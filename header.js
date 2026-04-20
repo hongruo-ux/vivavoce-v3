@@ -74,6 +74,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
   // ── Desktop nav HTML ─────────────────────────────────────────
+  // Menus that never show featured cards
+  const NO_CARDS_MENUS = ["What's New", 'Brands', 'Editorial'];
+
   const desktopNavHTML = NAV_ITEMS.map(item => {
     if (!item.megaMenu) {
       const isActive = !item.noActive && item.href === currentPage;
@@ -86,13 +89,6 @@ window.addEventListener('DOMContentLoaded', () => {
         ${col.links.map(l => `<a href="plp.html" class="mega-link">${l}</a>`).join('')}
       </div>`).join('');
     let extra = '';
-    if (item.megaMenu.cards) {
-      extra = item.megaMenu.cards.map(c => `
-        <a href="plp.html" class="mega-card">
-          <div class="mega-card-img wf-img"></div>
-          <div class="mega-card-label">${c.label}</div>
-        </a>`).join('');
-    }
     if (item.megaMenu.stories) {
       extra = `<div class="mega-stories-col">
         <div class="mega-col-title">Latest Stories</div>
@@ -106,6 +102,13 @@ window.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>`).join('')}
       </div>`;
+    } else if (!NO_CARDS_MENUS.includes(item.label)) {
+      const cards = item.megaMenu.cards || [];
+      const isSingle = cards.length <= 1;
+      const frameClass = isSingle ? 'mega-cards-frame mega-cards-frame--single' : 'mega-cards-frame';
+      const slot1 = cards[0] ? `<a href="plp.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${cards[0].label}</div></a>` : '<div class="mega-card"></div>';
+      const slot2 = isSingle ? '' : (cards[1] ? `<a href="plp.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${cards[1].label}</div></a>` : '<div class="mega-card"></div>');
+      extra = `<div class="${frameClass}">${slot1}${slot2}</div>`;
     }
     return `<div class="nav-item"><button class="nav-link" data-menu="${menuId}">${item.label}</button><div class="mega-menu" id="${menuId}"><div class="mega-menu-inner">${cols}${extra}</div></div></div>`;
   }).join('');
@@ -193,11 +196,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const html = `
     <a href="#main-content" class="sr-only">Skip to main content</a>
-    <div class="promo-banner" id="promo-banner">
-      <span class="promo-banner-text">FREE Shipping &amp; Returns on all orders</span>
-      <button class="promo-banner-close" id="promo-banner-close" aria-label="Dismiss">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    <div class="promo-banner" id="promo-banner" data-slide="0" role="region" aria-label="Promotions">
+      <button class="promo-nav-btn promo-nav-btn--prev" id="promo-prev" aria-label="Previous offer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
+      <div class="promo-track" id="promo-track">
+        <div class="promo-slide promo-slide--shipping" role="group" aria-label="Offer 1 of 2">
+          <span class="promo-banner-text">FREE Shipping &amp; Returns on all orders</span>
+        </div>
+        <div class="promo-slide promo-slide--nyc banner-sm" role="group" aria-label="Offer 2 of 2">
+          <span class="promo-banner-text">NYC Pop-Up Store &nbsp;&middot;&nbsp; Open May 23&ndash;30 &nbsp;&nbsp;<a href="#" class="btn xs">Sign Up</a></span>
+        </div>
+      </div>
+      <button class="promo-nav-btn promo-nav-btn--next" id="promo-next" aria-label="Next offer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <div class="promo-dots" aria-hidden="true">
+        <button class="promo-dot is-active" data-dot="0"></button>
+        <button class="promo-dot" data-dot="1"></button>
+      </div>
     </div>
     <header class="site-header" id="site-header">
       <div class="utility-bar">
@@ -293,22 +310,25 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <!-- Search overlay -->
-    <div class="search-overlay" id="search-overlay">
-      <div class="search-overlay-mask" id="search-overlay-mask"></div>
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="search-mask" id="search-overlay-mask"></div>
       <div class="search-panel">
-        <div class="search-row">
+        <div class="search-input-row">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-          <input class="search-field" type="search" placeholder="Search brands, styles, products..." id="search-field"/>
-          <button class="icon-circle-btn" id="search-close-btn" aria-label="Close">
+          <input class="search-input" type="search" placeholder="Search styles, products..." id="search-field" autocomplete="off"/>
+          <button class="search-clear-btn" id="search-clear-btn" aria-label="Clear">Clear</button>
+          <button class="icon-circle-btn search-close-btn" id="search-close-btn" aria-label="Close">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
         </div>
-        <div class="search-results-label">Products</div>
-        <div class="search-results-grid">
-          <a href="pdp.html" class="search-result-card"><div class="wf-img" style="aspect-ratio:3/4;margin-bottom:6px"></div><div class="search-result-name">Silk Slip Dress</div><div class="search-result-price">$285.00</div></a>
-          <a href="pdp.html" class="search-result-card"><div class="wf-img" style="aspect-ratio:3/4;margin-bottom:6px"></div><div class="search-result-name">Linen Blazer</div><div class="search-result-price">$390.00</div></a>
-          <a href="pdp.html" class="search-result-card"><div class="wf-img" style="aspect-ratio:3/4;margin-bottom:6px"></div><div class="search-result-name">Cashmere Crew Knit</div><div class="search-result-price">$420.00</div></a>
-          <a href="pdp.html" class="search-result-card"><div class="wf-img" style="aspect-ratio:3/4;margin-bottom:6px"></div><div class="search-result-name">Wide-Leg Trousers</div><div class="search-result-price">$175.00</div></a>
+        <div class="search-body" id="search-body">
+          <div class="search-results-label">Products</div>
+          <div class="search-results-grid" id="search-results-grid">
+            <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Silk Slip Dress</div><div class="search-result-price">$285.00</div></a>
+            <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Linen Blazer</div><div class="search-result-price">$390.00</div></a>
+            <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Cashmere Crew Knit</div><div class="search-result-price">$420.00</div></a>
+            <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Wide-Leg Trousers</div><div class="search-result-price">$175.00</div></a>
+          </div>
         </div>
       </div>
     </div>`;
@@ -476,11 +496,106 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Search ───────────────────────────────────────────────────
-  function openSearch() { document.getElementById('search-overlay').classList.add('is-open'); document.body.style.overflow='hidden'; setTimeout(()=>document.getElementById('search-field')?.focus(),50); }
-  function closeSearch() { document.getElementById('search-overlay').classList.remove('is-open'); document.body.style.overflow=''; }
+  const SEARCH_KEYWORDS = ['dresses', 'clothing', 'pants', 'shirts', 'jeans'];
+
+  // Related suggestions shown as pills when a base keyword matches
+  const SEARCH_SUGGESTIONS = {
+    dresses:  ['Summer Dresses', 'Casual Dresses', 'Maxi Dresses', 'Midi Dresses', 'Wedding Guest Dresses', 'Wrap Dresses'],
+    clothing: ['Summer Clothing', 'Active Clothing', 'New In Clothing', 'Sale Clothing', 'Designer Clothing', 'Sustainable Clothing'],
+    pants:    ['Wide-Leg Pants', 'Tailored Pants', 'Linen Pants', 'Leather Pants', 'Cropped Pants', 'High-Waist Pants'],
+    shirts:   ['Linen Shirts', 'Oversized Shirts', 'Silk Shirts', 'Striped Shirts', 'Button-Down Shirts', 'Cropped Shirts'],
+    jeans:    ['Straight Jeans', 'Wide-Leg Jeans', 'Cropped Jeans', 'High-Rise Jeans', 'Skinny Jeans', 'Flare Jeans'],
+  };
+
+  const SEARCH_PRODUCTS = {
+    dresses:  [{ name:'Silk Slip Dress', price:'$285.00' }, { name:'Wrap Midi Dress', price:'$195.00' }, { name:'Maxi Floral Dress', price:'$240.00' }, { name:'Bodycon Mini', price:'$165.00' }],
+    clothing: [{ name:'Linen Blazer', price:'$390.00' }, { name:'Cashmere Crew Knit', price:'$420.00' }, { name:'Oversized Shirt', price:'$120.00' }, { name:'Tailored Coat', price:'$580.00' }],
+    pants:    [{ name:'Wide-Leg Trousers', price:'$175.00' }, { name:'Tailored Pants', price:'$210.00' }, { name:'Pleated Wide Leg', price:'$195.00' }, { name:'Slim Fit Trousers', price:'$160.00' }],
+    shirts:   [{ name:'Oversized Oxford', price:'$130.00' }, { name:'Silk Blouse', price:'$220.00' }, { name:'Striped Shirt', price:'$110.00' }, { name:'Linen Shirt', price:'$145.00' }],
+    jeans:    [{ name:'High-Rise Straight', price:'$195.00' }, { name:'Wide Leg Jeans', price:'$210.00' }, { name:'Slim Fit Jeans', price:'$175.00' }, { name:'Cropped Flare', price:'$185.00' }],
+  };
+
+  const FEATURED_HTML = `
+    <div class="search-results-label">Products</div>
+    <div class="search-results-grid">
+      <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Silk Slip Dress</div><div class="search-result-price">$285.00</div></a>
+      <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Linen Blazer</div><div class="search-result-price">$390.00</div></a>
+      <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Cashmere Crew Knit</div><div class="search-result-price">$420.00</div></a>
+      <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Wide-Leg Trousers</div><div class="search-result-price">$175.00</div></a>
+    </div>`;
+
+  function fuzzyMatch(input, keyword) {
+    // Check if input is a subsequence of keyword or keyword contains input
+    const q = input.toLowerCase();
+    const k = keyword.toLowerCase();
+    if (k.includes(q)) return true;
+    // Subsequence check
+    let qi = 0;
+    for (let i = 0; i < k.length && qi < q.length; i++) {
+      if (k[i] === q[qi]) qi++;
+    }
+    return qi === q.length;
+  }
+
+  function renderSearch(query) {
+    const body = document.getElementById('search-body');
+    const clearBtn = document.getElementById('search-clear-btn');
+    if (!body) return;
+
+    clearBtn.style.display = query ? '' : 'none';
+
+    if (!query) { body.innerHTML = FEATURED_HTML; return; }
+
+    const matched = SEARCH_KEYWORDS.filter(k => fuzzyMatch(query, k));
+
+    if (!matched.length) {
+      body.innerHTML = `<p class="search-no-results">No results found for &ldquo;${query}&rdquo;. Try another search.</p>`;
+      return;
+    }
+
+    const pillsHTML = `<div class="search-pills">${matched.flatMap(k =>
+      SEARCH_SUGGESTIONS[k].map(s =>
+        `<button class="search-pill" data-pill="${s}">${s}</button>`
+      )
+    ).join('')}</div>`;
+
+    const products = matched.flatMap(k => SEARCH_PRODUCTS[k]);
+    const cardsHTML = products.map(p =>
+      `<a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">${p.name}</div><div class="search-result-price">${p.price}</div></a>`
+    ).join('');
+
+    body.innerHTML = `${pillsHTML}<div class="search-results-label">Products</div><div class="search-results-grid">${cardsHTML}</div>`;
+
+    // Pill click — set input to pill text and re-render
+    body.querySelectorAll('.search-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const field = document.getElementById('search-field');
+        if (field) field.value = btn.dataset.pill;
+        renderSearch(btn.dataset.pill);
+      });
+    });
+  }
+
+  function openSearch() {
+    document.getElementById('search-overlay').classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('search-field')?.focus(), 50);
+  }
+  function closeSearch() {
+    document.getElementById('search-overlay').classList.remove('is-open');
+    document.body.style.overflow = '';
+    const field = document.getElementById('search-field');
+    if (field) { field.value = ''; renderSearch(''); }
+  }
+
   document.getElementById('search-open-btn')?.addEventListener('click', openSearch);
   document.getElementById('search-close-btn')?.addEventListener('click', closeSearch);
   document.getElementById('search-overlay-mask')?.addEventListener('click', closeSearch);
+  document.getElementById('search-clear-btn')?.addEventListener('click', () => {
+    const field = document.getElementById('search-field');
+    if (field) { field.value = ''; field.focus(); renderSearch(''); }
+  });
+  document.getElementById('search-field')?.addEventListener('input', e => renderSearch(e.target.value.trim()));
 
   // ── Language picker ─────────────────────────────────────────
   document.getElementById('lang-picker-btn')?.addEventListener('click', e => {
@@ -507,11 +622,52 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ── Promo banner dismiss ────────────────────────────────────
-  document.getElementById('promo-banner-close')?.addEventListener('click', () => {
-    const banner = document.getElementById('promo-banner');
-    if (banner) banner.style.display = 'none';
-  });
+  // ── Promo banner carousel (mobile <900px only) ───────────────
+  (function () {
+    const banner  = document.getElementById('promo-banner');
+    const track   = document.getElementById('promo-track');
+    const dots    = document.querySelectorAll('.promo-dot');
+    const total   = 2;
+    let current   = 0;
+    let autoTimer = null;
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      banner.setAttribute('data-slide', current);
+      dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+    }
+
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+    function stopAuto() { clearInterval(autoTimer); }
+    function resetAuto() { stopAuto(); startAuto(); }
+
+    function isMobile() { return window.innerWidth < 900; }
+
+    function init() {
+      if (isMobile()) {
+        goTo(current);
+        startAuto();
+      } else {
+        stopAuto();
+        track.style.transform = '';
+        banner.setAttribute('data-slide', '0');
+      }
+    }
+
+    document.getElementById('promo-prev')?.addEventListener('click', () => { if (isMobile()) { goTo(current - 1); resetAuto(); } });
+    document.getElementById('promo-next')?.addEventListener('click', () => { if (isMobile()) { goTo(current + 1); resetAuto(); } });
+    dots.forEach(d => d.addEventListener('click', () => { if (isMobile()) { goTo(Number(d.dataset.dot)); resetAuto(); } }));
+
+    banner?.addEventListener('mouseenter', () => { if (isMobile()) stopAuto(); });
+    banner?.addEventListener('mouseleave', () => { if (isMobile()) startAuto(); });
+
+    window.addEventListener('resize', init);
+    init();
+  }());
 
   // ── Escape ───────────────────────────────────────────────────
   document.addEventListener('keydown', e => {
