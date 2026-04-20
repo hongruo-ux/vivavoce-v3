@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Bag — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="main-header"></div>
+
+  <main>
+    <div class="container" style="padding-top:24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+        <h1>Your Bag <span style="font-size:1rem;color:var(--text-muted);font-weight:400">(3 items)</span></h1>
+        <a href="plp.html" class="btn sm">← Continue Shopping</a>
+      </div>
+
+      <div class="checkout-steps">
+        <div class="step-item active">1. Bag</div>
+        <div class="step-arrow active"></div>
+        <div class="step-item">2. Checkout</div>
+        <div class="step-arrow"></div>
+        <div class="step-item">3. Payment</div>
+        <div class="step-arrow"></div>
+        <div class="step-item">4. Confirm</div>
+      </div>
+
+      <div class="cart-layout">
+        <div>
+          <div class="cart-item">
+            <div class="cart-item-img wf-img"></div>
+            <div>
+              <div style="font-size:0.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:3px">Jacquemus</div>
+              <div style="font-size:0.875rem;font-weight:600;margin-bottom:4px">La Robe Murano Asymmetric Linen Dress</div>
+              <div style="font-size:0.75rem;color:var(--text-muted)">Size: S · Natural Linen</div>
+              <div style="display:flex;align-items:center;gap:8px;margin-top:10px">
+                <div class="qty-ctrl" style="height:36px">
+                  <button class="qty-btn" style="height:36px">−</button>
+                  <div class="qty-val" style="height:36px;min-width:32px">1</div>
+                  <button class="qty-btn" style="height:36px">+</button>
+                </div>
+                <button class="btn sm">Remove</button>
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:0.75rem;text-decoration:line-through;color:var(--text-muted)">$750</div>
+              <div style="font-size:1rem;font-weight:700">$595</div>
+              <span class="badge sale">−20%</span>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item-img wf-img"></div>
+            <div>
+              <div style="font-size:0.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:3px">A.P.C.</div>
+              <div style="font-size:0.875rem;font-weight:600;margin-bottom:4px">Wool Blazer — Marine</div>
+              <div style="font-size:0.75rem;color:var(--text-muted)">Size: M · Marine</div>
+              <div style="display:flex;align-items:center;gap:8px;margin-top:10px">
+                <div class="qty-ctrl" style="height:36px">
+                  <button class="qty-btn" style="height:36px">−</button>
+                  <div class="qty-val" style="height:36px;min-width:32px">1</div>
+                  <button class="qty-btn" style="height:36px">+</button>
+                </div>
+                <button class="btn sm">Remove</button>
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:0.75rem;text-decoration:line-through;color:var(--text-muted)">$620</div>
+              <div style="font-size:1rem;font-weight:700">$434</div>
+              <span class="badge sale">−30%</span>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item-img wf-img"></div>
+            <div>
+              <div style="font-size:0.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:3px">Jacquemus</div>
+              <div style="font-size:0.875rem;font-weight:600;margin-bottom:4px">Le Bambino Small Leather Bag</div>
+              <div style="font-size:0.75rem;color:var(--text-muted)">Colour: Brown</div>
+              <div style="display:flex;align-items:center;gap:8px;margin-top:10px">
+                <div class="qty-ctrl" style="height:36px">
+                  <button class="qty-btn" style="height:36px">−</button>
+                  <div class="qty-val" style="height:36px;min-width:32px">1</div>
+                  <button class="qty-btn" style="height:36px">+</button>
+                </div>
+                <button class="btn sm">Remove</button>
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1rem;font-weight:700">$595</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-summary">
+          <div style="font-size:0.875rem;font-weight:700;margin-bottom:18px">Order Summary</div>
+          <div class="summary-row"><span>Subtotal (3 items)</span><span>$1,624</span></div>
+          <div class="summary-row"><span>Discount</span><span style="color:#43a047">−$162</span></div>
+          <div class="summary-row"><span>Shipping</span><span style="color:var(--text-muted)">Free</span></div>
+          <div class="summary-row total"><span>Total</span><span>$1,462</span></div>
+          <div style="display:flex;gap:8px;margin:18px 0">
+            <input placeholder="Promo code" style="flex:1">
+            <button class="btn sm">Apply</button>
+          </div>
+          <button class="btn filled lg full">Proceed to Checkout →</button>
+          <div style="text-align:center;font-size:0.6875rem;color:var(--text-muted);margin-top:10px">🔒 Secure checkout · SSL encrypted</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="main-footer"></div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+</body>
+</html>

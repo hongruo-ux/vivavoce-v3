@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="main-header"></div>
+
+  <main>
+    <div class="container" style="padding-top:24px">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>My Account</span></div>
+
+      <div class="account-layout" style="margin-top:16px">
+        <aside class="account-sidebar">
+          <div style="padding:22px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px">
+            <div style="width:48px;height:48px;background:var(--placeholder);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.125rem">👤</div>
+            <div>
+              <div style="font-size:0.8125rem;font-weight:700">Sophie Martin</div>
+              <div style="font-size:0.6875rem;color:var(--text-muted)">Member since 2022</div>
+            </div>
+          </div>
+          <button class="account-nav-item active" onclick="switchPanel(this,'orders')">📦 My Orders</button>
+          <button class="account-nav-item" onclick="switchPanel(this,'wishlist')">♡ Wishlist</button>
+          <button class="account-nav-item" onclick="switchPanel(this,'addresses')">📍 Addresses</button>
+          <button class="account-nav-item" onclick="switchPanel(this,'profile')">👤 Profile</button>
+          <button class="account-nav-item" onclick="switchPanel(this,'payment')">💳 Payment Methods</button>
+          <button class="account-nav-item" onclick="switchPanel(this,'loyalty')">⭐ Loyalty Points</button>
+          <button class="account-nav-item" onclick="switchPanel(this,'prefs')">⚙ Preferences</button>
+          <button class="account-nav-item" style="border-top:1px solid var(--border)">↩ Sign Out</button>
+        </aside>
+
+        <div>
+          <!-- Orders -->
+          <div class="account-section" id="panel-orders">
+            <div class="account-section-head">
+              <div class="account-section-title">Order History</div>
+              <span class="tag">12 orders</span>
+            </div>
+            <div>
+              <div class="order-row">
+                <div><div style="font-weight:700">#VV-2025-0412</div><div style="font-size:0.6875rem;color:var(--text-muted)">3 items · $1,624</div></div>
+                <span style="font-size:0.6875rem;color:var(--text-muted)">Apr 10, 2025</span>
+                <span class="order-status status-shipped">Shipped</span>
+                <button class="btn sm">View</button>
+              </div>
+              <div class="order-row">
+                <div><div style="font-weight:700">#VV-2025-0389</div><div style="font-size:0.6875rem;color:var(--text-muted)">1 item · $485</div></div>
+                <span style="font-size:0.6875rem;color:var(--text-muted)">Mar 28, 2025</span>
+                <span class="order-status status-delivered">Delivered</span>
+                <button class="btn sm">View</button>
+              </div>
+              <div class="order-row">
+                <div><div style="font-weight:700">#VV-2025-0301</div><div style="font-size:0.6875rem;color:var(--text-muted)">2 items · $870</div></div>
+                <span style="font-size:0.6875rem;color:var(--text-muted)">Feb 14, 2025</span>
+                <span class="order-status status-delivered">Delivered</span>
+                <button class="btn sm">View</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile -->
+          <div class="account-section" id="panel-profile" style="display:none">
+            <div class="account-section-head"><div class="account-section-title">Personal Details</div></div>
+            <div class="account-section-body">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+                <div><div style="font-size:0.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:6px">First Name</div><input value="Sophie"></div>
+                <div><div style="font-size:0.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:6px">Last Name</div><input value="Martin"></div>
+                <div><div style="font-size:0.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:6px">Email</div><input value="sophie@email.com"></div>
+                <div><div style="font-size:0.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:6px">Phone</div><input value="+33 6 12 34 56 78"></div>
+              </div>
+              <button class="btn filled">Save Changes</button>
+            </div>
+          </div>
+
+          <!-- Loyalty -->
+          <div class="account-section" id="panel-loyalty" style="display:none">
+            <div class="account-section-head"><div class="account-section-title">Viva Voce Rewards</div></div>
+            <div class="account-section-body">
+              <div style="border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface-sand);padding:28px;display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+                <div>
+                  <div style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:4px">Your Points</div>
+                  <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:700">3,240 pts</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px">≈ $32.40 in rewards</div>
+                </div>
+                <div style="text-align:right">
+                  <span class="badge new" style="font-size:0.75rem;padding:6px 12px">Gold Member</span>
+                  <div style="font-size:0.6875rem;color:var(--text-muted);margin-top:8px">1,760 pts to Platinum</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other panels -->
+          <div class="account-section" id="panel-wishlist" style="display:none">
+            <div class="account-section-head"><div class="account-section-title">Wishlist</div></div>
+            <div class="account-section-body"><p style="color:var(--text-muted);font-size:0.8125rem">Your saved items will appear here.</p></div>
+          </div>
+          <div class="account-section" id="panel-addresses" style="display:none">
+            <div class="account-section-head"><div class="account-section-title">Addresses</div></div>
+            <div class="account-section-body"><p style="color:var(--text-muted);font-size:0.8125rem">Your saved addresses will appear here.</p></div>
+          </div>
+          <div class="account-section" id="panel-payment" style="display:none">
+            <div class="account-section-head"><div class="account-section-title">Payment Methods</div></div>
+            <div class="account-section-body"><p style="color:var(--text-muted);font-size:0.8125rem">Your saved payment methods will appear here.</p></div>
+          </div>
+          <div class="account-section" id="panel-prefs" style="display:none">
+            <div class="account-section-head"><div class="account-section-title">Preferences</div></div>
+            <div class="account-section-body"><p style="color:var(--text-muted);font-size:0.8125rem">Your preferences will appear here.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="main-footer"></div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script>
+    function switchPanel(btn, id) {
+      document.querySelectorAll('.account-nav-item').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('[id^="panel-"]').forEach(p => p.style.display = 'none');
+      const panel = document.getElementById('panel-' + id);
+      if (panel) panel.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

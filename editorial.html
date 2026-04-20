@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editorial — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="main-header"></div>
+
+  <main>
+    <div class="container" style="padding-top:24px">
+      <div style="padding:32px 0 24px">
+        <p style="font-size:0.6875rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">ARC. Journal</p>
+        <h1>Editorial</h1>
+      </div>
+
+      <div class="tab-bar" style="margin-bottom:28px">
+        <button class="tab active" onclick="filterTab(this)">All</button>
+        <button class="tab" onclick="filterTab(this)">Style Guide</button>
+        <button class="tab" onclick="filterTab(this)">Brand Spotlight</button>
+        <button class="tab" onclick="filterTab(this)">Trend Report</button>
+        <button class="tab" onclick="filterTab(this)">How To Wear</button>
+        <button class="tab" onclick="filterTab(this)">Sustainability</button>
+      </div>
+
+      <div class="blog-layout">
+        <div>
+          <div class="blog-featured">
+            <div class="blog-featured-img wf-img">
+              <div class="blog-featured-meta">
+                <div style="font-size:0.625rem;color:#aaa;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:4px">Trend Report</div>
+                <div style="font-family:var(--font-display);font-size:1.375rem;font-weight:700;line-height:1.3">The Return of Quiet Luxury: Why Less is the New More for SS25</div>
+                <div style="font-size:0.6875rem;color:#aaa;margin-top:8px">Apr 12, 2025 · 8 min read · By Amélie Fontaine</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img wf-img"></div>
+            <div class="blog-card-body">
+              <div class="blog-cat">Style Guide</div>
+              <div class="blog-title">How to Build a Capsule Wardrobe for Spring 2025</div>
+              <div class="blog-excerpt">Ten essential pieces that will take you from work to weekend.</div>
+              <div class="blog-meta">Apr 8 · 5 min read</div>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img wf-img"></div>
+            <div class="blog-card-body">
+              <div class="blog-cat">Brand Spotlight</div>
+              <div class="blog-title">Inside Jacquemus: Sun, Sea and Linen</div>
+              <div class="blog-excerpt">Simon Porte Jacquemus has built more than a brand — he's built a feeling.</div>
+              <div class="blog-meta">Apr 5 · 4 min read</div>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img wf-img"></div>
+            <div class="blog-card-body">
+              <div class="blog-cat">How To Wear</div>
+              <div class="blog-title">5 Ways to Wear a Blazer This Season</div>
+              <div class="blog-excerpt">From casual to boardroom — every occasion covered.</div>
+              <div class="blog-meta">Apr 1 · 3 min read</div>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img wf-img"></div>
+            <div class="blog-card-body">
+              <div class="blog-cat">Sustainability</div>
+              <div class="blog-title">Our 2025 Sustainability Report</div>
+              <div class="blog-excerpt">An honest look at our environmental footprint and initiatives.</div>
+              <div class="blog-meta">Mar 28 · 10 min read</div>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img wf-img"></div>
+            <div class="blog-card-body">
+              <div class="blog-cat">Trend Report</div>
+              <div class="blog-title">The New Minimalism: Clean Lines for a New Era</div>
+              <div class="blog-excerpt">Fashion is returning to a refined, considered approach.</div>
+              <div class="blog-meta">Mar 22 · 6 min read</div>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-widget">
+            <div class="widget-title">Categories</div>
+            <div class="widget-body">
+              <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:6px 0;border-bottom:1px solid var(--border)">Style Guide<span style="color:var(--text-muted)">18</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:6px 0;border-bottom:1px solid var(--border)">Brand Spotlight<span style="color:var(--text-muted)">14</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:6px 0;border-bottom:1px solid var(--border)">Trend Report<span style="color:var(--text-muted)">11</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:6px 0">How To Wear<span style="color:var(--text-muted)">9</span></div>
+            </div>
+          </div>
+          <div class="sidebar-widget">
+            <div class="widget-title">Newsletter</div>
+            <div class="widget-body">
+              <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:10px">Weekly editorial in your inbox.</p>
+              <input placeholder="your@email.com" style="margin-bottom:8px">
+              <button class="btn filled full">Subscribe</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="main-footer"></div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script>
+    function filterTab(btn) {
+      document.querySelectorAll('.tab-bar .tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
