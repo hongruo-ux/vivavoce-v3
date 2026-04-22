@@ -136,12 +136,14 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 /* Base = md: used for standard UI, small popups */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-  font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.02em;
+  font-family: var(--font-body); font-size: 0.9375rem; font-weight: 500; letter-spacing: 0.02em;
   padding: 0.75rem 1.5rem; height: 44px; border-radius: var(--radius-pill);
   border: 1.5px solid var(--evergreen); cursor: pointer; text-decoration: none;
   transition: background 150ms ease, transform 150ms ease, color 150ms ease;
   white-space: nowrap; background: transparent; color: var(--evergreen);
 }
+.btn.light-btn { border-color: var(--surface-mint); color: var(--surface-page); }
+.btn.light-btn:hover { background-color: rgba(255, 255, 255, 0.1); /* Subtle glow */ color: var(--surface-page); }
 .btn:hover { background: var(--surface-mint); text-decoration: none; color: var(--evergreen); }
 .btn:focus-visible { outline: var(--focus-ring); outline-offset: 2px; }
 .btn.filled { background: var(--cta-bg); color: #fff; border-color: var(--cta-bg); }
@@ -154,6 +156,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .btn.sm { font-size: 0.8125rem; height: 36px; padding: 0.5rem 1.25rem; }
 .btn.xs { font-size: 0.75rem; height: 28px; padding: 0.25rem 0.875rem; }
 .btn.full { width: 100%; }
+
 
 /* ── Popup context sizing ────────────────────────────────────
    Add .popup-sm or .popup-lg to the popup container.
