@@ -21,7 +21,6 @@
 
       <div style="margin-bottom:28px">
         <div class="page-header"><h1>Category Level Collection Page</h1></div>
-        <p style="color:var(--text-muted);font-size:0.8125rem;margin-top:6px">1,420 products from 200+ brands</p>
       </div>
 
       <div class="plp-layout">
@@ -129,39 +128,7 @@
           </div>
         </aside>
 
-        <!-- Products column -->
-        <div>
-
-          <!-- Mobile / tablet toolbar: Filter + Sort CTAs (full width) -->
-          <div class="plp-toolbar-mobile">
-            <span class="plp-cta-btn">
-              <button class="btn sm plp-toolbar-btn" id="filter-open-btn" aria-label="Open filters" aria-expanded="false" aria-controls="filter-drawer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-                Filter
-              </button>
-              <span class="plp-filter-dot" id="filter-dot" aria-hidden="true"></span>
-            </span>
-            <div class="plp-sort-wrap">
-              <button class="btn sm plp-toolbar-btn" id="sort-open-btn" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M7 12h10M11 18h2"/></svg>
-                <span id="sort-label">Sort</span>
-              </button>
-              <div class="sort-dropdown" id="sort-dropdown" role="listbox" aria-label="Sort options">
-                <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
-                <button class="sort-option" role="option" data-value="new-in">New In</button>
-                <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
-                <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Active filters bar — hidden when empty, shown dynamically -->
-          <div class="active-filters" id="active-filters-bar" style="display:none">
-            <span style="font-size:0.6875rem;color:var(--text-muted)">Active:</span>
-            <!-- tags injected by JS -->
-          </div>
-
-          <!-- Product grid -->
+       <!-- Product grid -->
           <div class="grid-3 plp-grid" id="plp-grid" style="gap:12px">
 
             <div class="product-card" data-name="La Robe Murano" data-price="$595" data-brand="Jacquemus" data-colors="#e8c4b8,#1a1a18,#c4d4e8" data-sizes="XS,S,M,L" data-badge="Exclusive">
@@ -169,7 +136,7 @@
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-badge"><span class="badge new">New</span></div>
-                <div class="product-card-mask"><span class="mask-label">Exclusive</span></div>
+                <div class="product-card-mask"><span class="mask-label">Exclusive</span><SPan>•</SPan><span class="mask-label">Eco-Friendly Materials</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -201,6 +168,8 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
+                <div class="product-card-mask"><span class="mask-label">Fair Trade</span></div>
+
                 <div class="product-card-badge"><span class="badge sale">Sale</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
@@ -250,6 +219,7 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
+                <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -265,6 +235,7 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
+                <div class="product-card-mask"><span class="mask-label">OEKO-TEX</span></div>
                 <div class="product-card-badge"><span class="badge sale">Sale</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
@@ -313,6 +284,8 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
+                <div class="product-card-mask"><span class="mask-label">Fair Trade</span></div>
+
                 <div class="product-card-badge"><span class="badge new">New</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
@@ -346,6 +319,7 @@
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -378,6 +352,8 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
+                <div class="product-card-mask"><span class="mask-label">OEKO-TEX</span></div>
+
                 <div class="product-card-badge"><span class="badge new">New</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
@@ -394,7 +370,7 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
-                <div class="product-card-mask"><span class="mask-label">Exclusive</span></div>
+                <div class="product-card-mask"><span class="mask-label">Fair Trade</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -410,6 +386,7 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
+                <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
                 <div class="product-card-badge"><span class="badge sale">Sale</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
@@ -442,6 +419,7 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
+                <div class="product-card-mask"><span class="mask-label">OEKO-TEX</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -458,7 +436,7 @@
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-badge"><span class="badge new">New</span></div>
-                <div class="product-card-mask"><span class="mask-label">Exclusive</span></div>
+                <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -474,6 +452,7 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
+                <div class="product-card-mask"><span class="mask-label">Fair Trade</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -489,7 +468,7 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
-                <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div>
+                <div class="product-card-mask"><span class="mask-label">OEKO-TEX</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -505,6 +484,7 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
+                <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
                 <div class="product-card-badge"><span class="badge sale">Sale</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
@@ -522,7 +502,7 @@
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-badge"><span class="badge new">New</span></div>
-                <div class="product-card-mask"><span class="mask-label">Exclusive</span></div>
+                <div class="product-card-mask"><span class="mask-label">Fair Trade</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -538,6 +518,7 @@
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
                 <div class="wf-img ratio-3-4"></div>
+                <div class="product-card-mask"><span class="mask-label">OEKO-TEX</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -567,27 +548,7 @@
 
           </div><!-- /plp-grid -->
 
-          <!-- Infinite scroll sentinel (mobile only) -->
-          <div id="plp-sentinel" style="height:1px;margin-top:8px"></div>
 
-          <!-- Load More button (mobile only, shown after 40 auto-loaded) -->
-          <div class="plp-load-more-wrap" id="plp-load-more-wrap" style="display:none">
-            <button class="btn sm plp-load-more-btn" id="plp-load-more-btn">Load More</button>
-          </div>
-
-          <!-- Desktop pagination -->
-          <p class="pagination-label" id="pagination-label">Showing 1–12 of <strong>1,420</strong> products</p>
-          <div class="pagination" id="plp-pagination">
-            <button class="page-btn">‹</button>
-            <button class="page-btn active">1</button>
-            <button class="page-btn">2</button>
-            <button class="page-btn">3</button>
-            <button class="page-btn">…</button>
-            <button class="page-btn">59</button>
-            <button class="page-btn">›</button>
-          </div>
-
-        </div><!-- /products column -->
       </div><!-- /plp-layout -->
     </div><!-- /container -->
   </main>

@@ -57,7 +57,7 @@
 .signin-overlay { display: none; position: fixed; inset: 0; z-index: 500; }
 .signin-overlay.is-open { display: block; }
 .signin-mask { position: absolute; inset: 0; }
-signin-panel {
+.signin-panel {
   position: fixed; /* Changed from absolute to fixed to keep it relative to the screen */
   top: 0;
   right: 0;
