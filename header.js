@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
 
   const NAV_ITEMS = [
-    { label: "What's New", href: 'plp.html', noActive: true },
+    { label: "What's New", href: 'plpNew.html', noActive: true },
     { label: 'Get Inspired', megaMenu: { cols: [
-      { title: 'Shop by Style', links: ['All Dresses','Midi Dresses','Maxi Dresses','Mini Dresses','Shirt Dresses','Wrap Dresses','Slip Dresses','Bodycon Dresses'] },
+      { title: 'Shop by Style', links: ['Midi Dresses','Maxi Dresses','Mini Dresses','Shirt Dresses','Wrap Dresses','Slip Dresses','Bodycon Dresses'] },
       { title: 'Shop by Occasion', links: ['Casual','Work','Evening','Wedding Guest','Vacation','Brunch'] },
       { title: 'Featured', links: ['Best Sellers','New In','Designer Dresses','Under $200','Under $500'] },
     ], cards: [{ label: 'Dress Edit' }, { label: 'New Season' }] }},
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     ], cards: [{ label: 'Dress Edit' }] }},
     { label: 'Active', megaMenu: { cols: [
       { title: 'Women', links: ['Leggings','Sports Bras','Tops','Jackets','Shorts'] },
-      { title: 'Men', links: ['T-Shirts','Shorts','Joggers','Hoodies','Jackets'] },
+      { title: 'Training Day Style', links: ['T-Shirts','Shorts','Joggers','Hoodies','Jackets'] },
       { title: 'Shop', links: ['New In','Best Sellers','Sale','Under $100'] },
     ], cards: [{ label: 'Active Edit' }] }},
     { label: 'Shoes', megaMenu: { cols: [
@@ -37,13 +37,13 @@ window.addEventListener('DOMContentLoaded', () => {
     { label: 'Bags', megaMenu: { cols: [
       { title: 'Style', links: ['Tote','Shoulder','Crossbody','Clutch','Backpack'] },
       { title: 'Size', links: ['Mini','Small','Medium','Large','Oversized'] },
-      { title: 'Shop', links: ['New In','Designer','Under $200','Sale'] },
+      { title: 'Shop', links: ['New In','Designer','Under $200','Community Top Pick'] },
     ], cards: [{ label: 'Bag Edit' }] }},
     { label: 'Accessories', megaMenu: { cols: [
       { title: 'Jewellery', links: ['Necklaces','Rings','Earrings','Bracelets'] },
       { title: 'Scarves & Hats', links: ['Scarves','Hats','Belts','Sunglasses'] },
       { title: 'Shop', links: ['New In','Designer','Trending','Under $50'] },
-    ], cards: [{ label: 'Accessories Edit' }] }},
+    ], cards: [{ label: 'Accessories Edits' }, { label: 'Jewelry-New' }] }},
     { label: 'Beauty', megaMenu: { cols: [
       { title: 'Skincare', links: ['Cleansers','Serums','Moisturisers','SPF','Eye Care'] },
       { title: 'Makeup', links: ['Foundation','Lips','Eyes','Blush','Setting Spray'] },
@@ -60,19 +60,20 @@ window.addEventListener('DOMContentLoaded', () => {
   ];
 
   const PILL_ITEMS = [
-    { label: "What's New", href: 'plp.html' },
-    { label: 'Summer', href: 'plp.html' },
+    { label: "What's New", href: 'plpNew.html' },
+    { label: 'Summer', href: 'plpCategory.html' },
     { label: 'Clothing', href: 'plp.html' },
-    { label: 'Dresses', href: 'plp.html' },
-    { label: 'Active', href: 'plp.html' },
-    { label: 'Shoes', href: 'plp.html' },
-    { label: 'Bags', href: 'plp.html' },
-    { label: 'Accessories', href: 'plp.html' },
-    { label: 'Beauty', href: 'plp.html' },
+    { label: 'Dresses', href: 'plpCategory.html' },
+    { label: 'Active', href: 'plpCategory.html' },
+    { label: 'Shoes', href: 'plpCategory.html' },
+    { label: 'Bags', href: 'plpCategory.html' },
+    { label: 'Accessories', href: 'plpCategory.html' },
+    { label: 'Beauty', href: 'plpCategory.html' },
   ];
 
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-
+  const isHomePage = currentPage === 'index.html';
+  
   // ── Desktop nav HTML ─────────────────────────────────────────
   // Menus that never show featured cards
   const NO_CARDS_MENUS = ["What's New", 'Brands', 'Editorial'];
@@ -80,14 +81,16 @@ window.addEventListener('DOMContentLoaded', () => {
   const desktopNavHTML = NAV_ITEMS.map(item => {
     if (!item.megaMenu) {
       const isActive = !item.noActive && item.href === currentPage;
-      return `<div class="nav-item"><a href="${item.href||'#'}" class="nav-link${isActive?' is-active':''}">${item.label}</a></div>`;
+      return `<div class="nav-item"><a href="${item.href || '#'}" class="nav-link${isActive?' is-active':''}">${item.label}</a></div>`;
     }
     const menuId = 'mega-' + item.label.replace(/[\s']+/g, '-');
+    
     const cols = item.megaMenu.cols.map(col => `
       <div class="mega-col">
         ${col.title ? `<div class="mega-col-title">${col.title}</div>` : ''}
-        ${col.links.map(l => `<a href="plp.html" class="mega-link">${l}</a>`).join('')}
+        ${col.links.map(l => `<a href="plpCategory.html" class="mega-link">${l}</a>`).join('')}
       </div>`).join('');
+
     let extra = '';
     if (item.megaMenu.stories) {
       extra = `<div class="mega-stories-col">
@@ -104,30 +107,45 @@ window.addEventListener('DOMContentLoaded', () => {
       </div>`;
     } else if (!NO_CARDS_MENUS.includes(item.label)) {
       const cards = item.megaMenu.cards || [];
-      const isSingle = cards.length <= 1;
+      const isSingle = cards.length === 1;
       const frameClass = isSingle ? 'mega-cards-frame mega-cards-frame--single' : 'mega-cards-frame';
-      const slot1 = cards[0] ? `<a href="plp.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${cards[0].label}</div></a>` : '<div class="mega-card"></div>';
-      const slot2 = isSingle ? '' : (cards[1] ? `<a href="plp.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${cards[1].label}</div></a>` : '<div class="mega-card"></div>');
+      const slot1 = cards[0] ? `<a href="plpCategory.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${cards[0].label}</div></a>` : '<div class="mega-card"></div>';
+      const slot2 = !isSingle ? (cards[1] ? `<a href="plpCategory.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${cards[1].label}</div></a>` : '<div class="mega-card"></div>') : '';
       extra = `<div class="${frameClass}">${slot1}${slot2}</div>`;
     }
-    return `<div class="nav-item"><button class="nav-link" data-menu="${menuId}">${item.label}</button><div class="mega-menu" id="${menuId}"><div class="mega-menu-inner">${cols}${extra}</div></div></div>`;
+
+    // Determine the label: "Read All" for Editorial, "Shop All" for others
+    const actionLabel = item.label === 'Editorial' ? 'Read All' : 'Shop All';
+    const skipShopAll = ['Get Inspired', 'Summer'].includes(item.label);
+    const shopAllLink = skipShopAll ? '' : `<a href="plp.html" class="mega-link" style="display:block; font-weight:700; margin-bottom:15px; width:100%;">${actionLabel} ${item.label}</a>`;
+
+    return `<div class="nav-item">
+      <button class="nav-link" data-menu="${menuId}">${item.label}</button>
+      <div class="mega-menu" id="${menuId}">
+        <div class="mega-menu-inner">
+          <div style="flex:1;">
+            ${shopAllLink}
+            <div style="display:flex; gap:20px;">${cols}</div>
+          </div>
+          ${extra}
+        </div>
+      </div>
+    </div>`;
   }).join('');
 
   // ── Mobile accordion links ──────────────────────────────────
   const mobileAccordionLinks = NAV_ITEMS.map(item => {
-    // Direct link — no mega menu
     if (!item.megaMenu) {
       return `<a href="${item.href||'plp.html'}" class="mobile-nav-link">${item.label}</a>`;
     }
 
     const subId = 'acc-' + item.label.replace(/[\s']+/g, '-');
 
-    // Inner column groups — each with +/− toggle, first one open by default
     const groupsHTML = item.megaMenu.cols.map((col, i) => {
       const groupId = subId + '-g' + i;
       const isFirst = i === 0;
       const linksHTML = col.links.map(l =>
-        `<a href="plp.html" class="mobile-acc-link">${l}</a>`
+        `<a href="plpCategory.html" class="mobile-acc-link">${l}</a>`
       ).join('');
       if (!col.title) {
         return `<div class="mobile-acc-group-open">${linksHTML}</div>`;
@@ -141,15 +159,13 @@ window.addEventListener('DOMContentLoaded', () => {
       </div>`;
     }).join('');
 
-    // Featured cards (if any)
     const cardsHTML = item.megaMenu.cards ? item.megaMenu.cards.map(c =>
-      `<a href="plp.html" class="mobile-acc-card">
+      `<a href="plpCategory.html" class="mobile-acc-card">
         <div class="mobile-acc-card-img wf-img"></div>
         <div class="mobile-acc-card-label">${c.label}</div>
       </a>`
     ).join('') : '';
 
-    // Editorial stories (if any)
     const storiesHTML = item.megaMenu.stories ? item.megaMenu.stories.map(s =>
       `<div class="mobile-acc-story">
         <div class="mobile-acc-story-img wf-img"></div>
@@ -161,6 +177,18 @@ window.addEventListener('DOMContentLoaded', () => {
       </div>`
     ).join('') : '';
 
+    // LOGIC: Use a distinct container to force the spacing 
+    const actionLabel = item.label === 'Editorial' ? 'Read All' : 'Shop All';
+    const skipShopAll = ['Get Inspired', 'Summer'].includes(item.label);
+    
+    // This uses a wrapper div to separate the link from the "element style" logic seen in your inspector
+    const shopAllMobile = skipShopAll ? '' : `
+      <div class="shop-all-container" style="padding: 8px 16px 8px 16px; margin-bottom: 8px;">
+        <a href="plp.html" style="font-weight: 700; text-decoration: none; color: inherit; font-size: .9375rem; display: block;">
+          ${actionLabel} ${item.label}
+        </a>
+      </div>`;
+
     const cardsSection = cardsHTML ? `<div class="mobile-acc-cards">${cardsHTML}</div>` : '';
     const storiesSection = storiesHTML ? `<div class="mobile-acc-stories">${storiesHTML}</div>` : '';
 
@@ -170,6 +198,7 @@ window.addEventListener('DOMContentLoaded', () => {
         <svg class="mobile-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="mobile-acc-body" id="${subId}">
+        ${shopAllMobile}
         ${groupsHTML}
         ${cardsSection}
         ${storiesSection}
@@ -205,7 +234,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <span class="promo-banner-text">FREE Shipping &amp; Returns on all orders</span>
         </div>
         <div class="promo-slide promo-slide--nyc banner-sm" role="group" aria-label="Offer 2 of 2">
-          <span class="promo-banner-text">NYC Pop-Up Store &nbsp;&middot;&nbsp; Open May 23&ndash;30 &nbsp;&nbsp;<a href="#" class="btn xs">Sign Up</a></span>
+          <span class="promo-banner-text">NYC Pop-Up Store &nbsp;&middot;&nbsp; Open May 23&ndash;30 &nbsp;&nbsp;<a href="#">Sign Up</a></span>
         </div>
       </div>
       <button class="promo-nav-btn promo-nav-btn--next" id="promo-next" aria-label="Next offer">
@@ -257,7 +286,7 @@ window.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
       <nav class="main-nav desktop-only" id="main-nav">${desktopNavHTML}</nav>
-      <div class="pill-strip mobile-only">${pillsHTML}</div>
+      ${isHomePage ? `<div class="pill-strip mobile-only">${pillsHTML}</div>` : ''}
     </header>
 
     <!-- Desktop account popup -->
