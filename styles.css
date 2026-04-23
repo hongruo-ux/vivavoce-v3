@@ -215,7 +215,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .carousel-track { display:flex; overflow-x:auto; gap:1rem; scrollbar-width:none; -webkit-overflow-scrolling:touch; padding-bottom:.5rem; align-items:flex-start; }
 .carousel-track::-webkit-scrollbar { display:none; }
 /* Column variants — desktop */
-.carousel-item--2 { flex:0 0 calc((100% - 3rem) / 1.8); min-width:0; }
+.carousel-item--2 { flex:0 0 calc((100% - 3rem) / 1.6); min-width:0; }
 .carousel-item--3 { flex:0 0 calc((100% - 3rem) / 3.3); min-width:0; }
 .carousel-item--4 { flex:0 0 calc((100% - 3rem) / 4.3); min-width:0; }
 .carousel-item--5 { flex:0 0 calc((100% - 4rem) / 5.3); min-width:0; }
