@@ -1,0 +1,9 @@
+
+/* === BRANDS === */
+.brands-hero { background: var(--surface-sand); padding: 3rem 0; text-align: center; }
+.alpha-nav { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+.alpha-btn { width: 32px; height: 32px; min-height: 0; border: 1px solid var(--border); border-radius: var(--radius-card); font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); }
+.alpha-btn.active { background: var(--text-primary); color: #fff; border-color: var(--text-primary); }
+.brand-list-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+.brand-list-card { display: flex; flex-direction: column; gap: 6px; padding: 1.25rem; border: 1px solid var(--border); border-radius: var(--radius-card); cursor: pointer; text-align: left; min-height: 0; transition: box-shadow 150ms ease; background: var(--surface-card); }
+.brand-list-card:hover { box-shadow: var(--shadow-hover); }

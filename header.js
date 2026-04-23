@@ -2,12 +2,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const NAV_ITEMS = [
     { label: "What's New", href: 'plpNew.html', noActive: true },
-    { label: 'Get Inspired', megaMenu: { cols: [
+    { label: 'Get Inspired', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Shop by Style', links: ['Midi Dresses','Maxi Dresses','Mini Dresses','Shirt Dresses','Wrap Dresses','Slip Dresses','Bodycon Dresses'] },
       { title: 'Shop by Occasion', links: ['Casual','Work','Evening','Wedding Guest','Vacation','Brunch'] },
       { title: 'Featured', links: ['Best Sellers','New In','Designer Dresses','Under $200','Under $500'] },
     ], cards: [{ label: 'Dress Edit' }, { label: 'New Season' }] }},
-    { label: 'Summer', megaMenu: { cols: [
+    { label: 'Summer', href: 'plpCategory.html',  megaMenu: { cols: [
       { title: 'Shop by Category', links: ['Dresses','Tops','Shorts','Swimwear','Sandals'] },
       { title: 'Summer Edits', links: ['Resort Wear','Beach Essentials','Sun Dresses','Linen Collection'] },
       { title: 'Trending Now', links: ['Coastal Chic','Maximalist Prints','Sheer Layers','Bold Colour'] },
@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
       { title: 'Bottoms', links: ['Trousers','Jeans','Skirts','Shorts','Leggings'] },
       { title: 'Outerwear', links: ['Coats','Jackets','Blazers','Gilets'] },
     ], cards: [{ label: 'New In' }] }},
-    { label: 'Dresses', megaMenu: { cols: [
+    { label: 'Dresses', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Style', links: ['Midi','Maxi','Mini','Wrap','Slip'] },
       { title: 'Occasion', links: ['Party','Wedding Guest','Casual','Work'] },
       { title: 'Edit', links: ['New Arrivals','Under £100','Designer','Sustainable'] },
@@ -29,27 +29,27 @@ window.addEventListener('DOMContentLoaded', () => {
       { title: 'Training Day Style', links: ['T-Shirts','Shorts','Joggers','Hoodies','Jackets'] },
       { title: 'Shop', links: ['New In','Best Sellers','Sale','Under $100'] },
     ], cards: [{ label: 'Active Edit' }] }},
-    { label: 'Shoes', megaMenu: { cols: [
+    { label: 'Shoes', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Type', links: ['Heels','Flats','Boots','Sandals','Trainers'] },
       { title: 'Occasion', links: ['Casual','Formal','Sport','Going Out'] },
       { title: 'Shop', links: ['New In','Sale','Designer','Under $50'] },
     ], cards: [{ label: 'Shoe Edit' }] }},
-    { label: 'Bags', megaMenu: { cols: [
+    { label: 'Bags', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Style', links: ['Tote','Shoulder','Crossbody','Clutch','Backpack'] },
       { title: 'Size', links: ['Mini','Small','Medium','Large','Oversized'] },
       { title: 'Shop', links: ['New In','Designer','Under $200','Community Top Pick'] },
     ], cards: [{ label: 'Bag Edit' }] }},
-    { label: 'Accessories', megaMenu: { cols: [
+    { label: 'Accessories', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Jewellery', links: ['Necklaces','Rings','Earrings','Bracelets'] },
       { title: 'Scarves & Hats', links: ['Scarves','Hats','Belts','Sunglasses'] },
       { title: 'Shop', links: ['New In','Designer','Trending','Under $50'] },
     ], cards: [{ label: 'Accessories Edits' }, { label: 'Jewelry-New' }] }},
-    { label: 'Beauty', megaMenu: { cols: [
+    { label: 'Beauty', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Skincare', links: ['Cleansers','Serums','Moisturisers','SPF','Eye Care'] },
       { title: 'Makeup', links: ['Foundation','Lips','Eyes','Blush','Setting Spray'] },
       { title: 'Shop', links: ['New In','Best Sellers','Natural','Luxury'] },
     ], cards: [{ label: 'Beauty Edit' }] }},
-    { label: 'Editorial', megaMenu: { cols: [
+    { label: 'Editorial', href: 'editorial.html', megaMenu: { cols: [
       { title: 'Community', links: ['Lifestyle','Fashion','Trending Styles','Brand Stories','View All'] },
       { title: 'Sustainability & Vision', links: ['Our Mission','Sustainability','Environmental Friendly','View All'] },
     ], stories: [
@@ -117,10 +117,10 @@ window.addEventListener('DOMContentLoaded', () => {
     // Determine the label: "Read All" for Editorial, "Shop All" for others
     const actionLabel = item.label === 'Editorial' ? 'Read All' : 'Shop All';
     const skipShopAll = ['Get Inspired', 'Summer'].includes(item.label);
-    const shopAllLink = skipShopAll ? '' : `<a href="plp.html" class="mega-link" style="display:block; font-weight:700; margin-bottom:15px; width:100%;">${actionLabel} ${item.label}</a>`;
+    const shopAllLink = skipShopAll ? '' : `<a href="editorial.html" class="mega-link" style="display:block; font-weight:700; margin-bottom:15px; width:100%;">${actionLabel} ${item.label}</a>`;
 
     return `<div class="nav-item">
-      <button class="nav-link" data-menu="${menuId}">${item.label}</button>
+      <a href="${item.href || 'plp.html'}" class="nav-link" data-menu="${menuId}">${item.label}</a>
       <div class="mega-menu" id="${menuId}">
         <div class="mega-menu-inner">
           <div style="flex:1;">
@@ -299,7 +299,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     <!-- Mobile account modal with mask -->
     <div class="account-modal-mask" id="account-modal-mask"></div>
-    <div class="account-modal popup-lg" id="account-modal">
+    <div class="account-modal popup-md" id="account-modal" style ="height: fit-content;">
       <div class="account-modal-head">
         <h4>Account</h4>
         <button class="account-modal-close" id="account-modal-close" aria-label="Close">
@@ -405,11 +405,16 @@ window.addEventListener('DOMContentLoaded', () => {
         scheduleClose();
       });
       btn.addEventListener('click', e => {
-        e.stopPropagation();
         const menu = document.getElementById(menuId);
         if (!menu) return;
-        if (menu.classList.contains('is-open')) { menu.classList.remove('is-open'); btn.classList.remove('menu-open'); }
-        else { openMenu(menuId, btn); }
+
+        // If the menu is closed, open it and stop the link from loading
+        if (!menu.classList.contains('is-open')) {
+          e.preventDefault(); 
+          e.stopPropagation();
+          openMenu(menuId, btn);
+        } 
+        // If the menu is already open, the link (like editorial.html) will work normally
       });
     });
     document.querySelectorAll('.mega-menu').forEach(menu => {

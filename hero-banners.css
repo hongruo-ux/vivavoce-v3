@@ -2,7 +2,7 @@
 /* === SPLIT CAROUSEL REVEAL STYLE === */
 .split-carousel {
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 45% 55%;
   height: 580px; /* Adjust height as needed */
   background: #FFFFFF;
   overflow: hidden;
@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 4rem 3rem;
+  padding: 2rem 2rem;
   color: #FFFFFF;
   z-index: 10;
 }
@@ -93,15 +93,20 @@
   z-index: 2;
 }
 
+
 /* Mobile: Show only the masked text side */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .split-carousel {
     grid-template-columns: 1fr;
-    height: 480px;
+    height: 640px;
   }
   .split-gallery {
     display: none;
   }
+  .split-mask {
+    padding: 2rem 2rem;
+  }
+  .split-gradient-overlay {background: linear-gradient(to top, rgba(0, 0, 0, .9) 0%, rgba(0, 0, 0, .2) 39%);}
 }
 
 /* Split hero image: */
@@ -120,3 +125,127 @@
   min-height: 400px; 
 }
 .hero-left {background-color: #F7E2C7;}
+
+/* --- New Two-Column Brand Block --- */
+.brand-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
+  gap: 1rem; /* Matches your existing grid gap */
+  margin-bottom: 2.25rem; /* Matches standard section padding */
+}
+
+.brand-featured-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-featured-img {
+  width: 100%;
+  aspect-ratio: 16 / 12; /* Matches the square layout in screenshot */
+  background: var(--placeholder); /* Uses your existing placeholder color */
+}
+
+.brand-featured-title {
+  font-family: var(--font-body); /* Uses Sharp Earth OL */
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.brand-featured-link {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.brand-title-block{
+  gap: 0.5rem;
+}
+
+/* Mobile: Stack cards vertically */
+@media (max-width: 744px) {
+  .brand-featured-grid {
+    grid-template-columns: 1fr; /* Single column for stacking */
+    gap: 2rem;
+  }
+}
+
+
+
+/* =========================================
+   SOCIAL MOSAIC / CAROUSEL SYSTEM
+   ========================================= */
+/* --- THE TOGGLE LOGIC --- */
+@media (min-width: 1025px) {
+  .insta-mobile-carousel { display: none !important; }
+  .insta-desktop-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .mosaic-grid-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .insta-desktop-grid { display: none !important; }
+  .insta-mobile-carousel { display: block !important; }
+  .insta-mobile-carousel .carousel-track { display: flex !important; }
+  
+
+}
+
+/* --- THE UI STYLES (Badge, Mask, Icon) --- */
+.insta-feed-card { 
+  position: relative; 
+  height: 100%; 
+  width: 100%; 
+  overflow: hidden; 
+}
+
+/* Fixes the "Wired" Mask - smooth bottom gradient */
+.insta-gradient-mask {
+  position: absolute; 
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 30%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.insta-card-footer {
+  position: absolute; 
+  bottom: 0; 
+  width: 100%; 
+  padding: 1.2rem;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-end; /* Keeps items at bottom */
+  z-index: 2; 
+  color: white;
+}
+
+.insta-profile { display: flex; align-items: center; gap: 12px; }
+
+.insta-badge {
+  width: 44px; height: 44px; 
+  background: #DDE6D3; 
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #B34424; font-weight: 900; font-size: 11px;
+  flex-shrink: 0;
+}
+
+.insta-meta { display: flex; flex-direction: column; line-height: 1.2; }
+.insta-brand { font-weight: 700; font-size: 1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+.insta-date { font-size: 0.85rem; opacity: 0.9; }
+
+/* The Instagram Icon (SVG) */
+.insta-icon svg {
+  width: 24px; height: 24px;
+  stroke: white;
+  display: block;
+}

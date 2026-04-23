@@ -1,0 +1,29 @@
+
+/* === PDP === */
+.pdp-layout { display: grid; grid-template-columns: 1fr 440px; gap: 3rem; margin-top: 1.5rem; }
+.pdp-gallery { display: grid; grid-template-columns: 72px 1fr; gap: 0.75rem; }
+.pdp-thumbs { display: flex; flex-direction: column; gap: 6px; }
+.pdp-thumb { width: 72px; height: 90px; min-height: 0; border: 2px solid transparent; overflow: hidden; padding: 0; }
+.pdp-thumb.active { border-color: var(--text-primary); }
+.pdp-main-img { aspect-ratio: 3/4; }
+.pdp-info { display: flex; flex-direction: column; gap: 1.25rem; }
+.pdp-brand { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); min-height: 0; padding: 0; }
+.pdp-price { font-size: 1.5rem; font-weight: 700; }
+.pdp-price-old { font-size: 1rem; text-decoration: line-through; color: var(--text-caption); }
+.stars { color: #f59e0b; font-size: 0.875rem; }
+.size-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; }
+.size-btn { height: 40px; min-height: 0; border: 1.5px solid var(--border); font-size: 0.8125rem; font-weight: 600; color: var(--text-primary); border-radius: var(--radius-card); }
+.size-btn:hover { border-color: var(--text-primary); }
+.size-btn.active { border-color: var(--text-primary); background: var(--text-primary); color: #fff; }
+.size-btn.oos { opacity: 0.35; text-decoration: line-through; }
+.pdp-add-row { display: flex; gap: 0.75rem; align-items: center; }
+.qty-ctrl { display: flex; align-items: center; border: 1.5px solid var(--border); border-radius: var(--radius-pill); overflow: hidden; height: 44px; }
+.qty-btn { width: 40px; height: 100%; min-height: 0; font-size: 1.25rem; color: var(--text-primary); border-radius: 0; }
+.qty-val { width: 40px; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 0.9375rem; font-weight: 600; }
+.pdp-usps { font-size: 0.8125rem; color: var(--text-secondary); line-height: 2; }
+.tab-bar { display: flex; border-bottom: 1px solid var(--border); }
+.tab { padding: 0.75rem 1.25rem; font-size: 0.875rem; font-weight: 600; color: var(--text-caption); min-height: 0; border-bottom: 2px solid transparent; }
+.tab.active { color: var(--text-primary); border-bottom-color: var(--text-primary); }
+.tab:hover { color: var(--text-primary); }
+.tab-content { padding: 1.5rem 0; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.8; max-width: 680px; display: none; }
+.tab-content.active { display: block; }
