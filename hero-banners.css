@@ -2,7 +2,7 @@
 /* === SPLIT CAROUSEL REVEAL STYLE === */
 .split-carousel {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 42% 58%;
   height: 580px; /* Adjust height as needed */
   background: #FFFFFF;
   overflow: hidden;
