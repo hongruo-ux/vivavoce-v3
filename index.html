@@ -7,37 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="header-additions.css" />
   <link rel="stylesheet" href="hero-banners.css" />
-<style>
-    .carousel-btn.is-visible {
-          display: flex !important;
-          opacity: 1;
-        }
 
-        /* 2. FIX THE LAYOUT: Standardize the Section Padding & Typo */
-        .featured-category-section {
-          padding: 2.5rem 0;
-        }
-
-        /* 3. FIX THE TEXT CARD: Force it to fill height and center text */
-        .carousel-track {
-          align-items: stretch; /* Allows items to fill the full height of the track */
-        }
-
-      .insta-text-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; 
-      height: 100%;
-      padding-right: 2rem; /* Adjusted for consistent spacing */
-      gap: .875rem;
-    }
-    @media (max-width) {
-      .featured-category-section, .featured-category-section{
-        padding: 0;
-      }
-    }
-
-</style>
 
 </head>
 <body>
@@ -48,8 +18,8 @@
     <!-- Hero -->
     <div class="hero">
       <div class="hero-left">
-        <span class="hero-eyebrow">Spring / Summer 2026 Collection</span>
-        <h1 class="hero-title">Dress for<br>the World<br>You Want.</h1>
+        <span class="hero-eyebrow desktop-only">Spring / Summer 2026 Collection</span>
+        <h1 class="hero-title">Dress for the World You Want.</h1>
         <p class="hero-sub">Curated fashion from over 200 independent and luxury brands. Free returns. Worldwide shipping.</p>
         <div class="hero-btns">
           <a href="plp.html" class="btn filled lg">Shop Women →</a>
@@ -62,275 +32,325 @@
     <!-- Marquee -->
     <div class="marquee-bar">
       <div class="marquee-inner">
-        <span class="marquee-item">Free Returns <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">200+ Brands <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">Sustainable Fashion <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">New Arrivals Daily <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">Authenticated Luxury <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">Free Shipping $150+ <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">Free Returns <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">200+ Brands <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">Sustainable Fashion <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">New Arrivals Daily <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">Authenticated Luxury <span style="opacity:.3">·</span></span>
-        <span class="marquee-item">Free Shipping $150+ <span style="opacity:.3">·</span></span>
+        <span class="marquee-item"><span class="material-icons">local_shipping</span> Free Returns</span>
+        <span class="marquee-item"><span class="material-icons">storefront</span> 200+ Brands</span>
+        <span class="marquee-item"><span class="material-icons">eco</span> Sustainable Fashion</span>
+        <span class="marquee-item"><span class="material-icons">new_releases</span> New Arrivals Daily</span>
+        <span class="marquee-item"><span class="material-icons">verified</span> Authenticated Luxury</span>
+        <span class="marquee-item"><span class="material-icons">redeem</span> Free Shipping $150+</span>
+        <span class="marquee-item"><span class="material-icons">local_shipping</span> Free Returns</span>
+        <span class="marquee-item"><span class="material-icons">storefront</span> 200+ Brands</span>
+        <span class="marquee-item"><span class="material-icons">eco</span> Sustainable Fashion</span>
+        <span class="marquee-item"><span class="material-icons">new_releases</span> New Arrivals Daily</span>
+        <span class="marquee-item"><span class="material-icons">verified</span> Authenticated Luxury</span>
+        <span class="marquee-item"><span class="material-icons">redeem</span> Free Shipping $150+</span>
       </div>
     </div>
 
-    <div class="container">
       
 
       <!-- New Arrivals -->
-      <div class="section">
-        <div class="section-header">
-          <div>
-            <div class="section-eyebrow">Just dropped</div>
-            <h3 class="section-title">New this week</h3>
+       <div class="container">
+        <div class="section">
+          <div class="section-header">
+            <div>
+              <div class="section-eyebrow">Just dropped</div>
+              <h3 class="section-title">New this week</h3>
+            </div>
+            <a href="plp.html" class="btn sm">View All →</a>
           </div>
-          <a href="plp.html" class="btn sm">View All →</a>
-        </div>
-        <div class="carousel-wrap">
-          <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <div class="carousel-track">
+          <div class="carousel-wrap">
+            <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="carousel-track">
 
-            <div class="carousel-item--4">
-              <div class="product-card">
-                <div class="product-card-img">
-                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
-                  <div class="product-card-mask"><span class="mask-label">Community's FAV</span></div></a>
+              <div class="carousel-item--5">
+                <div class="product-card">
+                  <div class="product-card-img">
+                    <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <div class="product-card-mask"><span class="mask-label">Community's FAV</span></div></a>
+                  </div>
+                  <div class="product-card-info">
+                    <a href="plpBrand.html" class="product-brand">Toteme</a>
+                    <div class="product-name">Draped Silk Midi Dress</div>
+                    <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size oos">XL</span></div>
+                    <div class="product-price">$485</div>
+                  </div>
+                  <button class="product-quick-add">Quick Add</button>
                 </div>
-                <div class="product-card-info">
-                  <a href="plpBrand.html" class="product-brand">Toteme</a>
-                  <div class="product-name">Draped Silk Midi Dress</div>
-                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size oos">XL</span></div>
-                  <div class="product-price">$485</div>
-                </div>
-                <button class="product-quick-add">Quick Add</button>
               </div>
-            </div>
 
-            <div class="carousel-item--4">
-              <div class="product-card">
-                <div class="product-card-img">
-                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
-                  <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
+              <div class="carousel-item--5">
+                <div class="product-card">
+                  <div class="product-card-img">
+                    <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
+                  </div>
+                  <div class="product-card-info">
+                    <a href="plpBrand.html" class="product-brand">Sandro</a>
+                    <div class="product-name">Floral Wrap Midi Skirt</div>
+                    <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                    <div class="product-price">$310</div>
+                  </div>
+                  <button class="product-quick-add">Quick Add</button>
                 </div>
-                <div class="product-card-info">
-                  <a href="plpBrand.html" class="product-brand">Sandro</a>
-                  <div class="product-name">Floral Wrap Midi Skirt</div>
-                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
-                  <div class="product-price">$310</div>
-                </div>
-                <button class="product-quick-add">Quick Add</button>
               </div>
-            </div>
 
-            <div class="carousel-item--4">
-              <div class="product-card">
-                <div class="product-card-img">
-                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
-                  <div class="product-card-mask"><span class="mask-label">Exclusive</span></div></a>
+              <div class="carousel-item--5">
+                <div class="product-card">
+                  <div class="product-card-img">
+                    <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <div class="product-card-mask"><span class="mask-label">Exclusive</span></div></a>
+                  </div>
+                  <div class="product-card-info">
+                    <a href="plpBrand.html" class="product-brand">Jacquemus</a>
+                    <div class="product-name">Le Chiquito Nœud Bag</div>
+                    <div class="product-sizes"><span class="product-size">One Size</span></div>
+                    <div class="product-price">$650</div>
+                  </div>
+                  <button class="product-quick-add">Quick Add</button>
                 </div>
-                <div class="product-card-info">
-                  <a href="plpBrand.html" class="product-brand">Jacquemus</a>
-                  <div class="product-name">Le Chiquito Nœud Bag</div>
-                  <div class="product-sizes"><span class="product-size">One Size</span></div>
-                  <div class="product-price">$650</div>
-                </div>
-                <button class="product-quick-add">Quick Add</button>
               </div>
-            </div>
 
-            <div class="carousel-item--4">
-              <div class="product-card">
-                <div class="product-card-img">
-                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a>
+              <div class="carousel-item--5">
+                <div class="product-card">
+                  <div class="product-card-img">
+                    <a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a>
+                  </div>
+                  <div class="product-card-info">
+                    <a href="plpBrand.html" class="product-brand">AMI Paris</a>
+                    <div class="product-name">Oversized Crewneck Sweater</div>
+                    <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size">XL</span></div>
+                    <div class="product-price">$395</div>
+                  </div>
+                  <button class="product-quick-add">Quick Add</button>
                 </div>
-                <div class="product-card-info">
-                  <a href="plpBrand.html" class="product-brand">AMI Paris</a>
-                  <div class="product-name">Oversized Crewneck Sweater</div>
-                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size">XL</span></div>
-                  <div class="product-price">$395</div>
-                </div>
-                <button class="product-quick-add">Quick Add</button>
               </div>
-            </div>
 
-            <div class="carousel-item--4">
-              <div class="product-card">
-                <div class="product-card-img">
-                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
-                  <div class="product-card-mask"><span class="mask-label">Community's</span></div></a>
+              <div class="carousel-item--5">
+                <div class="product-card">
+                  <div class="product-card-img">
+                    <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <div class="product-card-mask"><span class="mask-label">Community's</span></div></a>
+                  </div>
+                  <div class="product-card-info">
+                    <a href="plpBrand.html" class="product-brand">Isabel Marant</a>
+                    <div class="product-name">Étoile Printed Maxi Dress</div>
+                    <div class="product-sizes"><span class="product-size oos">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size oos">L</span></div>
+                    <div class="product-price">$560</div>
+                  </div>
+                  <button class="product-quick-add">Quick Add</button>
                 </div>
-                <div class="product-card-info">
-                  <a href="plpBrand.html" class="product-brand">Isabel Marant</a>
-                  <div class="product-name">Étoile Printed Maxi Dress</div>
-                  <div class="product-sizes"><span class="product-size oos">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size oos">L</span></div>
-                  <div class="product-price">$560</div>
-                </div>
-                <button class="product-quick-add">Quick Add</button>
               </div>
-            </div>
 
-            <div class="carousel-item--4">
-              <div class="product-card">
-                <div class="product-card-img">
-                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a>
+              <div class="carousel-item--5">
+                <div class="product-card">
+                  <div class="product-card-img">
+                    <a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a>
+                  </div>
+                  <div class="product-card-info">
+                    <a href="plpBrand.html" class="product-brand">A.P.C.</a>
+                    <div class="product-name">Straight-Leg Tailored Trousers</div>
+                    <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size">XL</span></div>
+                    <div class="product-price">$290</div>
+                  </div>
+                  <button class="product-quick-add">Quick Add</button>
                 </div>
-                <div class="product-card-info">
-                  <a href="plpBrand.html" class="product-brand">A.P.C.</a>
-                  <div class="product-name">Straight-Leg Tailored Trousers</div>
-                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size">XL</span></div>
-                  <div class="product-price">$290</div>
-                </div>
-                <button class="product-quick-add">Quick Add</button>
               </div>
-            </div>
 
+            </div>
+            <button class="carousel-btn carousel-btn--next" aria-label="Next">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
           </div>
-          <button class="carousel-btn carousel-btn--next" aria-label="Next">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
         </div>
       </div>
      
       <!--Featured Banner-->
-      <div class="section" style="padding-bottom: 1rem;">
-        <div class="split-carousel">
-          
-          <div class="split-mask" style="background-image: url('images/home/banner2.png');">
-            <div class="split-gradient-overlay"></div>
-            <div class="split-content">
-              <span class="split-eyebrow">Featured Collection</span>
-              <h2 class="split-title">Mega Summer<br>Fashion Collection</h2>
-              <a href="plpCategory.html" class="btn light-btn md" style="width:fit-content;">Discover Exclusive Deals</a></div>
-          </div>
+      <div class="container">
+          <div class="section" style="padding-bottom: 1rem;">
+            <div class="split-carousel">
+              
+              <div class="split-mask" style="background-image: url('images/home/banner2.png');">
+                <div class="split-gradient-overlay"></div>
+                <div class="split-content">
+                  <span class="split-eyebrow">Featured Collection</span>
+                  <h2 class="split-title">Mega Summer<br>Fashion Collection</h2>
+                  <a href="plpCategory.html" class="btn light-btn md" style="width:fit-content;">Discover Exclusive Deals</a></div>
+              </div>
 
-          <div class="split-gallery">
-            <div class="split-track">
-              <div class="split-img" style="background-image: url('images/home/banner3.png');"></div>
-              <div class="split-img" style="background-image: url('images/home/banner4.png');"></div>
+              <div class="split-gallery">
+                <div class="split-track">
+                  <div class="split-img" style="background-image: url('images/home/banner3.png');"></div>
+                  <div class="split-img" style="background-image: url('images/home/banner4.png');"></div>
+                </div>
+              </div>
+
             </div>
           </div>
-
-        </div>
+        <!-- Split Grid -->
+          <section class="section" style="padding-top: 0;">
+            <div class="brand-featured-grid"> <div class="brand-featured-card">
+                <a href="plpCategory.html" class="brand-featured-img wf-img banner-ease" style="background-image: url('images/home/banner3.png');"></a>
+                <div class="brand-title-block">
+                  <a href="plpCategory.html" class="brand-featured-title"><h3>Brand Name</h3></a>
+                  <a href="plpCategory.html" class="brand-featured-link">Shop now ></a>
+                </div> 
+              </div> <div class="brand-featured-card">
+                <a href="plpCategory.html" class="brand-featured-img wf-img banner-ease" style="background-image: url('images/home/banner3.png');"></a>
+                <div class="brand-title-block">
+                  <a href="plpCategory.html" class="brand-featured-title"><h3>Brand Name</h3></a>
+                  <a href="plpCategory.html" class="brand-featured-link">Shop now ></a>
+                </div>    
+              </div> 
+            </div> 
+          </section>
       </div>
-<!-- Split Grid -->
-    <section class="container section" style="padding-top: 0;">
-      <div class="brand-featured-grid"> <div class="brand-featured-card">
-          <a href="plpCategory.html" class="brand-featured-img wf-img banner-ease" style="background-image: url('images/home/banner3.png');"></a>
-          <div class="brand-title-block">
-            <a href="plpCategory.html" class="brand-featured-title"><h3>Brand Name</h3></a>
-            <a href="plpCategory.html" class="brand-featured-link">Shop now ></a>
-          </div> 
-        </div> <div class="brand-featured-card">
-          <a href="plpCategory.html" class="brand-featured-img wf-img banner-ease" style="background-image: url('images/home/banner3.png');"></a>
-          <div class="brand-title-block">
-            <a href="plpCategory.html" class="brand-featured-title"><h3>Brand Name</h3></a>
-            <a href="plpCategory.html" class="brand-featured-link">Shop now ></a>
-          </div>    
-        </div> 
-      </div> 
-    </section>
+
 
   <!-- Look book by style -->
-    <div class="section">
-    <div class="featured-category-section">
-      <div class="">
-        <div class="carousel-wrap">
-          <div class="carousel-track">
-            <div class="carousel-item--2" style="max-width: 32%;">
-              <div class="insta-text-card">
-                <h3 class="section-title">The Editor’s Daily Draft</h3>
-                <p class="hero-sub">Discover the versatile staples our design community is wearing this season.</p>
-              </div>
+   
+    <div class="section bg-header" style="background-color: var(--icy-mint);">
+      <div class="container">
+         <div class="insta-text-card mobile-only " style="margin-bottom: 1rem;">
+          <h3 class="section-title">The Editor’s Daily Draft</h3>
+          <p class="hero-sub">Discover the versatile staples our design community is wearing this season.</p>
+      </div>
+      
+        <div class="featured-category-section">
+          
+            <div class="carousel-wrap">
+              <div class="carousel-track">
+                <div class="carousel-item--2 desktop-only" style="max-width: 32%;">
+                  <div class="insta-text-card">
+                    <h3 class="section-title">The Editor’s Daily Draft</h3>
+                    <p class="hero-sub">Discover the versatile staples our design community is wearing this season.</p>
+                  </div>
+                </div>
+
+                <div class="carousel-item--2">
+                  <div class="insta-feed-card" >
+                    <a href="plpCategory.html" class="brand-featured-card">
+                      <div class="carousel-img ratio-16-9 wf-img banner-ease" style="background-image: url('images/home/collection1.png');"></div>
+                    <div class="insta-label product-name">The linen Shop</div>
+                    </a>
+                    
+                  </div>
+                </div>
+
+                <div class="carousel-item--2">
+                  <div class="insta-feed-card">
+                    <a href="plpCategory.html" class="brand-featured-card">
+                      <div class="carousel-img ratio-16-9 wf-img banner-ease" style="background-image: url('images/home/collection2.png');"></div>
+                    <div class="insta-label product-name">Saturday in the City</div>
+                    </a>
+                    
+                  </div>
+                </div>
+
+                <div class="carousel-item--2">
+                  <div class="insta-feed-card">
+                    <a href="plpCategory.html" class="brand-featured-card">
+                      <div class="carousel-img ratio-16-9 wf-img banner-ease" style="background-image: url('images/home/collection3.png');"></div>
+                    <div class="insta-label product-name">Color pop in Your Ears</div>
+                    </a>
+                    
+                  </div>
+                </div>
+
+
+              <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button class="carousel-btn carousel-btn--next" aria-label="Next">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
             </div>
-
-            <div class="carousel-item--2">
-              <div class="insta-feed-card" >
-                <a href="plpCategory.html" class="brand-featured-card">
-                  <div class="carousel-img ratio-16-9 wf-img banner-ease" style="background-image: url('images/home/collection1.png');"></div>
-                <div class="insta-label product-name">The linen Shop</div>
-                </a>
-                
-              </div>
-            </div>
-
-            <div class="carousel-item--2">
-              <div class="insta-feed-card">
-                <a href="plpCategory.html" class="brand-featured-card">
-                  <div class="carousel-img ratio-16-9 wf-img banner-ease" style="background-image: url('images/home/collection2.png');"></div>
-                <div class="insta-label product-name">Saturday in the City</div>
-                </a>
-                
-              </div>
-            </div>
-
-            <div class="carousel-item--2">
-              <div class="insta-feed-card">
-                <a href="plpCategory.html" class="brand-featured-card">
-                  <div class="carousel-img ratio-16-9 wf-img banner-ease" style="background-image: url('images/home/collection3.png');"></div>
-                <div class="insta-label product-name">Color pop in Your Ears</div>
-                </a>
-                
-              </div>
-            </div>
-
-
-          <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <button class="carousel-btn carousel-btn--next" aria-label="Next">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-        </div>
+ 
     </div>
+
+  </div>
+
+      </div>
+    </div>
+
+   <!-- Social mosaic -->
+  <div class="container">
+        <div class="section social-mosaic-section">
+
+        <div class="section-header" style="width: 80%; margin-inline: 0; padding: 2.5rem 0 1rem;">
+              <div>
+                <div class="section-eyebrow">Beyond the look</div>
+                <h2 class="section-header ">Fashion is a conversation, not a monologue. This space belongs to the creators, the stylists, and the trendsetters who make Viva Voce their own every single day.</h2>
+              </div>
+            </div>
+
+        <div class="insta-desktop-grid">
+          <div class="mosaic-grid-left">
+            <div class="insta-feed-card ratio-1-1"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner3.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div></div></div></div>
+            <div class="insta-feed-card ratio-1-1"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner4.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div></div></div></div>
+            <div class="insta-feed-card ratio-1-1"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner3.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div></div></div></div>
+            <div class="insta-feed-card ratio-1-1"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner4.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div></div></div></div>
+          </div>
+          <div class="mosaic-grid-right">
+  <div class="insta-feed-card" style="display: flex; height: 100%;">
+    <div class="carousel-img" style=" background-color: var(--evergreen); height: 100%; width: 100%; display: flex;  flex-direction: column; align-items: center; justify-content: center; text-align: center; ">
+      <div style="position: relative; max-width: 80%;">
+        <span style=" display: block; font-size: 80px; color: rgba(0,0,0,0.1); position: absolute; top: -50px; left: 50%; transform: translateX(-50%); font-family: Georgia, serif; ">“</span>
+        <h2 style="margin: 0 0 15px 0; color:white; italic; font-weight: 500;letter-spacing: -0.5px;"> I used to think more was better, but now I know that the right piece is everything. My wardrobe finally feels like me. </h2>  
+        <p style=" margin: 0 0 20px 0; color:wheat; ">
+          — Elena R, 12/25, VoV Customer
+        </p>
+        
+        <a class="btn" href="" style="display: inline-block; text-decoration: none;">
+          Shop the Product
+        </a>
+      </div>
+</div>
   </div>
 </div>
-
-  <!-- Social mosaic -->
-    <div class="section social-mosaic-section">
-
-    <div class="section-header container" style="width: 80%; margin-inline: 0; padding: 6vw 0 1vw;">
-          <div>
-            <div class="section-eyebrow">Beyond the look</div>
-            <h2 class="section-header ">Fashion is a conversation, not a monologue. This space belongs to the creators, the stylists, and the trendsetters who make Viva Voce their own every single day.</h2>
-          </div>
         </div>
 
-    <div class="insta-desktop-grid">
-      <div class="mosaic-grid-left">
-        <div class="insta-feed-card ratio-1-1"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner3.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div></div></div></div>
-        <div class="insta-feed-card ratio-1-1"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner4.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div></div></div></div>
-        <div class="insta-feed-card ratio-1-1"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner3.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div></div></div></div>
-        <div class="insta-feed-card ratio-1-1"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner4.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div></div></div></div>
+        <div class="insta-mobile-carousel carousel-wrap">
+          <div class="carousel-track">
+            <div class="carousel-item--3"><div class="insta-feed-card"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner3.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div></div></div></div></div>
+            <div class="carousel-item--3"><div class="insta-feed-card"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner4.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div></div></div></div></div>
+            <div class="carousel-item--3"><div class="insta-feed-card"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner2.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div></div></div></div></div>
+          </div>
+          <div class="carousel-img" style=" background-color: var(--evergreen); height: 100%; width: 100%; display: flex;  flex-direction: column; align-items: center; justify-content: center; text-align: center; ">
+      
+      <div style="position: relative; max-width: 80%; padding: 8VW 0;">
+        <span style=" display: block; font-size: 40px; line-height: 1; color: rgba(0,0,0,0.1); position: absolute; top: -50px; left: 50%; transform: translateX(-50%); font-family: Georgia, serif; ">“</span>
+        
+        <h3 style="margin: 0 0 15px 0; font-style: italic; font-weight: 500; color: var(--surface-page); letter-spacing: -0.5px;"> 
+          I used to think more was better, but now I know that the right piece is everything. My wardrobe finally feels like me.
+        </h3>
+        
+        <p style=" margin: 0 0 20px 0; color: var(--surface-page); font-size: 0.875rem; line-height: 1.6; ">
+          "— Elena R, 12/25, VoV Customer" 
+        </p>
+        
+        <a class="btn" href="" style="display: inline-block; text-decoration: none;">
+          Shop the Product
+        </a>
       </div>
-      <div class="mosaic-grid-right">
-        <div class="insta-feed-card"><div class="carousel-img wf-img banner-ease" style="background-image: url('images/home/banner2.png'); height: 100%;"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div></div></div></div>
-      </div>
-    </div>
 
-    <div class="insta-mobile-carousel carousel-wrap">
-      <div class="carousel-track">
-        <div class="carousel-item--3"><div class="insta-feed-card"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner3.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div></div></div></div></div>
-        <div class="carousel-item--3"><div class="insta-feed-card"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner4.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div></div></div></div></div>
-        <div class="carousel-item--3"><div class="insta-feed-card"><div class="carousel-img wf-img banner-ease ratio-1-1" style="background-image: url('images/home/banner2.png');"><div class="insta-gradient-mask"></div><div class="insta-card-footer"><div class="insta-profile"><div class="insta-badge">VoV</div><div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div></div><div class="insta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div></div></div></div></div>
-      </div>
     </div>
+        </div>
+        
 
-  </div>
-  </div>
+        </div>
+ </div>
 
 <!-- Styles You May Like -->
-      <div class="section" style="padding-bottom: 4rem;">
-        <div class="section-header">
-          <div>
+      <div class="container">
+        <div class=" section-header">
+          <div class="insta-text-card">
             <div class="section-eyebrow">Tailored for You</div>
             <h3 class="section-title">Styles You May Like</h3>
           </div>
-          <a href="plp.html" class="btn sm">View All →</a>
+          <a href="plp.html" class="btn sm" style="margin-top: 1rem;">View All →</a>
         </div>
         <div class="carousel-wrap">
           <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
@@ -338,7 +358,7 @@
           </button>
           <div class="carousel-track">
 
-            <div class="carousel-item--4">
+            <div class="carousel-item--5">
               <div class="product-card">
                 <div class="product-card-img">
                   <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
@@ -354,7 +374,7 @@
               </div>
             </div>
 
-            <div class="carousel-item--4">
+            <div class="carousel-item--5">
               <div class="product-card">
                 <div class="product-card-img">
                   <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
@@ -370,7 +390,7 @@
               </div>
             </div>
 
-            <div class="carousel-item--4">
+            <div class="carousel-item--5">
               <div class="product-card">
                 <div class="product-card-img">
                   <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
@@ -386,7 +406,7 @@
               </div>
             </div>
 
-            <div class="carousel-item--4">
+            <div class="carousel-item--5">
               <div class="product-card">
                 <div class="product-card-img">
                   <a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a>
@@ -401,7 +421,7 @@
               </div>
             </div>
 
-            <div class="carousel-item--4">
+            <div class="carousel-item--5">
               <div class="product-card">
                 <div class="product-card-img">
                   <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
@@ -417,7 +437,7 @@
               </div>
             </div>
 
-            <div class="carousel-item--4">
+            <div class="carousel-item--5">
               <div class="product-card">
                 <div class="product-card-img">
                   <a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a>
@@ -438,14 +458,18 @@
           </button>
         </div>
       </div>
-
-   <!-- Look book by brands -->
-    <div class="section">
-    <div class="featured-category-section">
+ <!-- Look book by brands -->
+      <div class="container">
+      
+      <div class="featured-category-section section">
+        <div class="insta-text-card mobile-only" style="margin-bottom: 1rem;">
+        <h3 class="section-title">Shop for Your Styles</h3>
+        <p class="hero-sub">Discover the brands of our design community this season.</p>
+      </div>
       <div class="">
         <div class="carousel-wrap">
           <div class="carousel-track">
-            <div class="carousel-item--3" style="max-width: 40%;">
+            <div class="carousel-item--3 desktop-only" style="max-width: 28%;">
               <div class="insta-text-card">
                 <h3 class="section-title">Shop for Your Styles</h3>
                 <p class="hero-sub">Discover the brands of our design community this season.</p>
@@ -455,7 +479,7 @@
             <div class="carousel-item--3">
               <div class="insta-feed-card">
                 <a href="plpCategory.html" class="brand-featured-card">
-                  <div class="carousel-img ratio-3-4"></div>
+                  <div class="carousel-img ratio-3-4 wf-img banner-ease" style="background-image: url('images/home/banner2.png');"></div>
                 <div class="insta-label product-name">City Uniform</div>
                 </a>
                 
@@ -465,7 +489,7 @@
             <div class="carousel-item--3">
               <div class="insta-feed-card">
                 <a href="plpCategory.html" class="brand-featured-card">
-                  <div class="carousel-img ratio-3-4"></div>
+                  <div class="carousel-img ratio-3-4 wf-img banner-ease" style="background-image: url('images/home/banner5.png');"></div>
                 <div class="insta-label product-name">Saturday in the City</div>
                 </a>
                 
@@ -475,22 +499,13 @@
             <div class="carousel-item--3">
               <div class="insta-feed-card">
                 <a href="plpCategory.html" class="brand-featured-card">
-                  <div class="carousel-img ratio-3-4"></div>
+                  <div class="carousel-img ratio-3-4 wf-img banner-ease" style="background-image: url('images/home/banner2.png');"></div>
                 <div class="insta-label product-name">Kinetic Minimalism</div>
                 </a>
                 
               </div>
             </div>
 
-            <div class="carousel-item--3">
-              <div class="insta-feed-card">
-                <a href="plpCategory.html" class="brand-featured-card">
-                  <div class="carousel-img ratio-3-4"></div>
-                <div class="insta-label product-name">Studio Collective</div>
-                </a>
-                
-              </div>
-            </div>
 
           <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
@@ -501,15 +516,16 @@
         </div>
     </div>
   </div>
-</div>
+
+    </div> 
 
 
       
+      </div><!-- /container: Look book by brands -->
   </main>
      <!-- Sustainability & Editorials -->
-
-      <div style="width: 100%; max-width: none;">
-          <div class="bg-header">
+      <div class="bg-header">
+            <div class="container">
             <div class="section">
 
 
@@ -521,39 +537,49 @@
                 
                 <div class="carousel-wrap">
                   <div class="carousel-track">
-                    <div class="carousel-item--2 white">
+                    <div class="carousel-item--3 white">
                       <div class="brand-featured-card">
                         <a href="editorial.html" class="brand-featured-img wf-img banner-ease" style="background-image: url('images/home/blog1.png');"></a>
                         <div class="brand-title-block bg">
-                          <a href="editorial.html"><h4 class="truncate product-name">Sustainability and all other good stuff</h4></a>
+                          <a href="editorial.html"><h4 class="truncate product-name">Beyond Green: Engineering a Future That Actually Works for Everyone</h4></a>
                           <div class="btn-group">
-                            <a href="editorial.html" class="brand-featured-link btn md"> Explore Community Editorials  ></a> 
+                            <a href="editorial.html" class="brand-featured-link btn md"> Explore More  ></a> 
                           </div>
                         </div> 
                       </div> 
                     </div>
 
-                    <div class="carousel-item--2 white">
+                    <div class="carousel-item--3 white">
+                      <div class="brand-featured-card">
+                        <a href="editorial.html" class="brand-featured-img wf-img banner-ease" style="background-image: url('images/home/banner3.png');"></a>
+                        <div class="brand-title-block bg">
+                          <a href="editorial.html"><h4 class="truncate product-name">The Cultural Thread: Exploring the Intersection of Design and People</h4></a>
+                          <div class="btn-group">
+                            <a href="editorial.html" class="brand-featured-link btn md">Expore Community ></a> 
+                          </div>
+                        </div> 
+                      </div> 
+                    </div>
+
+                    <div class="carousel-item--3 white">
                       <div class="brand-featured-card">
                         <a href="editorial.html" class="brand-featured-img wf-img banner-ease" style="background-image: url('images/home/banner3.png');"></a>
                         <div class="brand-title-block bg">
                           <a href="editorial.html"><h4 class="truncate product-name">The Cultural Thread: Exploring the Intersection of Design and People</h4></a>
                           <div class="btn-group">
                             <a href="editorial.html" class="brand-featured-link btn md">Read Article ></a> 
-                          <a href="editorial.html" class="brand-featured-link"> Explore Community Editorials ></a>
                           </div>
                         </div> 
                       </div> 
                     </div>
 
-                    <div class="carousel-item--2 white">
+                    <div class="carousel-item--3 white">
                       <div class="brand-featured-card">
                         <a href="editorial.html" class="brand-featured-img wf-img banner-ease" style="background-image: url('images/home/banner3.png');"></a>
                         <div class="brand-title-block bg">
                           <a href="editorial.html"><h4 class="truncate product-name">The Cultural Thread: Exploring the Intersection of Design and People</h4></a>
                           <div class="btn-group">
-                            <a href="editorial.html" class="brand-featured-link btn md">Read Article ></a> 
-                          <a href="editorial.html" class="brand-featured-link"> Explore Community Editorials ></a>
+                            <a href="editorial.html" class="brand-featured-link btn md">Explore Community  ></a> 
                           </div>
                         </div> 
                       </div> 
@@ -568,46 +594,36 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
                   </button>
                 </div>
+                </div><!-- /carousel-wrap -->
             </div>
           </div>
         </div>
       </div>
-     </div>
-
-
-      <!-- Promo Cards -->
-      <div class="section">
-        <div class="promo-banner">
-          <div class="wf-img banner-ease" style="min-height:300px"></div>
-          <div class="promo-content">
-            <span class="tag">Limited Time</span>
-            <div style="font-family:var(--font-display);font-size:2.25rem;font-weight:700;line-height:1.15">End of<br>Season Sale</div>
-            <p style="color:var(--text-muted);line-height:1.7">Shop categories.</p>
-            <a href="plp.html" class="btn filled">Shop Sale →</a>
-          </div>
-        </div>
-      </div>
-
-
-      
-      <!-- Brands -->
+    </div><!-- /bg-header -->
+  
+    <!-- Brands -->
       <div class="container">
-        <div class="section section-header">
-          <div>
+        <div class="section">
+            <div class="brand-title-block" style="margin-bottom: 1rem;">
             <div class="section-eyebrow">Partners</div>
             <div class="section-title">Featured Brands</div>
           </div>
-          <a href="brands.html" class="btn sm">All Brands →</a>
         </div>
-        <div class="brand-strip">
-          <a href="brands.html" class="brand-strip-item"><div class="brand-logo-wf">Toteme</div></a>
-          <a href="brands.html" class="brand-strip-item"><div class="brand-logo-wf">Jacquemus</div></a>
-          <a href="brands.html" class="brand-strip-item"><div class="brand-logo-wf">A.P.C.</div></a>
-          <a href="brands.html" class="brand-strip-item"><div class="brand-logo-wf">Sandro</div></a>
-          <a href="brands.html" class="brand-strip-item"><div class="brand-logo-wf">AMI Paris</div></a>
-          <a href="brands.html" class="brand-strip-item"><div class="brand-logo-wf">Marant</div></a>
-        </div>
+        <div class="pill-strip" style="border-top: none; padding: 0 0 2rem; display: block !important;">
+            <a href="plpBrand.html" class="pill-link">Toteme</a>
+            <a href="plpBrand.html" class="pill-link">Jacquemus</a>
+            <a href="plpBrand.html" class="pill-link">A.P.C.</a>
+            <a href="plpBrand.html" class="pill-link">Sandro</a>
+            <a href="plpBrand.html" class="pill-link">AMI Paris</a>
+            <a href="plpBrand.html" class="pill-link">Isabel Marant</a>
+            <a href="plpBrand.html" class="pill-link">Toteme</a>
+            <a href="plpBrand.html" class="pill-link">Jacquemus</a>
+            <a href="brands.html" class="pill-link">Shop All Brands</a>
+
+          </div>
       </div>
+
+
 
   <div id="main-footer"></div>
 

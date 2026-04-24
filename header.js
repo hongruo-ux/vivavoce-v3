@@ -18,7 +18,10 @@ window.addEventListener('DOMContentLoaded', () => {
       { title: 'Tops', links: ['Blouses','T-Shirts','Knitwear','Shirts','Bodysuits'] },
       { title: 'Bottoms', links: ['Trousers','Jeans','Skirts','Shorts','Leggings'] },
       { title: 'Outerwear', links: ['Coats','Jackets','Blazers','Gilets'] },
-    ], cards: [{ label: 'New In' }] }},
+      { title: 'Bags', links: ['Tote','Shoulder','Crossbody','Clutch','Backpack'] },
+      { title: 'Accessories', links: ['Necklaces','Rings','Earrings','Bracelets','Scarves','Sunglasses'] },
+      { title: 'Beauty', links: ['Skincare','Makeup','Best Sellers','Natural','Luxury'] },
+    ], cards: [{ label: 'New In' }, { label: 'Bag Edit' }] }},
     { label: 'Dresses', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Style', links: ['Midi','Maxi','Mini','Wrap','Slip'] },
       { title: 'Occasion', links: ['Party','Wedding Guest','Casual','Work'] },
@@ -86,7 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const menuId = 'mega-' + item.label.replace(/[\s']+/g, '-');
     
     const cols = item.megaMenu.cols.map(col => `
-      <div class="mega-col">
+      <div class="mega-col" style="flex:0 0 calc(20% - 14px); min-width:0;">
         ${col.title ? `<div class="mega-col-title">${col.title}</div>` : ''}
         ${col.links.map(l => `<a href="plpCategory.html" class="mega-link">${l}</a>`).join('')}
       </div>`).join('');
@@ -122,10 +125,10 @@ window.addEventListener('DOMContentLoaded', () => {
     return `<div class="nav-item">
       <a href="${item.href || 'plp.html'}" class="nav-link" data-menu="${menuId}">${item.label}</a>
       <div class="mega-menu" id="${menuId}">
-        <div class="mega-menu-inner">
+        <div class="mega-menu-inner" style="align-items:stretch;">
           <div style="flex:1;">
             ${shopAllLink}
-            <div style="display:flex; gap:20px;">${cols}</div>
+            <div style="display:flex; flex-wrap:wrap; gap:20px;">${cols}</div>
           </div>
           ${extra}
         </div>
