@@ -256,16 +256,16 @@
 
 /* --- MARQUEE BAR --- */
 
-.marquee-bar { overflow: hidden; background: var(--neon-celery); color: var(--text-primary); padding: .875rem 0; }
+.marquee-bar { overflow: hidden; background: var(--surface-page); color: var(--text-primary); padding: .875rem 0; }
 .marquee-inner { display: flex; animation: marquee 28s linear infinite; white-space: nowrap; }
-.marquee-item { font-size: .875rem; vertical-align: middle;  font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0 1.5rem; opacity: 0.85; }
+.marquee-item { font-family: var(--font-display); font-size: 1.5rem; vertical-align: middle;  font-weight: lighter; letter-spacing: 0.06em; text-transform: uppercase; padding: 0 1.5rem; opacity: 0.85; }
 .marquee-item .material-icons { vertical-align: middle; margin-right: 4px; }
 
 
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 @media (max-width: 744px) {
-  .marquee-item { font-size: 0.75rem; }
+  .marquee-item { font-size: 1rem; }
   .marquee-bar {padding: .5rem;}
 }
 
