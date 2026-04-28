@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Methods — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="header-additions.css" />
+  <link rel="stylesheet" href="plp-additions.css" />
+  <link rel="stylesheet" href="hero-banners.css" />
+  <link rel="stylesheet" href="cart-additions.css" />
+  <link rel="stylesheet" href="pdp-additions.css" />
+  <link rel="stylesheet" href="wishlist-additions.css" />
+</head>
+<body>
+
+  <div id="main-header"></div>
+
+  <main>
+    <div class="container" style="padding-top:24px">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span><a href="#">My Account</a><span>/</span><span>Payment Methods</span>
+      </div>
+      <div class="page-header"><h1>My Account</h1></div>
+
+      <!-- Mobile toolbar -->
+      <div class="plp-toolbar-mobile">
+        <span class="plp-cta-btn">
+          <button class="btn sm plp-toolbar-btn" id="filter-open-btn" aria-label="Open menu" aria-expanded="false" aria-controls="billing-filter-drawer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+            My Account
+          </button>
+        </span>
+      </div>
+
+      <div class="wishlist-layout">
+
+        <!-- Left: Account nav -->
+        <aside class="blog-filter-sidebar">
+          <div class="filter-group" style="border:none">
+            <div class="filter-acc-body is-open">
+              <a href="profile.html" class="filter-cat-link">My Account</a>
+              <a href="#" class="filter-cat-link">Order History</a>
+              <a href="billing.html" class="filter-cat-link wishlist-nav-active">Payment Methods</a>
+              <a href="address.html" class="filter-cat-link">Address Book</a>
+              <a href="wishlist.html" class="filter-cat-link">Wishlist</a>
+              <button class="btn sm" style="margin-top: 1rem; width: 100%;">Sign Out</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right: Billing content -->
+        <div class="wishlist-main">
+
+          <div class="wishlist-section-header">
+            <h2 class="wishlist-section-title">Payment Methods <span class="wishlist-count">3</span></h2>
+            <button class="btn sm billing-add-btn" id="billing-add-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+              Add New Card
+            </button>
+          </div>
+
+          <!-- Card list -->
+          <div class="billing-cards">
+
+            <!-- Card 1 — Visa, default -->
+            <div class="billing-card billing-card--default">
+              <div class="billing-card-left">
+                <div class="billing-card-type">
+                  <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="24" rx="4" fill="#1A1F71"/><path d="M15.39 16.5h-2.22l1.39-8.5h2.22L15.39 16.5zm7.6-8.28a5.5 5.5 0 00-1.98-.36c-2.18 0-3.72 1.14-3.73 2.77-.01 1.2 1.09 1.87 1.92 2.27.85.41 1.14.67 1.13 1.04-.01.56-.68.82-1.31.82-.87 0-1.33-.13-2.04-.44l-.28-.13-.3 1.83c.5.23 1.43.43 2.4.44 2.27 0 3.74-1.11 3.76-2.83.01-.94-.57-1.66-1.82-2.25-.76-.38-1.23-.64-1.22-1.02 0-.34.39-.7 1.24-.7.71-.01 1.22.15 1.62.32l.19.1.29-1.87zm5.53-.22h-1.7c-.53 0-.92.15-1.16.69l-3.28 7.81h2.28l.46-1.26h2.78l.26 1.26H29l-1.48-8.5zm-2.67 5.37l.85-2.27.49 2.27h-1.34zM13.5 8l-2.16 5.8-.23-1.16C10.65 11.1 9.4 9.73 8 9.08L9.97 16.5h2.3L15.8 8H13.5z" fill="white"/><path d="M9.22 8H5.76l-.03.18c2.7.68 4.5 2.33 5.24 4.31L10.2 8.7C10.06 8.17 9.68 8.02 9.22 8z" fill="#F9A533"/></svg>
+                </div>
+                <div class="billing-card-info">
+                  <div class="billing-card-number">Visa ending in <strong>4242</strong></div>
+                  <div class="billing-card-expiry">Expires 08 / 27</div>
+                  <span class="billing-card-default-badge">Default</span>
+                </div>
+              </div>
+              <div class="billing-card-actions">
+                <button class="utility-link billing-action-btn billing-update-btn">Update</button>
+                <span class="billing-action-sep">·</span>
+                <button class="utility-link billing-action-btn billing-action-delete">Delete</button>
+              </div>
+            </div>
+
+            <!-- Card 2 — Mastercard -->
+            <div class="billing-card">
+              <div class="billing-card-left">
+                <div class="billing-card-type">
+                  <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="24" rx="4" fill="#252525"/><circle cx="15" cy="12" r="7" fill="#EB001B"/><circle cx="23" cy="12" r="7" fill="#F79E1B"/><path d="M19 7.13A7 7 0 0122 12a7 7 0 01-3 4.87A7 7 0 0116 12a7 7 0 013-4.87z" fill="#FF5F00"/></svg>
+                </div>
+                <div class="billing-card-info">
+                  <div class="billing-card-number">Mastercard ending in <strong>8891</strong></div>
+                  <div class="billing-card-expiry">Expires 03 / 26</div>
+                </div>
+              </div>
+              <div class="billing-card-actions">
+                <button class="utility-link billing-action-btn">Set as Default</button>
+                <span class="billing-action-sep">·</span>
+                <button class="utility-link billing-action-btn billing-update-btn">Update</button>
+                <span class="billing-action-sep">·</span>
+                <button class="utility-link billing-action-btn billing-action-delete">Delete</button>
+              </div>
+            </div>
+
+            <!-- Card 3 — Amex -->
+            <div class="billing-card">
+              <div class="billing-card-left">
+                <div class="billing-card-type">
+                  <svg width="38" height="24" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="24" rx="4" fill="#2557D6"/><path d="M8 15.5V8.5h5.5l1 2 1-2H21v.9l-.5.6.5.6v.9h-3.5l-.5-.6-.5.6H8zm2-1h2v-1.5h2v-1H12V10H10v5.5zm5-5.5l-1.5 3.5H15l.3-.75h1.4l.3.75h1.5L17 8.5h-2zm-.2 2.25l.2-.5.2.5h-.4zm3.7-2.25v5.5h1.5V12h1.5v-1.5H20V10h2v-1.5h-3.5z" fill="white"/></svg>
+                </div>
+                <div class="billing-card-info">
+                  <div class="billing-card-number">Amex ending in <strong>3005</strong></div>
+                  <div class="billing-card-expiry">Expires 11 / 28</div>
+                </div>
+              </div>
+              <div class="billing-card-actions">
+                <button class="utility-link billing-action-btn">Set as Default</button>
+                <span class="billing-action-sep">·</span>
+                <button class="utility-link billing-action-btn billing-update-btn">Update</button>
+                <span class="billing-action-sep">·</span>
+                <button class="utility-link billing-action-btn billing-action-delete">Delete</button>
+              </div>
+            </div>
+
+          </div><!-- /billing-cards -->
+
+        </div><!-- /wishlist-main -->
+      </div><!-- /wishlist-layout -->
+    </div>
+  </main>
+
+  <div id="main-footer" data-no-newsletter></div>
+
+  <!-- Mobile account nav drawer -->
+  <div class="filter-overlay" id="billing-filter-overlay"></div>
+  <div class="filter-drawer" id="billing-filter-drawer" role="dialog" aria-modal="true" aria-label="My Account">
+    <div class="filter-drawer-head">
+      <span class="filter-drawer-title">My Account</span>
+      <button class="account-modal-close" id="billing-filter-close-btn" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="filter-drawer-body">
+      <div class="filter-acc-item">
+        <div class="filter-acc-body is-open">
+          <a href="profile.html" class="filter-cat-link">My Account</a>
+          <a href="#" class="filter-cat-link">Order History</a>
+          <a href="billing.html" class="filter-cat-link wishlist-nav-active">Payment Methods</a>
+          <a href="address.html" class="filter-cat-link">Address Book</a>
+          <a href="wishlist.html" class="filter-cat-link">Wishlist</a>
+          <button class="btn sm" style="margin-top: 1rem; width: 100%;">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Update Card Modal -->
+  <div class="account-modal-mask" id="billing-modal-mask"></div>
+  <div class="account-modal popup-lg" id="billing-modal">
+    <div class="account-modal-head">
+      <h4>Update Card</h4>
+      <button class="account-modal-close" id="billing-modal-close" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="account-modal-content">
+      <div class="profile-form">
+        <div class="profile-form-grid">
+
+          <div class="profile-field profile-field--full">
+            <label class="profile-label" for="card-name">Name on Card</label>
+            <input class="profile-input" type="text" id="card-name" placeholder="Emma Johnson" autocomplete="cc-name" />
+          </div>
+
+          <div class="profile-field profile-field--full">
+            <label class="profile-label" for="card-number">Card Number</label>
+            <input class="profile-input" type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" />
+          </div>
+
+          <div class="profile-field">
+            <label class="profile-label" for="card-expiry">Expiration Date</label>
+            <input class="profile-input" type="text" id="card-expiry" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp" />
+          </div>
+
+          <div class="profile-field">
+            <label class="profile-label" for="card-cvv">CVV</label>
+            <input class="profile-input" type="text" id="card-cvv" placeholder="•••" maxlength="4" autocomplete="cc-csc" />
+          </div>
+
+        </div>
+        <div class="profile-actions">
+          <button class="btn filled" id="billing-modal-save">Update Card</button>
+          <button class="utility-link" id="billing-modal-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script src="carousel.js"></script>
+  <script>
+  (function () {
+    /* Account nav drawer */
+    var overlay  = document.getElementById('billing-filter-overlay');
+    var drawer   = document.getElementById('billing-filter-drawer');
+    var openBtn  = document.getElementById('filter-open-btn');
+    var closeBtn = document.getElementById('billing-filter-close-btn');
+
+    function openDrawer() {
+      drawer.classList.add('is-open');
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+    }
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (openBtn)  openBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (overlay)  overlay.addEventListener('click', closeDrawer);
+
+    /* Update card modal */
+    var modalMask   = document.getElementById('billing-modal-mask');
+    var modal       = document.getElementById('billing-modal');
+    var modalClose  = document.getElementById('billing-modal-close');
+    var modalCancel = document.getElementById('billing-modal-cancel');
+    var modalSave   = document.getElementById('billing-modal-save');
+    var addBtn      = document.getElementById('billing-add-btn');
+
+    function openModal() {
+      modal.classList.add('is-open');
+      modalMask.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modalMask.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.billing-update-btn').forEach(function(btn) {
+      btn.addEventListener('click', openModal);
+    });
+
+    if (addBtn)      addBtn.addEventListener('click', openModal);
+    if (modalClose)  modalClose.addEventListener('click', closeModal);
+    if (modalCancel) modalCancel.addEventListener('click', closeModal);
+    if (modalMask)   modalMask.addEventListener('click', closeModal);
+    if (modalSave)   modalSave.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeModal(); closeDrawer(); }
+    });
+  })();
+  </script>
+</body>
+</html>

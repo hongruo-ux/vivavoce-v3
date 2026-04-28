@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Address Book — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="header-additions.css" />
+  <link rel="stylesheet" href="plp-additions.css" />
+  <link rel="stylesheet" href="hero-banners.css" />
+  <link rel="stylesheet" href="cart-additions.css" />
+  <link rel="stylesheet" href="pdp-additions.css" />
+  <link rel="stylesheet" href="wishlist-additions.css" />
+</head>
+<body>
+
+  <div id="main-header"></div>
+
+  <main>
+    <div class="container" style="padding-top:24px">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span><a href="#">My Account</a><span>/</span><span>Address Book</span>
+      </div>
+      <div class="page-header"><h1>My Account</h1></div>
+
+      <!-- Mobile toolbar -->
+      <div class="plp-toolbar-mobile">
+        <span class="plp-cta-btn">
+          <button class="btn sm plp-toolbar-btn" id="filter-open-btn" aria-label="Open menu" aria-expanded="false" aria-controls="address-filter-drawer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+            My Account
+          </button>
+        </span>
+      </div>
+
+      <div class="wishlist-layout">
+
+        <!-- Left: Account nav -->
+        <aside class="blog-filter-sidebar">
+          <div class="filter-group" style="border:none">
+            <div class="filter-acc-body is-open">
+              <a href="profile.html" class="filter-cat-link">My Account</a>
+              <a href="#" class="filter-cat-link">Order History</a>
+              <a href="billing.html" class="filter-cat-link">Payment Methods</a>
+              <a href="address.html" class="filter-cat-link wishlist-nav-active">Address Book</a>
+              <a href="wishlist.html" class="filter-cat-link">Wishlist</a>
+              <button class="btn sm" style="margin-top: 1rem; width: 100%;">Sign Out</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right: Address content -->
+        <div class="wishlist-main">
+
+          <div class="wishlist-section-header">
+            <h2 class="wishlist-section-title">Address Book <span class="wishlist-count">2</span></h2>
+            <button class="btn sm billing-add-btn" id="address-add-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+              Add New Address
+            </button>
+          </div>
+
+          <!-- Address list -->
+          <div class="billing-cards">
+
+            <!-- Address 1 — Default -->
+            <div class="billing-card billing-card--default">
+              <div class="billing-card-left">
+                <div class="address-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="billing-card-info">
+                  <div class="billing-card-number"><strong>Emma Johnson</strong></div>
+                  <div class="billing-card-expiry">42 West 34th Street, Apt 8B</div>
+                  <div class="billing-card-expiry">New York, NY 10001</div>
+                  <div class="billing-card-expiry">United States</div>
+                  <div class="billing-card-expiry">+1 (212) 555 0192</div>
+                  <span class="billing-card-default-badge">Default</span>
+                </div>
+              </div>
+              <div class="billing-card-actions">
+                <button class="utility-link billing-action-btn address-update-btn">Edit</button>
+                <span class="billing-action-sep">·</span>
+                <button class="utility-link billing-action-btn billing-action-delete">Delete</button>
+              </div>
+            </div>
+
+            <!-- Address 2 -->
+            <div class="billing-card">
+              <div class="billing-card-left">
+                <div class="address-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="billing-card-info">
+                  <div class="billing-card-number"><strong>Emma Johnson</strong></div>
+                  <div class="billing-card-expiry">18 Rue du Faubourg Saint-Honoré</div>
+                  <div class="billing-card-expiry">Paris, 75008</div>
+                  <div class="billing-card-expiry">France</div>
+                  <div class="billing-card-expiry">+33 1 42 68 00 00</div>
+                </div>
+              </div>
+              <div class="billing-card-actions">
+                <button class="utility-link billing-action-btn">Set as Default</button>
+                <span class="billing-action-sep">·</span>
+                <button class="utility-link billing-action-btn address-update-btn">Edit</button>
+                <span class="billing-action-sep">·</span>
+                <button class="utility-link billing-action-btn billing-action-delete">Delete</button>
+              </div>
+            </div>
+
+          </div><!-- /billing-cards -->
+
+        </div><!-- /wishlist-main -->
+      </div><!-- /wishlist-layout -->
+    </div>
+  </main>
+
+  <div id="main-footer" data-no-newsletter></div>
+
+  <!-- Mobile account nav drawer -->
+  <div class="filter-overlay" id="address-filter-overlay"></div>
+  <div class="filter-drawer" id="address-filter-drawer" role="dialog" aria-modal="true" aria-label="My Account">
+    <div class="filter-drawer-head">
+      <span class="filter-drawer-title">My Account</span>
+      <button class="account-modal-close" id="address-filter-close-btn" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="filter-drawer-body">
+      <div class="filter-acc-item">
+        <div class="filter-acc-body is-open">
+          <a href="profile.html" class="filter-cat-link">My Account</a>
+          <a href="#" class="filter-cat-link">Order History</a>
+          <a href="billing.html" class="filter-cat-link">Payment Methods</a>
+          <a href="address.html" class="filter-cat-link wishlist-nav-active">Address Book</a>
+          <a href="wishlist.html" class="filter-cat-link">Wishlist</a>
+          <button class="btn sm" style="margin-top: 1rem; width: 100%;">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Address Modal -->
+  <div class="account-modal-mask" id="address-modal-mask"></div>
+  <div class="account-modal popup-md" id="address-modal">
+    <div class="account-modal-head">
+      <h4>Edit Address</h4>
+      <button class="account-modal-close" id="address-modal-close" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="account-modal-content">
+      <div class="profile-form">
+        <div class="profile-form-grid">
+
+          <div class="profile-field">
+            <label class="profile-label" for="addr-first-name">First Name</label>
+            <input class="profile-input" type="text" id="addr-first-name" placeholder="Emma" autocomplete="given-name" />
+          </div>
+
+          <div class="profile-field">
+            <label class="profile-label" for="addr-last-name">Last Name</label>
+            <input class="profile-input" type="text" id="addr-last-name" placeholder="Johnson" autocomplete="family-name" />
+          </div>
+
+          <div class="profile-field profile-field--full">
+            <label class="profile-label" for="addr-line1">Address Line 1</label>
+            <input class="profile-input" type="text" id="addr-line1" placeholder="Street address" autocomplete="address-line1" />
+          </div>
+
+          <div class="profile-field profile-field--full">
+            <label class="profile-label" for="addr-line2">Address Line 2 <span style="font-weight:400;text-transform:none;letter-spacing:0">— optional</span></label>
+            <input class="profile-input" type="text" id="addr-line2" placeholder="Apt, suite, floor" autocomplete="address-line2" />
+          </div>
+
+          <div class="profile-field">
+            <label class="profile-label" for="addr-city">City</label>
+            <input class="profile-input" type="text" id="addr-city" placeholder="New York" autocomplete="address-level2" />
+          </div>
+
+          <div class="profile-field">
+            <label class="profile-label" for="addr-state">State / Province</label>
+            <input class="profile-input" type="text" id="addr-state" placeholder="NY" autocomplete="address-level1" />
+          </div>
+
+          <div class="profile-field">
+            <label class="profile-label" for="addr-zip">Zip / Postal Code</label>
+            <input class="profile-input" type="text" id="addr-zip" placeholder="10001" autocomplete="postal-code" />
+          </div>
+
+          <div class="profile-field">
+            <label class="profile-label" for="addr-country">Country</label>
+            <select class="profile-input" id="addr-country" autocomplete="country">
+              <option value="">Select country</option>
+              <option value="US">United States</option>
+              <option value="GB">United Kingdom</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+              <option value="JP">Japan</option>
+              <option value="KR">South Korea</option>
+              <option value="AU">Australia</option>
+              <option value="CA">Canada</option>
+            </select>
+          </div>
+
+          <div class="profile-field profile-field--full">
+            <label class="profile-label" for="addr-phone">Phone Number</label>
+            <input class="profile-input" type="tel" id="addr-phone" placeholder="+1 (212) 555 0192" autocomplete="tel" />
+          </div>
+
+          <div class="profile-field profile-field--full">
+            <label class="filter-option" style="cursor:pointer;gap:8px">
+              <input type="checkbox" id="addr-default" style="width:15px;height:15px;accent-color:var(--evergreen)">
+              Set as default address
+            </label>
+          </div>
+
+        </div>
+        <div class="profile-actions">
+          <button class="btn filled" id="address-modal-save">Save Address</button>
+          <button class="utility-link" id="address-modal-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script src="carousel.js"></script>
+  <script>
+  (function () {
+    /* Account nav drawer */
+    var overlay  = document.getElementById('address-filter-overlay');
+    var drawer   = document.getElementById('address-filter-drawer');
+    var openBtn  = document.getElementById('filter-open-btn');
+    var closeBtn = document.getElementById('address-filter-close-btn');
+
+    function openDrawer() {
+      drawer.classList.add('is-open');
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+    }
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (openBtn)  openBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (overlay)  overlay.addEventListener('click', closeDrawer);
+
+    /* Address modal */
+    var modalMask   = document.getElementById('address-modal-mask');
+    var modal       = document.getElementById('address-modal');
+    var modalClose  = document.getElementById('address-modal-close');
+    var modalCancel = document.getElementById('address-modal-cancel');
+    var modalSave   = document.getElementById('address-modal-save');
+    var addBtn      = document.getElementById('address-add-btn');
+
+    function openModal(title) {
+      modal.querySelector('h4').textContent = title || 'Edit Address';
+      modal.classList.add('is-open');
+      modalMask.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modalMask.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.address-update-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() { openModal('Edit Address'); });
+    });
+
+    if (addBtn)      addBtn.addEventListener('click', function() { openModal('Add New Address'); });
+    if (modalClose)  modalClose.addEventListener('click', closeModal);
+    if (modalCancel) modalCancel.addEventListener('click', closeModal);
+    if (modalMask)   modalMask.addEventListener('click', closeModal);
+    if (modalSave)   modalSave.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeModal(); closeDrawer(); }
+    });
+  })();
+  </script>
+</body>
+</html>

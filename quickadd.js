@@ -7,11 +7,15 @@ window.addEventListener('DOMContentLoaded', () => {
   if (!modal || !mask) return;
 
   function openModal(card) {
-    const name   = card.dataset.name   || '';
-    const price  = card.dataset.price  || '';
-    const brand  = card.dataset.brand  || '';
+    // Read from data attributes if present, otherwise fall back to DOM content
+    const name   = card.dataset.name  || card.querySelector('.product-name')?.textContent.trim()  || '';
+    const price  = card.dataset.price || card.querySelector('.product-price')?.textContent.trim() || '';
+    const brand  = card.dataset.brand || card.querySelector('.product-brand')?.textContent.trim() || '';
     const colors = card.dataset.colors ? card.dataset.colors.split(',') : [];
-    const sizes  = card.dataset.sizes  ? card.dataset.sizes.split(',')  : [];
+    const sizeEls = card.querySelectorAll('.product-size');
+    const sizes = card.dataset.sizes
+      ? card.dataset.sizes.split(',')
+      : sizeEls.length ? Array.from(sizeEls).map(el => el.textContent.trim()) : [];
 
     document.getElementById('qa-title').textContent        = name;
     document.getElementById('qa-product-name').textContent = name;

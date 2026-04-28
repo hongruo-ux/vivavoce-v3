@@ -1,0 +1,339 @@
+/* === WISHLIST === */
+
+/* Two-column layout: nav sidebar + main content */
+.wishlist-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.5rem;
+  padding-bottom: 6rem;
+  align-items: start;
+}
+
+/* Main content area */
+.wishlist-main { min-width: 0; }
+
+/* Section header */
+.wishlist-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+.wishlist-section-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.wishlist-count {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* Table head — desktop only */
+.wishlist-table-head {
+  display: grid;
+  grid-template-columns: 200px 1fr 140px 100px 180px;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-caption);
+}
+
+/* Wishlist row */
+.wishlist-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 140px 100px 180px;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Product image */
+.wishlist-row-img {
+  width: 100%;
+  padding-right: 1rem;
+  aspect-ratio: 3/4;
+  flex-shrink: 0;
+}
+
+/* Product info */
+.wishlist-row-info { display: flex; flex-direction: column; gap: 4px; }
+
+/* Back order note */
+.wishlist-back-order {
+  font-size: 0.75rem;
+  color: var(--text-caption);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Stock badges */
+.wishlist-stock-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+.wishlist-stock-in {
+  background: var(--icy-mint);
+  color: var(--evergreen);
+}
+.wishlist-stock-low {
+  background: var(--surface-sand);
+  color: var(--cta-bg);
+}
+.wishlist-stock-back {
+  background: #f0f0ec;
+  color: var(--text-secondary);
+}
+
+/* Actions column */
+.wishlist-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* Add to Cart button */
+.wishlist-atc-btn {
+  flex: 1;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Active nav link */
+.wishlist-nav-active {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 960px) {
+  .wishlist-layout { grid-template-columns: 1fr; }
+  .blog-filter-sidebar { display: none; }
+  .wishlist-table-head { display: none; }
+  .wishlist-row {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0.75rem;
+  }
+  .wishlist-row-img { width: 100px; }
+  .wishlist-row-info { grid-column: 2; grid-row: 1; }
+  .wishlist-row-stock { grid-column: 2; grid-row: 2; }
+  .wishlist-row-price { grid-column: 1; grid-row: 2; align-self: start; }
+  .wishlist-row-actions {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-content: stretch;
+  }
+  .wishlist-atc-btn { flex: 1; }
+}
+
+
+
+/* === PROFILE FORM === */
+.profile-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--evergreen);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.profile-avatar-name { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.profile-avatar-change { font-size: 0.8125rem; }
+
+.profile-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.profile-field { display: flex; flex-direction: column; gap: 6px; }
+.profile-field--full { grid-column: 1 / -1; }
+.profile-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-caption); }
+.profile-input {
+  width: 100%;
+  height: 48px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 0 1rem;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  background: var(--surface-page);
+  transition: border-color 150ms;
+}
+.profile-input:focus { outline: none; border-color: var(--text-primary); }
+.profile-input-wrap { position: relative; }
+.profile-input-wrap .profile-input { padding-right: 3rem; }
+.profile-input-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-caption);
+  min-height: 0;
+  padding: 0;
+}
+.profile-hint { font-size: 0.75rem; color: var(--text-caption); }
+
+.profile-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.profile-section-divider::before,
+.profile-section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.profile-section-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-caption); white-space: nowrap; }
+
+.profile-actions { display: flex; gap: 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border); margin-top: 1.5rem; }
+
+@media (max-width: 960px) {
+  .profile-form-grid { grid-template-columns: 1fr; }
+  .profile-field--full { grid-column: 1; }
+}
+
+
+/* === BILLING / PAYMENT METHODS === */
+.billing-add-btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.billing-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.billing-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+}
+
+.billing-card--default {
+  background: var(--surface-card);
+  padding: 1.25rem 1rem;
+  border-radius: var(--radius-card);
+  border: 1.5px solid var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.billing-card-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.billing-card-type {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.billing-card-number {
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.billing-card-expiry {
+  font-size: 0.8125rem;
+  color: var(--text-caption);
+}
+
+.billing-card-default-badge {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--evergreen);
+  background: var(--icy-mint);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.billing-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.billing-action-sep {
+  color: var(--border);
+  font-size: 0.8125rem;
+}
+
+.billing-action-btn {
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.billing-action-delete { color: var(--cta-bg); }
+.billing-action-delete:hover { color: var(--cta-hover); }
+
+@media (max-width: 960px) {
+  .billing-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .billing-card-actions { padding-top: 0.5rem; }
+}
+
+.address-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}

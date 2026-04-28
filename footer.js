@@ -136,10 +136,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   /* ─── Inject footer ─── */
   const container = document.getElementById('main-footer');
+  const noNewsletter = container && container.hasAttribute('data-no-newsletter');
+  const finalHtml = noNewsletter
+    ? html.replace(/<!-- Newsletter Band -->[\s\S]*?<\/div>\s*<!-- Main Footer Grid -->/, '<!-- Main Footer Grid -->')
+    : html;
   if (container) {
-    container.outerHTML = html;
+    container.outerHTML = finalHtml;
   } else {
-    document.body.insertAdjacentHTML('beforeend', html);
+    document.body.insertAdjacentHTML('beforeend', finalHtml);
   }
 
   /* ─── Accordion logic (mobile) ─── */

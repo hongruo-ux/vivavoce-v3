@@ -1,5 +1,14 @@
 window.addEventListener('DOMContentLoaded', () => {
 
+  // ── Auth state ───────────────────────────────────────────────
+  const ACCOUNT_PAGES = ['wishlist.html', 'profile.html', 'billing.html', 'address.html'];
+  const currentPage   = window.location.pathname.split('/').pop() || 'index.html';
+  const IS_ACCOUNT_PAGE = ACCOUNT_PAGES.includes(currentPage);
+  const IS_LOGGED_IN = IS_ACCOUNT_PAGE || localStorage.getItem('vv_logged_in') === 'true';
+  const USER_NAME     = localStorage.getItem('vv_user_name') || 'Emma';
+
+  const isHomePage = currentPage === 'index.html';
+
   const NAV_ITEMS = [
     { label: "What's New", href: 'plpNew.html', noActive: true },
     { label: 'Get Inspired', href: 'plpCategory.html', megaMenu: { cols: [
@@ -7,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
       { title: 'Shop by Occasion', links: ['Casual','Work','Evening','Wedding Guest','Vacation','Brunch'] },
       { title: 'Featured', links: ['Best Sellers','New In','Designer Dresses','Under $200','Under $500'] },
     ], cards: [{ label: 'Dress Edit' }, { label: 'New Season' }] }},
-    { label: 'Summer', href: 'plpCategory.html',  megaMenu: { cols: [
+    { label: 'Summer', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Shop by Category', links: ['Dresses','Tops','Shorts','Swimwear','Sandals'] },
       { title: 'Summer Edits', links: ['Resort Wear','Beach Essentials','Sun Dresses','Linen Collection'] },
       { title: 'Trending Now', links: ['Coastal Chic','Maximalist Prints','Sheer Layers','Bold Colour'] },
@@ -74,11 +83,7 @@ window.addEventListener('DOMContentLoaded', () => {
     { label: 'Beauty', href: 'plpCategory.html' },
   ];
 
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const isHomePage = currentPage === 'index.html';
-  
   // ── Desktop nav HTML ─────────────────────────────────────────
-  // Menus that never show featured cards
   const NO_CARDS_MENUS = ["What's New", 'Brands', 'Editorial'];
 
   const desktopNavHTML = NAV_ITEMS.map(item => {
@@ -87,13 +92,11 @@ window.addEventListener('DOMContentLoaded', () => {
       return `<div class="nav-item"><a href="${item.href || '#'}" class="nav-link${isActive?' is-active':''}">${item.label}</a></div>`;
     }
     const menuId = 'mega-' + item.label.replace(/[\s']+/g, '-');
-    
     const cols = item.megaMenu.cols.map(col => `
       <div class="mega-col" style="flex:0 0 calc(20% - 14px); min-width:0;">
         ${col.title ? `<div class="mega-col-title">${col.title}</div>` : ''}
         ${col.links.map(l => `<a href="plpCategory.html" class="mega-link">${l}</a>`).join('')}
       </div>`).join('');
-
     let extra = '';
     if (item.megaMenu.stories) {
       extra = `<div class="mega-stories-col">
@@ -116,12 +119,9 @@ window.addEventListener('DOMContentLoaded', () => {
       const slot2 = !isSingle ? (cards[1] ? `<a href="plpCategory.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${cards[1].label}</div></a>` : '<div class="mega-card"></div>') : '';
       extra = `<div class="${frameClass}">${slot1}${slot2}</div>`;
     }
-
-    // Determine the label: "Read All" for Editorial, "Shop All" for others
     const actionLabel = item.label === 'Editorial' ? 'Read All' : 'Shop All';
     const skipShopAll = ['Get Inspired', 'Summer'].includes(item.label);
     const shopAllLink = skipShopAll ? '' : `<a href="editorial.html" class="mega-link" style="display:block; font-weight:700; margin-bottom:15px; width:100%;">${actionLabel} ${item.label}</a>`;
-
     return `<div class="nav-item">
       <a href="${item.href || 'plp.html'}" class="nav-link" data-menu="${menuId}">${item.label}</a>
       <div class="mega-menu" id="${menuId}">
@@ -141,18 +141,12 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!item.megaMenu) {
       return `<a href="${item.href||'plp.html'}" class="mobile-nav-link">${item.label}</a>`;
     }
-
     const subId = 'acc-' + item.label.replace(/[\s']+/g, '-');
-
     const groupsHTML = item.megaMenu.cols.map((col, i) => {
       const groupId = subId + '-g' + i;
       const isFirst = i === 0;
-      const linksHTML = col.links.map(l =>
-        `<a href="plpCategory.html" class="mobile-acc-link">${l}</a>`
-      ).join('');
-      if (!col.title) {
-        return `<div class="mobile-acc-group-open">${linksHTML}</div>`;
-      }
+      const linksHTML = col.links.map(l => `<a href="plpCategory.html" class="mobile-acc-link">${l}</a>`).join('');
+      if (!col.title) return `<div class="mobile-acc-group-open">${linksHTML}</div>`;
       return `<div class="mobile-acc-group-item">
         <button class="mobile-acc-group-btn" data-group="${groupId}" aria-expanded="${isFirst}">
           <span>${col.title}</span>
@@ -161,14 +155,11 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="mobile-acc-group-body${isFirst ? ' is-open' : ''}" id="${groupId}">${linksHTML}</div>
       </div>`;
     }).join('');
-
     const cardsHTML = item.megaMenu.cards ? item.megaMenu.cards.map(c =>
       `<a href="plpCategory.html" class="mobile-acc-card">
         <div class="mobile-acc-card-img wf-img"></div>
         <div class="mobile-acc-card-label">${c.label}</div>
-      </a>`
-    ).join('') : '';
-
+      </a>`).join('') : '';
     const storiesHTML = item.megaMenu.stories ? item.megaMenu.stories.map(s =>
       `<div class="mobile-acc-story">
         <div class="mobile-acc-story-img wf-img"></div>
@@ -177,24 +168,15 @@ window.addEventListener('DOMContentLoaded', () => {
           <div class="mobile-acc-story-title">${s.title}</div>
           <div class="mobile-acc-story-date">${s.date}</div>
         </div>
-      </div>`
-    ).join('') : '';
-
-    // LOGIC: Use a distinct container to force the spacing 
+      </div>`).join('') : '';
     const actionLabel = item.label === 'Editorial' ? 'Read All' : 'Shop All';
     const skipShopAll = ['Get Inspired', 'Summer'].includes(item.label);
-    
-    // This uses a wrapper div to separate the link from the "element style" logic seen in your inspector
     const shopAllMobile = skipShopAll ? '' : `
-      <div class="shop-all-container" style="padding: 8px 16px 8px 16px; margin-bottom: 8px;">
-        <a href="plp.html" style="font-weight: 700; text-decoration: none; color: inherit; font-size: .9375rem; display: block;">
+      <div class="shop-all-container" style="padding: 8px 16px; margin-bottom: 8px;">
+        <a href="plp.html" style="font-weight:700; text-decoration:none; color:inherit; font-size:.9375rem; display:block;">
           ${actionLabel} ${item.label}
         </a>
       </div>`;
-
-    const cardsSection = cardsHTML ? `<div class="mobile-acc-cards">${cardsHTML}</div>` : '';
-    const storiesSection = storiesHTML ? `<div class="mobile-acc-stories">${storiesHTML}</div>` : '';
-
     return `<div class="mobile-acc-item">
       <button class="mobile-nav-link mobile-acc-btn" data-acc="${subId}" aria-expanded="false">
         <span>${item.label}</span>
@@ -203,16 +185,36 @@ window.addEventListener('DOMContentLoaded', () => {
       <div class="mobile-acc-body" id="${subId}">
         ${shopAllMobile}
         ${groupsHTML}
-        ${cardsSection}
-        ${storiesSection}
+        ${cardsHTML ? `<div class="mobile-acc-cards">${cardsHTML}</div>` : ''}
+        ${storiesHTML ? `<div class="mobile-acc-stories">${storiesHTML}</div>` : ''}
       </div>
     </div>`;
   }).join('');
 
-    const pillsHTML = PILL_ITEMS.map(p => `<a href="${p.href}" class="pill-link">${p.label}</a>`).join('');
+  const pillsHTML = PILL_ITEMS.map(p => `<a href="${p.href}" class="pill-link">${p.label}</a>`).join('');
 
-  // ── Account content (shared between popup and modal) ─────────
-  const accountContent = `
+  // ── Account content ──────────────────────────────────────────
+  const accountContent = IS_LOGGED_IN ? `
+    <div class="account-user-row">
+      <div class="user-avatar user-avatar--lg">${USER_NAME.charAt(0)}</div>
+      <div>
+        <div class="account-user-name">Hi, ${USER_NAME}</div>
+        <a href="profile.html" class="utility-link">View My Account</a>
+      </div>
+    </div>
+    <div class="account-btn-row">
+      <a href="profile.html" class="btn sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Account
+      </a>
+      <a href="#" class="btn sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+        Orders
+      </a>
+      
+    </div>
+    <a href="#" class="btn md full">Sign Out</a>
+  ` : `
     <a href="account.html" class="btn filled md full">Sign in to Viva Voce</a>
     <a href="account.html" class="btn secondary md full">Other sign in options</a>
     <div class="account-btn-row">
@@ -225,6 +227,34 @@ window.addEventListener('DOMContentLoaded', () => {
         Profile
       </a>
     </div>`;
+
+  // ── Sign in trigger HTML ─────────────────────────────────────
+  const signinTriggerHTML = IS_LOGGED_IN
+    ? `<div class="user-greeting hide-on-mobile" id="signin-trigger">
+        <div class="user-avatar">${USER_NAME.charAt(0)}</div>
+        <span class="user-greeting-name">Hi, ${USER_NAME}</span>
+        <div class="user-greeting-dropdown" id="user-greeting-dropdown">
+          <a href="profile.html" class="user-greeting-link">View My Account</a>
+          <a href="#" class="user-greeting-link">Track Order History</a>
+          <a href="#" class="user-greeting-link">Sign Out</a>
+
+        </div>
+       </div>`
+    : `<button class="utility-link hide-on-mobile" id="signin-trigger">Sign In / Register</button>`;
+
+  // ── Mobile sign in HTML ──────────────────────────────────────
+  const mobileSigninHTML = IS_LOGGED_IN
+    ? `<div class="mobile-acc-item">
+        <button class="mobile-nav-link mobile-acc-btn" data-acc="acc-user-account" aria-expanded="false">
+          <span>Hi, ${USER_NAME}</span>
+          <svg class="mobile-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-body" id="acc-user-account">
+          <a href="profile.html" class="mobile-acc-link" style="padding-left:1rem">View My Account</a>
+          <a href="#" class="mobile-acc-link" style="padding-left:1rem">Track Order History</a>
+        </div>
+       </div>`
+    : `<button class="mobile-nav-link signin-link" id="mobile-signin-btn">Sign In / Register</button>`;
 
   const html = `
     <a href="#main-content" class="sr-only">Skip to main content</a>
@@ -264,14 +294,12 @@ window.addEventListener('DOMContentLoaded', () => {
               <button class="lang-picker-option is-selected" data-lang="English" role="option">English</button>
               <button class="lang-picker-option" data-lang="Español" role="option">Español</button>
             </div>
-            
           </div>
           <a href="#" class="utility-link hide-on-mobile">Need Help?</a>
-
         </div>
         <a href="index.html" class="site-logo">viva voce</a>
         <div class="utility-bar-right">
-          <button class="utility-link hide-on-mobile" id="signin-trigger">Sign In / Register</button>
+          ${signinTriggerHTML}
           <button class="icon-circle-btn" id="search-open-btn" aria-label="Search">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
           </button>
@@ -302,7 +330,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     <!-- Mobile account modal with mask -->
     <div class="account-modal-mask" id="account-modal-mask"></div>
-    <div class="account-modal popup-md" id="account-modal" style ="height: fit-content;">
+    <div class="account-modal popup-md" id="account-modal" style="height: fit-content;">
       <div class="account-modal-head">
         <h4>Account</h4>
         <button class="account-modal-close" id="account-modal-close" aria-label="Close">
@@ -323,20 +351,18 @@ window.addEventListener('DOMContentLoaded', () => {
           </button>
         </div>
         <div class="mobile-nav-links" id="mobile-nav-links">
-              <button class="mobile-nav-link signin-link" id="mobile-signin-btn">Sign In / Register</button>
-              ${mobileAccordionLinks}
-            <div class="mobile-drawer-footer">
-              <span class="utility-ships">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-                Ships Globally
-              </span>
-              <span class="utility-sep">·</span>
-              <button class="utility-link" id="mobile-lang-btn">English ▾</button>
-              <span class="utility-sep">·</span>
-              
-              <a href="#" class="utility-link">Need Help?</a>
-            </div>
-
+          ${mobileSigninHTML}
+          ${mobileAccordionLinks}
+          <div class="mobile-drawer-footer">
+            <span class="utility-ships">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+              Ships Globally
+            </span>
+            <span class="utility-sep">·</span>
+            <button class="utility-link" id="mobile-lang-btn">English ▾</button>
+            <span class="utility-sep">·</span>
+            <a href="#" class="utility-link">Need Help?</a>
+          </div>
         </div>
       </div>
     </div>
@@ -400,24 +426,12 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-menu]').forEach(btn => {
       const menuId = btn.dataset.menu;
       let hoverEnterTimeout = null;
-      btn.addEventListener('mouseenter', () => {
-        hoverEnterTimeout = setTimeout(() => openMenu(menuId, btn), 300);
-      });
-      btn.addEventListener('mouseleave', () => {
-        clearTimeout(hoverEnterTimeout);
-        scheduleClose();
-      });
+      btn.addEventListener('mouseenter', () => { hoverEnterTimeout = setTimeout(() => openMenu(menuId, btn), 300); });
+      btn.addEventListener('mouseleave', () => { clearTimeout(hoverEnterTimeout); scheduleClose(); });
       btn.addEventListener('click', e => {
         const menu = document.getElementById(menuId);
         if (!menu) return;
-
-        // If the menu is closed, open it and stop the link from loading
-        if (!menu.classList.contains('is-open')) {
-          e.preventDefault(); 
-          e.stopPropagation();
-          openMenu(menuId, btn);
-        } 
-        // If the menu is already open, the link (like editorial.html) will work normally
+        if (!menu.classList.contains('is-open')) { e.preventDefault(); e.stopPropagation(); openMenu(menuId, btn); }
       });
     });
     document.querySelectorAll('.mega-menu').forEach(menu => {
@@ -479,7 +493,6 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
     const btn = document.getElementById('hamburger-btn');
     if (btn) { btn.querySelector('.icon-open').style.display=''; btn.querySelector('.icon-close').style.display='none'; btn.setAttribute('aria-expanded','false'); }
-    // Close all accordion items and inner groups
     document.querySelectorAll('.mobile-acc-body.is-open').forEach(b => {
       b.classList.remove('is-open');
       b.previousElementSibling?.setAttribute('aria-expanded','false');
@@ -504,11 +517,10 @@ window.addEventListener('DOMContentLoaded', () => {
       const id = btn.dataset.acc;
       const body = document.getElementById(id);
       const isOpen = body.classList.contains('is-open');
-      // Close all outer items
       document.querySelectorAll('.mobile-acc-body.is-open').forEach(b => {
         b.classList.remove('is-open');
         b.previousElementSibling?.setAttribute('aria-expanded','false');
-        b.previousElementSibling?.querySelector('.mobile-acc-icon')?.style && (b.previousElementSibling.querySelector('.mobile-acc-icon').style.transform = '');
+        b.previousElementSibling?.querySelector('.mobile-acc-icon') && (b.previousElementSibling.querySelector('.mobile-acc-icon').style.transform = '');
       });
       if (!isOpen) {
         body.classList.add('is-open');
@@ -534,24 +546,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // ── Search ───────────────────────────────────────────────────
   const SEARCH_KEYWORDS = ['dresses', 'clothing', 'pants', 'shirts', 'jeans'];
-
-  // Related suggestions shown as pills when a base keyword matches
   const SEARCH_SUGGESTIONS = {
-    dresses:  ['Summer Dresses', 'Casual Dresses', 'Maxi Dresses', 'Midi Dresses', 'Wedding Guest Dresses', 'Wrap Dresses'],
-    clothing: ['Summer Clothing', 'Active Clothing', 'New In Clothing', 'Sale Clothing', 'Designer Clothing', 'Sustainable Clothing'],
-    pants:    ['Wide-Leg Pants', 'Tailored Pants', 'Linen Pants', 'Leather Pants', 'Cropped Pants', 'High-Waist Pants'],
-    shirts:   ['Linen Shirts', 'Oversized Shirts', 'Silk Shirts', 'Striped Shirts', 'Button-Down Shirts', 'Cropped Shirts'],
-    jeans:    ['Straight Jeans', 'Wide-Leg Jeans', 'Cropped Jeans', 'High-Rise Jeans', 'Skinny Jeans', 'Flare Jeans'],
+    dresses:  ['Summer Dresses','Casual Dresses','Maxi Dresses','Midi Dresses','Wedding Guest Dresses','Wrap Dresses'],
+    clothing: ['Summer Clothing','Active Clothing','New In Clothing','Sale Clothing','Designer Clothing','Sustainable Clothing'],
+    pants:    ['Wide-Leg Pants','Tailored Pants','Linen Pants','Leather Pants','Cropped Pants','High-Waist Pants'],
+    shirts:   ['Linen Shirts','Oversized Shirts','Silk Shirts','Striped Shirts','Button-Down Shirts','Cropped Shirts'],
+    jeans:    ['Straight Jeans','Wide-Leg Jeans','Cropped Jeans','High-Rise Jeans','Skinny Jeans','Flare Jeans'],
   };
-
   const SEARCH_PRODUCTS = {
-    dresses:  [{ name:'Silk Slip Dress', price:'$285.00' }, { name:'Wrap Midi Dress', price:'$195.00' }, { name:'Maxi Floral Dress', price:'$240.00' }, { name:'Bodycon Mini', price:'$165.00' }],
-    clothing: [{ name:'Linen Blazer', price:'$390.00' }, { name:'Cashmere Crew Knit', price:'$420.00' }, { name:'Oversized Shirt', price:'$120.00' }, { name:'Tailored Coat', price:'$580.00' }],
-    pants:    [{ name:'Wide-Leg Trousers', price:'$175.00' }, { name:'Tailored Pants', price:'$210.00' }, { name:'Pleated Wide Leg', price:'$195.00' }, { name:'Slim Fit Trousers', price:'$160.00' }],
-    shirts:   [{ name:'Oversized Oxford', price:'$130.00' }, { name:'Silk Blouse', price:'$220.00' }, { name:'Striped Shirt', price:'$110.00' }, { name:'Linen Shirt', price:'$145.00' }],
-    jeans:    [{ name:'High-Rise Straight', price:'$195.00' }, { name:'Wide Leg Jeans', price:'$210.00' }, { name:'Slim Fit Jeans', price:'$175.00' }, { name:'Cropped Flare', price:'$185.00' }],
+    dresses:  [{name:'Silk Slip Dress',price:'$285.00'},{name:'Wrap Midi Dress',price:'$195.00'},{name:'Maxi Floral Dress',price:'$240.00'},{name:'Bodycon Mini',price:'$165.00'}],
+    clothing: [{name:'Linen Blazer',price:'$390.00'},{name:'Cashmere Crew Knit',price:'$420.00'},{name:'Oversized Shirt',price:'$120.00'},{name:'Tailored Coat',price:'$580.00'}],
+    pants:    [{name:'Wide-Leg Trousers',price:'$175.00'},{name:'Tailored Pants',price:'$210.00'},{name:'Pleated Wide Leg',price:'$195.00'},{name:'Slim Fit Trousers',price:'$160.00'}],
+    shirts:   [{name:'Oversized Oxford',price:'$130.00'},{name:'Silk Blouse',price:'$220.00'},{name:'Striped Shirt',price:'$110.00'},{name:'Linen Shirt',price:'$145.00'}],
+    jeans:    [{name:'High-Rise Straight',price:'$195.00'},{name:'Wide Leg Jeans',price:'$210.00'},{name:'Slim Fit Jeans',price:'$175.00'},{name:'Cropped Flare',price:'$185.00'}],
   };
-
   const FEATURED_HTML = `
     <div class="search-results-label">Products</div>
     <div class="search-results-grid">
@@ -562,15 +570,10 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>`;
 
   function fuzzyMatch(input, keyword) {
-    // Check if input is a subsequence of keyword or keyword contains input
-    const q = input.toLowerCase();
-    const k = keyword.toLowerCase();
+    const q = input.toLowerCase(); const k = keyword.toLowerCase();
     if (k.includes(q)) return true;
-    // Subsequence check
     let qi = 0;
-    for (let i = 0; i < k.length && qi < q.length; i++) {
-      if (k[i] === q[qi]) qi++;
-    }
+    for (let i = 0; i < k.length && qi < q.length; i++) { if (k[i] === q[qi]) qi++; }
     return qi === q.length;
   }
 
@@ -578,60 +581,25 @@ window.addEventListener('DOMContentLoaded', () => {
     const body = document.getElementById('search-body');
     const clearBtn = document.getElementById('search-clear-btn');
     if (!body) return;
-
     clearBtn.style.display = query ? '' : 'none';
-
     if (!query) { body.innerHTML = FEATURED_HTML; return; }
-
     const matched = SEARCH_KEYWORDS.filter(k => fuzzyMatch(query, k));
-
-    if (!matched.length) {
-      body.innerHTML = `<p class="search-no-results">No results found for &ldquo;${query}&rdquo;. Try another search.</p>`;
-      return;
-    }
-
-    const pillsHTML = `<div class="search-pills">${matched.flatMap(k =>
-      SEARCH_SUGGESTIONS[k].map(s =>
-        `<button class="search-pill" data-pill="${s}">${s}</button>`
-      )
-    ).join('')}</div>`;
-
-    const products = matched.flatMap(k => SEARCH_PRODUCTS[k]);
-    const cardsHTML = products.map(p =>
-      `<a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">${p.name}</div><div class="search-result-price">${p.price}</div></a>`
-    ).join('');
-
+    if (!matched.length) { body.innerHTML = `<p class="search-no-results">No results found for &ldquo;${query}&rdquo;. Try another search.</p>`; return; }
+    const pillsHTML = `<div class="search-pills">${matched.flatMap(k => SEARCH_SUGGESTIONS[k].map(s => `<button class="search-pill" data-pill="${s}">${s}</button>`)).join('')}</div>`;
+    const cardsHTML = matched.flatMap(k => SEARCH_PRODUCTS[k]).map(p => `<a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">${p.name}</div><div class="search-result-price">${p.price}</div></a>`).join('');
     body.innerHTML = `${pillsHTML}<div class="search-results-label">Products</div><div class="search-results-grid">${cardsHTML}</div>`;
-
-    // Pill click — set input to pill text and re-render
     body.querySelectorAll('.search-pill').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const field = document.getElementById('search-field');
-        if (field) field.value = btn.dataset.pill;
-        renderSearch(btn.dataset.pill);
-      });
+      btn.addEventListener('click', () => { const field = document.getElementById('search-field'); if (field) field.value = btn.dataset.pill; renderSearch(btn.dataset.pill); });
     });
   }
 
-  function openSearch() {
-    document.getElementById('search-overlay').classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => document.getElementById('search-field')?.focus(), 50);
-  }
-  function closeSearch() {
-    document.getElementById('search-overlay').classList.remove('is-open');
-    document.body.style.overflow = '';
-    const field = document.getElementById('search-field');
-    if (field) { field.value = ''; renderSearch(''); }
-  }
+  function openSearch() { document.getElementById('search-overlay').classList.add('is-open'); document.body.style.overflow = 'hidden'; setTimeout(() => document.getElementById('search-field')?.focus(), 50); }
+  function closeSearch() { document.getElementById('search-overlay').classList.remove('is-open'); document.body.style.overflow = ''; const field = document.getElementById('search-field'); if (field) { field.value = ''; renderSearch(''); } }
 
   document.getElementById('search-open-btn')?.addEventListener('click', openSearch);
   document.getElementById('search-close-btn')?.addEventListener('click', closeSearch);
   document.getElementById('search-overlay-mask')?.addEventListener('click', closeSearch);
-  document.getElementById('search-clear-btn')?.addEventListener('click', () => {
-    const field = document.getElementById('search-field');
-    if (field) { field.value = ''; field.focus(); renderSearch(''); }
-  });
+  document.getElementById('search-clear-btn')?.addEventListener('click', () => { const field = document.getElementById('search-field'); if (field) { field.value = ''; field.focus(); renderSearch(''); } });
   document.getElementById('search-field')?.addEventListener('input', e => renderSearch(e.target.value.trim()));
 
   // ── Language picker ─────────────────────────────────────────
@@ -661,47 +629,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // ── Promo banner carousel (mobile <900px only) ───────────────
   (function () {
-    const banner  = document.getElementById('promo-banner');
-    const track   = document.getElementById('promo-track');
-    const dots    = document.querySelectorAll('.promo-dot');
-    const total   = 2;
-    let current   = 0;
-    let autoTimer = null;
-
-    function goTo(index) {
-      current = (index + total) % total;
-      track.style.transform = `translateX(-${current * 100}%)`;
-      banner.setAttribute('data-slide', current);
-      dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
-    }
-
-    function startAuto() {
-      clearInterval(autoTimer);
-      autoTimer = setInterval(() => goTo(current + 1), 5000);
-    }
+    const banner = document.getElementById('promo-banner');
+    const track  = document.getElementById('promo-track');
+    const dots   = document.querySelectorAll('.promo-dot');
+    const total  = 2; let current = 0; let autoTimer = null;
+    function goTo(index) { current = (index + total) % total; track.style.transform = `translateX(-${current * 100}%)`; banner.setAttribute('data-slide', current); dots.forEach((d, i) => d.classList.toggle('is-active', i === current)); }
+    function startAuto() { clearInterval(autoTimer); autoTimer = setInterval(() => goTo(current + 1), 5000); }
     function stopAuto() { clearInterval(autoTimer); }
-    function resetAuto() { stopAuto(); startAuto(); }
-
     function isMobile() { return window.innerWidth < 900; }
-
-    function init() {
-      if (isMobile()) {
-        goTo(current);
-        startAuto();
-      } else {
-        stopAuto();
-        track.style.transform = '';
-        banner.setAttribute('data-slide', '0');
-      }
-    }
-
-    document.getElementById('promo-prev')?.addEventListener('click', () => { if (isMobile()) { goTo(current - 1); resetAuto(); } });
-    document.getElementById('promo-next')?.addEventListener('click', () => { if (isMobile()) { goTo(current + 1); resetAuto(); } });
-    dots.forEach(d => d.addEventListener('click', () => { if (isMobile()) { goTo(Number(d.dataset.dot)); resetAuto(); } }));
-
+    function init() { if (isMobile()) { goTo(current); startAuto(); } else { stopAuto(); track.style.transform = ''; banner.setAttribute('data-slide', '0'); } }
+    document.getElementById('promo-prev')?.addEventListener('click', () => { if (isMobile()) { goTo(current - 1); stopAuto(); startAuto(); } });
+    document.getElementById('promo-next')?.addEventListener('click', () => { if (isMobile()) { goTo(current + 1); stopAuto(); startAuto(); } });
+    dots.forEach(d => d.addEventListener('click', () => { if (isMobile()) { goTo(Number(d.dataset.dot)); stopAuto(); startAuto(); } }));
     banner?.addEventListener('mouseenter', () => { if (isMobile()) stopAuto(); });
     banner?.addEventListener('mouseleave', () => { if (isMobile()) startAuto(); });
-
     window.addEventListener('resize', init);
     init();
   }());
@@ -714,4 +655,10 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('lang-picker-dropdown')?.classList.remove('is-open');
     closeSearch(); closeDrawer(); closeAccount();
   });
+});
+
+// ── Wishlist button redirect ─────────────────────────────────
+document.addEventListener('click', function (e) {
+  const wishlistBtn = e.target.closest('.icon-circle-btn[aria-label="Wishlist"]');
+  if (wishlistBtn) window.location.href = 'wishlist.html';
 });

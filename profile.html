@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="header-additions.css" />
+  <link rel="stylesheet" href="plp-additions.css" />
+  <link rel="stylesheet" href="hero-banners.css" />
+  <link rel="stylesheet" href="cart-additions.css" />
+  <link rel="stylesheet" href="pdp-additions.css" />
+  <link rel="stylesheet" href="wishlist-additions.css" />
+</head>
+<body>
+
+  <div id="main-header"></div>
+
+  <main>
+    <div class="container" style="padding-top:24px">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span><a href="#">My Account</a><span>/</span><span>My Profile</span>
+      </div>
+      <div class="page-header"><h1>My Account</h1></div>
+
+      <!-- Mobile toolbar -->
+      <div class="plp-toolbar-mobile">
+        <span class="plp-cta-btn">
+          <button class="btn sm plp-toolbar-btn" id="filter-open-btn" aria-label="Open menu" aria-expanded="false" aria-controls="profile-filter-drawer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+            My Account
+          </button>
+        </span>
+      </div>
+
+      <div class="wishlist-layout">
+
+        <!-- Left: Account nav -->
+        <aside class="blog-filter-sidebar">
+          <div class="filter-group" style="border:none">
+            <div class="filter-acc-body is-open">
+              <a href="profile.html" class="filter-cat-link wishlist-nav-active">My Account</a>
+              <a href="#" class="filter-cat-link">Order History</a>
+              <a href="billing.html" class="filter-cat-link">Payment Methods</a>
+              <a href="address.html" class="filter-cat-link">Address Book</a>
+              <a href="wishlist.html" class="filter-cat-link">Wishlist</a>
+              <button class="btn sm" style="margin-top: 1rem; width: 100%;">Sign Out</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right: Profile content -->
+        <div class="wishlist-main">
+
+          <div class="wishlist-section-header">
+            <h2 class="wishlist-section-title">Personal Information</h2>
+          </div>
+
+          <!-- Profile form -->
+          <div class="profile-form">
+
+            <!-- Avatar row -->
+            <div class="profile-avatar-row">
+              <div class="profile-avatar">E</div>
+              <div class="profile-avatar-info">
+                <div class="profile-avatar-name">Emma Johnson</div>
+                <button class="utility-link profile-avatar-change">Change photo</button>
+              </div>
+            </div>
+
+            <!-- Form fields -->
+            <div class="profile-form-grid">
+
+              <div class="profile-field">
+                <label class="profile-label" for="profile-first-name">First Name</label>
+                <input class="profile-input" type="text" id="profile-first-name" value="Emma" autocomplete="given-name" />
+              </div>
+
+              <div class="profile-field">
+                <label class="profile-label" for="profile-last-name">Last Name</label>
+                <input class="profile-input" type="text" id="profile-last-name" value="Johnson" autocomplete="family-name" />
+              </div>
+
+              <div class="profile-field profile-field--full">
+                <label class="profile-label" for="profile-email">Email Address</label>
+                <input class="profile-input" type="email" id="profile-email" value="emma.johnson@email.com" autocomplete="email" />
+              </div>
+
+              <div class="profile-field profile-field--full">
+                <label class="profile-label" for="profile-phone">Phone Number</label>
+                <input class="profile-input" type="tel" id="profile-phone" value="+1 (212) 555 0192" autocomplete="tel" />
+              </div>
+
+            </div>
+
+            <!-- Password section -->
+            <div class="profile-section-divider">
+              <span class="profile-section-label">Password & Security</span>
+            </div>
+
+            <div class="profile-form-grid">
+
+              <div class="profile-field profile-field--full">
+                <label class="profile-label" for="profile-password">Password</label>
+                <div class="profile-input-wrap">
+                  <input class="profile-input" type="password" id="profile-password" placeholder="Enter new password" autocomplete="new-password" />
+                  <button class="profile-input-icon" id="profile-password-toggle" aria-label="Show password" type="button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+                <p class="profile-hint">Leave blank to keep your current password.</p>
+              </div>
+
+              <div class="profile-field profile-field--full">
+                <label class="profile-label" for="profile-password-confirm">Confirm New Password</label>
+                <div class="profile-input-wrap">
+                  <input class="profile-input" type="password" id="profile-password-confirm" placeholder="Confirm new password" autocomplete="new-password" />
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Actions -->
+            <div class="profile-actions">
+              <button class="btn filled" id="profile-save-btn">Save Changes</button>
+              <button class="btn" id="profile-cancel-btn">Cancel</button>
+            </div>
+
+          </div><!-- /profile-form -->
+
+        </div><!-- /wishlist-main -->
+      </div><!-- /wishlist-layout -->
+    </div>
+  </main>
+
+  <div id="main-footer" data-no-newsletter></div>
+
+  <!-- Mobile account nav drawer -->
+  <div class="filter-overlay" id="profile-filter-overlay"></div>
+  <div class="filter-drawer" id="profile-filter-drawer" role="dialog" aria-modal="true" aria-label="My Account">
+    <div class="filter-drawer-head">
+      <span class="filter-drawer-title">My Account</span>
+      <button class="account-modal-close" id="profile-filter-close-btn" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="filter-drawer-body">
+      <div class="filter-acc-item">
+        <div class="filter-acc-body is-open">
+          <a href="profile.html" class="filter-cat-link wishlist-nav-active">My Account</a>
+          <a href="#" class="filter-cat-link">Order History</a>
+          <a href="billing.html" class="filter-cat-link">Payment Methods</a>
+          <a href="address.html" class="filter-cat-link">Address Book</a>
+          <a href="wishlist.html" class="filter-cat-link">Wishlist</a>
+          <button class="btn sm" style="margin-top: 1rem; width: 100%;">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script src="carousel.js"></script>
+  <script>
+  (function () {
+    var overlay  = document.getElementById('profile-filter-overlay');
+    var drawer   = document.getElementById('profile-filter-drawer');
+    var openBtn  = document.getElementById('filter-open-btn');
+    var closeBtn = document.getElementById('profile-filter-close-btn');
+
+    function openDrawer() {
+      drawer.classList.add('is-open');
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+    }
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (openBtn)  openBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (overlay)  overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeDrawer(); });
+
+    /* Password toggle */
+    var pwdToggle = document.getElementById('profile-password-toggle');
+    var pwdInput  = document.getElementById('profile-password');
+    if (pwdToggle && pwdInput) {
+      pwdToggle.addEventListener('click', function() {
+        var isText = pwdInput.type === 'text';
+        pwdInput.type = isText ? 'password' : 'text';
+        pwdToggle.setAttribute('aria-label', isText ? 'Show password' : 'Hide password');
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

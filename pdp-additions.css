@@ -99,7 +99,6 @@
 .pdp-about-section { margin-top: 3rem; }
 .pdp-about-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 1rem; }
 .pdp-about-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
-.pdp-about-img { aspect-ratio: 1/1; }
 .pdp-about-img-ins { aspect-ratio: 9/12.5; }
 
 .pdp-about-quote { text-align: center; background: var(--blue-sky); display: flex; flex-direction: column; justify-content: center; padding: 2rem; gap: 1rem; }
