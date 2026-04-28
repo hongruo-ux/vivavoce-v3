@@ -22,6 +22,29 @@
       <div style="margin-bottom:28px">
         <div class="page-header"><h1>Category Level Collection Page</h1></div>
       </div>
+      
+      <!-- Mobile toolbar: Filter + Sort -->
+        <div class="plp-toolbar-mobile">
+          <span class="plp-cta-btn">
+            <button class="btn sm plp-toolbar-btn" id="filter-open-btn" aria-label="Open filters" aria-expanded="false" aria-controls="filter-drawer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+              Filter
+            </button>
+            <span class="plp-filter-dot" id="filter-dot" aria-hidden="true"></span>
+          </span>
+          <div class="plp-sort-wrap">
+            <button class="btn sm plp-toolbar-btn" id="sort-open-btn" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M7 12h10M11 18h2"/></svg>
+              <span id="sort-label">Sort</span>
+            </button>
+            <div class="sort-dropdown" id="sort-dropdown" role="listbox" aria-label="Sort options">
+              <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
+              <button class="sort-option" role="option" data-value="new-in">New In</button>
+              <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
+              <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
+            </div>
+          </div>
+        </div>
 
       <div class="plp-layout">
 
@@ -602,11 +625,11 @@
           <svg class="filter-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="filter-acc-body" id="fac-category">
-          <a href="catePLP.html?cat=dresses" class="filter-cat-link">Dresses<span class="filter-count">324</span></a>
-          <a href="catePLP.html?cat=tops" class="filter-cat-link">Tops<span class="filter-count">289</span></a>
-          <a href="catePLP.html?cat=trousers" class="filter-cat-link">Trousers<span class="filter-count">201</span></a>
-          <a href="catePLP.html?cat=skirts" class="filter-cat-link">Skirts<span class="filter-count">167</span></a>
-          <a href="catePLP.html?cat=outerwear" class="filter-cat-link">Outerwear<span class="filter-count">145</span></a>
+          <a href="plpCategory.html" class="filter-cat-link">Dresses<span class="filter-count">324</span></a>
+          <a href="plpCategory.html" class="filter-cat-link">Tops<span class="filter-count">289</span></a>
+          <a href="plpCategory.html" class="filter-cat-link">Trousers<span class="filter-count">201</span></a>
+          <a href="plpCategory.html" class="filter-cat-link">Skirts<span class="filter-count">167</span></a>
+          <a href="plpCategory.html" class="filter-cat-link">Outerwear<span class="filter-count">145</span></a>
         </div>
       </div>
       <div class="filter-acc-item">

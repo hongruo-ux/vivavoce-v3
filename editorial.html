@@ -6,8 +6,9 @@
   <title>Editorial — Viva Voce</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="header-additions.css" />
+  <link rel="stylesheet" href="plp-additions.css" />
   <link rel="stylesheet" href="editorial-addition.css" />
-
+  <link rel="stylesheet" href="hero-banners.css" />
 </head>
 <body>
 
@@ -20,23 +21,83 @@
         <h1>Editorial</h1>
       </div>
 
-      <div class="tab-bar" style="margin-bottom:28px">
-        <button class="tab active" onclick="filterTab(this)">All</button>
-        <button class="tab" onclick="filterTab(this)">Style Guide</button>
-        <button class="tab" onclick="filterTab(this)">Brand Spotlight</button>
-        <button class="tab" onclick="filterTab(this)">Trend Report</button>
-        <button class="tab" onclick="filterTab(this)">How To Wear</button>
-        <button class="tab" onclick="filterTab(this)">Sustainability</button>
+      <!-- Mobile toolbar: Filter + Sort -->
+      <div class="plp-toolbar-mobile">
+        <span class="plp-cta-btn">
+          <button class="btn sm plp-toolbar-btn" id="filter-open-btn" aria-label="Open filters" aria-expanded="false" aria-controls="editorial-filter-drawer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+            Filter
+          </button>
+          <span class="plp-filter-dot" id="filter-dot" aria-hidden="true"></span>
+        </span>
+        <div class="plp-sort-wrap">
+          <button class="btn sm plp-toolbar-btn" id="sort-open-btn" aria-label="Sort" aria-expanded="false" aria-haspopup="listbox">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M7 12h10M11 18h2"/></svg>
+            <span id="sort-label">Sort</span>
+          </button>
+          <div class="sort-dropdown" id="sort-dropdown" role="listbox">
+            <button class="sort-option is-selected" role="option" data-value="newest">Newest</button>
+            <button class="sort-option" role="option" data-value="oldest">Oldest</button>
+            <button class="sort-option" role="option" data-value="popular">Most Popular</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active filters bar -->
+      <div class="active-filters" id="editorial-active-filters" style="display:none">
+        <span style="font-size:0.6875rem;color:var(--text-muted)">Active:</span>
       </div>
 
       <div class="blog-layout">
+
+        <!-- Left: Categories filter -->
+        <aside class="blog-filter-sidebar">
+          <div class="filter-group">
+            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-editorial-cat">
+              Categories
+              <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="filter-group-body" id="fg-editorial-cat">
+              <label class="filter-option"><input type="checkbox" class="editorial-filter" data-label="Style Guide" style="width:15px;height:15px;accent-color:var(--evergreen)">Style Guide<span class="filter-count">18</span></label>
+              <label class="filter-option"><input type="checkbox" class="editorial-filter" data-label="Brand Spotlight" style="width:15px;height:15px;accent-color:var(--evergreen)">Brand Spotlight<span class="filter-count">14</span></label>
+              <label class="filter-option"><input type="checkbox" class="editorial-filter" data-label="Trend Report" style="width:15px;height:15px;accent-color:var(--evergreen)">Trend Report<span class="filter-count">11</span></label>
+              <label class="filter-option"><input type="checkbox" class="editorial-filter" data-label="How To Wear" style="width:15px;height:15px;accent-color:var(--evergreen)">How To Wear<span class="filter-count">9</span></label>
+              <label class="filter-option"><input type="checkbox" class="editorial-filter" data-label="Sustainability" style="width:15px;height:15px;accent-color:var(--evergreen)">Sustainability<span class="filter-count">6</span></label>
+            </div>
+          </div>
+
+          <!-- Desktop Sort By -->
+          <div class="filter-group">
+            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-editorial-sort">
+              Sort By
+              <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="filter-group-body" id="fg-editorial-sort">
+              <div class="plp-sort-wrap">
+                <button class="btn sm plp-toolbar-btn" id="desktop-sort-btn" aria-expanded="false" aria-haspopup="listbox">
+                  <span id="desktop-sort-label">Newest</span>
+                  <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="sort-dropdown" id="desktop-sort-dropdown" role="listbox">
+                  <button class="sort-option is-selected" role="option" data-value="newest">Newest</button>
+                  <button class="sort-option" role="option" data-value="oldest">Oldest</button>
+                  <button class="sort-option" role="option" data-value="popular">Most Popular</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Middle: Articles -->
         <div>
           <div class="blog-featured">
             <div class="blog-featured-img wf-img">
               <div class="blog-featured-meta">
-                <div style="font-size:0.625rem;color:#aaa;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:4px">Trend Report</div>
+                <div style="font-size:0.625rem;color:#eee;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:4px">Trend Report</div>
                 <div style="font-family:var(--font-display);font-size:1.375rem;font-weight:700;line-height:1.3">The Return of Quiet Luxury: Why Less is the New More for SS25</div>
-                <div style="font-size:0.6875rem;color:#aaa;margin-top:8px">Apr 12, 2025 · 8 min read · By Amélie Fontaine</div>
+                <div style="font-size:0.6875rem;color:#eee;margin-top:8px">Apr 12, 2025 · 8 min read · By Amélie Fontaine</div>
+                <div class="blog-tags light"> <span class="blog-tag" style="color: white;">Style Guide</span> </div>
+
               </div>
             </div>
           </div>
@@ -44,65 +105,65 @@
           <div class="blog-card">
             <div class="blog-card-img wf-img"></div>
             <div class="blog-card-body">
-              <div class="blog-cat">Style Guide</div>
-              <div class="blog-title">How to Build a Capsule Wardrobe for Spring 2025</div>
+              <a href=""><div class="blog-title">How to Build a Capsule Wardrobe for Spring 2025</div></a>
               <div class="blog-excerpt">Ten essential pieces that will take you from work to weekend.</div>
               <div class="blog-meta">Apr 8 · 5 min read</div>
+              <div class="blog-tags"> <span class="blog-tag">Sustainability</span> <span class="blog-tag">How To Wear</span> </div>
+              <div class="btnRead"></div><button class="btn md ">Read the article</button>
+
             </div>
           </div>
 
           <div class="blog-card">
             <div class="blog-card-img wf-img"></div>
             <div class="blog-card-body">
-              <div class="blog-cat">Brand Spotlight</div>
               <div class="blog-title">Inside Jacquemus: Sun, Sea and Linen</div>
               <div class="blog-excerpt">Simon Porte Jacquemus has built more than a brand — he's built a feeling.</div>
               <div class="blog-meta">Apr 5 · 4 min read</div>
+              <div class="blog-tags"> <span class="blog-tag">Style Guide</span>  <span class="blog-tag">Brand Spotlight</span></div>
+              <div class="btnRead"></div><button class="btn md ">Read the article</button>
             </div>
           </div>
 
           <div class="blog-card">
             <div class="blog-card-img wf-img"></div>
             <div class="blog-card-body">
-              <div class="blog-cat">How To Wear</div>
               <div class="blog-title">5 Ways to Wear a Blazer This Season</div>
               <div class="blog-excerpt">From casual to boardroom — every occasion covered.</div>
               <div class="blog-meta">Apr 1 · 3 min read</div>
+              <div class="blog-tags"> <span class="blog-tag">Style Guide</span> </div>
+              <div class="btnRead"></div><button class="btn md ">Read the article</button>
+
             </div>
           </div>
 
           <div class="blog-card">
             <div class="blog-card-img wf-img"></div>
             <div class="blog-card-body">
-              <div class="blog-cat">Sustainability</div>
               <div class="blog-title">Our 2025 Sustainability Report</div>
               <div class="blog-excerpt">An honest look at our environmental footprint and initiatives.</div>
               <div class="blog-meta">Mar 28 · 10 min read</div>
+              <div class="blog-tags"> <span class="blog-tag">Style Guide</span> </div>
+              <div class="btnRead"></div><button class="btn md ">Read the article</button>
             </div>
           </div>
 
           <div class="blog-card">
             <div class="blog-card-img wf-img"></div>
             <div class="blog-card-body">
-              <div class="blog-cat">Trend Report</div>
               <div class="blog-title">The New Minimalism: Clean Lines for a New Era</div>
               <div class="blog-excerpt">Fashion is returning to a refined, considered approach.</div>
               <div class="blog-meta">Mar 22 · 6 min read</div>
+              <div class="blog-tags"> <span class="blog-tag">Style Guide</span> </div>
+              <div class="btnRead"></div><button class="btn md ">Read the article</button>
             </div>
           </div>
         </div>
 
-        <aside>
-          <div class="sidebar-widget">
-            <div class="widget-title">Categories</div>
-            <div class="widget-body">
-              <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:6px 0;border-bottom:1px solid var(--border)">Style Guide<span style="color:var(--text-muted)">18</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:6px 0;border-bottom:1px solid var(--border)">Brand Spotlight<span style="color:var(--text-muted)">14</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:6px 0;border-bottom:1px solid var(--border)">Trend Report<span style="color:var(--text-muted)">11</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:6px 0">How To Wear<span style="color:var(--text-muted)">9</span></div>
-            </div>
-          </div>
-          <div class="sidebar-widget">
+        <!-- Right: Newsletter -->
+        <aside class="blog-newsletter-sidebar">
+          <div class="blog-newsletter-img wf-img"></div>
+          <div class="sidebar-widget blog-newsletter-widget">
             <div class="widget-title">Newsletter</div>
             <div class="widget-body">
               <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:10px">Weekly editorial in your inbox.</p>
@@ -111,19 +172,240 @@
             </div>
           </div>
         </aside>
+
       </div>
     </div>
+    <!-- Trending Articles -->
+     <div class="container">
+      <!-- Trending Articles -->
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow">What's Hot</div>
+      <h3 class="section-title">Trending Articles</h3>
+    </div>
+  </div>
+  <div class="carousel-wrap">
+    <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="carousel-track">
+
+      <div class="carousel-item--4">
+        <div class="carousel-img ratio-4-3 wf-img"></div>
+        <div class="blog-cat" style="margin-top:0.75rem">Trend Report</div>
+        <div class="blog-title">The Return of Quiet Luxury</div>
+        <div class="blog-meta">Apr 12 · 8 min read</div>
+      </div>
+
+      <div class="carousel-item--4">
+        <div class="carousel-img ratio-4-3 wf-img"></div>
+        <div class="blog-cat" style="margin-top:0.75rem">Style Guide</div>
+        <div class="blog-title">How to Build a Capsule Wardrobe</div>
+        <div class="blog-meta">Apr 8 · 5 min read</div>
+      </div>
+
+      <div class="carousel-item--4">
+        <div class="carousel-img ratio-4-3 wf-img"></div>
+        <div class="blog-cat" style="margin-top:0.75rem">Brand Spotlight</div>
+        <div class="blog-title">Inside Jacquemus: Sun, Sea and Linen</div>
+        <div class="blog-meta">Apr 5 · 4 min read</div>
+      </div>
+
+      <div class="carousel-item--4">
+        <div class="carousel-img ratio-4-3 wf-img"></div>
+        <div class="blog-cat" style="margin-top:0.75rem">How To Wear</div>
+        <div class="blog-title">5 Ways to Wear a Blazer This Season</div>
+        <div class="blog-meta">Apr 1 · 3 min read</div>
+      </div>
+
+      <div class="carousel-item--4">
+        <div class="carousel-img ratio-4-3 wf-img"></div>
+        <div class="blog-cat" style="margin-top:0.75rem">Sustainability</div>
+        <div class="blog-title">Our 2025 Sustainability Report</div>
+        <div class="blog-meta">Mar 28 · 10 min read</div>
+      </div>
+
+      <div class="carousel-item--4">
+        <div class="carousel-img ratio-4-3 wf-img"></div>
+        <div class="blog-cat" style="margin-top:0.75rem">Trend Report</div>
+        <div class="blog-title">The New Minimalism: Clean Lines</div>
+        <div class="blog-meta">Mar 22 · 6 min read</div>
+      </div>
+
+    </div>
+    <button class="carousel-btn carousel-btn--next" aria-label="Next">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+</div>
+      
+     </div>
+    
   </main>
 
   <div id="main-footer"></div>
 
+  <!-- Filter drawer -->
+  <div class="filter-overlay" id="editorial-filter-overlay"></div>
+  <div class="filter-drawer" id="editorial-filter-drawer" role="dialog" aria-modal="true" aria-label="Filters">
+    <div class="filter-drawer-head">
+      <span class="filter-drawer-title">Categories</span>
+      <button class="account-modal-close" id="editorial-filter-close-btn" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="filter-drawer-body">
+      <div class="filter-acc-item">
+        <div class="filter-acc-body is-open">
+          <label class="filter-option"><input type="checkbox" class="editorial-filter" data-label="Style Guide" style="width:15px;height:15px;accent-color:var(--evergreen)">Style Guide<span class="filter-count">18</span></label>
+          <label class="filter-option"><input type="checkbox" class="editorial-filter" data-label="Brand Spotlight" style="width:15px;height:15px;accent-color:var(--evergreen)">Brand Spotlight<span class="filter-count">14</span></label>
+          <label class="filter-option"><input type="checkbox" class="editorial-filter" data-label="Trend Report" style="width:15px;height:15px;accent-color:var(--evergreen)">Trend Report<span class="filter-count">11</span></label>
+          <label class="filter-option"><input type="checkbox" class="editorial-filter" data-label="How To Wear" style="width:15px;height:15px;accent-color:var(--evergreen)">How To Wear<span class="filter-count">9</span></label>
+          <label class="filter-option"><input type="checkbox" class="editorial-filter" data-label="Sustainability" style="width:15px;height:15px;accent-color:var(--evergreen)">Sustainability<span class="filter-count">6</span></label>
+        </div>
+      </div>
+    </div>
+    <div class="filter-drawer-footer">
+      <button class="btn sm" id="editorial-filter-clear-btn">Clear All</button>
+      <button class="btn filled sm" id="editorial-filter-apply-btn">Apply</button>
+    </div>
+  </div>
+
   <script src="header.js"></script>
   <script src="footer.js"></script>
+  <script src="carousel.js"></script>
   <script>
-    function filterTab(btn) {
-      document.querySelectorAll('.tab-bar .tab').forEach(t => t.classList.remove('active'));
-      btn.classList.add('active');
+  (function () {
+    var activeFiltersBar = document.getElementById('editorial-active-filters');
+
+    function getAllCheckboxes() {
+      return Array.from(document.querySelectorAll('input.editorial-filter'));
     }
+    function getChecked() {
+      return getAllCheckboxes().filter(function(cb) { return cb.checked; });
+    }
+    function syncPaired(changed) {
+      var label = changed.getAttribute('data-label');
+      getAllCheckboxes().forEach(function(cb) {
+        if (cb !== changed && cb.getAttribute('data-label') === label) cb.checked = changed.checked;
+      });
+    }
+    function renderActiveTags() {
+      var seen = {}, unique = [];
+      getChecked().forEach(function(cb) {
+        var lbl = cb.getAttribute('data-label');
+        if (!seen[lbl]) { seen[lbl] = true; unique.push(cb); }
+      });
+      if (unique.length === 0) { activeFiltersBar.style.display = 'none'; return; }
+      activeFiltersBar.style.display = 'flex';
+      activeFiltersBar.querySelectorAll('.active-filter').forEach(function(el) { el.remove(); });
+      unique.forEach(function(cb) {
+        var lbl = cb.getAttribute('data-label');
+        var btn = document.createElement('button');
+        btn.className = 'active-filter';
+        btn.textContent = lbl + ' ✕';
+        btn.addEventListener('click', function() {
+          getAllCheckboxes().forEach(function(c) { if (c.getAttribute('data-label') === lbl) c.checked = false; });
+          renderActiveTags();
+          updateFilterDot();
+        });
+        activeFiltersBar.appendChild(btn);
+      });
+    }
+    function updateFilterDot() {
+      var dot = document.getElementById('filter-dot');
+      var seen = {}, count = 0;
+      getChecked().forEach(function(cb) {
+        var lbl = cb.getAttribute('data-label');
+        if (!seen[lbl]) { seen[lbl] = true; count++; }
+      });
+      if (dot) dot.classList.toggle('is-visible', count > 0);
+    }
+
+    document.addEventListener('change', function(e) {
+      if (e.target && e.target.classList.contains('editorial-filter')) {
+        syncPaired(e.target);
+        renderActiveTags();
+        updateFilterDot();
+      }
+    });
+
+    /* Filter drawer */
+    var overlay  = document.getElementById('editorial-filter-overlay');
+    var drawer   = document.getElementById('editorial-filter-drawer');
+    var openBtn  = document.getElementById('filter-open-btn');
+    var closeBtn = document.getElementById('editorial-filter-close-btn');
+    var clearBtn = document.getElementById('editorial-filter-clear-btn');
+    var applyBtn = document.getElementById('editorial-filter-apply-btn');
+
+    function openDrawer() {
+      drawer.classList.add('is-open');
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+    }
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (openBtn)  openBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (overlay)  overlay.addEventListener('click', closeDrawer);
+    if (clearBtn) clearBtn.addEventListener('click', function() {
+      getAllCheckboxes().forEach(function(cb) { cb.checked = false; });
+      renderActiveTags();
+      updateFilterDot();
+    });
+    if (applyBtn) applyBtn.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeDrawer(); });
+
+    /* Mobile sort */
+    var sortBtn      = document.getElementById('sort-open-btn');
+    var sortDropdown = document.getElementById('sort-dropdown');
+    var sortLabel    = document.getElementById('sort-label');
+    if (sortBtn) sortBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = sortDropdown.classList.toggle('is-open');
+      sortBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    if (sortDropdown) sortDropdown.querySelectorAll('.sort-option').forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        sortDropdown.querySelectorAll('.sort-option').forEach(function(o) { o.classList.remove('is-selected'); });
+        this.classList.add('is-selected');
+        if (sortLabel) sortLabel.textContent = this.textContent;
+        sortDropdown.classList.remove('is-open');
+        sortBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* Desktop sort */
+    var dSortBtn      = document.getElementById('desktop-sort-btn');
+    var dSortDropdown = document.getElementById('desktop-sort-dropdown');
+    var dSortLabel    = document.getElementById('desktop-sort-label');
+    if (dSortBtn) dSortBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = dSortDropdown.classList.toggle('is-open');
+      dSortBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    if (dSortDropdown) dSortDropdown.querySelectorAll('.sort-option').forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        dSortDropdown.querySelectorAll('.sort-option').forEach(function(o) { o.classList.remove('is-selected'); });
+        this.classList.add('is-selected');
+        if (dSortLabel) dSortLabel.textContent = this.textContent;
+        dSortDropdown.classList.remove('is-open');
+        dSortBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (dSortDropdown && !dSortDropdown.contains(e.target) && e.target !== dSortBtn) dSortDropdown.classList.remove('is-open');
+      if (sortDropdown && !sortDropdown.contains(e.target) && e.target !== sortBtn) sortDropdown.classList.remove('is-open');
+    });
+  })();
   </script>
 </body>
 </html>

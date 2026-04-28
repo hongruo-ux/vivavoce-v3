@@ -14,7 +14,7 @@
   transition: color 150ms;
 }
 .filter-cat-link:hover { color: var(--red-coral); text-decoration: underline; text-underline-offset: 2px; }
-.filter-cat-link .filter-count { margin-left: auto; font-size: 0.6875rem; color: var(--text-caption); }
+.filter-cat-link .filter-count { margin-left: auto; font-size: 1rem; color: var(--text-caption); }
 
 /* Size filter grid — 32×32 square buttons */
 .filter-size-grid {
@@ -51,7 +51,7 @@
 
 /* Drawer size grid — slightly larger gap for touch */
 .filter-acc-body .filter-size-grid { gap: 8px; padding: 4px 0 8px; }
-.filter-acc-body .filter-size-btn { width: 32px; height: 32px; }
+.filter-acc-body .filter-size-btn { width: 44px; height: 44px; }
 
 /* Color filter grid */
 .filter-color-grid {
@@ -190,7 +190,7 @@
 
 
 /* === PLP === */
-.plp-layout { display: grid; grid-template-columns: 220px 1fr; gap: 2rem; padding-bottom: 3rem; }
+.plp-layout { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; padding-bottom: 3rem; }
 .filter-sidebar { border-right: 1px solid var(--border); padding-right: 1.5rem; }
 .filter-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.875rem; font-weight: 700; }
 .filter-group { border-bottom: 1px solid var(--border); padding: 1rem 0; }

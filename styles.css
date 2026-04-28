@@ -64,7 +64,7 @@
   --text-caption: #6b6b67;
   --text-muted: #6b6b67;
   --link-default: #005670;
-  --link-hover: #a02218;
+  --link-hover: #1d6040;
   --link-visited: #4a4a46;
   --cta-bg: #de3726;
   --cta-hover: #b82d1e;
@@ -166,8 +166,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   transition: background 150ms ease, transform 150ms ease, color 150ms ease;
   white-space: nowrap; background-color: rgba(255, 255, 255, 0.9); color: var(--evergreen);
 }
-.btn.light-btn { border-color: var(--surface-mint); background-color: rgba(255, 255, 255, 0.1); color: var(--surface-page); }
-.btn.light-btn:hover { background-color: rgba(255, 255, 255, 0.1); /* Subtle glow */ color: var(--surface-page); }
+.btn.light-btn { border-color: var(--surface-mint); border-width: 1px; background-color: rgba(225, 225, 225, 0.1); color: var(--surface-page); }
+.btn.light-btn:hover { border-color: rgba(225, 225, 225, 0.4); background-color: rgba(0, 0, 0, 0.2); /* Subtle glow */ color: var(--surface-page); text-decoration: underline;}
 .btn:hover { background: var(--surface-mint); text-decoration: none; color: var(--evergreen); }
 .btn:focus-visible { outline: var(--focus-ring); outline-offset: 2px; }
 .btn.filled { background: var(--cta-bg); color: #fff; border-color: var(--cta-bg); }
@@ -226,6 +226,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .ratio-1-1 { aspect-ratio:1/1; }
 .ratio-16-9 { aspect-ratio:16/9; }
 .mobile-only{ display: none !important;}
+.ratio-4-3 {aspect-ratio: 4/3;}
 
 /* Mid (745px–960px) */
 @media (max-width:960px) and (min-width:745px) {
