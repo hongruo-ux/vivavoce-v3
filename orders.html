@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order History — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="header-additions.css" />
+  <link rel="stylesheet" href="plp-additions.css" />
+  <link rel="stylesheet" href="hero-banners.css" />
+  <link rel="stylesheet" href="cart-additions.css" />
+  <link rel="stylesheet" href="pdp-additions.css" />
+  <link rel="stylesheet" href="wishlist-additions.css" />
+</head>
+<body>
+
+  <div id="main-header"></div>
+
+  <main>
+    <div class="container" style="padding-top:24px">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span><a href="#">My Account</a><span>/</span><span>Order History</span>
+      </div>
+      <div class="page-header"><h1>My Account</h1></div>
+
+      <!-- Mobile toolbar -->
+      <div class="plp-toolbar-mobile">
+        <span class="plp-cta-btn">
+          <button class="btn sm plp-toolbar-btn" id="filter-open-btn" aria-label="Open menu" aria-expanded="false" aria-controls="orders-filter-drawer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+            My Account
+          </button>
+        </span>
+      </div>
+
+      <div class="wishlist-layout">
+
+        <!-- Left: Account nav -->
+        <aside class="blog-filter-sidebar">
+          <div class="filter-group" style="border:none">
+            <div class="filter-acc-body is-open">
+              <a href="profile.html" class="filter-cat-link">My Account</a>
+              <a href="orders.html" class="filter-cat-link wishlist-nav-active">Order History</a>
+              <a href="billing.html" class="filter-cat-link">Payment Methods</a>
+              <a href="address.html" class="filter-cat-link">Address Book</a>
+              <a href="wishlist.html" class="filter-cat-link">Wishlist</a>
+              <button class="btn sm" style="margin-top:1rem;width:100%">Sign Out</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right: Order history -->
+        <div class="wishlist-main">
+
+          <div class="wishlist-section-header">
+            <h2 class="wishlist-section-title">Order History <span class="wishlist-count">4</span></h2>
+          </div>
+
+          <!-- Table header — desktop only -->
+          <div class="order-table-head desktop-only">
+            <span>Items</span>
+            <span>Order</span>
+            <span>Status</span>
+            <span>Date</span>
+            <span></span>
+          </div>
+
+          <!-- Order 1 -->
+          <div class="order-row">
+            <div class="order-row-thumbs">
+              <div class="order-thumb-wrap">
+                <div class="order-thumb wf-img"></div>
+                <span class="order-item-count">2</span>
+              </div>
+            </div>
+            <div class="order-row-info">
+              <div class="order-number">#8821</div>
+              <div class="order-total">$1,190</div>
+            </div>
+            <div class="order-row-status">
+              <span class="order-status-badge order-status-delivered">Delivered</span>
+            </div>
+            <div class="order-row-date utility-text">12 Apr 2025</div>
+            <div class="order-row-action">
+              <a href="order-details.html" class="utility-link order-view-link">View Details</a>
+            </div>
+          </div>
+
+          <!-- Order 2 -->
+          <div class="order-row">
+            <div class="order-row-thumbs">
+              <div class="order-thumb-wrap">
+                <div class="order-thumb wf-img"></div>
+                <span class="order-item-count">1</span>
+              </div>
+            </div>
+            <div class="order-row-info">
+              <div class="order-number">#7654</div>
+              <div class="order-total">$434</div>
+            </div>
+            <div class="order-row-status">
+              <span class="order-status-badge order-status-shipped">Shipped</span>
+            </div>
+            <div class="order-row-date utility-text">28 Mar 2025</div>
+            <div class="order-row-action">
+              <a href="order-details.html" class="utility-link order-view-link">View Details</a>
+            </div>
+          </div>
+
+          <!-- Order 3 -->
+          <div class="order-row">
+            <div class="order-row-thumbs">
+              <div class="order-thumb-wrap">
+                <div class="order-thumb wf-img"></div>
+                <span class="order-item-count">3</span>
+              </div>
+            </div>
+            <div class="order-row-info">
+              <div class="order-number">#6203</div>
+              <div class="order-total">$1,520</div>
+            </div>
+            <div class="order-row-status">
+              <span class="order-status-badge order-status-processing">Processing</span>
+            </div>
+            <div class="order-row-date utility-text">15 Mar 2025</div>
+            <div class="order-row-action">
+              <a href="order-details.html" class="utility-link order-view-link">View Details</a>
+            </div>
+          </div>
+
+          <!-- Order 4 -->
+          <div class="order-row">
+            <div class="order-row-thumbs">
+              <div class="order-thumb-wrap">
+                <div class="order-thumb wf-img"></div>
+                <span class="order-item-count">2</span>
+              </div>
+            </div>
+            <div class="order-row-info">
+              <div class="order-number">#5019</div>
+              <div class="order-total">$720</div>
+            </div>
+            <div class="order-row-status">
+              <span class="order-status-badge order-status-delivered">Delivered</span>
+            </div>
+            <div class="order-row-date utility-text">2 Feb 2025</div>
+            <div class="order-row-action">
+              <a href="order-details.html" class="utility-link order-view-link">View Details</a>
+            </div>
+          </div>
+
+        </div><!-- /wishlist-main -->
+      </div><!-- /wishlist-layout -->
+    </div>
+  </main>
+
+  <div id="main-footer" data-no-newsletter></div>
+
+  <!-- Mobile account nav drawer -->
+  <div class="filter-overlay" id="orders-filter-overlay"></div>
+  <div class="filter-drawer" id="orders-filter-drawer" role="dialog" aria-modal="true" aria-label="My Account">
+    <div class="filter-drawer-head">
+      <span class="filter-drawer-title">My Account</span>
+      <button class="account-modal-close" id="orders-filter-close-btn" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="filter-drawer-body">
+      <div class="filter-acc-item">
+        <div class="filter-acc-body is-open">
+          <a href="profile.html" class="filter-cat-link">My Account</a>
+          <a href="orders.html" class="filter-cat-link wishlist-nav-active">Order History</a>
+          <a href="billing.html" class="filter-cat-link">Payment Methods</a>
+          <a href="address.html" class="filter-cat-link">Address Book</a>
+          <a href="wishlist.html" class="filter-cat-link">Wishlist</a>
+          <button class="btn sm" style="margin-top:1rem;width:100%">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script src="carousel.js"></script>
+  <script>
+  (function () {
+    var overlay  = document.getElementById('orders-filter-overlay');
+    var drawer   = document.getElementById('orders-filter-drawer');
+    var openBtn  = document.getElementById('filter-open-btn');
+    var closeBtn = document.getElementById('orders-filter-close-btn');
+    function openDrawer() { drawer.classList.add('is-open'); overlay.classList.add('is-open'); document.body.style.overflow = 'hidden'; if (openBtn) openBtn.setAttribute('aria-expanded', 'true'); }
+    function closeDrawer() { drawer.classList.remove('is-open'); overlay.classList.remove('is-open'); document.body.style.overflow = ''; if (openBtn) openBtn.setAttribute('aria-expanded', 'false'); }
+    if (openBtn)  openBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (overlay)  overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeDrawer(); });
+  })();
+  </script>
+</body>
+</html>

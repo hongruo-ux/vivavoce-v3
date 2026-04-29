@@ -386,3 +386,34 @@
   
   
 }
+
+/* Promo applied badge */
+.cart-promo-applied {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--surface-sand);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.cart-promo-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: var(--text-caption);
+  min-height: 0;
+  padding: 0;
+  margin-left: 2px;
+  line-height: 1;
+}
+.cart-promo-remove:hover { color: var(--text-primary); }
+
+.cart-promo-applied--readonly { cursor: default; }
