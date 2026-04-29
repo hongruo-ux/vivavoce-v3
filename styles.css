@@ -147,7 +147,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .banner-ease:hover {transform: scale(1.01);}
 .ratio-1-1 { aspect-ratio: 1 / 1;}
 .brand-featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;}
-.section{padding: 4rem 0;}
+.section{padding: 6rem 0;}
 
 @media (max-width: 960px) {
   .banner-ease:hover { transform: none; }
@@ -180,6 +180,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .btn.sm { font-size: 0.8125rem; height: 36px; padding: 0.5rem 1.25rem; }
 .btn.xs { font-size: 0.75rem; height: 28px; padding: 0.25rem 0.875rem; }
 .btn.full { width: 100%; }
+
 
 /* === ARTICLE LINK — all-caps contextual link, used in article body content === */
 .btn-link {
@@ -286,7 +287,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .section:last-child { border-bottom: none; }
 .section-header { gap: 2rem; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; }
 /* Full-bleed background band. Always place a .container inside for content width + gutters. */
-.bg-header { padding-block: 2.5rem 2rem; background-color: var(--blue-sky); }
+.bg-header { padding-block: 8rem 6rem; background-color: var(--blue-sky); }
 @media (max-width:744px) { .bg-header { padding-block: 2rem 1.5rem; } }
 .section-eyebrow { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 4px; }
 .section-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; text-transform: capitalize; }
@@ -460,7 +461,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .promo-banner { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; background: var(--surface-sand); }
 .promo-content { display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 3rem; }
 
-.featured-category-section { padding: 2.5rem 0; width: 100%; max-width: 100%; overflow: hidden; }
+.featured-category-section { width: 100%; max-width: 100%; overflow: hidden; }
 
 /* Carousel visibility helper (previously inline <style> in index.html) */
 .carousel-btn.is-visible { display: flex !important; opacity: 1; }
@@ -475,7 +476,6 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 
 @media (max-width: 744px) {
-  .featured-category-section { padding: 0; }
 }
 
 /* === RESPONSIVE === */

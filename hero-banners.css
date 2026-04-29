@@ -224,6 +224,8 @@
   align-items: flex-end; /* Keeps items at bottom */
   z-index: 2; 
   color: white;
+  margin-bottom: 40px;
+  
 }
 
 .insta-profile { display: flex; align-items: center; gap: 12px; }
