@@ -107,7 +107,8 @@
   .nav-link { padding: 0.875rem 0.6125rem; font-size: var(--text-default); font-weight: 600; letter-spacing: 0.06rem;  }
 
 }
-@media (max-width: 1079px) {}
+@media (max-width: 1079px) {  .nav-link { padding: 0.875rem 0.6125rem; font-size: var(--text-default); font-weight: 600; letter-spacing: 0.06rem;  }
+}
 @media (max-width: 739px) {}
 
 
