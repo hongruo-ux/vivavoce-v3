@@ -1,15 +1,21 @@
 
-/* === SPLIT CAROUSEL REVEAL STYLE === */
-.split-carousel {
-  display: grid;
-  grid-template-columns: 42% 58%;
-  height: 580px; /* Adjust height as needed */
-  background: #FFFFFF;
-  overflow: hidden;
-  position: relative;
-}
+/* ============================================
+   HERO BANNERS
+   Breakpoints:
+   >1400px   — XL desktop
+   1080–1400 — Desktop
+   740–1079  — Tablet
+   <740px    — Mobile
+   ============================================ */
 
-/* Left Mask Side */
+
+/* ============================================
+   SPLIT CAROUSEL
+   ============================================ */
+
+/* --- Layout --- */
+
+/* --- Left mask side --- */
 .split-mask {
   position: relative;
   background-size: cover;
@@ -22,7 +28,6 @@
   z-index: 10;
 }
 
-/* The requested Gradient: Black bottom 100% -> Top 0% */
 .split-gradient-overlay {
   position: absolute;
   inset: 0;
@@ -35,28 +40,28 @@
   z-index: 2;
 }
 
+/* --- Typography --- */
 .split-eyebrow {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: var(--text-sm);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
+  color: var(--surface-sand);
 }
 
 .split-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 2.75rem);
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 2rem;
   text-transform: uppercase;
-  color: var(--golden-hour);
+  color: var(--surface-card);
 }
 
 .split-cta {
   color: #FFFFFF;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: var(--text-sm);
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
@@ -65,7 +70,7 @@
   align-self: flex-start;
 }
 
-/* Right Reveal Side */
+/* --- Right reveal side --- */
 .split-gallery {
   position: relative;
   width: 100%;
@@ -84,7 +89,7 @@
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out; /* Smooth reveal speed */
+  transition: opacity 1.5s ease-in-out;
   z-index: 1;
 }
 
@@ -93,47 +98,99 @@
   z-index: 2;
 }
 
+/* --- Responsive --- */
 
-/* Mobile: Show only the masked text side */
-@media (max-width: 960px) {
-  .split-carousel {
-    grid-template-columns: 1fr;
-    height: 640px;
-  }
-  .split-gallery {
-    display: none;
-  }
-  .split-mask {
-    padding: 2rem 2rem;
-  }
-  .split-gradient-overlay {background: linear-gradient(to top, rgba(0, 0, 0, .9) 0%, rgba(0, 0, 0, .2) 39%);}
-}
+/* @media (min-width: 1401px) — XL desktop: no overrides needed, base styles apply */
 
-/* Split hero image: */
+/* @media (max-width: 1400px) — Desktop: no overrides needed */
 
+/* @media (max-width: 1079px) — Tablet: no overrides needed */
+
+@media (max-width: 1100px) {}
+  /* @media (max-width: 1100px) — Collapse to single column, hide gallery */
+
+
+
+/* ============================================
+   HERO BANNER — STANDARD
+   ============================================ */
+
+/* --- Layout --- */
 .hero-right.wf-img {
-  /* This ensures the image covers the entire div area */
   background-size: cover;
-  
-  /* This keeps the subject of the image centered */
   background-position: center;
-  
-  /* Prevents the image from tiling if the container is larger than the file */
   background-repeat: no-repeat;
-  
-  /* Maintains a minimum height to ensure visibility */
-  min-height: 400px; 
+  min-height: 60vh;
 }
-.hero-left {background-color: #F7E2C7;}
 
-/* --- New Two-Column Brand Block --- */
+.hero-left {
+  background-color:var(--surface-sand);
+}
+
+ /* ── Featured Stack: 1 full-width + 2-col row ── */
+    .featured-stack { display: flex; flex-direction: column; gap: 1rem; }
+
+    .featured-stack__hero {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 6;
+      overflow: hidden;
+    }
+    .featured-stack__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.72) 100%);
+    }
+    .featured-stack__content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: flex-end; gap: 0.75rem;
+      padding: 3rem 2.5rem;
+      justify-content: center;
+
+    }
+
+    .featured-stack__row  { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .featured-stack__row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .featured-stack__card { display: flex; flex-direction: column; }
+    .featured-stack__img  { aspect-ratio: 1 / 1; display: block; }
+    @media (min-width:1399px) {
+          .featured-stack__hero { aspect-ratio: 16 / 7; }
+          .featured-stack__img{ aspect-ratio: 4 / 3;}
+          
+        }
+    @media (max-width:1399px) {
+      .featured-stack__hero { aspect-ratio: 16 / 9; }
+      .featured-stack__img{ aspect-ratio: 1 / 1;}
+      
+    }
+
+    @media (max-width:1080px) {
+      .featured-stack__hero { aspect-ratio: 16 / 9; }
+      .featured-stack__img{ aspect-ratio: 1 / 1;}
+      
+    }
+    @media (max-width: 739px) {
+      .featured-stack__row    { grid-template-columns: 1fr; }
+      .featured-stack__hero   { aspect-ratio: 3 / 4; margin-bottom: 2rem;}
+      .featured-stack__img{ aspect-ratio: 16 / 9;}
+
+      .featured-stack__content { padding: 1.25rem; }
+    }
+
+
+/* ============================================
+   BRAND FEATURED GRID
+   ============================================ */
+
+/* --- Layout --- */
 .brand-featured-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
-  gap: 1rem; /* Matches your existing grid gap */
-  margin-bottom: 2.25rem; /* Matches standard section padding */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.25rem;
 }
 
+/* --- Card --- */
 .brand-featured-card {
   display: flex;
   flex-direction: column;
@@ -143,40 +200,66 @@
 
 .brand-featured-img {
   width: 100%;
-  aspect-ratio: 16 / 12; /* Matches the square layout in screenshot */
-  background: var(--placeholder); /* Uses your existing placeholder color */
+  aspect-ratio: 16 / 12;
+  background: var(--placeholder);
 }
 
+/* --- Typography --- */
 .brand-featured-title {
-  font-family: var(--font-body); /* Uses Sharp Earth OL */
-  font-size: 1.25rem;
+  font-family: var(--font-body);
+  font-size: var(--text-default);
   font-weight: 600;
   color: var(--text-primary);
 }
 
 .brand-featured-link {
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   color: var(--text-primary);
   text-decoration: none;
 }
-.brand-title-block{
-  gap: 1rem !important;
+
+.brand-title-block {
+    padding: 1rem 0 !important;
+  }
+.featured-stack__overlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0) 100%) !important;
 }
 
-/* Mobile: Stack cards vertically */
-@media (max-width: 744px) {
-  .brand-featured-grid {
-    grid-template-columns: 1fr; /* Single column for stacking */
-    gap: 2rem;
+.featured-stack__content {
+  max-width: 40% !important;
+}
+
+@media (max-width: 739px) {
+  .featured-stack__content {
+    max-width: 100% !important;
   }
 }
+/* --- Responsive --- */
+
+/* @media (min-width: 1401px) — XL desktop: no overrides needed */
+
+/* @media (max-width: 1400px) — Desktop: no overrides needed */
+
+/* @media (max-width: 1079px) — Tablet: no overrides needed */
+
+@media (max-width: 1080px) {
+  /* @media (max-width: 1080px) — Mobile: stack to single column */
+  .brand-featured-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-left {
+    align-items: center;
+    text-align: center;
+}
+}
 
 
-
-/* =========================================
+/* ============================================
    SOCIAL MOSAIC / CAROUSEL SYSTEM
-   ========================================= */
-/* --- THE TOGGLE LOGIC --- */
+   ============================================ */
+
+/* --- Layout toggle: desktop grid vs mobile carousel --- */
 @media (min-width: 1025px) {
   .insta-mobile-carousel { display: none !important; }
   .insta-desktop-grid {
@@ -197,17 +280,16 @@
   .insta-mobile-carousel .carousel-track { display: flex !important; }
 }
 
-/* --- THE UI STYLES (Badge, Mask, Icon) --- */
-.insta-feed-card { 
-  position: relative; 
-  height: 100%; 
-  width: 100%; 
-  overflow: hidden; 
+/* --- Card structure --- */
+.insta-feed-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* Fixes the "Wired" Mask - smooth bottom gradient */
 .insta-gradient-mask {
-  position: absolute; 
+  position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 30%, transparent 60%);
   z-index: 1;
@@ -215,59 +297,108 @@
 }
 
 .insta-card-footer {
-  position: absolute; 
-  bottom: 0; 
-  width: 100%; 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   padding: 1.2rem;
-  display: flex; 
-  justify-content: space-between; 
-  align-items: flex-end; /* Keeps items at bottom */
-  z-index: 2; 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
   color: white;
-  margin-bottom: 40px;
-  
+  transform-origin: bottom center;
+  transition: transform 0.3s ease;
 }
 
+.banner-ease:hover .insta-card-footer {
+  transform: scale(0.99);
+}
+
+/* --- Profile badge --- */
 .insta-profile { display: flex; align-items: center; gap: 12px; }
 
 .insta-badge {
-  width: 44px; height: 44px; 
-  background: #DDE6D3; 
+  width: 44px;
+  height: 44px;
+  background: #DDE6D3;
   border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  color: #B34424; font-weight: 900; font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B34424;
+  font-weight: 900;
+  font-size: 11px;
   flex-shrink: 0;
 }
 
+/* --- Typography --- */
 .insta-meta { display: flex; flex-direction: column; line-height: 1.2; }
-.insta-brand { font-weight: 700; font-size: 1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-.insta-date { font-size: 0.85rem; opacity: 0.9; }
+.insta-brand { font-weight: 700; font-size: var(--text-default); text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+.insta-date { font-size: var(--text-sm); opacity: 0.9; }
 
-/* The Instagram Icon (SVG) */
+/* --- Icon --- */
 .insta-icon svg {
-  width: 24px; height: 24px;
+  width: 24px;
+  height: 24px;
   stroke: white;
   display: block;
 }
 
-.insta-text-card{display: flex; 
-    flex-direction: column; 
-    height: 100%; 
-    box-sizing: border-box;}
-
-
-/* --- MARQUEE BAR --- */
-
-.marquee-bar { overflow: hidden; background: var(--surface-page); color: var(--text-primary); padding: .875rem 0; }
-.marquee-inner { display: flex; animation: marquee 28s linear infinite; white-space: nowrap; }
-.marquee-item { font-family: var(--font-display); font-size: 1.125rem; vertical-align: middle;  font-weight: 300; letter-spacing: 0.06em; text-transform: uppercase; padding: 0 1.5rem; opacity: 0.85; }
-.marquee-item .material-icons { vertical-align: middle; margin-right: 4px; }
-
-
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-@media (max-width: 744px) {
-  .marquee-item { font-size: 1rem; }
-  .marquee-bar {padding: .5rem;}
+/* --- Text card variant --- */
+.insta-text-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 }
 
+
+
+/* ============================================================
+   BEYOND THE LOOK
+   ============================================================ */
+.btl-card            { position: relative; overflow: hidden; border-radius: var(--radius-card, 4px); background: var(--placeholder); }
+.btl-img             { width: 100%; height: 100%; background-size: cover; background-position: center; }
+.btl-overlay         { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 50%); pointer-events: none; }
+.btl-footer          { position: absolute; bottom: 0.75rem; left: 0.75rem; right: 0.75rem; display: flex; align-items: center; justify-content: space-between; }
+.insta-profile       { display: flex; align-items: center; gap: 0.5rem; }
+.insta-badge         { width: 48px; height: 48px; border-radius: 50%; background: var(--evergreen); color: #fff; font-size: 9px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.insta-meta          { display: flex; flex-direction: column; }
+.insta-brand         { font-size: var(--text-sm); font-weight: 700; color: #fff; line-height: 1.2; }
+.insta-date          { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.2; }
+.insta-icon          { color: #fff; width: 18px; height: 18px; flex-shrink: 0; }
+.insta-icon svg      { width: 18px; height: 18px; }
+
+.btl-quote           { padding: 1.5rem 0 0; margin: auto; padding: 0 1rem; }
+.btl-quote-mark      { font-family: var(--font-display); font-size: 3rem; line-height: 0.8; color: var(--blue-sky); display: block; margin-bottom: 0.75rem; }
+.btl-quote-text      { font-family: var(--font-display); font-size: var(--quote-lg); font-weight: 400; font-style: italic; color: var(--text-primary); line-height: 1.5; margin-bottom: 1.5rem; }
+.btl-quote-attr      { font-size: var(--text-sm); color: var(--text-caption); }
+
+/* Desktop */
+.btl-grid            { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: stretch; }
+.btl-left            { display: flex; flex-direction: column; gap: 1rem; }
+.btl-images          { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.btl-images .btl-card { aspect-ratio: 1; }
+.btl-right           { }
+.btl-card--tall      { height: 100%;  aspect-ratio: 1 / 1;}
+.btl-card--tall .btl-img { height: 100%; }
+.btl-mobile          { display: none; }
+
+/* Mobile */
+@media (max-width: 1080px) {
+  .btl-grid          { display: none; }
+  .btl-mobile        { display: block; }
+  .btl-mobile .btl-card { aspect-ratio: 1; }
+  .btl-mobile .btl-quote { padding: 1.5rem 0 1rem; }
+  .btl-quote-mark {margin-bottom: 0;}
+}
+.btl-card--quote { background: var(--surface-sand); display: flex; flex-direction: column; justify-content: center; padding: 2rem 1.5rem; aspect-ratio: 1; }
+.btl-card--quote .btl-quote-mark { color: var(--surface-blue-sky); }
+.btl-card--quote .btl-quote-text { color: var(--text-primary); }
+.btl-card--quote .btl-quote-attr { color: var(--text-caption); }
+@media (max-width:749px) {
+  .btl-card--quote {padding: 1rem .5rem;}
+  
+}

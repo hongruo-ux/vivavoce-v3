@@ -1,370 +1,247 @@
+/* ============================================================
+   VIVA VOCE — plp-additions.css
+   Structure: base styles → per-component breakpoints inline
+   Breakpoints: ≥1401px · ≤1400px · ≤1079px · ≤739px
+   ============================================================ */
 
-/* ============================================
-   PLP FILTER EXTENSIONS — category links, size, color, price slider, sustainability
-   ============================================ */
 
-/* Category links */
-.filter-cat-link {
-  display: flex;
-  align-items: center;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  text-decoration: none;
-  padding: 0.3rem 0;
-  transition: color 150ms;
+/* ============================================================
+   PLP LAYOUT
+   ============================================================ */
+.plp-layout   { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; padding-bottom: 3rem; }
+.page-header  { padding-bottom: 0.875rem; }
+.breadcrumb   { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--text-caption); margin-bottom: 1rem; }
+.breadcrumb button { min-height: 0; font-size: var(--text-sm); color: var(--text-caption); padding: 0; }
+.breadcrumb a      { color: var(--text-caption); }
+
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {
+  .plp-layout { grid-template-columns: 1fr; }
 }
-.filter-cat-link:hover { color: var(--red-coral); text-decoration: underline; text-underline-offset: 2px; }
-.filter-cat-link .filter-count { margin-left: auto; font-size: 0.8125rem; color: var(--text-caption); }
-.filter-cat-link-active{ color: var(--text-primary); font-weight: 700; line-height: 2.125rem;}
-.filter-cat-link-active:hover { color: var(--link-hover); text-decoration: underline; }
-
-/* Size filter grid — 32×32 square buttons */
-.filter-size-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding-top: 4px;
-}
-.filter-size-btn {
-  width: fit-content;
-  min-width: 44px;
-  width: fit-content;
-  height: 44px;
-  min-height: 0;
-  border: 1.5px solid var(--border);
-  border-radius: 10rem;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  background: var(--surface-page);
-  cursor: pointer;
-  transition: border-color 150ms, background 150ms;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  font-family: var(--font-body);
-}
-.filter-size-btn:hover { border-color: var(--text-primary); }
-.filter-size-btn.is-active {
-  border-color: var(--text-primary);
-  background: var(--text-primary);
-  color: #fff;
-}
-
-/* Drawer size grid — slightly larger gap for touch */
-.filter-acc-body .filter-size-grid { gap: 8px; padding: 4px 0 8px; }
-.filter-acc-body .filter-size-btn { width: 44px; height: 44px; }
-
-/* Color filter grid */
-.filter-color-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  padding-top: 4px;
-}
-.filter-color-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  border: 1.5px solid transparent;
-  border-radius: var(--radius-pill);
-  padding: 4px 8px 4px 4px;
-  cursor: pointer;
-  min-height: 0;
-  transition: border-color 150ms, background 150ms;
-  font-family: var(--font-body);
-}
-.filter-color-btn:hover { background: var(--surface-sand); }
-.filter-color-btn.is-active { border-color: var(--text-primary); background: var(--surface-sand); }
-.filter-color-swatch {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  border: 1.5px solid rgba(0,0,0,0.12);
-  display: block;
-}
-.filter-color-label {
-  font-size: 0.8125rem;
-  color: var(--text-primary);
-  white-space: nowrap;
-}
-
-/* Price range slider */
-.filter-range-wrap { padding: 4px 0 8px; }
-.filter-range-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 14px;
-}
-.filter-range-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-.filter-range-reset {
-  font-size: 0.8125rem;
-  color: var(--text-muted);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  min-height: 0;
-  font-family: var(--font-body);
-  transition: color 150ms;
-}
-.filter-range-reset:hover { color: var(--text-primary); }
-.filter-range-track {
-  position: relative;
-  height: 4px;
-  background: var(--border);
-  border-radius: 2px;
-  margin: 0 0 8px;
-}
-.filter-range-fill {
-  position: absolute;
-  top: 0;
-  height: 4px;
-  background: var(--text-primary);
-  border-radius: 2px;
-  pointer-events: none;
-}
-.filter-range-input {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  left: 0;
-  height: 4px;
-  background: none;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  margin: 0;
-  min-height: 0;
-  -webkit-appearance: none;
-  appearance: none;
-  pointer-events: none;
-}
-.filter-range-input::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--text-primary);
-  border: 2px solid var(--surface-page);
-  box-shadow: 0 0 0 1.5px var(--text-primary);
-  cursor: pointer;
-  pointer-events: all;
-  transition: transform 120ms;
-}
-.filter-range-input::-webkit-slider-thumb:hover { transform: scale(1.15); }
-.filter-range-input::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--text-primary);
-  border: 2px solid var(--surface-page);
-  box-shadow: 0 0 0 1.5px var(--text-primary);
-  cursor: pointer;
-  pointer-events: all;
-}
-.filter-range-ticks {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.6875rem;
-  color: var(--text-caption);
-  margin-top: 6px;
-}
-
-/* Drawer: make range inputs full-width */
-.filter-acc-body .filter-range-wrap { padding: 4px 0 12px; }
-
-/* ─── Responsive: size + color grids on mobile ─── */
-@media (max-width: 960px) {
-  .filter-size-btn { width: 32px; height: 32px; }
-  .filter-color-grid { grid-template-columns: repeat(2, 1fr); }
-}
+@media (max-width: 739px) {}
 
 
-/* === PLP === */
-.plp-layout { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; padding-bottom: 3rem; }
-.filter-sidebar { border-right: 1px solid var(--border); padding-right: 1.5rem; }
-.filter-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.875rem; font-weight: 700; }
-.filter-group { border-bottom: 1px solid var(--border); padding: 1rem 0; }
-.filter-group-title { display: flex; justify-content: space-between; align-items: center; width: 100%; font-size: 0.8125rem; font-weight: 600; color: var(--text-primary); min-height: 44px; text-align: left; padding: 0; transition: color 150ms; }
-.filter-group-title:hover { color: var(--red-coral); }
-.filter-group-title[aria-expanded="false"] .filter-chev { transform: rotate(0deg); }
-.filter-group-title[aria-expanded="true"] .filter-chev { transform: rotate(180deg); }
-.filter-chev { flex-shrink: 0; transition: transform 220ms ease; color: var(--text-caption); }
-.filter-group-body { margin-top: 0.25rem; display: flex; flex-direction: column; gap: 8px; padding-bottom: 0.75rem; }
-.filter-group-body.is-closed { display: none; }
-.filter-option { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-secondary); cursor: pointer; }
-.filter-count { margin-left: auto; font-size: 0.6875rem; color: var(--text-caption); }
-.plp-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-.breadcrumb { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--text-caption); margin-bottom: 1rem; }
-.breadcrumb button { min-height: 0; font-size: 0.75rem; color: var(--text-caption); padding: 0; }
-.breadcrumb a { color: var(--text-caption); }
-.pagination { display: flex; gap: 6px; justify-content: center; margin-top: 2rem; }
-.page-btn { width: 36px; height: 36px; min-height: 0; border-radius: var(--radius-pill); border: 1px solid var(--border); font-size: 0.8125rem; font-weight: 600; color: var(--text-primary); }
-.page-btn.active { background: var(--text-primary); color: #fff; border-color: var(--text-primary); }
-
-/* Pagination label — shown on all viewports, sits above pagination */
-.pagination-label { text-align: center; font-size: 0.8125rem; color: var(--text-muted); margin-top: 2rem; margin-bottom: 0.5rem; }
-
-/* === FILTER DRAWER (tablet + mobile) === */
-/* Overlay mask */
-.filter-overlay { display: none; position: fixed; inset: 0; background: rgba(26,26,24,.4); z-index: 399; }
-.filter-overlay.is-open { display: block; }
-
-/* Drawer — slides in from right */
-.filter-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(360px, 92vw); background: var(--surface-page); z-index: 400; display: flex; flex-direction: column; border-left: 1px solid var(--border); transform: translateX(100%); transition: transform 280ms cubic-bezier(.4,0,.2,1); }
-.filter-drawer.is-open { transform: translateX(0); }
-
-/* Drawer head */
-.filter-drawer-head { display: flex; align-items: center; justify-content: space-between; padding: 0 1rem; border-bottom: 1px solid var(--border); flex-shrink: 0; height: 56px; }
-.filter-drawer-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); font-family: var(--font-body); }
-
-/* Scrollable body */
-.filter-drawer-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
-
-/* Footer with clear + apply */
-.filter-drawer-footer { display: flex; gap: .75rem; padding: 1rem; border-top: 1px solid var(--border); flex-shrink: 0; }
-.filter-drawer-footer .btn { flex: 1; justify-content: center; }
-
-/* Filter accordion rows — reuse mobile-nav-link sizing & chevron pattern */
-.filter-acc-item { border-bottom: 1px solid var(--border); }
-.filter-acc-btn { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0 1rem; height: 56px; font-size: 1rem; font-weight: 600; color: var(--text-primary); background: none; border: none; cursor: pointer; font-family: var(--font-body); text-align: left; min-height: 0; transition: color 150ms; gap: .5rem; }
-.filter-acc-btn:hover { color: var(--red-coral); }
-.filter-acc-btn[aria-expanded="true"] { color: var(--red-coral); }
-.filter-acc-icon { flex-shrink: 0; color: var(--text-caption); transition: transform 200ms ease; }
-.filter-acc-btn[aria-expanded="true"] .filter-acc-icon { transform: rotate(180deg); }
-.filter-acc-body { display: none; background: var(--surface-card); padding: .5rem 1rem .875rem; }
-.filter-acc-body.is-open { display: block; }
-
-/* Checkboxes inside drawer */
-.filter-acc-body .filter-option { display: flex; align-items: center; gap: 8px; font-size: 0.9375rem; color: var(--text-secondary); cursor: pointer; padding: .375rem 0; }
-.filter-acc-body .filter-count { margin-left: auto; font-size: 0.6875rem; color: var(--text-caption); }
-.filter-acc-body .filter-option input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--evergreen); cursor: pointer; }
-
-/* Mobile PLP toolbar — full-width flex row */
-.plp-toolbar-mobile { display: none; align-items: center; gap: .5rem; margin-bottom: 1rem; }
-.plp-cta-btn { position: relative; display: flex; flex: 1; }
-.plp-toolbar-btn { flex: 1; justify-content: center; width: 100%; }
-.plp-sort-wrap { position: relative; flex: 1; display: flex; flex-direction: column; }
-.plp-filter-dot { position: absolute; top: -3px; right: -3px; width: 8px; height: 8px; border-radius: 50%; background: var(--red-coral); border: 1.5px solid var(--surface-page); display: none; z-index: 1; }
+/* ============================================================
+   PLP TOOLBAR
+   ============================================================ */
+.plp-toolbar        { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.plp-toolbar-mobile { display: none; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+.plp-cta-btn        { position: relative; display: flex; flex: 1; }
+.plp-toolbar-btn    { flex: 1; justify-content: center; width: 100%; }
+.plp-sort-wrap      { position: relative; flex: 1; display: flex; flex-direction: column; }
+.plp-filter-dot     { position: absolute; top: -3px; right: -3px; width: 8px; height: 8px; border-radius: 50%; background: var(--red-coral); border: 1.5px solid var(--surface-page); display: none; z-index: 1; }
 .plp-filter-dot.is-visible { display: block; }
 
-/* Sort dropdown */
-.sort-dropdown { display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: var(--surface-page); border: 1px solid var(--border); z-index: 300; box-shadow: var(--shadow-card); min-width: 160px; }
-.sort-dropdown.is-open { display: block; }
-.sort-option { display: block; width: 100%; text-align: left; padding: .625rem 1rem; font-size: .8125rem; font-family: var(--font-body); color: var(--text-primary); background: none; border: none; cursor: pointer; min-height: 0; transition: background 150ms; }
-.sort-option:hover { background: var(--surface-sand); }
+.sort-dropdown          { display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: var(--surface-page); border: 1px solid var(--border); z-index: 300; box-shadow: var(--shadow-card); min-width: 160px; }
+.sort-dropdown.is-open  { display: block; }
+.sort-option            { display: block; width: 100%; text-align: left; padding: 0.625rem 1rem; font-size: var(--text-default); font-family: var(--font-body); color: var(--text-primary); background: none; border: none; cursor: pointer; min-height: 0; transition: background 150ms; }
+.sort-option:hover      { background: var(--surface-sand); }
 .sort-option.is-selected { font-weight: 700; color: var(--red-coral); }
 
-/* Load more */
+@media (min-width: 1401px) {
+  .plp-toolbar-mobile  { display: none !important; }
+  .plp-toolbar-showing { display: block; }
+}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {
+  .plp-toolbar         { display: none; }
+  .plp-toolbar-mobile  { display: flex; }
+  .plp-toolbar-showing { display: none; }
+}
+@media (max-width: 739px) {}
+
+
+/* ============================================================
+   FILTER SIDEBAR (desktop)
+   ============================================================ */
+.filter-sidebar      { border-right: 1px solid var(--border); padding-right: 1.5rem; }
+.filter-header       { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: var(--text-sm); font-weight: 700; }
+.filter-group        { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+.filter-group-title  { display: flex; justify-content: space-between; align-items: center; width: 100%; font-size: var(--text-sm); font-weight: 600; color: var(--text-primary); min-height: 44px; text-align: left; padding: 0; transition: color 150ms; }
+.filter-group-title:hover { color: var(--red-coral); }
+.filter-group-title[aria-expanded="false"] .filter-chev { transform: rotate(0deg); }
+.filter-group-title[aria-expanded="true"]  .filter-chev { transform: rotate(180deg); }
+.filter-chev         { flex-shrink: 0; transition: transform 220ms ease; color: var(--text-caption); }
+.filter-group-body   { margin-top: 0.25rem; display: flex; flex-direction: column; gap: 8px; padding-bottom: 0.75rem; }
+.filter-group-body.is-closed { display: none; }
+.filter-option       { display: flex; align-items: center; gap: 8px; font-size: var(--text-default); color: var(--text-secondary); cursor: pointer; }
+.filter-count        { margin-left: auto; font-size: var(--text-sm); color: var(--text-caption); }
+
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {
+  .filter-sidebar { display: none; }
+}
+@media (max-width: 739px) {}
+
+
+/* ============================================================
+   FILTER — CATEGORY LINKS
+   ============================================================ */
+.filter-cat-link        { display: flex; align-items: center; font-size: var(--text-default); color: var(--text-secondary); text-decoration: none; padding: 0.3rem 0; transition: color 150ms; }
+.filter-cat-link:hover  { color: var(--red-coral); text-decoration: underline; text-underline-offset: 2px; }
+.filter-cat-link .filter-count { margin-left: auto; font-size: var(--text-sm); color: var(--text-caption); }
+.filter-cat-link-active        { color: var(--text-primary); font-weight: 700; line-height: 2.125rem; }
+.filter-cat-link-active:hover  { color: var(--link-hover); text-decoration: underline; }
+
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {}
+@media (max-width: 739px) {}
+
+
+/* ============================================================
+   FILTER — SIZE GRID
+   ============================================================ */
+.filter-size-grid { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 4px; }
+.filter-size-btn  {
+  width: fit-content; min-width: 31%; height: 44px; min-height: 0;
+  border: 1.5px solid var(--border); border-radius: 10rem;
+  font-size: var(--text-sm); font-weight: 600; color: var(--text-primary);
+  background: var(--surface-page); cursor: pointer;
+  transition: border-color 150ms, background 150ms;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0; font-family: var(--font-body);
+}
+.filter-size-btn:hover    { border-color: var(--text-primary); }
+.filter-size-btn.is-active { border-color: var(--text-primary); background: var(--text-primary); color: #fff; }
+.filter-acc-body .filter-size-grid { gap: 8px; padding: 4px 0 8px; }
+.filter-acc-body .filter-size-btn  { width: 31%; height: 44px; }
+
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {
+  .filter-size-btn { width: 31%; height: 32px; }
+}
+@media (max-width: 739px) {}
+
+
+/* ============================================================
+   FILTER — COLOR GRID
+   ============================================================ */
+.filter-color-grid   { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; padding-top: 4px; }
+.filter-color-btn    { display: flex; align-items: center; gap: 8px; background: none; border: 1.5px solid transparent; border-radius: var(--radius-pill); padding: 4px 8px 4px 4px; cursor: pointer; min-height: 0; transition: border-color 150ms, background 150ms; font-family: var(--font-body); }
+.filter-color-btn:hover    { background: var(--surface-sand); }
+.filter-color-btn.is-active { border-color: var(--text-primary); background: var(--surface-sand); }
+.filter-color-swatch { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; border: 1.5px solid rgba(0,0,0,0.12); display: block; }
+.filter-color-label  { font-size: var(--text-default); color: var(--text-primary); white-space: nowrap; }
+
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {
+  .filter-color-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 739px) {}
+
+
+/* ============================================================
+   FILTER — PRICE RANGE SLIDER
+   ============================================================ */
+.filter-range-wrap   { padding: 4px 0 8px; }
+.filter-range-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.filter-range-label  { font-size: var(--text-default); font-weight: 600; color: var(--text-primary); }
+.filter-range-reset  { font-size: var(--text-default); color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; background: none; border: none; cursor: pointer; padding: 0; min-height: 0; font-family: var(--font-body); transition: color 150ms; }
+.filter-range-reset:hover { color: var(--text-primary); }
+.filter-range-track  { position: relative; height: 4px; background: var(--border); border-radius: 2px; margin: 0 0 8px; }
+.filter-range-fill   { position: absolute; top: 0; height: 4px; background: var(--text-primary); border-radius: 2px; pointer-events: none; }
+.filter-range-input  { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; left: 0; height: 4px; background: none; border: none; border-radius: 0; padding: 0; margin: 0; min-height: 0; -webkit-appearance: none; appearance: none; pointer-events: none; }
+.filter-range-input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--text-primary); border: 2px solid var(--surface-page); box-shadow: 0 0 0 1.5px var(--text-primary); cursor: pointer; pointer-events: all; transition: transform 120ms; }
+.filter-range-input::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.filter-range-input::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--text-primary); border: 2px solid var(--surface-page); box-shadow: 0 0 0 1.5px var(--text-primary); cursor: pointer; pointer-events: all; }
+.filter-range-ticks  { display: flex; justify-content: space-between; font-size: var(--text-sm); color: var(--text-caption); margin-top: 6px; }
+.filter-acc-body .filter-range-wrap { padding: 4px 0 12px; }
+
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {}
+@media (max-width: 739px) {}
+
+
+/* ============================================================
+   FILTER DRAWER (tablet + mobile)
+   ============================================================ */
+.filter-overlay         { display: none; position: fixed; inset: 0; background: rgba(26,26,24,0.4); z-index: 399; }
+.filter-overlay.is-open { display: block; }
+.filter-drawer          { position: fixed; top: 0; right: 0; bottom: 0; width: min(360px,92vw); background: var(--surface-page); z-index: 400; display: flex; flex-direction: column; border-left: 1px solid var(--border); transform: translateX(100%); transition: transform 280ms cubic-bezier(.4,0,.2,1); }
+.filter-drawer.is-open  { transform: translateX(0); }
+.filter-drawer-head     { display: flex; align-items: center; justify-content: space-between; padding: 0 1rem; border-bottom: 1px solid var(--border); flex-shrink: 0; height: 56px; }
+.filter-drawer-title    { font-size: var(--text-default); font-weight: 600; color: var(--text-primary); font-family: var(--font-body); }
+.filter-drawer-body     { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.filter-drawer-footer   { display: flex; gap: 0.75rem; padding: 1rem; border-top: 1px solid var(--border); flex-shrink: 0; }
+.filter-drawer-footer .btn { flex: 1; justify-content: center; }
+.filter-acc-item        { border-bottom: 1px solid var(--border); }
+.filter-acc-btn         { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0 1rem; height: 56px; font-size: var(--text-default); font-weight: 600; color: var(--text-primary); background: none; border: none; cursor: pointer; font-family: var(--font-body); text-align: left; min-height: 0; transition: color 150ms; gap: 0.5rem; }
+.filter-acc-btn:hover                       { color: var(--red-coral); }
+.filter-acc-btn[aria-expanded="true"]       { color: var(--red-coral); }
+.filter-acc-icon        { flex-shrink: 0; color: var(--text-caption); transition: transform 200ms ease; }
+.filter-acc-btn[aria-expanded="true"] .filter-acc-icon { transform: rotate(180deg); }
+.filter-acc-body        { display: none; background: var(--surface-card); padding: 0.5rem 1rem 0.875rem; }
+.filter-acc-body.is-open { display: block; }
+.filter-acc-body .filter-option { display: flex; align-items: center; gap: 8px; font-size: var(--text-default); color: var(--text-secondary); cursor: pointer; padding: 0.375rem 0; }
+.filter-acc-body .filter-count  { margin-left: auto; font-size: var(--text-sm); color: var(--text-caption); }
+.filter-acc-body .filter-option input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--evergreen); cursor: pointer; }
+
+@media (min-width: 1401px) {
+  .filter-overlay,
+  .filter-drawer { display: none !important; }
+}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {}
+@media (max-width: 739px) {}
+
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+.pagination       { display: flex; gap: 6px; justify-content: center; margin-top: 2rem; }
+.page-btn         { width: 36px; height: 36px; min-height: 0; border-radius: var(--radius-pill); border: 1px solid var(--border); font-size: var(--text-sm); font-weight: 600; color: var(--text-primary); }
+.page-btn.active  { background: var(--text-primary); color: #fff; border-color: var(--text-primary); }
+.pagination-label { text-align: center; font-size: var(--text-default); color: var(--text-muted); margin-top: 2rem; margin-bottom: 0.5rem; }
 .plp-load-more-wrap { justify-content: center; padding: 1.5rem 0; }
-.plp-load-more-btn { min-width: 160px; }
+.plp-load-more-btn  { min-width: 160px; }
 
-/* product-card-mask — ensure visible on ALL viewports (no opacity trick) */
-.product-card-mask { position: absolute; inset: 0; background: rgba(255,255,255,0.45); display: flex; align-items: flex-end; justify-content: flex-start; padding: .375rem; z-index: 2; pointer-events: none; }
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {}
+@media (max-width: 739px) {}
 
-/* Quick Add — 32px / 12px on mobile; override global button min-height */
-@media (max-width: 960px) {
+
+/* ============================================================
+   PRODUCT CARD — PLP OVERRIDES
+   ============================================================ */
+.product-card-mask { position: absolute; inset: 0; background: rgba(255,255,255,0.45); display: flex; align-items: flex-end; justify-content: flex-start; padding: 0.375rem; z-index: 2; pointer-events: none; }
+
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {
   .product-quick-add {
     height: 32px !important;
     min-height: 0 !important;
-    font-size: 0.75rem !important;
+    font-size: var(--text-sm) !important;
     padding: 0 1rem;
     margin-top: 10px;
   }
 }
+@media (max-width: 739px) {}
 
-/* Hide desktop sidebar + toolbar on tablet/mobile */
-@media (max-width: 960px) {
-  .filter-sidebar { display: none; }
-  .plp-layout { grid-template-columns: 1fr; }
-  .plp-toolbar { display: none; }
-  .plp-toolbar-mobile { display: flex; }
-  .plp-toolbar-showing { display: none; }
+
+/* ============================================================
+   PLP BRAND HERO BANNER
+   ============================================================ */
+.plp-brand-hero     { display: grid; grid-template-columns: 1fr 1fr; background-color: var(--surface-sand); margin-bottom: 2.5rem; }
+.brand-hero-image img { width: 100%; height: 250px; object-fit: cover; display: block; }
+.brand-hero-content { padding: 1rem 2rem; display: flex; flex-direction: column; justify-content: center; }
+.brand-title        { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 400; margin-bottom: 1rem; }
+.show-mobile        { display: none; }
+
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {
+  .plp-brand-hero     { grid-template-columns: 1fr; background-color: transparent; margin-bottom: 1.5rem; }
+  .hide-mobile        { display: none; }
+  .show-mobile        { display: block; background-color: var(--surface-sand); margin-top: 5rem; border-top: 1px solid var(--border); }
+  .plp-brand-footer .brand-hero-content { text-align: center; align-items: center; padding: 3.5rem 1.25rem; }
+  .brand-title        { font-size: var(--text-lg); }
 }
-
-/* On desktop, no drawer needed */
-@media (min-width: 961px) {
-  .filter-overlay,
-  .filter-drawer { display: none !important; }
-  .plp-toolbar-showing { display: block; }
-  .plp-toolbar-mobile { display: none !important; }
-}
-
-.page-header{
-  padding-bottom: 0.875rem;
-}
-
-
-/* banner */
-/* --- Desktop Layout --- */
-.plp-brand-hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: var(--surface-sand); /* */
-    margin-bottom: 2.5rem;
-}
-
-.brand-hero-image img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
-
-.brand-hero-content {
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.brand-title {
-    font-family: var(--font-display); /* GT Alpina */
-    font-size: 2.5rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-}
-
-/* --- Separation Logic --- */
-.show-mobile { display: none; }
-
-@media (max-width: 960px) {
-    /* Top Banner: Show ONLY the image */
-    .plp-brand-hero {
-        grid-template-columns: 1fr;
-        background-color: transparent;
-        margin-bottom: 1.5rem;
-    }
-    
-    .hide-mobile { display: none; }
-
-    /* Bottom Section: Show text block after products */
-    .show-mobile {
-        display: block;
-        background-color: var(--surface-sand);
-        margin-top: 5rem; /* Forces a large gap from the product grid */
-        border-top: 1px solid var(--border);
-    }
-
-    .plp-brand-footer .brand-hero-content {
-        text-align: center;
-        align-items: center;
-        padding: 3.5rem 1.25rem;
-    }
-    
-    .brand-title {
-        font-size: 1.75rem;
-    }
-}
+@media (max-width: 739px) {}

@@ -15,12 +15,12 @@ window.addEventListener('DOMContentLoaded', () => {
       { title: 'Shop by Style', links: ['Midi Dresses','Maxi Dresses','Mini Dresses','Shirt Dresses','Wrap Dresses','Slip Dresses','Bodycon Dresses'] },
       { title: 'Shop by Occasion', links: ['Casual','Work','Evening','Wedding Guest','Vacation','Brunch'] },
       { title: 'Featured', links: ['Best Sellers','New In','Designer Dresses','Under $200','Under $500'] },
-    ], cards: [{ label: 'Dress Edit' }, { label: 'New Season' }] }},
+    ], cards: [{ label: 'Dress Edit' }] }},
     { label: 'Summer', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Shop by Category', links: ['Dresses','Tops','Shorts','Swimwear','Sandals'] },
       { title: 'Summer Edits', links: ['Resort Wear','Beach Essentials','Sun Dresses','Linen Collection'] },
       { title: 'Trending Now', links: ['Coastal Chic','Maximalist Prints','Sheer Layers','Bold Colour'] },
-    ], cards: [{ label: 'Vacation Shop' }, { label: 'Beach Edit' }] }},
+    ], cards: [{ label: 'Beach Edit' }] }},
     { label: 'Brands', href: 'brands.html' },
     { label: 'Clothing', megaMenu: { cols: [
       { title: 'Dresses', links: ['Midi','Maxi','Mini','Wrap','Slip','Shirt Dress'] },
@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
       { title: 'Bags', links: ['Tote','Shoulder','Crossbody','Clutch','Backpack'] },
       { title: 'Accessories', links: ['Necklaces','Rings','Earrings','Bracelets','Scarves','Sunglasses'] },
       { title: 'Beauty', links: ['Skincare','Makeup','Best Sellers','Natural','Luxury'] },
-    ], cards: [{ label: 'New In' }, { label: 'Bag Edit' }] }},
+    ], cards: [{ label: 'Bag Edit' }] }},
     { label: 'Dresses', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Style', links: ['Midi','Maxi','Mini','Wrap','Slip'] },
       { title: 'Occasion', links: ['Party','Wedding Guest','Casual','Work'] },
@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
       { title: 'Jewellery', links: ['Necklaces','Rings','Earrings','Bracelets'] },
       { title: 'Scarves & Hats', links: ['Scarves','Hats','Belts','Sunglasses'] },
       { title: 'Shop', links: ['New In','Designer','Trending','Under $50'] },
-    ], cards: [{ label: 'Accessories Edits' }, { label: 'Jewelry-New' }] }},
+    ], cards: [ { label: 'Jewelry-New' }] }},
     { label: 'Beauty', href: 'plpCategory.html', megaMenu: { cols: [
       { title: 'Skincare', links: ['Cleansers','Serums','Moisturisers','SPF','Eye Care'] },
       { title: 'Makeup', links: ['Foundation','Lips','Eyes','Blush','Setting Spray'] },
@@ -93,7 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     const menuId = 'mega-' + item.label.replace(/[\s']+/g, '-');
     const cols = item.megaMenu.cols.map(col => `
-      <div class="mega-col" style="flex:0 0 calc(20% - 14px); min-width:0;">
+      <div class="mega-col" style="flex:0 0 calc(24% - 14px); min-width:0;">
         ${col.title ? `<div class="mega-col-title">${col.title}</div>` : ''}
         ${col.links.map(l => `<a href="plpCategory.html" class="mega-link">${l}</a>`).join('')}
       </div>`).join('');
@@ -254,7 +254,18 @@ window.addEventListener('DOMContentLoaded', () => {
           <a href="#" class="mobile-acc-link" style="padding-left:1rem">Track Order History</a>
         </div>
        </div>`
-    : `<button class="mobile-nav-link signin-link" id="mobile-signin-btn">Sign In / Register</button>`;
+    : `<div class="mobile-signin-btns">
+        <a href="account.html" class="btn sm full">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          My Account
+        </a>
+        <a href="wishlist.html" class="btn sm full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+</svg>
+          Wishlist
+        </a>
+      </div>`;
 
   const html = `
     <a href="#main-content" class="sr-only">Skip to main content</a>
@@ -280,39 +291,30 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <header class="site-header" id="site-header">
       <div class="utility-bar">
+        <button class="icon-circle-btn mobile-only utility-bar-hamburger" id="hamburger-btn" aria-label="Menu" aria-expanded="false">
+          <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
         <div class="utility-bar-left">
-          <span class="utility-ships">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-            Ships Globally
-          </span>
-          <div class="lang-picker" id="lang-picker">
-            <button class="lang-picker-btn" id="lang-picker-btn" aria-haspopup="listbox" aria-expanded="false">
-              <span id="lang-label">English</span>
-              <svg class="lang-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="lang-picker-dropdown" id="lang-picker-dropdown" role="listbox">
-              <button class="lang-picker-option is-selected" data-lang="English" role="option">English</button>
-              <button class="lang-picker-option" data-lang="Español" role="option">Español</button>
-            </div>
-          </div>
-          <a href="#" class="utility-link hide-on-mobile">Need Help?</a>
+          <button href="#" class="utility-link">
+            <span class="material-icons" style="font-size:16px;">eco</span>
+            Sustainability &amp; Responsibility
+          </button>
+          
+          <button href="#" class="utility-link hide-on-mobile">Need Help?</button>
         </div>
-        <a href="index.html" class="site-logo">viva voce</a>
+        <a href="index.html" class="site-logo"><img src="images/logo/logo-black.png" alt="Viva Voce" class="site-logo-img" /></a>
         <div class="utility-bar-right">
           ${signinTriggerHTML}
           <button class="icon-circle-btn" id="search-open-btn" aria-label="Search">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
           </button>
-          <button class="icon-circle-btn" aria-label="Wishlist">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <button class="icon-circle-btn hide-on-mobile" aria-label="Wishlist">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
           </button>
           <button class="icon-circle-btn cart-btn" aria-label="Cart" onclick="location.href='cart.html'">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
             <span class="cart-count">3</span>
-          </button>
-          <button class="icon-circle-btn mobile-only" id="hamburger-btn" aria-label="Menu" aria-expanded="false">
-            <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-            <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
         </div>
       </div>
@@ -334,7 +336,7 @@ window.addEventListener('DOMContentLoaded', () => {
       <div class="account-modal-head">
         <h4>Account</h4>
         <button class="account-modal-close" id="account-modal-close" aria-label="Close">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
       <div class="account-modal-content">${accountContent}</div>
@@ -345,19 +347,19 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="mobile-drawer" id="mobile-drawer">
       <div class="mobile-drawer-inner">
         <div class="mobile-drawer-head">
-          <a href="index.html" class="site-logo">viva voce</a>
+          <a href="index.html" class="site-logo"><img src="images/logo/logo-black.png" alt="Viva Voce" class="site-logo-img" /></a>
           <button class="icon-circle-btn" id="drawer-close-btn" aria-label="Close menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
         </div>
         <div class="mobile-nav-links" id="mobile-nav-links">
           ${mobileSigninHTML}
           ${mobileAccordionLinks}
           <div class="mobile-drawer-footer">
-            <span class="utility-ships">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-              Ships Globally
-            </span>
+            <a href="#" class="utility-link">
+              <span class="material-icons" style="font-size:16px;">eco</span>
+              Sustainability &amp; Responsibility
+            </a>
             <span class="utility-sep">·</span>
             <button class="utility-link" id="mobile-lang-btn">English ▾</button>
             <span class="utility-sep">·</span>
@@ -372,11 +374,11 @@ window.addEventListener('DOMContentLoaded', () => {
       <div class="search-mask" id="search-overlay-mask"></div>
       <div class="search-panel">
         <div class="search-input-row">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
           <input class="search-input" type="search" placeholder="Search styles, products..." id="search-field" autocomplete="off"/>
           <button class="search-clear-btn" id="search-clear-btn" aria-label="Clear">Clear</button>
           <button class="icon-circle-btn search-close-btn" id="search-close-btn" aria-label="Close">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
         </div>
         <div class="search-body" id="search-body">
@@ -384,7 +386,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <div class="search-results-grid" id="search-results-grid">
             <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Silk Slip Dress</div><div class="search-result-price">$285.00</div></a>
             <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Linen Blazer</div><div class="search-result-price">$390.00</div></a>
-            <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Cashmere Crew Knit</div><div class="search-result-price">$420.00</div></a>
+            <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Cashmere Crew Knit</div><div class="search-result-price">$424.00</div></a>
             <a href="pdp.html" class="search-result-card"><div class="wf-img search-result-image"></div><div class="search-result-name">Wide-Leg Trousers</div><div class="search-result-price">$175.00</div></a>
           </div>
         </div>
@@ -448,9 +450,27 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => { if (document.querySelector('.mega-menu.is-open')) positionMegaMenus(); }, { passive: true });
   window.addEventListener('resize', positionMegaMenus);
 
+  // Nav overflow: between 961px-1100px hide desktop nav, show pill-strip
+  function checkNavOverflow() {
+    const nav = document.getElementById('main-nav');
+    if (!nav) return;
+    const w = window.innerWidth;
+    if (w > 960 && w <= 1100) {
+      nav.style.setProperty('display', 'none', 'important');
+      const pill = document.querySelector('#site-header .pill-strip');
+      if (pill) pill.style.setProperty('display', 'flex', 'important');
+    } else {
+      nav.style.removeProperty('display');
+      const pill = document.querySelector('#site-header .pill-strip');
+      if (pill) pill.style.removeProperty('display');
+    }
+  }
+  checkNavOverflow();
+  window.addEventListener('resize', checkNavOverflow);
+
   // ── Account popup (desktop) / modal (mobile) ─────────────────
   function openAccount() {
-    if (window.innerWidth >= 961) {
+    if (window.innerWidth >= 1101) {
       const popup = document.getElementById('account-popup');
       if (popup.classList.contains('is-open')) { closeAccount(); return; }
       const rect = document.getElementById('signin-trigger').getBoundingClientRect();
@@ -555,7 +575,7 @@ window.addEventListener('DOMContentLoaded', () => {
   };
   const SEARCH_PRODUCTS = {
     dresses:  [{name:'Silk Slip Dress',price:'$285.00'},{name:'Wrap Midi Dress',price:'$195.00'},{name:'Maxi Floral Dress',price:'$240.00'},{name:'Bodycon Mini',price:'$165.00'}],
-    clothing: [{name:'Linen Blazer',price:'$390.00'},{name:'Cashmere Crew Knit',price:'$420.00'},{name:'Oversized Shirt',price:'$120.00'},{name:'Tailored Coat',price:'$580.00'}],
+    clothing: [{name:'Linen Blazer',price:'$390.00'},{name:'Cashmere Crew Knit',price:'$424.00'},{name:'Oversized Shirt',price:'$120.00'},{name:'Tailored Coat',price:'$580.00'}],
     pants:    [{name:'Wide-Leg Trousers',price:'$175.00'},{name:'Tailored Pants',price:'$210.00'},{name:'Pleated Wide Leg',price:'$195.00'},{name:'Slim Fit Trousers',price:'$160.00'}],
     shirts:   [{name:'Oversized Oxford',price:'$130.00'},{name:'Silk Blouse',price:'$220.00'},{name:'Striped Shirt',price:'$110.00'},{name:'Linen Shirt',price:'$145.00'}],
     jeans:    [{name:'High-Rise Straight',price:'$195.00'},{name:'Wide Leg Jeans',price:'$210.00'},{name:'Slim Fit Jeans',price:'$175.00'},{name:'Cropped Flare',price:'$185.00'}],

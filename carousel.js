@@ -4,15 +4,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const track = wrap.querySelector('.carousel-track');
     const btnPrev = wrap.querySelector('.carousel-btn--prev');
     const btnNext = wrap.querySelector('.carousel-btn--next');
-    if (!track || !btnPrev || !btnNext) return;
+    if (!track) return; // only require track — buttons are optional
 
     function updateButtons() {
       const scrollLeft = track.scrollLeft;
       const maxScroll = track.scrollWidth - track.clientWidth;
-      // Only show buttons on desktop (not touch-primary devices)
       const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-      btnPrev.classList.toggle('is-visible', isDesktop && scrollLeft > 4);
-      btnNext.classList.toggle('is-visible', isDesktop && scrollLeft < maxScroll - 4);
+      if (btnPrev) btnPrev.classList.toggle('is-visible', isDesktop && scrollLeft > 4);
+      if (btnNext) btnNext.classList.toggle('is-visible', isDesktop && maxScroll > 4 && scrollLeft < maxScroll - 4);
     }
 
     function scrollByItem(direction) {
@@ -21,13 +20,13 @@ window.addEventListener('DOMContentLoaded', () => {
       track.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
     }
 
-    btnPrev.addEventListener('click', () => scrollByItem(-1));
-    btnNext.addEventListener('click', () => scrollByItem(1));
+    if (btnPrev) btnPrev.addEventListener('click', () => scrollByItem(-1));
+    if (btnNext) btnNext.addEventListener('click', () => scrollByItem(1));
     track.addEventListener('scroll', updateButtons, { passive: true });
     window.addEventListener('resize', updateButtons);
 
-    // Initial state
-    updateButtons();
+    // Defer initial state until after layout has painted
+    requestAnimationFrame(() => requestAnimationFrame(updateButtons));
   });
 
 });

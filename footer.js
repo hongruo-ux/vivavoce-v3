@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
             class="newsletter-img ratio 16-9"
           />
           <div class="newsletter-content">
-            <h3 class="newsletter-title">Join our Newsletter — Get Updates, Offers and Invites.</h3>
+            <h4 class="newsletter-title">Join our Newsletter — Get Updates, Offers and Invites.</h4>
             <div class="newsletter-form">
               <input type="email" placeholder="Email address" aria-label="Email address" />
               <button class="newsletter-submit" aria-label="Subscribe">${arrowSVG}</button>
@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         <!-- Brand Column -->
         <div class="footer-brand-col">
-          <img src="images/logo/logo.png" alt="Viva Voce" class="footer-logo" />
+          <img src="images/logo/logo.png" alt="Viva Voce" class="footer-logo" style="min-width:280px;" />
           <div class="footer-social-label">Follow us on social media</div>
           <div class="footer-social-icons">
             <a href="#" aria-label="Facebook">
@@ -115,18 +115,20 @@ window.addEventListener('DOMContentLoaded', () => {
       <div class="footer-bottom">
         <div class="footer-bottom-inner">
           <div class="footer-bottom-left">
+            <span class="material-icons">eco</span>
+            <a href="editorial.html" class="footer-bottom-link">Sustainability</a>
+            <span class="footer-bottom-sep">·</span>
+            <a href="#" class="footer-bottom-link">Need Help?</a>
+          </div>
+          <div class="footer-bottom-lang">
             <span class="material-icons">language</span>
-            <span>Ships Globally</span>
-            <span style="opacity:0.4">·</span>
             <select aria-label="Language">
               <option>English</option>
               <option>한국어</option>
               <option>日本語</option>
               <option>Français</option>
             </select>
-            <span class="material-icons" style="font-size:16px;opacity:0.6">expand_more</span>
-            <span style="opacity:0.4">·</span>
-            <a href="#" style="color:inherit;font-size:0.8125rem;">Need Help?</a>
+            <span class="material-icons footer-expand-icon">expand_more</span>
           </div>
           <div class="footer-bottom-right">© 2026, Viva Voce Live.</div>
         </div>
@@ -172,3 +174,4 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+

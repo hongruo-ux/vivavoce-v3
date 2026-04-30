@@ -467,8 +467,8 @@
 }
 
 
-/* ── Responsive: tablet (≤960px) ─────────────────────────── */
-@media (max-width: 960px) {
+/* ── Responsive: tablet (≤1180px) ─────────────────────────── */
+@media (max-width: 1180px) {
   .article-hero-img    { height: 300px; }
   .article-hero-title  { font-size: 2rem; padding-inline: 0; }
   .article-subtitle    { font-size: 1.5rem; }
