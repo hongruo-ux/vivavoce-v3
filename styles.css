@@ -136,7 +136,7 @@
   :root {
     --text-xl:      1.125rem;
     --text-lg:      1rem;
-    --text-default: 0.925rem;
+    --text-default: 1.025rem;
     --text-sm:      0.875rem;
 
     --header-display: 3.5rem;
@@ -155,7 +155,7 @@
   :root {
     --text-xl:      1.125rem;
     --text-lg:      1rem;
-    --text-default: 0.875rem;
+    --text-default: 0.975rem;
     --text-sm:      0.8125rem;
 
     --header-display: 3.5rem;
