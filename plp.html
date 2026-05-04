@@ -17,36 +17,64 @@
   <div id="main-header"></div>
 
   <main>
-    <div class="container" style="padding-top:24px">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a><span>/</span><span>All Clothing</span>
-      </div>
-      <div class="">
-        <div style="padding-bottom: 1rem;">
-          <h4>Shop by Category</h4>
-        </div>
-        <div class="carousel-wrap">
-          <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <div class="carousel-track">
-            <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Tops</div></a>
-            <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Dresses</div></a>
-            <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Bottoms</div></a>
-            <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Outerwear</div></a>
-            <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Footwear</div></a>
-            <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Accessories</div></a>
-            <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Swimwear</div></a>
+
+    <!-- ============================================================
+         BREADCRUMB + CATEGORY CAROUSEL
+         Pattern: band > container > section-sm
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
+        <div class="section-sm">
+
+          <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span><span>All Clothing</span>
           </div>
-          <button class="carousel-btn carousel-btn--next" aria-label="Next">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
+
+          <div class="section-carousel">
+            <div class="section-header-carousel">
+              <h4>Shop by Category</h4>
+            </div>
+            <div class="carousel-wrap">
+              <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <div class="carousel-track">
+                <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Tops</div></a>
+                <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Dresses</div></a>
+                <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Bottoms</div></a>
+                <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Outerwear</div></a>
+                <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Footwear</div></a>
+                <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Accessories</div></a>
+                <a href="plpCategory.html" class="category-card carousel-item--6"><div class="carousel-img ratio-1-1"></div><div class="category-label">Swimwear</div></a>
+              </div>
+              <button class="carousel-btn carousel-btn--next" aria-label="Next">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div style="padding:3rem 0">
-        <div class="page-header"><h1>All Clothing Collection Page</h1></div>
-        <p class="summary">SEO description added here.</p>
+    </div>
+
+    <!-- ============================================================
+         PAGE HEADER + SEO INTRO
+         Pattern: band > container > section-xs
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
+        <div class="section-sm">
+          <div class="page-header"><h2>All Clothing Collection Page</h2></div>
+        </div>
       </div>
+    </div>
+
+    <!-- ============================================================
+         PLP LAYOUT — SIDEBAR + PRODUCT GRID
+         Pattern: band > container
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
 
       <div class="plp-layout">
 
@@ -55,6 +83,9 @@
           <div class="filter-header">
             <span>Filters</span>
             <button class="btn sm" id="sidebar-clear-btn">Clear All</button>
+          </div>
+          <div class="active-filters" id="active-filters-bar" style="display:none">
+            <span style="font-size:var(--text-sm);color:var(--text-muted)">Active:</span>
           </div>
           <div class="filter-group">
             <button class="filter-group-title" aria-expanded="true" aria-controls="fg-category">Category <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -155,6 +186,19 @@
 
         <!-- Products column -->
         <div>
+          <!-- Desktop toolbar: Sort + product count -->
+          <div class="plp-toolbar">
+            <span class="section-eyebrow">1,420 products</span>
+            <div class="plp-sort-wrap">
+              <a id="sort-open-btn-desktop" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">SORT BY ↓</a>
+              <div class="sort-dropdown" id="sort-dropdown-desktop" role="listbox" aria-label="Sort options">
+                <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
+                <button class="sort-option" role="option" data-value="new-in">New In</button>
+                <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
+                <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
+              </div>
+            </div>
+          </div>
 
           <!-- Mobile / tablet toolbar: Filter + Sort CTAs (full width) -->
           <div class="plp-toolbar-mobile">
@@ -179,12 +223,7 @@
             </div>
           </div>
 
-          <!-- Active filters bar — hidden when empty, shown dynamically -->
-          <div class="active-filters" id="active-filters-bar" style="display:none">
-            <span style="font-size:0.6875rem;color:var(--text-muted)">Active:</span>
-            <!-- tags injected by JS -->
-          </div>
-
+      
           <!-- Product grid -->
           <div class="grid-3 plp-grid" id="plp-grid" style="gap:12px">
 
@@ -702,10 +741,76 @@
 
         </div><!-- /products column -->
       </div><!-- /plp-layout -->
-    </div><!-- /container -->
+
+      </div><!-- /container -->
+    </div><!-- /band: plp-layout -->
+
+    <!-- ============================================================
+         SEO BLOCK — ABOUT + KEYWORD PILLS
+         Pattern: band > container > section-sm
+    ============================================================ -->
+
+     <div class="band">
+      <div  >
+        <div class="plp-seo-box"  style="background-color: var(--blue-sky);">
+            <div class="container">
+                <h3>Shop [Category] arrivals on Viva Voce</h3>
+               <div class="plp-seo-body is-truncated" id="plp-seo-body">
+                <p>Discover Viva Voce's full <strong>[women's clothing]</strong> collection — a carefully curated edit of <strong>[ethical fashion]</strong> from the world's most exciting independent and contemporary designers. Whether you're searching for a <strong>[linen dress] </strong>for summer, a versatile <strong>[midi dress]</strong> for the office, or a statement <strong>[outerwear]</strong> piece for the new season, our edit spans every occasion and aesthetic.</p>
+                <p>Every piece on Viva Voce is selected with intention. We champion <strong>[sustainable fashion brands]</strong> committed to <strong>[fair trade clothing] </strong>and <strong>[eco-friendly materials]</strong> — so you can shop with confidence knowing your wardrobe choices align with your values. From [Jacquemus] and [Toteme] to emerging labels you won't find anywhere else, our [designer clothing for women] collection is updated weekly with the latest arrivals.</p>
+                <p>Shop by [size-inclusive fashion] options including Petite, Tall, and Plus Size ranges. Filter by colour, fit, and sustainability credentials to find exactly what you're looking for in our [women's clothing online] store.</p>
+              </div>
+              <button class="plp-seo-toggle " id="plp-seo-toggle" aria-expanded="false">READ MORE</button>
+
+            </div>
+           
+          </div>
+        <div class="">
+          <div class="section-sm ">
+            <div class="container">
+              <h4>You may also like to search</h4>
+              <div class="plp-keyword-pills" style="padding-top: 1.5rem;">
+                <a href="plpCategory.html" class="btn md">Category Name Dresses</a>
+                <a href="plpCategory.html" class="btn md">Category Name Tops</a>
+                <a href="plpCategory.html" class="btn md">Category Name Outerwear</a>
+                <a href="plpCategory.html" class="btn md">Category Name Category Arrivals</a>
+                <a href="plpCategory.html" class="btn md">Category Name Sale</a>
+                <a href="plpCategory.html" class="btn md">Sustainable Category</a>
+                <a href="plpCategory.html" class="btn md">Ethical Fashion</a>
+                <a href="plpCategory.html" class="btn md">Designer Clothing</a>
+                <a href="plpCategory.html" class="btn md">Capsule Wardrobe</a>
+                <a href="plpCategory.html" class="btn md">Category In This Week</a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          
+
+          
+
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <div id="main-footer"></div>
+
+  <!-- SEO Read More toggle -->
+  <script>
+  (function () {
+    var body   = document.getElementById('plp-seo-body');
+    var toggle = document.getElementById('plp-seo-toggle');
+    if (!body || !toggle) return;
+    toggle.addEventListener('click', function () {
+      var isTruncated = body.classList.toggle('is-truncated');
+      toggle.textContent = isTruncated ? 'READ MORE' : 'READ LESS';
+      toggle.setAttribute('aria-expanded', String(!isTruncated));
+    });
+  })();
+  </script>
 
   <script src="header.js"></script>
   <script src="footer.js"></script>

@@ -17,30 +17,53 @@
   <div id="main-header"></div>
 
   <main>
-    <div class="container" style="padding-top:24px">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a><span>/</span><a href="brands.html">All Brands</a><span>/</span><span>Brand Name</span>
+
+    <!-- ============================================================
+         BREADCRUMB
+         Pattern: band > container > section-sm
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
+        <div class="section-sm">
+          <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span><a href="brands.html">All Brands</a><span>/</span><span>Brand Name</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PAGE HEADER + BRAND HERO
+         Pattern: band > container > section-xs
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
+        <div class="section-xs">
+          <div class="page-header"><h2>Brand Name</h2></div>
+        </div>
       </div>
 
-      <div style="padding:3rem 0">
-        <div class="page-header"><h1>Brand Name</h1></div>
-      </div>
-      
-  <!-- brand banner -->
-
-    <section class="plp-brand-hero">
-    <div class="brand-hero-content hide-mobile">
-        <span class="brand-eyebrow" style="padding-bottom: 1rem;"><h3>About the brand</h3></span>
-        <p class="brand-description">
+      <!-- brand banner — full width within band, no container -->
+      <section class="plp-brand-hero">
+        <div class="brand-hero-content hide-mobile"">
+          <h4 style="padding-bottom: .5rem;">About the brand</h4>
+          <p class="brand-description">
             Few labels are as synonymous with classic American style as your brand. The heritage brand is globally recognized for its elevated sportswear, tailoring...
-        </p>
+          </p>
+        </div>
+        <div class="brand-hero-image">
+          <img src="images/home/slide-3-s.png" alt="Brand Banner" class="wf-img">
+        </div>
+      </section>
     </div>
-    <div class="brand-hero-image">
-        <img src="images/plp/brand.jpg" alt="Brand Banner" class="wf-img">
-    </div>
-    </section>
 
-    
+    <!-- ============================================================
+         PLP LAYOUT — SIDEBAR + PRODUCT GRID
+         Pattern: band > container
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
+
       <div class="plp-layout">
 
         <!-- Desktop Sidebar -->
@@ -49,18 +72,20 @@
             <span>Filters</span>
             <button class="btn sm" id="sidebar-clear-btn">Clear All</button>
           </div>
+          <div class="active-filters" id="active-filters-bar" style="display:none">
+            <span style="font-size:0.6875rem;color:var(--text-muted)">Active:</span>
+          </div>
           <div class="filter-group">
             <button class="filter-group-title" aria-expanded="true" aria-controls="fg-category">Category <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
             <div class="filter-group-body" id="fg-category">
-              <a href="plpCategory.html?cat=dresses" class="filter-cat-link">Dresses<span class="filter-count">324</span></a>
-              <a href="plpCategory.html?cat=tops" class="filter-cat-link">Tops<span class="filter-count">289</span></a>
-              <a href="plpCategory.html?cat=trousers" class="filter-cat-link">Trousers<span class="filter-count">201</span></a>
-              <a href="plpCategory.html?cat=skirts" class="filter-cat-link">Skirts<span class="filter-count">167</span></a>
-              <a href="plpCategory.html?cat=outerwear" class="filter-cat-link">Outerwear<span class="filter-count">145</span></a>
-              <a href="plpCategory.html?cat=footwear" class="filter-cat-link">Footwear<span class="filter-count">24</span></a>
-              <a href="plpCategory.html?cat=accessories" class="filter-cat-link">Accessories<span class="filter-count">56</span></a>
-              <a href="plpCategory.html?cat=swimwear" class="filter-cat-link">Swimwear<span class="filter-count">87</span></a>
-
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Dresses" style="width:15px;height:15px">Dresses<span class="filter-count">324</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Tops" style="width:15px;height:15px">Tops<span class="filter-count">289</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Trousers" style="width:15px;height:15px">Trousers<span class="filter-count">201</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Skirts" style="width:15px;height:15px">Skirts<span class="filter-count">167</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Outerwear" style="width:15px;height:15px">Outerwear<span class="filter-count">145</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Footwear" style="width:15px;height:15px">Footwear<span class="filter-count">24</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Accessories" style="width:15px;height:15px">Accessories<span class="filter-count">56</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Swimwear" style="width:15px;height:15px">Swimwear<span class="filter-count">87</span></label>
             </div>
           </div>
           <div class="filter-group">
@@ -149,6 +174,20 @@
         <!-- Products column -->
         <div>
 
+          <!-- Desktop toolbar: Sort + product count -->
+          <div class="plp-toolbar">
+            <span class="section-eyebrow">1,420 products</span>
+            <div class="plp-sort-wrap">
+              <a id="sort-open-btn-desktop" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">SORT BY ↓</a>
+              <div class="sort-dropdown" id="sort-dropdown-desktop" role="listbox" aria-label="Sort options">
+                <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
+                <button class="sort-option" role="option" data-value="new-in">New In</button>
+                <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
+                <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
+              </div>
+            </div>
+          </div>
+
           <!-- Mobile / tablet toolbar: Filter + Sort CTAs (full width) -->
           <div class="plp-toolbar-mobile">
             <span class="plp-cta-btn">
@@ -170,12 +209,6 @@
                 <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
               </div>
             </div>
-          </div>
-
-          <!-- Active filters bar — hidden when empty, shown dynamically -->
-          <div class="active-filters" id="active-filters-bar" style="display:none">
-            <span style="font-size:0.6875rem;color:var(--text-muted)">Active:</span>
-            <!-- tags injected by JS -->
           </div>
 
           <!-- Product grid -->
@@ -695,19 +728,87 @@
 
         </div><!-- /products column -->
       </div><!-- /plp-layout -->
-    </div><!-- /container -->
-      <!-- brand banner -->
-       <section class="plp-brand-footer show-mobile">
-    <div class="brand-hero-content">
+
+      </div><!-- /container -->
+    </div><!-- /band: plp-layout -->
+
+    <!-- ============================================================
+         BRAND FOOTER (mobile only)
+         Pattern: band
+    ============================================================ -->
+    <section class="plp-brand-footer show-mobile">
+      <div class="brand-hero-content">
         <span class="brand-eyebrow">About the brand</span>
         <h1 class="brand-title">BRAND NAME</h1>
         <p class="brand-description">
-            Few labels are as synonymous with classic American style as Polo Ralph Lauren. The heritage brand is globally recognized for its elevated sportswear, tailoring...
+          Few labels are as synonymous with classic American style as Polo Ralph Lauren. The heritage brand is globally recognized for its elevated sportswear, tailoring...
         </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEO BLOCK — ABOUT + KEYWORD PILLS
+         Pattern: band > container > section-sm
+    ============================================================ -->
+ <div class="band">
+      <div  >
+        <div class="plp-seo-box"  style="background-color: var(--blue-sky);">
+            <div class="container">
+                <h3>Shop [Brand] On Viva Voce</h3>
+               <div class="plp-seo-body is-truncated" id="plp-seo-body">
+                 <p>Explore Viva Voce's curated edit of <strong>[Brand Name clothing]</strong> — one of the most celebrated names in contemporary fashion. Known for its commitment to <strong>[quality craftsmanship]</strong> and <strong>[timeless design]</strong>, this brand has been a cornerstone of the Viva Voce edit since its launch on our platform. Every piece is selected by our team of stylists who champion brands that align with our values of <strong>[ethical production]</strong> and <strong>[sustainable fashion]</strong>.</p>
+                  <p>From signature <strong>[Brand Name dresses]</strong> to elevated <strong>[Brand Name tops]</strong> and <strong>[Brand Name outerwear]</strong>, our brand edit spans every category and occasion. Whether you're building a <strong>[capsule wardrobe]</strong> or looking for a standout piece, this is the definitive place to shop <strong>[Brand Name online]</strong> with the confidence of knowing every item meets our rigorous ethical and quality standards.</p>
+                  <p>New pieces from <strong>[Brand Name]</strong> are added weekly. Filter by size — including <strong>[petite]</strong>, <strong>[tall]</strong>, and <strong>[plus size]</strong> — colour, and price to find exactly what you're looking for in our <strong>[Brand Name women's clothing]</strong> collection.</p>
+                </div>
+              <button class="plp-seo-toggle " id="plp-seo-toggle" aria-expanded="false">READ MORE</button>
+
+            </div>
+           
+          </div>
+        <div class="">
+          <div class="section-sm ">
+            <div class="container">
+              <h4>You may also like to search</h4>
+              <div class="plp-keyword-pills" style="padding-top: 1.5rem;">
+                <a href="plpCategory.html" class="btn md">Category Name Dresses</a>
+                <a href="plpCategory.html" class="btn md">Category Name Tops</a>
+                <a href="plpCategory.html" class="btn md">Category Name Outerwear</a>
+                <a href="plpCategory.html" class="btn md">Category Name Category Arrivals</a>
+                <a href="plpCategory.html" class="btn md">Category Name Sale</a>
+                <a href="plpCategory.html" class="btn md">Sustainable Category</a>
+                <a href="plpCategory.html" class="btn md">Ethical Fashion</a>
+                <a href="plpCategory.html" class="btn md">Designer Clothing</a>
+                <a href="plpCategory.html" class="btn md">Capsule Wardrobe</a>
+                <a href="plpCategory.html" class="btn md">Category In This Week</a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          
+
+          
+
+        </div>
+      </div>
     </div>
-</section>
 
   </main>
+
+  <!-- SEO Read More toggle -->
+  <script>
+  (function () {
+    var body   = document.getElementById('plp-seo-body');
+    var toggle = document.getElementById('plp-seo-toggle');
+    if (!body || !toggle) return;
+    toggle.addEventListener('click', function () {
+      var isTruncated = body.classList.toggle('is-truncated');
+      toggle.textContent = isTruncated ? 'READ MORE' : 'READ LESS';
+      toggle.setAttribute('aria-expanded', String(!isTruncated));
+    });
+  })();
+  </script>
 
   <div id="main-footer"></div>
 

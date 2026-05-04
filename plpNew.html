@@ -17,15 +17,40 @@
   <div id="main-header"></div>
 
   <main>
-    <div class="container" style="padding-top:24px">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a><span>/</span><span>New</span>
-      </div>
 
-      <div style="padding:3rem 0">
-        <div class="page-header"><h1>Just Arrived</h1></div>
-        <p class="summary">1,420 products from 200+ brands</p>
+    <!-- ============================================================
+         BREADCRUMB
+         Pattern: band > container > section-sm
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
+        <div class="section-xs">
+          <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span><span>New</span>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <!-- ============================================================
+         PAGE HEADER
+         Pattern: band > container > section-xs
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
+        <div class="section-sm">
+          <div class="page-header"><h2>Just Arrived</h2></div>
+          <p class="">1,420 products from 200+ brands</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PLP LAYOUT — SIDEBAR + PRODUCT GRID
+         Pattern: band > container
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
 
       <div class="plp-layout">
 
@@ -35,12 +60,15 @@
             <span>Filters</span>
             <button class="btn sm" id="sidebar-clear-btn">Clear All</button>
           </div>
+          <div class="active-filters" id="active-filters-bar" style="display:none">
+            <span style="font-size:0.6875rem;color:var(--text-muted)">Active:</span>
+          </div>
          
           <div class="filter-group">
-            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-category">Added By <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-            <div class="filter-group-body" id="fg-category">
-                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Dresses" style="width:15px;height:15px">This Week<span class="filter-count">84</span></label>
-                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Tops" style="width:15px;height:15px">This Month<span class="filter-count">84</span></label>
+            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-added-by">Added By <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="filter-group-body" id="fg-added-by">
+                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="This Week" style="width:15px;height:15px">This Week<span class="filter-count">84</span></label>
+                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="This Month" style="width:15px;height:15px">This Month<span class="filter-count">84</span></label>
             </div>
           </div>
             <div class="filter-group">
@@ -138,6 +166,19 @@
 
         <!-- Products column -->
         <div>
+          <!-- Desktop toolbar: Sort + product count -->
+          <div class="plp-toolbar">
+            <span class="section-eyebrow">1,420 products</span>
+            <div class="plp-sort-wrap">
+              <a id="sort-open-btn-desktop" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">SORT BY ↓</a>
+              <div class="sort-dropdown" id="sort-dropdown-desktop" role="listbox" aria-label="Sort options">
+                <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
+                <button class="sort-option" role="option" data-value="new-in">New In</button>
+                <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
+                <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
+              </div>
+            </div>
+          </div>
 
           <!-- Mobile / tablet toolbar: Filter + Sort CTAs (full width) -->
           <div class="plp-toolbar-mobile">
@@ -160,12 +201,6 @@
                 <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
               </div>
             </div>
-          </div>
-
-          <!-- Active filters bar — hidden when empty, shown dynamically -->
-          <div class="active-filters" id="active-filters-bar" style="display:none">
-            <span style="font-size:0.6875rem;color:var(--text-muted)">Active:</span>
-            <!-- tags injected by JS -->
           </div>
 
         <!-- Product grid -->
@@ -686,8 +721,73 @@
 
         </div><!-- /products column -->
       </div><!-- /plp-layout -->
-    </div><!-- /container -->
+
+      </div><!-- /container -->
+    </div><!-- /band: plp-layout -->
+
+    <!-- ============================================================
+         SEO BLOCK — ABOUT + KEYWORD PILLS
+         Pattern: band > container > section-sm
+    ============================================================ -->
+    <div class="band">
+      <div  >
+        <div class="plp-seo-box"  style="background-color: var(--blue-sky);">
+            <div class="container">
+                <h3>Shop new arrivals on Viva Voce</h3>
+               <div class="plp-seo-body is-truncated" id="plp-seo-body">
+                <p>Be the first to discover the latest <strong>[new arrivals women's fashion]</strong> at Viva Voce. Our <strong>[new in clothing]</strong> edit is refreshed weekly with the freshest pieces from over 200 independent and contemporary designers — from <strong>[new season dresses]</strong> and <strong>[new in tops]</strong> to the latest <strong>[designer accessories]</strong> you won't find on the high street.</p>
+                <p>Whether you're looking for this week's most coveted <strong>[new in designer clothing]</strong> or hunting for an emerging label making waves in <strong>[ethical fashion]</strong>, our curated drops make it easy to stay ahead of the season. Every piece is selected by our community of stylists and fashion editors who champion <strong>[sustainable new arrivals]</strong> from brands committed to <strong>[fair trade]</strong> and <strong>[eco-friendly production]</strong>.</p>
+                <p>Shop <strong>[new in petite]</strong>, <strong>[new in plus size]</strong>, and <strong>[new in tall]</strong> ranges updated alongside our main edit — because great style is for every body. Filter by brand, category, colour, or sustainability credentials to find your next wardrobe favourite from our <strong>[new women's clothing online]</strong> collection.</p>
+              </div>
+              <button class="plp-seo-toggle " id="plp-seo-toggle" aria-expanded="false">READ MORE</button>
+
+            </div>
+           
+          </div>
+        <div class="">
+          <div class="section-sm ">
+            <div class="container">
+              <h4>You may also like to search</h4>
+              <div class="plp-keyword-pills" style="padding-top: 1.5rem;">
+                <a href="plpCategory.html" class="btn md">New Name Dresses</a>
+                <a href="plpCategory.html" class="btn md">New Name Tops</a>
+                <a href="plpCategory.html" class="btn md">New Name Outerwear</a>
+                <a href="plpCategory.html" class="btn md">New Name New Arrivals</a>
+                <a href="plpCategory.html" class="btn md">New Name Sale</a>
+                <a href="plpCategory.html" class="btn md">Sustainable New</a>
+                <a href="plpCategory.html" class="btn md">Ethical Fashion</a>
+                <a href="plpCategory.html" class="btn md">Designer Clothing</a>
+                <a href="plpCategory.html" class="btn md">Capsule Wardrobe</a>
+                <a href="plpCategory.html" class="btn md">New In This Week</a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          
+
+          
+
+        </div>
+      </div>
+    </div>
+
   </main>
+
+  <!-- SEO Read More toggle -->
+  <script>
+  (function () {
+    var body   = document.getElementById('plp-seo-body');
+    var toggle = document.getElementById('plp-seo-toggle');
+    if (!body || !toggle) return;
+    toggle.addEventListener('click', function () {
+      var isTruncated = body.classList.toggle('is-truncated');
+      toggle.textContent = isTruncated ? 'READ MORE' : 'READ LESS';
+      toggle.setAttribute('aria-expanded', String(!isTruncated));
+    });
+  })();
+  </script>
 
   <div id="main-footer"></div>
 

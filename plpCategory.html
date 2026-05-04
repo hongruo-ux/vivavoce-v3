@@ -17,38 +17,40 @@
   <div id="main-header"></div>
 
   <main>
-    <div class="container" style="padding-top:24px">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a><span>/</span><a href="plp.html">All Women</a><span>/</span><span>Category Name</span>
-      </div>
 
-      <div style="padding:3rem 0">
-        <div class="page-header"><h1>Category Collection Page</h1></div>
-        <p class="summary">SEO description for this category</p>
-      </div>
-      
-      <!-- Mobile toolbar: Filter + Sort -->
-        <div class="plp-toolbar-mobile">
-          <span class="plp-cta-btn">
-            <button class="btn sm plp-toolbar-btn" id="filter-open-btn" aria-label="Open filters" aria-expanded="false" aria-controls="filter-drawer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-              Filter
-            </button>
-            <span class="plp-filter-dot" id="filter-dot" aria-hidden="true"></span>
-          </span>
-          <div class="plp-sort-wrap">
-            <button class="btn sm plp-toolbar-btn" id="sort-open-btn" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M7 12h10M11 18h2"/></svg>
-              <span id="sort-label">Sort</span>
-            </button>
-            <div class="sort-dropdown" id="sort-dropdown" role="listbox" aria-label="Sort options">
-              <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
-              <button class="sort-option" role="option" data-value="new-in">New In</button>
-              <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
-              <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
-            </div>
+    <!-- ============================================================
+         BREADCRUMB
+         Pattern: band > container > section-sm
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
+        <div class="section-sm">
+          <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span><a href="plp.html">All Women</a><span>/</span><span>Category Name</span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PAGE HEADER
+         Pattern: band > container > section-xs
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
+        <div class="section-xs">
+          <div class="page-header"><h1>Category Collection Page</h1></div>
+          <p class="summary">SEO description for this category</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PLP LAYOUT — SIDEBAR + PRODUCT GRID
+         Pattern: band > container
+    ============================================================ -->
+    <div class="band">
+      <div class="container">
 
       <div class="plp-layout">
 
@@ -58,15 +60,17 @@
             <span>Filters</span>
             <button class="btn sm" id="sidebar-clear-btn">Clear All</button>
           </div>
+          <div class="active-filters" id="active-filters-bar" style="display:none">
+            <span style="font-size:0.6875rem;color:var(--text-muted)">Active:</span>
+          </div>
           <div class="filter-group">
-            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-category">Category <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-            <div class="filter-group-body" id="fg-category">
-               <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Toteme" style="width:15px;height:15px">Cotton<span class="filter-count">84</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Jacquemus" style="width:15px;height:15px">Linen<span class="filter-count">72</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="A.P.C." style="width:15px;height:15px"><span class="filter-count">65</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Sandro" style="width:15px;height:15px">Wool<span class="filter-count">58</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="AMI Paris" style="width:15px;height:15px">Fibres/viscose <span class="filter-count">43</span></label>
-
+            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-material">Material <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="filter-group-body" id="fg-material">
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Cotton" style="width:15px;height:15px">Cotton<span class="filter-count">84</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Linen" style="width:15px;height:15px">Linen<span class="filter-count">72</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Silk" style="width:15px;height:15px">Silk<span class="filter-count">65</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Wool" style="width:15px;height:15px">Wool<span class="filter-count">58</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Fibres/Viscose" style="width:15px;height:15px">Fibres/Viscose<span class="filter-count">43</span></label>
             </div>
           </div>
           <div class="filter-group">
@@ -152,7 +156,47 @@
           </div>
         </aside>
 
-                  <!-- Product grid -->
+        <!-- Products column -->
+        <div>
+
+          <!-- Desktop toolbar: Sort + product count -->
+          <div class="plp-toolbar">
+            <span class="section-eyebrow">1,420 products</span>
+            <div class="plp-sort-wrap">
+              <a id="sort-open-btn-desktop" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">SORT BY↓</a>
+              <div class="sort-dropdown" id="sort-dropdown-desktop" role="listbox" aria-label="Sort options">
+                <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
+                <button class="sort-option" role="option" data-value="new-in">New In</button>
+                <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
+                <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile toolbar: Filter + Sort -->
+          <div class="plp-toolbar-mobile">
+            <span class="plp-cta-btn">
+              <button class="btn sm plp-toolbar-btn" id="filter-open-btn" aria-label="Open filters" aria-expanded="false" aria-controls="filter-drawer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+                Filter
+              </button>
+              <span class="plp-filter-dot" id="filter-dot" aria-hidden="true"></span>
+            </span>
+            <div class="plp-sort-wrap">
+              <button class="btn sm plp-toolbar-btn" id="sort-open-btn" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M7 12h10M11 18h2"/></svg>
+                <span id="sort-label">Sort</span>
+              </button>
+              <div class="sort-dropdown" id="sort-dropdown" role="listbox" aria-label="Sort options">
+                <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
+                <button class="sort-option" role="option" data-value="new-in">New In</button>
+                <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
+                <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product grid -->
           <div class="grid-3 plp-grid" id="plp-grid" style="gap:12px">
 
             <div class="product-card" data-name="La Robe Murano" data-price="$595" data-brand="Jacquemus" data-colors="#e8c4b8,#1a1a18,#c4d4e8" data-sizes="XS,S,M,L" data-badge="Exclusive">
@@ -203,7 +247,7 @@
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">Fair Trade</span></div>
 
-                <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-badge"><span class="badge sale">Selling Fast</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -281,7 +325,7 @@
                 </button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">OEKO-TEX</span></div>
-                <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-badge"><span class="badge sale">Selling Fast</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -378,7 +422,7 @@
                   <span class="material-icons wl-icon-hover">favorite</span>
                 </button>
                 <div class="wf-img ratio-3-4"></div>
-                <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-badge"><span class="badge sale">Selling Fast</span></div>
                 <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
@@ -459,7 +503,7 @@
                 </button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
-                <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-badge"><span class="badge sale">Selling Fast</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -575,7 +619,7 @@
                 </button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
-                <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-badge"><span class="badge sale">Selling Fast</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -647,10 +691,96 @@
 
           </div><!-- /plp-grid -->
 
+          <!-- Infinite scroll sentinel (mobile only) -->
+          <div id="plp-sentinel" style="height:1px;margin-top:8px"></div>
 
+          <!-- Load More button (mobile only, shown after 40 auto-loaded) -->
+          <div class="plp-load-more-wrap" id="plp-load-more-wrap" style="display:none">
+            <button class="btn sm plp-load-more-btn" id="plp-load-more-btn">Load More</button>
+          </div>
+
+          <!-- Desktop pagination -->
+          <p class="pagination-label" id="pagination-label">Showing 1–12 of <strong>1,420</strong> products</p>
+          <div class="pagination" id="plp-pagination">
+            <button class="page-btn">‹</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">…</button>
+            <button class="page-btn">59</button>
+            <button class="page-btn">›</button>
+          </div>
+
+        </div><!-- /products column -->
       </div><!-- /plp-layout -->
-    </div><!-- /container -->
+
+      </div><!-- /container -->
+    </div><!-- /band: plp-layout -->
+
+    <!-- ============================================================
+         SEO BLOCK — ABOUT + KEYWORD PILLS
+         Pattern: band > container > section-sm
+    ============================================================ -->
+    <div class="band">
+      <div  >
+        <div class="plp-seo-box"  style="background-color: var(--blue-sky);">
+            <div class="container">
+                <h3>Shop [Category] On Viva Voce</h3>
+               <div class="plp-seo-body is-truncated" id="plp-seo-body">
+                  <div class="plp-seo-body is-truncated" id="plp-seo-body">
+                    <p>Browse Viva Voce's curated <strong>[women's category clothing]</strong> collection — a refined selection of <strong>[designer dresses]</strong>, <strong>[tops]</strong>, <strong>[trousers]</strong> and more from over 200 independent and contemporary brands. Whether you're dressing for a special occasion, updating your everyday wardrobe, or hunting for a standout <strong>[statement piece]</strong>, this edit has been carefully chosen by our community of stylists and fashion editors.</p>
+                    <p>Every item in our <strong>[category clothing online]</strong> edit is sourced from brands who share our commitment to <strong>[ethical fashion]</strong> and <strong>[sustainable design]</strong>. From <strong>[fair trade clothing]</strong> crafted in certified factories to pieces made from <strong>[eco-friendly materials]</strong> like organic cotton and recycled fibres — shopping here means your style choices support real change. Filter by material, brand, fit, and sustainability credentials to shop with intention.</p>
+                    <p>Available in a full range of sizes including <strong>[petite]</strong>, <strong>[tall]</strong>, and <strong>[plus size]</strong> options, our <strong>[women's category page]</strong> is refreshed weekly so there's always something new to discover. Find your next favourite piece from the brands you love — and the ones you're about to.</p>
+                  </div>
+              <button class="plp-seo-toggle " id="plp-seo-toggle" aria-expanded="false">READ MORE</button>
+
+            </div>
+           
+          </div>
+        <div class="">
+          <div class="section-sm ">
+            <div class="container">
+              <h4>You may also like to search</h4>
+              <div class="plp-keyword-pills" style="padding-top: 1.5rem;">
+                <a href="plpCategory.html" class="btn md">Category Name Dresses</a>
+                <a href="plpCategory.html" class="btn md">Category Name Tops</a>
+                <a href="plpCategory.html" class="btn md">Category Name Outerwear</a>
+                <a href="plpCategory.html" class="btn md">Category Name Category Arrivals</a>
+                <a href="plpCategory.html" class="btn md">Category Name Sale</a>
+                <a href="plpCategory.html" class="btn md">Sustainable Category</a>
+                <a href="plpCategory.html" class="btn md">Ethical Fashion</a>
+                <a href="plpCategory.html" class="btn md">Designer Clothing</a>
+                <a href="plpCategory.html" class="btn md">Capsule Wardrobe</a>
+                <a href="plpCategory.html" class="btn md">Category In This Week</a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          
+
+          
+
+        </div>
+      </div>
+    </div>
+
   </main>
+
+  <!-- SEO Read More toggle -->
+  <script>
+  (function () {
+    var body   = document.getElementById('plp-seo-body');
+    var toggle = document.getElementById('plp-seo-toggle');
+    if (!body || !toggle) return;
+    toggle.addEventListener('click', function () {
+      var isTruncated = body.classList.toggle('is-truncated');
+      toggle.textContent = isTruncated ? 'READ MORE' : 'READ LESS';
+      toggle.setAttribute('aria-expanded', String(!isTruncated));
+    });
+  })();
+  </script>
 
   <div id="main-footer"></div>
 
@@ -955,6 +1085,28 @@
     });
 
     /* ─── SORT DROPDOWN ─── */
+    /* Desktop sort */
+    (function() {
+      var btn = document.getElementById('sort-open-btn-desktop');
+      var dd  = document.getElementById('sort-dropdown-desktop');
+      var lbl = document.getElementById('sort-label-desktop');
+      if (!btn || !dd) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dd.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', dd.classList.contains('is-open'));
+      });
+      dd.querySelectorAll('.sort-option').forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          dd.querySelectorAll('.sort-option').forEach(function(o) { o.classList.remove('is-selected'); });
+          opt.classList.add('is-selected');
+          if (lbl) lbl.textContent = opt.textContent;
+          dd.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+      document.addEventListener('click', function() { dd.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); });
+    })();
     var sortBtn      = document.getElementById('sort-open-btn');
     var sortDropdown = document.getElementById('sort-dropdown');
     var sortLabel    = document.getElementById('sort-label');

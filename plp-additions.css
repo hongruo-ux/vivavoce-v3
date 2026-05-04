@@ -8,16 +8,20 @@
 /* ============================================================
    PLP LAYOUT
    ============================================================ */
-.plp-layout   { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; padding-bottom: 3rem; }
-.page-header  { padding-bottom: 0.875rem; }
+.plp-layout   { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; padding-bottom: 8rem; }
+.page-header  { padding-bottom: 0.875rem; color: var(--red-coral)!important; }
 .breadcrumb   { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--text-caption); margin-bottom: 1rem; }
 .breadcrumb button { min-height: 0; font-size: var(--text-sm); color: var(--text-caption); padding: 0; }
 .breadcrumb a      { color: var(--text-caption); }
 
 @media (min-width: 1401px) {}
-@media (max-width: 1400px) {}
+@media (max-width: 1400px) {
+   .plp-layout{grid-template-columns: 240px 1fr; padding-bottom: 5rem;}
+    .plp-layout {gap: 1rem;}
+}
 @media (max-width: 1079px) {
-  .plp-layout { grid-template-columns: 1fr; }
+  .plp-layout { grid-template-columns: 1fr; padding-bottom: 1.5rem;}
+ 
 }
 @media (max-width: 739px) {}
 
@@ -29,12 +33,12 @@
 .plp-toolbar-mobile { display: none; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
 .plp-cta-btn        { position: relative; display: flex; flex: 1; }
 .plp-toolbar-btn    { flex: 1; justify-content: center; width: 100%; }
-.plp-sort-wrap      { position: relative; flex: 1; display: flex; flex-direction: column; }
+.plp-sort-wrap      { position: relative; flex: 1; display: flex; flex-direction: column; align-items: flex-end; }
 .plp-filter-dot     { position: absolute; top: -3px; right: -3px; width: 8px; height: 8px; border-radius: 50%; background: var(--red-coral); border: 1.5px solid var(--surface-page); display: none; z-index: 1; }
 .plp-filter-dot.is-visible { display: block; }
 
 .sort-dropdown          { display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: var(--surface-page); border: 1px solid var(--border); z-index: 300; box-shadow: var(--shadow-card); min-width: 160px; }
-.sort-dropdown.is-open  { display: block; }
+.sort-dropdown.is-open  { display: block; width: fit-content;}
 .sort-option            { display: block; width: 100%; text-align: left; padding: 0.625rem 1rem; font-size: var(--text-default); font-family: var(--font-body); color: var(--text-primary); background: none; border: none; cursor: pointer; min-height: 0; transition: background 150ms; }
 .sort-option:hover      { background: var(--surface-sand); }
 .sort-option.is-selected { font-weight: 700; color: var(--red-coral); }
@@ -55,11 +59,11 @@
 /* ============================================================
    FILTER SIDEBAR (desktop)
    ============================================================ */
-.filter-sidebar      { border-right: 1px solid var(--border); padding-right: 1.5rem; }
+.filter-sidebar      { padding-right: 1.5rem; position: sticky; top: 160px; max-height: calc(100vh - 127px); overflow-y: auto; }
 .filter-header       { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: var(--text-sm); font-weight: 700; }
 .filter-group        { border-bottom: 1px solid var(--border); padding: 1rem 0; }
-.filter-group-title  { display: flex; justify-content: space-between; align-items: center; width: 100%; font-size: var(--text-sm); font-weight: 600; color: var(--text-primary); min-height: 44px; text-align: left; padding: 0; transition: color 150ms; }
-.filter-group-title:hover { color: var(--red-coral); }
+.filter-group-title  { font-family: var(--font-display); display: flex; justify-content: space-between; align-items: center; width: 100%; font-size: var(--text-default); font-weight: 500; color: var(--cta-bg); min-height: 44px; text-align: left; padding: 0; transition: color 150ms; }
+.filter-group-title:hover { color: var(--link-hover); }
 .filter-group-title[aria-expanded="false"] .filter-chev { transform: rotate(0deg); }
 .filter-group-title[aria-expanded="true"]  .filter-chev { transform: rotate(180deg); }
 .filter-chev         { flex-shrink: 0; transition: transform 220ms ease; color: var(--text-caption); }
@@ -71,7 +75,7 @@
 @media (min-width: 1401px) {}
 @media (max-width: 1400px) {}
 @media (max-width: 1079px) {
-  .filter-sidebar { display: none; }
+  .filter-sidebar { display: none; position: static; max-height: none; overflow-y: visible; }
 }
 @media (max-width: 739px) {}
 
@@ -224,6 +228,36 @@
   }
 }
 @media (max-width: 739px) {}
+
+
+/* ============================================================
+   SEO KEYWORD PILLS
+   ============================================================ */
+.plp-keyword-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {}
+@media (max-width: 739px) {}
+
+
+/* ============================================================
+   SEO TEXT BOX
+   ============================================================ */
+.plp-seo-box        { padding: 4rem 0rem 4rem; }
+.plp-seo-body       { display: flex; flex-direction: column; gap: 0.75rem; padding-top: 1rem; font-size: var(--text-default); }
+.plp-seo-body.is-truncated { max-height: 3.5em; overflow: hidden; }
+.plp-seo-toggle     { display: block; margin-top: 0.75rem; background: none; border: none; padding: 0; font-size: var(--text-sm); font-weight: 700; font-family: var(--font-body); color: var(--text-primary); cursor: pointer; letter-spacing: 0.04em; min-height: 0; text-decoration: underline; text-underline-offset: 3px; }
+.plp-seo-toggle:hover { color: var(--red-coral); }
+
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {
+  .plp-seo-box { padding: 1.25rem; }
+}
+@media (max-width: 739px) {
+  .plp-seo-box { padding: 1rem; }
+}
 
 
 /* ============================================================
