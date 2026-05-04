@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="wishlist-additions.css" />
   <link rel="stylesheet" href="carousel.css">
   <link rel="stylesheet" href="quickadd-additions.css">
+  <link rel="stylesheet" href="add-to-wishlist-additions.css">
 </head>
 <body>
 
@@ -56,6 +57,15 @@
 
           <div class="wishlist-section-header">
             <h2 class="wishlist-section-title">Saved Items <span class="wishlist-count">3</span></h2>
+            <div class="wishlist-filter-wrap">
+              <label class="wishlist-filter-label" for="wishlist-collection-filter">Wishlist Collection</label>
+              <select id="wishlist-collection-filter">
+                <option value="all">All</option>
+                <option value="casual">Casual</option>
+                <option value="summer">Summer 2025</option>
+                <option value="sunglasses">Sunglasses</option>
+              </select>
+            </div>
           </div>
 
           <!-- Wishlist table header — desktop only -->
@@ -154,88 +164,108 @@
           </button>
           <div class="carousel-track">
 
-            <div class="carousel-item--4">
-              <div class="product-card"
-                data-name="La Robe Murano"
-                data-brand="Jacquemus"
-                data-price="$595"
-                data-colors="#f5e6d3,#1a1a18,#C2DBFC"
-                data-sizes="XS,S,M,L,XL">
-                <div class="product-card-img-wrap">
-                  <div class="carousel-img ratio-3-4 wf-img"></div>
-                  <button class="btn product-quick-add">Quick Add</button>
+            <div class="carousel-item--5">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                      <span class="material-icons wl-icon-default">favorite_border</span>
+                      <span class="material-icons wl-icon-hover">favorite</span>
+                    </button>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
                 </div>
-                <div class="pdp-brand" style="margin-top:0.75rem">Jacquemus</div>
-                <div class="product-name">La Robe Murano</div>
-                <div class="product-price">$595</div>
+                <button class="product-quick-add">Quick Add</button>
+
+                <div class="product-card-info">
+                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                  <div class="product-price">$310</div>
+                </div>
               </div>
             </div>
 
-            <div class="carousel-item--4">
-              <div class="product-card"
-                data-name="Wool Blazer — Marine"
-                data-brand="A.P.C."
-                data-price="$434"
-                data-colors="#2b3a52,#1a1a18"
-                data-sizes="XS,S,M,L">
-                <div class="product-card-img-wrap">
-                  <div class="carousel-img ratio-3-4 wf-img"></div>
-                  <button class="btn product-quick-add">Quick Add</button>
+            <div class="carousel-item--5">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                      <span class="material-icons wl-icon-default">favorite_border</span>
+                      <span class="material-icons wl-icon-hover">favorite</span>
+                    </button>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
                 </div>
-                <div class="pdp-brand" style="margin-top:0.75rem">A.P.C.</div>
-                <div class="product-name">Wool Blazer — Marine</div>
-                <div class="product-price">$434</div>
+                <button class="product-quick-add">Quick Add</button>
+
+                <div class="product-card-info">
+                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                  <div class="product-price">$310</div>
+                </div>
               </div>
             </div>
 
-            <div class="carousel-item--4">
-              <div class="product-card"
-                data-name="Strapless Midi Dress"
-                data-brand="Toteme"
-                data-price="$485"
-                data-colors="#f9eee2,#1a1a18"
-                data-sizes="XS,S,M,L,XL">
-                <div class="product-card-img-wrap">
-                  <div class="carousel-img ratio-3-4 wf-img"></div>
-                  <button class="btn product-quick-add">Quick Add</button>
+           <div class="carousel-item--5">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                      <span class="material-icons wl-icon-default">favorite_border</span>
+                      <span class="material-icons wl-icon-hover">favorite</span>
+                    </button>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
                 </div>
-                <div class="pdp-brand" style="margin-top:0.75rem">Toteme</div>
-                <div class="product-name">Strapless Midi Dress</div>
-                <div class="product-price">$485</div>
+                <button class="product-quick-add">Quick Add</button>
+
+                <div class="product-card-info">
+                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                  <div class="product-price">$310</div>
+                </div>
               </div>
             </div>
 
-            <div class="carousel-item--4">
-              <div class="product-card"
-                data-name="Le Bambino Bag"
-                data-brand="Jacquemus"
-                data-price="$595"
-                data-colors="#8b6347,#1a1a18"
-                data-sizes="One Size">
-                <div class="product-card-img-wrap">
-                  <div class="carousel-img ratio-3-4 wf-img"></div>
-                  <button class="btn product-quick-add">Quick Add</button>
+            <div class="carousel-item--5">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                      <span class="material-icons wl-icon-default">favorite_border</span>
+                      <span class="material-icons wl-icon-hover">favorite</span>
+                    </button>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
                 </div>
-                <div class="pdp-brand" style="margin-top:0.75rem">Jacquemus</div>
-                <div class="product-name">Le Bambino Bag</div>
-                <div class="product-price">$595</div>
+                <button class="product-quick-add">Quick Add</button>
+
+                <div class="product-card-info">
+                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                  <div class="product-price">$310</div>
+                </div>
               </div>
             </div>
 
-            <div class="carousel-item--4">
-              <div class="product-card"
-                data-name="Vegan Leather Coat"
-                data-brand="Nanushka"
-                data-price="$720"
-                data-colors="#c4b5a0,#1a1a18,#2b3a52"
-                data-sizes="XS,S,M,L,XL">
-                <div class="product-card-img-wrap">
-                  <div class="carousel-img ratio-3-4 wf-img"></div>
-                  <button class="btn product-quick-add">Quick Add</button>
+            <div class="carousel-item--5">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                      <span class="material-icons wl-icon-default">favorite_border</span>
+                      <span class="material-icons wl-icon-hover">favorite</span>
+                    </button>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
                 </div>
-                <div class="pdp-brand" style="margin-top:0.75rem">Nanushka</div>
-                <div class="product-name">Vegan Leather Coat</div>
-                <div class="product-price">$720</div>
+                <button class="product-quick-add">Quick Add</button>
+
+                <div class="product-card-info">
+                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                  <div class="product-price">$310</div>
+                </div>
               </div>
             </div>
 
@@ -309,6 +339,7 @@
   <script src="footer.js"></script>
   <script src="carousel.js"></script>
   <script src="quickadd.js"></script>
+  <script src="add-to-wishlist-additions.js"></script>
   <script>
   (function () {
     var overlay  = document.getElementById('wishlist-filter-overlay');
@@ -335,5 +366,32 @@
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeDrawer(); });
   })();
   </script>
+
+  <!-- Wishlist modal -->
+<div class="qa-mask" id="wl-mask"></div>
+<div class="wl-modal" id="wl-modal" role="dialog" aria-modal="true" aria-labelledby="wl-title">
+  <div class="wl-modal-head">
+    <h4 id="wl-title">Save to Wishlist</h4>
+    <button class="account-modal-close" id="wl-close" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="wl-modal-body">
+    <div class="wl-field">
+      <label class="qa-section-label" for="wl-select">Collection</label>
+      <select id="wl-select">
+        <option value="new">Save to a new collection</option>
+        <option value="casual">Casual</option>
+        <option value="summer">Summer 2025</option>
+        <option value="sunglasses">Sunglasses</option>
+      </select>
+    </div>
+    <div class="wl-new-input is-visible" id="wl-new-input">
+      <label class="qa-section-label" for="wl-name">Wishlist Collection Name</label>
+      <input type="text" id="wl-name" placeholder="Add a Collection Name" />
+    </div>
+    <button class="btn filled full lg" id="wl-save">Save</button>
+  </div>
+</div>
 </body>
 </html>

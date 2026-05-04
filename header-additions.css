@@ -117,29 +117,48 @@
    ============================================================ */
 .mega-menu         { display: none; position: fixed; left: 0; right: 0; background: #fff; border-top: 1px solid var(--border); z-index: 99; }
 .mega-menu.is-open { display: block; }
-.mega-menu-inner   { display: flex; gap: 1rem; padding: 1rem 1.5rem; max-width: 1280px; margin: 0 auto; align-items: flex-start; }
-.mega-col          { min-width: 100px; }
-.mega-col-title    { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-.mega-link         { display: block; font-size: var(--text-default); color: var(--text-primary); text-decoration: none; padding: 4px 0; transition: color 150ms; }
+.mega-menu-inner   { padding: 1.25rem 1.5rem; max-width: 1280px; margin: 0 auto; }
+.mega-shop-all     { display: inline-block; font-size: var(--text-default); font-weight: 700; color: var(--text-primary); text-decoration: none; margin-bottom: 1rem; transition: color 150ms; }
+.mega-shop-all:hover { color: var(--red-coral); }
+
+/* 5-col grid */
+.mega-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; align-items: start; }
+
+/* Links area — spans listCols cols, uses CSS columns internally for group stacking */
+.mega-links-area[data-cols="2"] { grid-column: span 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; align-items: start; }
+.mega-links-area[data-cols="3"] { grid-column: span 3; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; }
+.mega-links-area[data-cols="4"] { grid-column: span 4; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; align-items: start; }
+
+/* Cards area — spans cardCols cols */
+.mega-cards-area[data-cols="1"] { grid-column: span 1; display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.mega-cards-area[data-cols="2"] { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+/* Group — break-inside prevents a group splitting across columns */
+.mega-group        { break-inside: avoid; margin-bottom: 1.5rem; }
+
+.mega-col-title    { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.mega-link         { display: block; font-size: var(--text-default); color: var(--text-primary); text-decoration: none; padding: 6px 0; transition: color 150ms; }
 .mega-link:hover   { color: var(--red-coral); }
-.mega-cards-frame         { margin-left: auto; flex: 0 0 25%; max-width: 340px; min-width: 200px; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.mega-cards-frame--single { grid-template-columns: 1fr; }
+
+/* Cards */
 .mega-card         { text-decoration: none; color: var(--text-primary); min-width: 0; }
-.mega-card-img     { width: 100%; aspect-ratio: 3/4; background: var(--placeholder); align-items: end;}
+.mega-card-img     { width: 100%; aspect-ratio: 3/4; background: var(--placeholder); }
 .mega-card-label   { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 700; margin-top: 0.5rem; color: var(--text-primary); }
-.mega-stories-col  { margin-left: auto; flex-shrink: 0; width: 300px; padding-left: 2rem; border-left: 1px solid var(--border); }
-.mega-story        { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.625rem 0; border-bottom: 1px solid var(--border); }
+
+/* Editorial — legacy stories layout untouched */
+.mega-editorial-gap  { grid-column: span 1; }
+.mega-stories-area   { grid-column: span 2; border-left: 1px solid var(--border); padding-left: 1.5rem; }
+.mega-story          { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.625rem 0; border-bottom: 1px solid var(--border); }
 .mega-story:last-child { border-bottom: none; }
-.mega-story-img    { width: 56px; height: 56px; flex-shrink: 0; background: var(--placeholder); }
-.mega-story-cat    { font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 2px; }
-.mega-story-title  { font-size: var(--text-default); font-weight: 700; color: var(--text-primary); line-height: 1.35; margin-bottom: 2px; }
-.mega-story-date   { font-size: var(--text-sm); color: var(--text-disabled); }
+.mega-story-img      { width: 56px; height: 56px; flex-shrink: 0; background: var(--placeholder); }
+.mega-story-cat      { font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 2px; }
+.mega-story-title    { font-size: var(--text-default); font-weight: 700; color: var(--text-primary); line-height: 1.35; margin-bottom: 2px; }
+.mega-story-date     { font-size: var(--text-sm); color: var(--text-disabled); }
 
 @media (min-width: 1401px) {}
 @media (max-width: 1400px) {}
 @media (max-width: 1079px) {}
 @media (max-width: 739px) {}
-
 
 /* ============================================================
    PILL STRIP
@@ -252,6 +271,8 @@
 .hide-on-mobile { display: flex; align-items: center; }
 .mobile-drawer         { position: fixed; top: 0; left: 0; bottom: 0; width: min(340px,92vw); background: var(--surface-page); z-index: 400; display: flex; flex-direction: column; border-right: 1px solid var(--border); transform: translateX(-100%); transition: transform 280ms cubic-bezier(.4,0,.2,1); }
 .mobile-drawer.is-open { transform: translateX(0); }
+.mobile-signin-btns { display: flex; flex-direction: column; gap: 0.625rem; padding: 1.25rem; }
+
 .mobile-overlay         { display: none; position: fixed; inset: 0; background: rgba(26,26,24,0.4); z-index: 399; }
 .mobile-overlay.is-open { display: block; }
 .mobile-drawer-inner   { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
@@ -329,8 +350,8 @@
 .hero-left   { display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; padding: 3rem 3rem 3rem 2.5rem; }
 .hero-eyebrow { font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); }
 .hero-title  { font-size: var(--header-display); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; font-family: var(--font-display); }
-.hero-sub    { font-size: var(--text-lg); color: var(--text-secondary); line-height: 1.6; max-width: 50%; }
-.hero-btns   { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 0.25rem 0; }
+.hero-sub    { font-size: var(--text-lg); color: var(--text-secondary); line-height: 1.6; max-width: 80%; }
+.hero-btns   { display: flex; gap: 1rem; flex-wrap: wrap; margin: 0.25rem 0; }
 .hero-right  { min-height: 400px; }
 
 /* ── Featured stack overlay: left-to-right gradient so text sits in a dark

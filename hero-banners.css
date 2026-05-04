@@ -149,33 +149,58 @@
 
     }
 
-    .featured-stack__row  { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .featured-stack__row  { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1rem 0; }
     .featured-stack__row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
     .featured-stack__card { display: flex; flex-direction: column; }
     .featured-stack__img  { aspect-ratio: 1 / 1; display: block; }
     @media (min-width:1399px) {
-          .featured-stack__hero { aspect-ratio: 16 / 7; }
+          .featured-stack__hero { aspect-ratio: 16 / 6; }
           .featured-stack__img{ aspect-ratio: 4 / 3;}
           
         }
     @media (max-width:1399px) {
-      .featured-stack__hero { aspect-ratio: 16 / 9; }
-      .featured-stack__img{ aspect-ratio: 1 / 1;}
+      .featured-stack__img{ aspect-ratio: 4 / 3;}
       
     }
 
     @media (max-width:1080px) {
       .featured-stack__hero { aspect-ratio: 16 / 9; }
-      .featured-stack__img{ aspect-ratio: 1 / 1;}
+      .featured-stack__img{ aspect-ratio: 4 / 3;}
+      .featured-stack__row {gap: .5rem; padding: .5rem 0;}
       
     }
     @media (max-width: 739px) {
-      .featured-stack__row    { grid-template-columns: 1fr; }
-      .featured-stack__hero   { aspect-ratio: 3 / 4; margin-bottom: 2rem;}
-      .featured-stack__img{ aspect-ratio: 16 / 9;}
+      .featured-stack__hero                                     { aspect-ratio: 1/1; margin-bottom: 0; }
+      .featured-stack__img                                      { aspect-ratio: 1/1; }
+      .featured-stack__content                                  { padding: 1rem; }
+      .featured-stack__row                                      { grid-template-columns: 1fr; gap: 0; padding: 1rem 0; background-color: var(--surface-card);}
+      .featured-stack__row-3                                    { grid-template-columns: 1fr; gap: 0.75rem; }
 
-      .featured-stack__content { padding: 1.25rem; }
+      /* Card 1 — full bleed */
+      .featured-stack__row .featured-stack__card:first-child    { padding: 0; }
+
+      /* Card 2 — 1rem all sides */
+      .featured-stack__row .featured-stack__card  { padding:1rem 2rem 0 2rem !important; text-align: center; gap:1rem }
+
+      /* Card 3+ — sides + bottom */
+      .featured-stack__row .featured-stack__card:nth-child(2) .brand-title-block   { text-align: center; padding: 1rem !important; }
+
+      /* Center text */
+      .featured-stack__row .brand-title-block                   { text-align: center; padding: 0.5rem 0 0 !important; }
     }
+  
+
+
+    /* ============================================================
+   ABOUT VIVA VOCE GRID
+   ============================================================ */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.about-card { display: flex; flex-direction: column; }
+
+@media (max-width: 739px) {
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+}
+
 
 
 /* ============================================
@@ -219,8 +244,12 @@
 }
 
 .brand-title-block {
-    padding: 1rem 0 !important;
+    padding: 1rem !important;
   }
+
+@media (max-width: 739px) {
+  .brand-title-block { padding: 0.75rem 0 !important; }
+}
 .featured-stack__overlay {
   background: linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0) 100%) !important;
 }
@@ -371,9 +400,9 @@
 .insta-icon          { color: #fff; width: 18px; height: 18px; flex-shrink: 0; }
 .insta-icon svg      { width: 18px; height: 18px; }
 
-.btl-quote           { padding: 1.5rem 0 0; margin: auto; padding: 0 1rem; }
-.btl-quote-mark      { font-family: var(--font-display); font-size: 3rem; line-height: 0.8; color: var(--blue-sky); display: block; margin-bottom: 0.75rem; }
-.btl-quote-text      { font-family: var(--font-display); font-size: var(--quote-lg); font-weight: 400; font-style: italic; color: var(--text-primary); line-height: 1.5; margin-bottom: 1.5rem; }
+.btl-quote { padding: 0 1rem; display: flex; flex-direction: column; justify-content: center; height: 100%; background-color: var(--blue-sky); }
+.btl-quote-mark      { font-family: var(--font-display); font-size: 3rem; line-height: 0.8; color: var(--surface-card); display: block; margin-bottom: 0.75rem; }
+.btl-quote-text      { font-family: var(--font-display); font-size: var(--quote-lg); font-weight: 400; font-style: italic; color: var(--text-primary); line-height: 1.5; margin-bottom: 1rem; }
 .btl-quote-attr      { font-size: var(--text-sm); color: var(--text-caption); }
 
 /* Desktop */
@@ -386,19 +415,97 @@
 .btl-card--tall .btl-img { height: 100%; }
 .btl-mobile          { display: none; }
 
+
+.btl-card--quote { background: var(--blue-sky); display: flex; flex-direction: column; justify-content: center; padding: 2rem 1.5rem; aspect-ratio: 1; }
+.btl-card--quote .btl-quote-mark { color: var(--surface-blue-sky); }
+.btl-card--quote .btl-quote-text { color: var(--text-primary); }
+.btl-card--quote .btl-quote-attr { color: var(--text-caption); }
+
 /* Mobile */
 @media (max-width: 1080px) {
   .btl-grid          { display: none; }
   .btl-mobile        { display: block; }
-  .btl-mobile .btl-card { aspect-ratio: 1; }
-  .btl-mobile .btl-quote { padding: 1.5rem 0 1rem; }
-  .btl-quote-mark {margin-bottom: 0;}
+  .btl-mobile .btl-card { aspect-ratio: 1 / 1; }
+  .btl-mobile .btl-quote { padding: 0.75rem 0; }
+  .btl-quote-mark    { margin-bottom: 0; }
+  .btl-quote-text    { margin-bottom: 0.75rem; }
 }
-.btl-card--quote { background: var(--surface-sand); display: flex; flex-direction: column; justify-content: center; padding: 2rem 1.5rem; aspect-ratio: 1; }
-.btl-card--quote .btl-quote-mark { color: var(--surface-blue-sky); }
-.btl-card--quote .btl-quote-text { color: var(--text-primary); }
-.btl-card--quote .btl-quote-attr { color: var(--text-caption); }
-@media (max-width:749px) {
-  .btl-card--quote {padding: 1rem .5rem;}
-  
+
+
+@media (max-width: 749px) {
+  .btl-card--quote   { padding: 1rem; }
+  .btl-quote-text    { line-height: 1.4; margin-bottom: 0.5rem; }
+}
+
+
+/* --- Mother's Day Banner --- */
+.holiday-day {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  align-items: center;
+  background-color: var(--surface-sand);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.holiday-day__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.holiday-day__title {
+  font-family: var(--font-display);
+  color: var(--coral);
+}
+
+.holiday-day__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.holiday-day__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.holiday-day__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 739px) {
+  .holiday-day {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: .5rem;
+    text-align: center;
+  }
+
+  .holiday-day__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .holiday-day__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .holiday-day__img {
+    display: none;
+  }
 }

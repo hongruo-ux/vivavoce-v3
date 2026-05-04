@@ -10,19 +10,22 @@ window.addEventListener('DOMContentLoaded', () => {
   const isHomePage = currentPage === 'index.html';
 
   const NAV_ITEMS = [
-    { label: "What's New", href: 'plpNew.html', noActive: true },
-    { label: 'Get Inspired', href: 'plpCategory.html', megaMenu: { cols: [
+    { label: "What's New", href: 'plpNew.html', noActive: true, megaMenu: { listCols: 3, cardCols: 2, cols: [
+      { title: 'Shop by Category', links: ['All New Arrivals','Activewear','Bottoms','Dresses','Tops','Swimwear','Innerwear'] },
+      { title: 'The Collections', links: ['Spring Brights','Neutral Ground','Black & White'] },
+    ], cards: [{ label: 'Spring Brights' }, { label: 'Shop Our Pop-Up' }] }},
+    { label: 'Get Inspired', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
       { title: 'Shop by Style', links: ['Midi Dresses','Maxi Dresses','Mini Dresses','Shirt Dresses','Wrap Dresses','Slip Dresses','Bodycon Dresses'] },
       { title: 'Shop by Occasion', links: ['Casual','Work','Evening','Wedding Guest','Vacation','Brunch'] },
       { title: 'Featured', links: ['Best Sellers','New In','Designer Dresses','Under $200','Under $500'] },
     ], cards: [{ label: 'Dress Edit' }] }},
-    { label: 'Summer', href: 'plpCategory.html', megaMenu: { cols: [
+    { label: 'Summer', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
       { title: 'Shop by Category', links: ['Dresses','Tops','Shorts','Swimwear','Sandals'] },
       { title: 'Summer Edits', links: ['Resort Wear','Beach Essentials','Sun Dresses','Linen Collection'] },
       { title: 'Trending Now', links: ['Coastal Chic','Maximalist Prints','Sheer Layers','Bold Colour'] },
     ], cards: [{ label: 'Beach Edit' }] }},
     { label: 'Brands', href: 'brands.html' },
-    { label: 'Clothing', megaMenu: { cols: [
+    { label: 'Clothing', megaMenu: { listCols: 4, cardCols: 1, cols: [
       { title: 'Dresses', links: ['Midi','Maxi','Mini','Wrap','Slip','Shirt Dress'] },
       { title: 'Tops', links: ['Blouses','T-Shirts','Knitwear','Shirts','Bodysuits'] },
       { title: 'Bottoms', links: ['Trousers','Jeans','Skirts','Shorts','Leggings'] },
@@ -31,32 +34,32 @@ window.addEventListener('DOMContentLoaded', () => {
       { title: 'Accessories', links: ['Necklaces','Rings','Earrings','Bracelets','Scarves','Sunglasses'] },
       { title: 'Beauty', links: ['Skincare','Makeup','Best Sellers','Natural','Luxury'] },
     ], cards: [{ label: 'Bag Edit' }] }},
-    { label: 'Dresses', href: 'plpCategory.html', megaMenu: { cols: [
+    { label: 'Dresses', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
       { title: 'Style', links: ['Midi','Maxi','Mini','Wrap','Slip'] },
       { title: 'Occasion', links: ['Party','Wedding Guest','Casual','Work'] },
       { title: 'Edit', links: ['New Arrivals','Under £100','Designer','Sustainable'] },
     ], cards: [{ label: 'Dress Edit' }] }},
-    { label: 'Active', megaMenu: { cols: [
+    { label: 'Active', megaMenu: { listCols: 3, cardCols: 2, cols: [
       { title: 'Women', links: ['Leggings','Sports Bras','Tops','Jackets','Shorts'] },
       { title: 'Training Day Style', links: ['T-Shirts','Shorts','Joggers','Hoodies','Jackets'] },
       { title: 'Shop', links: ['New In','Best Sellers','Sale','Under $100'] },
     ], cards: [{ label: 'Active Edit' }] }},
-    { label: 'Shoes', href: 'plpCategory.html', megaMenu: { cols: [
+    { label: 'Shoes', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
       { title: 'Type', links: ['Heels','Flats','Boots','Sandals','Trainers'] },
-      { title: 'Occasion', links: ['Casual','Formal','Sport','Going Out'] },
+     { title: 'Occasion', links: ['Casual','Formal','Sport','Going Out'] },
       { title: 'Shop', links: ['New In','Sale','Designer','Under $50'] },
     ], cards: [{ label: 'Shoe Edit' }] }},
-    { label: 'Bags', href: 'plpCategory.html', megaMenu: { cols: [
+    { label: 'Bags', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
       { title: 'Style', links: ['Tote','Shoulder','Crossbody','Clutch','Backpack'] },
       { title: 'Size', links: ['Mini','Small','Medium','Large','Oversized'] },
       { title: 'Shop', links: ['New In','Designer','Under $200','Community Top Pick'] },
     ], cards: [{ label: 'Bag Edit' }] }},
-    { label: 'Accessories', href: 'plpCategory.html', megaMenu: { cols: [
+    { label: 'Accessories', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
       { title: 'Jewellery', links: ['Necklaces','Rings','Earrings','Bracelets'] },
       { title: 'Scarves & Hats', links: ['Scarves','Hats','Belts','Sunglasses'] },
       { title: 'Shop', links: ['New In','Designer','Trending','Under $50'] },
-    ], cards: [ { label: 'Jewelry-New' }] }},
-    { label: 'Beauty', href: 'plpCategory.html', megaMenu: { cols: [
+    ], cards: [{ label: 'Jewelry-New' }] }},
+    { label: 'Beauty', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
       { title: 'Skincare', links: ['Cleansers','Serums','Moisturisers','SPF','Eye Care'] },
       { title: 'Makeup', links: ['Foundation','Lips','Eyes','Blush','Setting Spray'] },
       { title: 'Shop', links: ['New In','Best Sellers','Natural','Luxury'] },
@@ -84,58 +87,75 @@ window.addEventListener('DOMContentLoaded', () => {
   ];
 
   // ── Desktop nav HTML ─────────────────────────────────────────
-  const NO_CARDS_MENUS = ["What's New", 'Brands', 'Editorial'];
-
   const desktopNavHTML = NAV_ITEMS.map(item => {
     if (!item.megaMenu) {
       const isActive = !item.noActive && item.href === currentPage;
       return `<div class="nav-item"><a href="${item.href || '#'}" class="nav-link${isActive?' is-active':''}">${item.label}</a></div>`;
     }
     const menuId = 'mega-' + item.label.replace(/[\s']+/g, '-');
-    const cols = item.megaMenu.cols.map(col => `
-      <div class="mega-col" style="flex:0 0 calc(24% - 14px); min-width:0;">
+
+    // Editorial — 5-col grid
+    if (item.megaMenu.stories) {
+      const groupsHTML = item.megaMenu.cols.map(col => `
+        <div class="mega-group">
+          ${col.title ? `<div class="mega-col-title">${col.title}</div>` : ''}
+          ${col.links.map(l => `<a href="plpCategory.html" class="mega-link">${l}</a>`).join('')}
+        </div>`).join('');
+      const storiesHTML = item.megaMenu.stories.map(s => `
+        <div class="mega-story">
+          <div class="mega-story-img wf-img"></div>
+          <div>
+            <div class="mega-story-cat">${s.cat}</div>
+            <div class="mega-story-title">${s.title}</div>
+            <div class="mega-story-date">${s.date}</div>
+          </div>
+        </div>`).join('');
+      return `<div class="nav-item">
+        <a href="${item.href || 'plp.html'}" class="nav-link" data-menu="${menuId}">${item.label}</a>
+        <div class="mega-menu" id="${menuId}">
+          <div class="mega-menu-inner">
+            <a href="editorial.html" class="mega-shop-all">Read All ${item.label}</a>
+            <div class="mega-grid">
+              <div class="mega-links-area" data-cols="2">${groupsHTML}</div>
+              <div class="mega-editorial-gap"></div>
+              <div class="mega-stories-area">
+                <div class="mega-col-title">Latest Stories</div>
+                ${storiesHTML}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    // Standard 5-col grid menus
+    const listCols = item.megaMenu.listCols;
+    const cardCols = item.megaMenu.cardCols;
+    const groupsHTML = item.megaMenu.cols.map(col => `
+      <div class="mega-group">
         ${col.title ? `<div class="mega-col-title">${col.title}</div>` : ''}
         ${col.links.map(l => `<a href="plpCategory.html" class="mega-link">${l}</a>`).join('')}
       </div>`).join('');
-    let extra = '';
-    if (item.megaMenu.stories) {
-      extra = `<div class="mega-stories-col">
-        <div class="mega-col-title">Latest Stories</div>
-        ${item.megaMenu.stories.map(s => `
-          <div class="mega-story">
-            <div class="mega-story-img wf-img"></div>
-            <div>
-              <div class="mega-story-cat">${s.cat}</div>
-              <div class="mega-story-title">${s.title}</div>
-              <div class="mega-story-date">${s.date}</div>
-            </div>
-          </div>`).join('')}
-      </div>`;
-    } else if (!NO_CARDS_MENUS.includes(item.label)) {
-      const cards = item.megaMenu.cards || [];
-      const isSingle = cards.length === 1;
-      const frameClass = isSingle ? 'mega-cards-frame mega-cards-frame--single' : 'mega-cards-frame';
-      const slot1 = cards[0] ? `<a href="plpCategory.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${cards[0].label}</div></a>` : '<div class="mega-card"></div>';
-      const slot2 = !isSingle ? (cards[1] ? `<a href="plpCategory.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${cards[1].label}</div></a>` : '<div class="mega-card"></div>') : '';
-      extra = `<div class="${frameClass}">${slot1}${slot2}</div>`;
-    }
-    const actionLabel = item.label === 'Editorial' ? 'Read All' : 'Shop All';
+    const cards = item.megaMenu.cards || [];
+    const cardsHTML = cards.map(c =>
+      `<a href="plpCategory.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${c.label}</div></a>`
+    ).join('');
+    const actionLabel = 'Shop All';
     const skipShopAll = ['Get Inspired', 'Summer'].includes(item.label);
-    const shopAllLink = skipShopAll ? '' : `<a href="editorial.html" class="mega-link" style="display:block; font-weight:700; margin-bottom:15px; width:100%;">${actionLabel} ${item.label}</a>`;
+    const shopAllLink = skipShopAll ? '' : `<a href="plp.html" class="mega-shop-all">${actionLabel} ${item.label}</a>`;
     return `<div class="nav-item">
       <a href="${item.href || 'plp.html'}" class="nav-link" data-menu="${menuId}">${item.label}</a>
       <div class="mega-menu" id="${menuId}">
-        <div class="mega-menu-inner" style="align-items:stretch;">
-          <div style="flex:1;">
-            ${shopAllLink}
-            <div style="display:flex; flex-wrap:wrap; gap:20px;">${cols}</div>
+        <div class="mega-menu-inner">
+          ${shopAllLink}
+          <div class="mega-grid">
+            <div class="mega-links-area" data-cols="${listCols}">${groupsHTML}</div>
+            <div class="mega-cards-area" data-cols="${cardCols}">${cardsHTML}</div>
           </div>
-          ${extra}
         </div>
       </div>
     </div>`;
   }).join('');
-
   // ── Mobile accordion links ──────────────────────────────────
   const mobileAccordionLinks = NAV_ITEMS.map(item => {
     if (!item.megaMenu) {
@@ -298,7 +318,7 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="utility-bar-left">
           <button href="#" class="utility-link">
             <span class="material-icons" style="font-size:16px;">eco</span>
-            Sustainability &amp; Responsibility
+            Ethical Production
           </button>
           
           <button href="#" class="utility-link hide-on-mobile">Need Help?</button>
@@ -358,7 +378,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <div class="mobile-drawer-footer">
             <a href="#" class="utility-link">
               <span class="material-icons" style="font-size:16px;">eco</span>
-              Sustainability &amp; Responsibility
+              Ethical Production
             </a>
             <span class="utility-sep">·</span>
             <button class="utility-link" id="mobile-lang-btn">English ▾</button>
