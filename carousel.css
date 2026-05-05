@@ -62,7 +62,7 @@
 }
 @media (max-width: 1079px) {
   .banner-ease:hover { transform: none; }
-  .carousel-track    { display: flex !important; flex-wrap: nowrap !important; gap: .5rem !important; }
+  .carousel-track    { display: flex !important; flex-wrap: nowrap !important; gap: 1rem !important; }
   .carousel-item--2  { flex: 0 0 calc((100% - 1rem) / 1.5);  }
   .carousel-item--3  { flex: 0 0 calc((100% - 1rem) / 2.3);  }
   .carousel-item--4  { flex: 0 0 calc((100% - 1rem) / 2.3); }
@@ -76,6 +76,8 @@
   .carousel-item--5  { flex: 0 0 calc((100% - 1rem) / 2.1); }
   .carousel-item--6  { flex: 0 0 calc((100% - 1rem) / 2.3); }
   .carousel-btn      { display: none !important; }
+    .carousel-track    {gap: .5rem !important; }
+
 }
 
 
@@ -92,8 +94,20 @@
 @media (max-width: 1079px) {}
 @media (max-width: 739px) {}
 
+/* ============================================================
+   10. STICKY CARD
+   ============================================================ */
+.stick-white {
+min-width: 25%; position: sticky; left: 0; background: var(--surface-sand); z-index: 1;"
+}
+@media (min-width: 1401px) {}
+@media (max-width: 1400px) {}
+@media (max-width: 1079px) {.stick-white {
+min-width: 25%; background: var(--surface-sand); z-index: 1;"
+} }
+@media (max-width: 739px) {}
 
-
+              
 /* ============================================================
    5. LAYOUT — section, bg-header, grids
    ============================================================ */
@@ -136,6 +150,7 @@
   .cart-layout    { grid-template-columns: 1fr; }
   .account-layout { grid-template-columns: 1fr; }
   .blog-layout    { grid-template-columns: 1fr; }
+  .featured-category-section {padding-left: .5rem;}
 }
 
 
@@ -196,7 +211,7 @@
 .hero-slide__content.content--middle { top: 50%; transform: translateY(-50%); }
 .hero-slide__content.content--bottom { bottom: 0; }
 
-.hero-slide__content .section-eyebrow { color: rgba(255,255,255,0.85); }
+.hero-slide__content .section-eyebrow {font-family: var(--font-display);}
 
 /* Ratio lives here, controlled per breakpoint — not in HTML */
 .carousel-item--hero .wf-img {
@@ -220,8 +235,9 @@
   max-width: 100%;
   
 }
+
 .hero-slide__content .section-eyebrow {
-   color: var(--text-primary);
+   color: var(--red-coral); font-size: var(--text-sm);
 }
 .hero-slide__content{ gap: .5rem;}
 .carousel-item--hero{
@@ -363,6 +379,7 @@
     padding-left: 0;
     padding-top: 1rem;
     width: 100%;
+    display: none;
   }
   .trust-block__top {
   flex-direction: column;

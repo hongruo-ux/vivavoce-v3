@@ -401,14 +401,14 @@
 .insta-icon svg      { width: 18px; height: 18px; }
 
 .btl-quote { padding: 0 1rem; display: flex; flex-direction: column; justify-content: center; height: 100%; background-color: var(--blue-sky); }
-.btl-quote-mark      { font-family: var(--font-display); font-size: 3rem; line-height: 0.8; color: var(--surface-card); display: block; margin-bottom: 0.75rem; }
+.btl-quote-mark      { font-family: var(--font-display); font-size: 3rem; line-height: 0.8; color: var(--surface-sand); display: block; margin-bottom: 0.75rem; }
 .btl-quote-text      { font-family: var(--font-display); font-size: var(--quote-lg); font-weight: 400; font-style: italic; color: var(--text-primary); line-height: 1.5; margin-bottom: 1rem; }
 .btl-quote-attr      { font-size: var(--text-sm); color: var(--text-caption); }
 
 /* Desktop */
-.btl-grid            { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; align-items: stretch; }
-.btl-left            { display: flex; flex-direction: column; gap: .5rem; }
-.btl-images          { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.btl-grid            { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: stretch; }
+.btl-left            { display: flex; flex-direction: column; gap: 1rem; }
+.btl-images          { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .btl-images .btl-card { aspect-ratio: 1; }
 .btl-right           { }
 .btl-card--tall      { height: 100%;  aspect-ratio: 1 / 1;}
@@ -434,7 +434,9 @@
 
 @media (max-width: 749px) {
   .btl-card--quote   { padding: 1rem; }
-  .btl-quote-text    { line-height: 1.4; margin-bottom: 0.5rem; }
+  .btl-quote-text    { line-height: 1.4; margin-bottom: 0.5rem; font-size: var(--text-default); }
+  .btl-quote-mark { font-size: 1.5rem;}
+  
 }
 
 

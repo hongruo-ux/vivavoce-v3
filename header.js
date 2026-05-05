@@ -339,7 +339,6 @@ window.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
       <nav class="main-nav desktop-only" id="main-nav">${desktopNavHTML}</nav>
-      ${isHomePage ? `<div class="pill-strip mobile-only">${pillsHTML}</div>` : ''}
     </header>
 
     <!-- Desktop account popup -->

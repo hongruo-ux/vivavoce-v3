@@ -320,8 +320,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 
 @media (max-width: 739px) {
   .band-padding {  padding-inline: 1rem;}
-   .left {padding-left: max(1rem, calc((100vw - 1600px) / 2 + 1rem)); padding-top: 1rem;}
-   .right { padding-left: 0; padding-right: max(1rem, calc((100vw - 1600px) / 2 + 1rem)); padding-top: 1rem;}
+   .left {padding-left:1rem; padding-top: 1rem;}
+   .right { padding-left: 0; padding-right:1rem; padding-top: 1rem;}
    .text-center{text-align: center;}
 }
 
@@ -453,8 +453,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 @media (max-width: 739px) {
   .section-header          { margin-bottom: 1rem; gap: 1rem; }
-  .section-title-block     { padding-bottom: 0.75rem; }
-  .section-header-carousel { margin-bottom: 0.75rem; }
+  .section-title-block     { padding-bottom: 1rem; }
+  .section-header-carousel { margin-bottom: 1rem; }
   .half-header             { max-width: 100%; }
 }
 

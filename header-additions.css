@@ -67,7 +67,7 @@
   .utility-bar-left { display: none; }
   .site-logo-img    { max-width: 140px; }
 }
-@media (max-width: 739px) {}
+@media (max-width: 739px) { .utility-bar {padding: .625rem 1rem 0.625rem 1rem;}}
 
 
 /* ============================================================
