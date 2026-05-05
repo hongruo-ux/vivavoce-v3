@@ -102,7 +102,7 @@
 .brand-featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 .featured-category-section { width: 100%; max-width: 100%; overflow: hidden; }
 
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;row-gap: 3rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }
 
@@ -277,7 +277,7 @@
 /* --- Trust Block --- */
 .trust-block {
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 50% 50%;
   align-items: center;
   background-color: var(--surface-mint);
   border-radius: var(--radius-lg);
@@ -297,7 +297,7 @@
   object-fit: cover;
   flex-shrink: 0;
   border-radius: 50%;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .trust-block__section {

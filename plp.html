@@ -24,7 +24,7 @@
     ============================================================ -->
     <div class="band">
       <div class="container">
-        <div class="section-sm">
+        <div class="">
 
           <div class="breadcrumb">
             <a href="index.html">Home</a><span>/</span><span>All Clothing</span>
@@ -186,17 +186,17 @@
 
         <!-- Products column -->
         <div>
-          <!-- Desktop toolbar: Sort + product count -->
+        <!-- Desktop toolbar: Sort + product count -->
           <div class="plp-toolbar">
-            <span class="section-eyebrow">1,420 products</span>
-            <div class="plp-sort-wrap">
-              <a id="sort-open-btn-desktop" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">SORT BY ↓</a>
-              <div class="sort-dropdown" id="sort-dropdown-desktop" role="listbox" aria-label="Sort options">
-                <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
-                <button class="sort-option" role="option" data-value="new-in">New In</button>
-                <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
-                <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
-              </div>
+            <span class="section-eyebrow" style="width: 70%;">1,420 products</span>
+            <div class="plp-sort-wrap" style="position:relative; width: 30%;" >
+              <a id="sort-open-btn-desktop" aria-label="Sort products">SORT BY↓</a>
+                <select id="sort-select-desktop" style="position:absolute;top:0;left:0;width:fit-content%;height:100%;opacity:0;cursor:pointer">
+                <option value="relevance">Relevance</option>
+                <option value="new-in">New In</option>
+                <option value="price-asc">Price: Low–High</option>
+                <option value="price-desc">Price: High–Low</option>
+              </select>
             </div>
           </div>
 
@@ -225,7 +225,7 @@
 
       
           <!-- Product grid -->
-          <div class="grid-3 plp-grid" id="plp-grid" style="gap:12px">
+          <div class="grid-3 plp-grid" id="plp-grid">
 
             <div class="product-card" data-name="La Robe Murano" data-price="$595" data-brand="Jacquemus" data-colors="#e8c4b8,#1a1a18,#c4d4e8" data-sizes="XS,S,M,L" data-badge="Exclusive">
               <a href="pdp.html"><div class="product-card-img">
@@ -751,8 +751,8 @@
     ============================================================ -->
 
      <div class="band">
-      <div  >
-        <div class="plp-seo-box"  style="background-color: var(--blue-sky);">
+      <div class="container"  >
+        <div class="plp-seo-box"  style="background-color: var(--surface-mint);">
             <div class="container">
                 <h3>Shop [Category] arrivals on Viva Voce</h3>
                <div class="plp-seo-body is-truncated" id="plp-seo-body">
@@ -767,7 +767,7 @@
           </div>
         <div class="">
           <div class="section-sm ">
-            <div class="container">
+            <div class="">
               <h4>You may also like to search</h4>
               <div class="plp-keyword-pills" style="padding-top: 1.5rem;">
                 <a href="plpCategory.html" class="btn md">Category Name Dresses</a>

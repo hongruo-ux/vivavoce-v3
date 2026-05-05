@@ -16,42 +16,40 @@
   <div id="main-header"></div>
 
   <main>
-    
-        <!-- ═══════════════════════════════════════════════
+
+    <!-- ═══════════════════════════════════════════════
          1. BREADCRUMB
     ════════════════════════════════════════════════ -->
-
-    
-    <div class="container" style="max-width: 1600px; padding: 1rem 1rem;">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a><span>/</span>
-        <a href="editorial.html">Editorio</a><span>/</span>
-        <a href="editorial-list.html">Lifestyle</a><span>/</span>
-        <span>Morning Rituals That Actually Stick</span>
-      </div>
-    </div>
-
-
-    <!-- ═══════════════════════════════════════════════
-         2. HERO BANNER — full viewport width, no padding
-    ════════════════════════════════════════════════ -->
-    <div class="article-hero">
-      <div class="wf-img article-hero-img"></div>
-      <div class="article-hero-overlay">
-        <h1 class="article-hero-title">Morning Rituals That Actually Stick</h1>
+    <div class="band">
+      <div class="container-article section-xs">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a><span>/</span>
+          <a href="editorial.html">Editorial</a><span>/</span>
+          <a href="editorial-list.html">Lifestyle</a><span>/</span>
+          <span>Morning Rituals That Actually Stick</span>
+        </div>
       </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════
-         3. ARTICLE HEADER — as seen in, subtitle,
-            summary, author, date
+         2. HERO BANNER — full-bleed, no container
     ════════════════════════════════════════════════ -->
-    <section class="article-header-section">
-      <div class="article-content-wrap">
+    <div class="band">
+      <div class="article-hero">
+        <div class="wf-img article-hero-img"></div>
+        <div class="article-hero-overlay">
+          <h1 class="article-hero-title">Morning Rituals That Actually Stick</h1>
+        </div>
+      </div>
+    </div>
 
+    <!-- ═══════════════════════════════════════════════
+         3. ARTICLE HEADER
+    ════════════════════════════════════════════════ -->
+    <div class="band">
+      <div class="container-article section-sm">
         <div class="article-seen-in">
           <span class="article-seen-in-label">As Seen In</span>
-          <!-- Platform logo — max-height 64px, width auto -->
           <div class="wf-img article-seen-in-logo" aria-label="Forbes"></div>
         </div>
 
@@ -71,16 +69,14 @@
         <p class="article-lead">
           Starting your morning with intention isn't about waking up at 5am or drinking celery juice. It's about finding the small, repeatable actions that make you feel like yourself before the world asks anything of you.
         </p>
-
       </div>
-    </section>
+    </div>
 
     <!-- ═══════════════════════════════════════════════
-         4. BODY PARAGRAPH SECTION
+         4. BODY PARAGRAPH
     ════════════════════════════════════════════════ -->
-    <section class="article-body-section">
-      <div class="article-content-wrap">
-
+    <div class="band">
+      <div class="container-article section-sm">
         <h3 class="article-section-title">Section Title</h3>
 
         <p class="article-body-text">
@@ -90,15 +86,14 @@
         <p class="article-body-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
         </p>
-
       </div>
-    </section>
+    </div>
 
     <!-- ═══════════════════════════════════════════════
-         5. FULL-WIDTH IMAGE (within max-width container)
+         5. FULL-WIDTH IMAGE
     ════════════════════════════════════════════════ -->
-    <section class="article-body-section article-body-section--flush">
-      <div class="article-content-wrap">
+    <div class="band">
+      <div class="container-article section-sm">
         <figure class="article-full-img-figure">
           <div class="wf-img article-full-img"></div>
           <figcaption class="article-img-caption">
@@ -106,14 +101,13 @@
           </figcaption>
         </figure>
       </div>
-    </section>
+    </div>
 
     <!-- ═══════════════════════════════════════════════
          6. BODY + INLINE WRAP IMAGE
     ════════════════════════════════════════════════ -->
-    <section class="article-body-section">
-      <div class="article-content-wrap">
-
+    <div class="band">
+      <div class="container-article section-sm">
         <h3 class="article-section-title">Section Title</h3>
 
         <p class="article-body-text">
@@ -124,7 +118,6 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
         </p>
 
-        <!-- Inline wrap image — floats right on desktop, stacks on mobile -->
         <div class="article-inline-img-wrap">
           <figure class="article-inline-img-figure">
             <div class="wf-img article-inline-img"></div>
@@ -138,15 +131,14 @@
         <p class="article-body-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
         </p>
-
       </div>
-    </section>
+    </div>
 
     <!-- ═══════════════════════════════════════════════
          7. QUOTE CARD
     ════════════════════════════════════════════════ -->
-    <section class="article-body-section article-body-section--flush">
-      <div class="article-content-wrap">
+    <div class="band">
+      <div class="container-article section-sm">
         <div class="article-quote-card">
           <span class="article-quote-pill">This Is Important</span>
           <blockquote class="article-quote-text">
@@ -155,27 +147,23 @@
           <p class="article-quote-attribution">— Quote —</p>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- ═══════════════════════════════════════════════
          8. PRODUCT CARD
     ════════════════════════════════════════════════ -->
-    <section class="article-body-section article-body-section--flush">
-      <div class="article-content-title" style="max-width: 1000px; margin: auto; padding-inline: 1rem;">
+    <div class="band">
+      <div class="container-article section-sm">
         <h3 class="article-section-title">Shop our editorial top picks</h3>
-        <p class="article-body-text" style="padding-bottom: 3rem;">
+        <p class="article-body-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
         </p>
-      </div>        
 
-      <div class="article-content-wrap">
         <div class="article-product-card">
-          <!-- Left: product image -->
           <div class="article-product-img-col">
             <div class="wf-img article-product-img"></div>
             <div class="badge sale article-product-badge">Best Seller</div>
           </div>
-          <!-- Right: product info -->
           <div class="article-product-info-col">
             <div class="product-brand">Pamut Apparel USA</div>
             <h3 class="article-product-name">Mira Dress | Linen</h3>
@@ -195,17 +183,15 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- ═══════════════════════════════════════════════
-         9. PROMO CARD — image + eyebrow, title, body, CTA
+         9. PROMO CARD
     ════════════════════════════════════════════════ -->
-    <section class="article-body-section article-body-section--flush">
-      <div class="article-content-wrap">
+    <div class="band">
+      <div class="container-article section-sm">
         <div class="article-promo-card">
-          <!-- Left: image -->
           <div class="wf-img article-promo-img"></div>
-          <!-- Right: content -->
           <div class="article-promo-body">
             <div class="blog-cat">Our Mission</div>
             <h3 class="article-promo-title">Add Promotion Title Here</h3>
@@ -216,83 +202,79 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    
-    <!-- Related Articles Carousel -->
-      <section class="article-body-section">
-        <div class="article-content-wrap">
-          <div class="section">
-            <div class="section-header">
-              <div>
-                <p class="section-eyebrow">Keep Reading</p>
-                <h2 class="section-title">Related Articles</h2>
-              </div>
-            </div>
-            <div class="carousel-wrap">
-              <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-              </button>
-              <div class="carousel-track">
-
-                <a href="#" class="carousel-item--3 editorial-card">
-                  <div class="wf-img ratio-4-3 editorial-card-img"></div>
-                  <div class="editorial-card-body">
-                    <div class="blog-cat">Lifestyle</div>
-                    <div class="blog-title">The Art of Slowing Down in a Fast World</div>
-                    <div class="blog-meta">Apr 16 · 6 min read</div>
-                  </div>
-                </a>
-
-                <a href="#" class="carousel-item--3 editorial-card">
-                  <div class="wf-img ratio-4-3 editorial-card-img"></div>
-                  <div class="editorial-card-body">
-                    <div class="blog-cat">Lifestyle</div>
-                    <div class="blog-title">5 Ways to Reset Your Space This Season</div>
-                    <div class="blog-meta">Apr 10 · 3 min read</div>
-                  </div>
-                </a>
-
-                <a href="#" class="carousel-item--3 editorial-card">
-                  <div class="wf-img ratio-4-3 editorial-card-img"></div>
-                  <div class="editorial-card-body">
-                    <div class="blog-cat">Fashion</div>
-                    <div class="blog-title">How to Build a Capsule Wardrobe for Spring</div>
-                    <div class="blog-meta">Apr 18 · 5 min read</div>
-                  </div>
-                </a>
-
-                <a href="#" class="carousel-item--3 editorial-card">
-                  <div class="wf-img ratio-4-3 editorial-card-img"></div>
-                  <div class="editorial-card-body">
-                    <div class="blog-cat">Trending Styles</div>
-                    <div class="blog-title">Coastal Grandmother Is Back — and Better</div>
-                    <div class="blog-meta">Apr 21 · 5 min read</div>
-                  </div>
-                </a>
-
-                <a href="#" class="carousel-item--3 editorial-card">
-                  <div class="wf-img ratio-4-3 editorial-card-img"></div>
-                  <div class="editorial-card-body">
-                    <div class="blog-cat">Brand Stories</div>
-                    <div class="blog-title">Inside Jacquemus: Sun, Sea and Linen</div>
-                    <div class="blog-meta">Apr 19 · 6 min read</div>
-                  </div>
-                </a>
-
-              </div>
-              <button class="carousel-btn carousel-btn--next" aria-label="Next">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-              </button>
-            </div>
+    <!-- ═══════════════════════════════════════════════
+         10. RELATED ARTICLES CAROUSEL
+    ════════════════════════════════════════════════ -->
+    <div class="band">
+      <div class="container-article section-sm">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">Keep Reading</p>
+            <h2 class="section-title">Related Articles</h2>
           </div>
         </div>
-      </section>
+        <div class="carousel-wrap">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel-track">
 
+            <a href="#" class="carousel-item--3 editorial-card">
+              <div class="wf-img ratio-4-3 editorial-card-img"></div>
+              <div class="editorial-card-body">
+                <div class="blog-cat">Lifestyle</div>
+                <div class="blog-title">The Art of Slowing Down in a Fast World</div>
+                <div class="blog-meta">Apr 16 · 6 min read</div>
+              </div>
+            </a>
 
+            <a href="#" class="carousel-item--3 editorial-card">
+              <div class="wf-img ratio-4-3 editorial-card-img"></div>
+              <div class="editorial-card-body">
+                <div class="blog-cat">Lifestyle</div>
+                <div class="blog-title">5 Ways to Reset Your Space This Season</div>
+                <div class="blog-meta">Apr 10 · 3 min read</div>
+              </div>
+            </a>
+
+            <a href="#" class="carousel-item--3 editorial-card">
+              <div class="wf-img ratio-4-3 editorial-card-img"></div>
+              <div class="editorial-card-body">
+                <div class="blog-cat">Fashion</div>
+                <div class="blog-title">How to Build a Capsule Wardrobe for Spring</div>
+                <div class="blog-meta">Apr 18 · 5 min read</div>
+              </div>
+            </a>
+
+            <a href="#" class="carousel-item--3 editorial-card">
+              <div class="wf-img ratio-4-3 editorial-card-img"></div>
+              <div class="editorial-card-body">
+                <div class="blog-cat">Trending Styles</div>
+                <div class="blog-title">Coastal Grandmother Is Back — and Better</div>
+                <div class="blog-meta">Apr 21 · 5 min read</div>
+              </div>
+            </a>
+
+            <a href="#" class="carousel-item--3 editorial-card">
+              <div class="wf-img ratio-4-3 editorial-card-img"></div>
+              <div class="editorial-card-body">
+                <div class="blog-cat">Brand Stories</div>
+                <div class="blog-title">Inside Jacquemus: Sun, Sea and Linen</div>
+                <div class="blog-meta">Apr 19 · 6 min read</div>
+              </div>
+            </a>
+
+          </div>
+          <button class="carousel-btn carousel-btn--next" aria-label="Next">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
 
   </main>
-  
 
   <div id="main-footer"></div>
 

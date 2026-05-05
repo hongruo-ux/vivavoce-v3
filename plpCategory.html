@@ -38,9 +38,8 @@
     ============================================================ -->
     <div class="band">
       <div class="container">
-        <div class="section-xs">
+        <div class="section-sm">
           <div class="page-header"><h1>Category Collection Page</h1></div>
-          <p class="summary">SEO description for this category</p>
         </div>
       </div>
     </div>
@@ -61,7 +60,7 @@
             <button class="btn sm" id="sidebar-clear-btn">Clear All</button>
           </div>
           <div class="active-filters" id="active-filters-bar" style="display:none">
-            <span style="font-size:0.6875rem;color:var(--text-muted)">Active:</span>
+            <span style="font-size: var(--text-sm);color:var(--text-muted)">Active:</span>
           </div>
           <div class="filter-group">
             <button class="filter-group-title" aria-expanded="true" aria-controls="fg-material">Material <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -161,15 +160,15 @@
 
           <!-- Desktop toolbar: Sort + product count -->
           <div class="plp-toolbar">
-            <span class="section-eyebrow">1,420 products</span>
-            <div class="plp-sort-wrap">
-              <a id="sort-open-btn-desktop" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">SORT BY↓</a>
-              <div class="sort-dropdown" id="sort-dropdown-desktop" role="listbox" aria-label="Sort options">
-                <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
-                <button class="sort-option" role="option" data-value="new-in">New In</button>
-                <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
-                <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
-              </div>
+            <span class="section-eyebrow" style="width: 70%;">1,420 products</span>
+            <div class="plp-sort-wrap" style="position:relative; width: 30%;" >
+              <a id="sort-open-btn-desktop" aria-label="Sort products">SORT BY↓</a>
+                <select id="sort-select-desktop" style="position:absolute;top:0;left:0;width:fit-content%;height:100%;opacity:0;cursor:pointer">
+                <option value="relevance">Relevance</option>
+                <option value="new-in">New In</option>
+                <option value="price-asc">Price: Low–High</option>
+                <option value="price-desc">Price: High–Low</option>
+              </select>
             </div>
           </div>
 
@@ -197,7 +196,7 @@
           </div>
 
           <!-- Product grid -->
-          <div class="grid-3 plp-grid" id="plp-grid" style="gap:12px">
+          <div class="grid-3 plp-grid" id="plp-grid">
 
             <div class="product-card" data-name="La Robe Murano" data-price="$595" data-brand="Jacquemus" data-colors="#e8c4b8,#1a1a18,#c4d4e8" data-sizes="XS,S,M,L" data-badge="Exclusive">
               <a href="pdp.html"><div class="product-card-img">
@@ -722,8 +721,8 @@
          Pattern: band > container > section-sm
     ============================================================ -->
     <div class="band">
-      <div  >
-        <div class="plp-seo-box"  style="background-color: var(--blue-sky);">
+      <div class="container" >
+        <div class="plp-seo-box"  style="background-color: var(--surface-mint);">
             <div class="container">
                 <h3>Shop [Category] On Viva Voce</h3>
                <div class="plp-seo-body is-truncated" id="plp-seo-body">
@@ -739,7 +738,7 @@
           </div>
         <div class="">
           <div class="section-sm ">
-            <div class="container">
+            <div class="">
               <h4>You may also like to search</h4>
               <div class="plp-keyword-pills" style="padding-top: 1.5rem;">
                 <a href="plpCategory.html" class="btn md">Category Name Dresses</a>

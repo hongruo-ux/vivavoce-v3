@@ -20,11 +20,11 @@
   <div id="main-header"></div>
 
   <main>
-    <div class="container" style="padding-top:24px">
+    <div class="band"><div class="container"><div>
       <div class="breadcrumb">
         <a href="index.html">Home</a><span>/</span><a href="#">My Account</a><span>/</span><span>Wishlist</span>
       </div>
-      <div class="page-header"><h1>Wishlist</h1></div>
+      <div class="page-header section-sm"><h2>Wishlist</h2></div>
 
       <!-- Mobile toolbar -->
       <div class="plp-toolbar-mobile">
@@ -56,17 +56,18 @@
         <div class="wishlist-main">
 
           <div class="wishlist-section-header">
-            <h2 class="wishlist-section-title">Saved Items <span class="wishlist-count">3</span></h2>
-            <div class="wishlist-filter-wrap">
-              <label class="wishlist-filter-label" for="wishlist-collection-filter">Wishlist Collection</label>
-              <select id="wishlist-collection-filter">
-                <option value="all">All</option>
-                <option value="casual">Casual</option>
-                <option value="summer">Summer 2025</option>
-                <option value="sunglasses">Sunglasses</option>
+            <h2 class="wishlist-section-title" style="width: 70%;">Saved Items <span class="wishlist-count">3</span></h2>
+            <div class="plp-sort-wrap" style="position:relative; width: 30%;" >
+              <a id="sort-open-btn-desktop" aria-label="Sort products">Saved Collections</a>
+                <select id="sort-select-desktop" style="position:absolute;top:0;left:0;width:fit-content%;height:100%;opacity:0;cursor:pointer">
+                <option value="relevance">Collection 1</option>
+                <option value="new-in">Collection 2</option>
+                <option value="price-asc">Collection 1</option>
+                <option value="price-desc">Collection 1</option>
               </select>
             </div>
           </div>
+
 
           <!-- Wishlist table header — desktop only -->
           <div class="wishlist-table-head desktop-only">
@@ -81,7 +82,7 @@
           <div class="wishlist-row">
             <div class="wishlist-row-img wf-img"></div>
             <div class="wishlist-row-info">
-              <div class="pdp-brand">Jacquemus</div>
+              <div class="product-brand">Jacquemus</div>
               <div class="product-name">La Robe Murano Asymmetric Linen Dress</div>
               <p class="utility-text">Size: S · Natural Linen</p>
             </div>
@@ -103,7 +104,7 @@
           <div class="wishlist-row">
             <div class="wishlist-row-img wf-img"></div>
             <div class="wishlist-row-info">
-              <div class="pdp-brand">A.P.C.</div>
+              <div class="product-brand">A.P.C.</div>
               <div class="product-name">Wool Blazer — Marine</div>
               <p class="utility-text">Size: M · Marine</p>
               <p class="wishlist-back-order">Back in order — estimated dispatch in 2–3 weeks</p>
@@ -126,7 +127,7 @@
           <div class="wishlist-row">
             <div class="wishlist-row-img wf-img"></div>
             <div class="wishlist-row-info">
-              <div class="pdp-brand">Jacquemus</div>
+              <div class="product-brand">Jacquemus</div>
               <div class="product-name">Le Bambino Small Leather Bag</div>
               <p class="utility-text">Colour: Brown</p>
               <p class="wishlist-back-order">Back order — estimated dispatch in 4–6 weeks</p>
@@ -147,10 +148,10 @@
 
         </div><!-- /wishlist-main -->
       </div><!-- /wishlist-layout -->
-    </div>
+    </div></div></div>
 
     <!-- You May Also Like -->
-    <div class="container">
+    <div class="band"><div class="container">
       <div class="section">
         <div class="section-header">
           <div>
@@ -275,7 +276,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </div></div>
 
   </main>
 

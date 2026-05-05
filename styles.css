@@ -408,13 +408,14 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 
 /* Article link */
 .btn-link {
-  font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+  font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing:1px;
   color: var(--text-primary); text-decoration: none;
   text-decoration: underline;
   transition: color 150ms ease, border-color 150ms ease;
   display: inline-flex; align-items: center;
   width: fit-content;
   padding: .875rem 0;
+  margin-bottom: 2px;
 }
 .btn-link:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); text-decoration: none; }
 
@@ -517,7 +518,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 
 .product-card-info  { padding: 0.75rem 0 0; display: flex; flex-direction: column; gap: 4px; }
-.product-brand      { font-size: var(--text-default); font-weight: 400; color: var(--red-coral); text-decoration: none; display: block; font-family: var(--font-display); }
+.product-brand      { font-size: var(--text-sm); font-weight: 400; color: var(--red-coral); text-decoration: none; display: block; font-family: var(--font-display); }
 .product-brand:hover { color: var(--cta-hover); }
 .product-name       { font-size: var(--text-lg); font-weight: 500; color: var(--text-primary); line-height: 1.4; font-family: var(--font-body); }
 .product-price      { font-size: var(--text-default); font-weight: 600; color: var(--text-primary); font-family: var(--font-body); }
@@ -669,3 +670,6 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 
 
+#sort-open-btn-desktop{
+  font-size: var(--text-sm); font-weight: 600; text-transform: uppercase; letter-spacing: .02rem; !important
+}
