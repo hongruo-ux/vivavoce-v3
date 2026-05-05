@@ -307,3 +307,6 @@
     padding-inline: 1rem;
   }
 }
+
+.pdp-made-to-order { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--text-secondary); }
+.pdp-made-to-order .material-icons { font-size: var(--text-default); }

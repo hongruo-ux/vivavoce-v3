@@ -231,7 +231,7 @@ min-width: 25%; background: var(--surface-sand); z-index: 1;"
   top: auto !important;
   bottom: auto !important;
   transform: none !important;
-  padding: 1rem 1rem;
+  padding: 1.5rem 1rem 1rem;
   max-width: 100%;
   
 }
