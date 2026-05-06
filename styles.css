@@ -209,6 +209,7 @@
 .section-sm { padding-block: 3rem; }
 .section-xs { padding-block: 1.5rem; }
 .section-xxs { padding-block: .875rem; }
+.section-breadcrumb {padding-block: 1rem;}
 
 
 
@@ -217,6 +218,8 @@
   .section-sm { padding-block: 2.5rem; }
   .section-xs { padding-block: 1.25rem; }
   .section-xxs { padding-block: .875rem; }
+  .section-breadcrumb {padding-block: 1rem;}
+
 
 }
 @media (max-width: 1079px) {
@@ -224,6 +227,8 @@
   .section-sm { padding-block: 2rem; }
   .section-xs { padding-block: 1rem; }
   .section-xxs { padding-block: .5rem; }
+  .section-breadcrumb {padding-block: .825rem;}
+
 
 }
 @media (max-width: 739px) {
@@ -231,6 +236,8 @@
   .section-sm { padding-block: 1.5rem; }
   .section-xs { padding-block: 0.75rem; }
   .section-xxs { padding-block: .5rem; }
+  .section-breadcrumb {padding-block: .5rem;}
+
 }
 
 

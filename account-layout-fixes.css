@@ -1,0 +1,242 @@
+/* ============================================================
+   ACCOUNT LAYOUT FIXES
+   Link AFTER all other stylesheets on every account page.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. CONTAINER GUTTERS
+   ------------------------------------------------------------ */
+.container-account {
+  padding-inline: max(1rem, calc((100vw - 1600px) / 2 + 1rem));
+}
+@media (max-width: 1079px) {
+  .container-account { padding-inline: 0.875rem; }
+}
+@media (max-width: 739px) {
+  .container-account { padding-inline: 1rem; }
+}
+
+
+/* ------------------------------------------------------------
+   2. ALL PAGE-LEVEL SECTION TITLES — left-aligned
+   ------------------------------------------------------------ */
+.wishlist-section-title {
+  text-align: left !important;
+  width: auto !important;
+  flex-shrink: 0;
+}
+
+.wishlist-layout{
+  padding: 1rem 0;
+}
+/* ------------------------------------------------------------
+   3. BREAKPOINT UNIFICATION — sidebar + layout + toolbar at 1079px
+   ------------------------------------------------------------ */
+.wishlist-layout .blog-filter-sidebar { display: block; }
+@media (max-width: 1079px) {
+  .wishlist-layout .blog-filter-sidebar { display: none; }
+}
+
+.wishlist-layout { grid-template-columns: 240px 1fr; }
+@media (max-width: 1079px) {
+  .wishlist-layout { grid-template-columns: 1fr; }
+}
+
+.plp-toolbar-mobile { display: none !important; }
+@media (max-width: 1079px) {
+  .plp-toolbar-mobile { display: flex !important; }
+}
+
+
+/* ------------------------------------------------------------
+   4. WISHLIST TABLE HEAD + ROW — desktop 5-col, mobile 2-col
+   ------------------------------------------------------------ */
+.wishlist-table-head {
+  display: grid !important;
+  grid-template-columns: 160px 1fr 140px 100px 180px;
+}
+.wishlist-row {
+  display: grid !important;
+  grid-template-columns: 160px 1fr 140px 100px 180px;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+
+@media (max-width: 1079px) {
+  .wishlist-table-head { display: none !important; }
+
+  .wishlist-row {
+    display: grid !important;
+    grid-template-columns: 160px 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    align-items: start;
+  }
+
+  .wishlist-row-img     { grid-column: 1; grid-row: 1 / 6; width: 160px;}
+  .wishlist-row-info    { grid-column: 2; grid-row: 1; }
+  .wishlist-row-stock   { grid-column: 2; grid-row: 2; }
+  .wishlist-row-price   { grid-column: 2; grid-row: 3; }
+  .wishlist-row-actions { grid-column: 2; grid-row: 4; display: flex; gap: 0.5rem; }
+  .wishlist-atc-btn     { flex: 1; }
+}
+
+/* ------------------------------------------------------------
+   5. WISHLIST SECTION HEADER — title left, collections right, same row
+   !important beats the 960px flex-direction:column in wishlist-additions.css
+   ------------------------------------------------------------ */
+.wishlist-section-header {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.wishlist-section-header .plp-sort-wrap {
+  position: relative;
+  width: auto !important;
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.wishlist-section-header .plp-sort-wrap .material-icons {
+  font-size: var(--header-h3);
+  line-height: 1;
+  color: var(--text-secondary);
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+
+/* ------------------------------------------------------------
+   6. ORDER TABLE — desktop 5-col grid
+   ------------------------------------------------------------ */
+.order-table-head {
+  display: grid;
+  grid-template-columns: 160px 1fr 130px 110px 140px;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-caption);
+}
+
+.order-row {
+  display: grid !important;
+  grid-template-columns: 160px 1fr 130px 110px 140px !important;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.order-row-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* View Details — btn sm style */
+.order-view-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--font-body) !important;
+  font-size: var(--text-sm) !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1.25rem !important;
+  height: 36px;
+  border-radius: var(--radius-pill) !important;
+  border: 1.5px solid var(--evergreen) !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  white-space: nowrap;
+  background-color: rgba(255,255,255,0.9) !important;
+  color: var(--evergreen) !important;
+  transition: background 150ms ease, color 150ms ease;
+}
+.order-view-link:hover {
+  background: var(--surface-mint) !important;
+  text-decoration: none !important;
+  color: var(--evergreen) !important;
+}
+
+
+/* ------------------------------------------------------------
+   7. ORDER TABLE MOBILE — 3 cols: 160px image | order# | status
+      View Details right-aligned below in col 2+3
+   ------------------------------------------------------------ */
+@media (max-width: 1079px) {
+  .order-table-head { display: none !important; }
+
+  .order-row {
+    display: grid !important;
+    grid-template-columns: 160px 1fr auto !important;
+    grid-template-rows: auto auto !important;
+    gap: 0.75rem 1rem !important;
+    padding: 1.25rem 0 !important;
+    align-items: center !important;
+  }
+
+  /* Col 1: thumbnail */
+  .order-row-thumbs {
+    grid-column: 1 !important;
+    grid-row: 1 / 3 !important;
+  }
+
+  /* Col 2: order number with eyebrow label */
+  .order-row-info {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+  .order-row-info::before {
+    content: "ORDER";
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-caption);
+    margin-bottom: 4px;
+  }
+
+  /* Col 3: status badge */
+  .order-row-status {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    justify-self: end;
+  }
+
+  /* View Details — spans col 2+3, right-aligned */
+  .order-row-date   { display: none !important; }
+  .order-row-action {
+    grid-column: 2 / 4 !important;
+    grid-row: 2 !important;
+    justify-content: flex-end !important;
+    padding-top: 0.25rem;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   8. PAGE HEADER — consistent vertical spacing
+   ------------------------------------------------------------ */
+.page-header {
+  padding-block: 2.5rem;
+}
+@media (max-width: 1079px) {
+  .page-header { padding-block: 2rem; }
+}
+@media (max-width: 739px) {
+  .page-header { padding-block: 1.5rem; }
+}

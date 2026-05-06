@@ -11,43 +11,26 @@
   <link rel="stylesheet" href="cart-additions.css" />
   <link rel="stylesheet" href="pdp-additions.css" />
   <link rel="stylesheet" href="wishlist-additions.css" />
+  <link rel="stylesheet" href="account-layout-fixes.css" />
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="cart-additions.css">
 </head>
 <body>
 
   <div id="main-header"></div>
 
   <main>
-    <div class="container cart-container">
+    <div class="container">
 
       <div class="breadcrumb">
         <a href="index.html">Home</a><span>/</span><a href="#">My Account</a><span>/</span><a href="orders.html">Order History</a><span>/</span><span>Order #VV-2024-8821</span>
       </div>
       <div class="page-header">
-        <h1>Order Details</h1>
+        <h1 style="padding-bottom: 1rem;">Order Details</h1>
         <p class="utility-text">Order #VV-2024-8821 · Placed 12 Apr 2025</p>
       </div>
 
-      <!-- Mobile: order summary accordion -->
-      <div class="cart-summary-accordion">
-        <button class="cart-summary-accordion-trigger" id="cart-summary-toggle" aria-expanded="false" aria-controls="cart-summary-panel">
-          <span class="cart-summary-accordion-label">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
-            Order Summary
-          </span>
-          <span class="cart-summary-accordion-total">$1,190</span>
-          <svg class="cart-summary-accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="cart-summary-accordion-panel" id="cart-summary-panel" hidden>
-          <div class="summary-row"><span>Subtotal (2 items)</span><span>$1,190</span></div>
-          <div class="summary-row"><span>Shipping</span><span class="utility-text">Free</span></div>
-          <div class="summary-row"><span>Tax</span><span>$95.20</span></div>
-          <div class="summary-row total"><span>Total</span><span>$1,285.20</span></div>
-        </div>
-        <div class="cart-promo-applied cart-promo-applied--readonly">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-          SUMMERSALE · −$50.00
-        </div>
-      </div>
+
 
       <!-- Main layout -->
       <div class="cart-layout">
@@ -157,70 +140,134 @@
 
       </div><!-- /cart-layout -->
 
-      <!-- Mobile bottom summary -->
-      <div class="cart-summary-bottom-mobile">
-        <h4>Order Summary</h4>
-        <div class="summary-row"><span>Subtotal (2 items)</span><span>$1,190</span></div>
-        <div class="summary-row"><span>Shipping</span><span class="utility-text">Free</span></div>
-        <div class="summary-row"><span>Tax</span><span>$95.20</span></div>
-        <div class="summary-row total"><span>Total</span><span>$1,285.20</span></div>
-      </div>
-
-      <!-- You May Also Like -->
+    <!-- You May Also Like -->
+    <div class="band"><div class="">
       <div class="section">
         <div class="section-header">
           <div>
-            <div class="section-eyebrow">Curated For You</div>
+            <div class="section-eyebrow">Tailored for you</div>
             <h3 class="section-title">You May Also Like</h3>
           </div>
-          <a href="plp.html" class="btn sm">View All →</a>
         </div>
         <div class="carousel-wrap">
           <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
           <div class="carousel-track">
+
             <div class="carousel-item--5">
-              <div class="product-card" data-name="Draped Silk Midi Dress" data-brand="Toteme" data-price="$485" data-colors="#f9eee2,#1a1a18" data-sizes="XS,S,M,L,XL">
-                <div class="product-card-img"><a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a></div>
-                <div class="product-card-info"><a href="plp.html" class="product-brand">Toteme</a><div class="product-name">Draped Silk Midi Dress</div><div class="product-price">$485</div></div>
+              <div class="product-card">
+                <div class="product-card-img">
+                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                      <span class="material-icons wl-icon-default">favorite_border</span>
+                      <span class="material-icons wl-icon-hover">favorite</span>
+                    </button>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
+                </div>
                 <button class="product-quick-add">Quick Add</button>
+
+                <div class="product-card-info">
+                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                  <div class="product-price">$310</div>
+                </div>
               </div>
             </div>
+
             <div class="carousel-item--5">
-              <div class="product-card" data-name="Floral Wrap Midi Skirt" data-brand="Sandro" data-price="$310" data-colors="#e8d5c4,#1a1a18" data-sizes="XS,S,M,L">
-                <div class="product-card-img"><a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a></div>
-                <div class="product-card-info"><a href="plp.html" class="product-brand">Sandro</a><div class="product-name">Floral Wrap Midi Skirt</div><div class="product-price">$310</div></div>
+              <div class="product-card">
+                <div class="product-card-img">
+                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                      <span class="material-icons wl-icon-default">favorite_border</span>
+                      <span class="material-icons wl-icon-hover">favorite</span>
+                    </button>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
+                </div>
                 <button class="product-quick-add">Quick Add</button>
+
+                <div class="product-card-info">
+                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                  <div class="product-price">$310</div>
+                </div>
               </div>
             </div>
-            <div class="carousel-item--5">
-              <div class="product-card" data-name="Le Chiquito Noeud Bag" data-brand="Jacquemus" data-price="$650" data-colors="#8b6347,#1a1a18" data-sizes="One Size">
-                <div class="product-card-img"><a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a></div>
-                <div class="product-card-info"><a href="plp.html" class="product-brand">Jacquemus</a><div class="product-name">Le Chiquito Noeud Bag</div><div class="product-price">$650</div></div>
+
+           <div class="carousel-item--5">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                      <span class="material-icons wl-icon-default">favorite_border</span>
+                      <span class="material-icons wl-icon-hover">favorite</span>
+                    </button>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
+                </div>
                 <button class="product-quick-add">Quick Add</button>
+
+                <div class="product-card-info">
+                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                  <div class="product-price">$310</div>
+                </div>
               </div>
             </div>
+
             <div class="carousel-item--5">
-              <div class="product-card" data-name="Oversized Crewneck Sweater" data-brand="AMI Paris" data-price="$395" data-colors="#c4b5a0,#1a1a18" data-sizes="XS,S,M,L,XL">
-                <div class="product-card-img"><a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a></div>
-                <div class="product-card-info"><a href="plp.html" class="product-brand">AMI Paris</a><div class="product-name">Oversized Crewneck Sweater</div><div class="product-price">$395</div></div>
+              <div class="product-card">
+                <div class="product-card-img">
+                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                      <span class="material-icons wl-icon-default">favorite_border</span>
+                      <span class="material-icons wl-icon-hover">favorite</span>
+                    </button>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
+                </div>
                 <button class="product-quick-add">Quick Add</button>
+
+                <div class="product-card-info">
+                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                  <div class="product-price">$310</div>
+                </div>
               </div>
             </div>
+
             <div class="carousel-item--5">
-              <div class="product-card" data-name="Etoile Printed Maxi Dress" data-brand="Isabel Marant" data-price="$560" data-colors="#d4c5b0,#1a1a18" data-sizes="XS,S,M,L">
-                <div class="product-card-img"><a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a></div>
-                <div class="product-card-info"><a href="plp.html" class="product-brand">Isabel Marant</a><div class="product-name">Etoile Printed Maxi Dress</div><div class="product-price">$560</div></div>
+              <div class="product-card">
+                <div class="product-card-img">
+                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                      <span class="material-icons wl-icon-default">favorite_border</span>
+                      <span class="material-icons wl-icon-hover">favorite</span>
+                    </button>
+                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
+                </div>
                 <button class="product-quick-add">Quick Add</button>
+
+                <div class="product-card-info">
+                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                  <div class="product-price">$310</div>
+                </div>
               </div>
             </div>
+
           </div>
           <button class="carousel-btn carousel-btn--next" aria-label="Next">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
           </button>
         </div>
       </div>
+    </div></div>
+
 
     </div><!-- /.container -->
   </main>
@@ -261,6 +308,5 @@
   <script src="footer.js"></script>
   <script src="carousel.js"></script>
   <script src="quickadd.js"></script>
-  <script src="cart.js"></script>
 </body>
 </html>

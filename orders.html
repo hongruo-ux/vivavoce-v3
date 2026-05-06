@@ -11,17 +11,18 @@
   <link rel="stylesheet" href="cart-additions.css" />
   <link rel="stylesheet" href="pdp-additions.css" />
   <link rel="stylesheet" href="wishlist-additions.css" />
+  <link rel="stylesheet" href="account-layout-fixes.css" />
 </head>
 <body>
 
   <div id="main-header"></div>
 
   <main>
-    <div class="container" style="padding-top:24px">
+    <div class="band"><div class="container-account">
       <div class="breadcrumb">
         <a href="index.html">Home</a><span>/</span><a href="#">My Account</a><span>/</span><span>Order History</span>
       </div>
-      <div class="page-header"><h1>My Account</h1></div>
+      <div class="page-header section-sm"><h2>My Account</h2></div>
 
       <!-- Mobile toolbar -->
       <div class="plp-toolbar-mobile">
@@ -67,22 +68,21 @@
 
           <!-- Order 1 -->
           <div class="order-row">
-            <div class="order-row-thumbs">
+            <a href="order-details.html" class="order-row-thumbs">
               <div class="order-thumb-wrap">
                 <div class="order-thumb wf-img"></div>
                 <span class="order-item-count">2</span>
               </div>
-            </div>
-            <div class="order-row-info">
+            </a>
+            <a href="order-details.html" class="order-row-info">
               <div class="order-number">#8821</div>
-              <div class="order-total">$1,190</div>
-            </div>
+            </a>
             <div class="order-row-status">
               <span class="order-status-badge order-status-delivered">Delivered</span>
             </div>
             <div class="order-row-date utility-text">12 Apr 2025</div>
             <div class="order-row-action">
-              <a href="order-details.html" class="utility-link order-view-link">View Details</a>
+              <a href="order-details.html" class="btn sm">View Details</a>
             </div>
           </div>
 
@@ -96,14 +96,13 @@
             </div>
             <div class="order-row-info">
               <div class="order-number">#7654</div>
-              <div class="order-total">$434</div>
             </div>
             <div class="order-row-status">
               <span class="order-status-badge order-status-shipped">Shipped</span>
             </div>
             <div class="order-row-date utility-text">28 Mar 2025</div>
             <div class="order-row-action">
-              <a href="order-details.html" class="utility-link order-view-link">View Details</a>
+              <a href="order-details.html" class="btn sm">View Details</a>
             </div>
           </div>
 
@@ -117,14 +116,13 @@
             </div>
             <div class="order-row-info">
               <div class="order-number">#6203</div>
-              <div class="order-total">$1,520</div>
             </div>
             <div class="order-row-status">
               <span class="order-status-badge order-status-processing">Processing</span>
             </div>
             <div class="order-row-date utility-text">15 Mar 2025</div>
             <div class="order-row-action">
-              <a href="order-details.html" class="utility-link order-view-link">View Details</a>
+              <a href="order-details.html" class="btn sm">View Details</a>
             </div>
           </div>
 
@@ -138,20 +136,19 @@
             </div>
             <div class="order-row-info">
               <div class="order-number">#5019</div>
-              <div class="order-total">$720</div>
             </div>
             <div class="order-row-status">
               <span class="order-status-badge order-status-delivered">Delivered</span>
             </div>
             <div class="order-row-date utility-text">2 Feb 2025</div>
             <div class="order-row-action">
-              <a href="order-details.html" class="utility-link order-view-link">View Details</a>
+              <a href="order-details.html" class="btn sm">View Details</a>
             </div>
           </div>
 
         </div><!-- /wishlist-main -->
       </div><!-- /wishlist-layout -->
-    </div>
+    </div></div>
   </main>
 
   <div id="main-footer" data-no-newsletter></div>
