@@ -20,14 +20,16 @@
   .pdp-layout { grid-template-columns: 1fr; margin-top: 0; }
   .pdp-layout { margin-right: 0;}
 }
-@media (max-width: 739px) {}
+@media (max-width: 739px) {
+   .pdp-layout{ gap: 1rem;}
+}
 
 
 /* ============================================================
    PDP INFO COLUMN
    ============================================================ */
 .pdp-info     { display: flex; flex-direction: column; gap: 1.125rem; position: sticky; top: 0; align-self: start; }
-.pdp-price    { font-size: var(--text-xl); font-weight: 700; }
+.pdp-price    { font-size: var(--header-h3); font-weight: 600; }
 .pdp-price-old { font-size: var(--text-default); text-decoration: line-through; color: var(--text-caption); }
 .pdp-urgency  { font-size: var(--text-sm); color: var(--cta-bg); font-weight: 600; margin-top: 8px; }
 
