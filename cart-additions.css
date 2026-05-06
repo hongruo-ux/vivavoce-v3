@@ -15,7 +15,15 @@
 
 
 
-
+.product-name-cart { font-size: var(--text-xl) !important; line-height: 200%;}
+.pdp-made-to-order {
+  background-color: var(--surface-sand);
+  width: fit-content;
+  padding: .25rem .5rem;
+  align-items: start;
+  font-size: var(--text-xs);
+  margin: .875rem 0;
+}
 
 
 /* ============================================================

@@ -7,3 +7,5 @@
 .brand-list-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
 .brand-list-card { display: flex; flex-direction: column; gap: 6px; padding: 1.25rem;  border-radius: var(--radius-card); cursor: pointer; text-align: left; min-height: 0; transition: box-shadow 150ms ease; }
 .brand-list-card:hover { box-shadow: var(--shadow-hover); }
+
+

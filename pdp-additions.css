@@ -26,7 +26,7 @@
 /* ============================================================
    PDP INFO COLUMN
    ============================================================ */
-.pdp-info     { display: flex; flex-direction: column; gap: 1.25rem; position: sticky; top: 0; align-self: start; }
+.pdp-info     { display: flex; flex-direction: column; gap: 1.125rem; position: sticky; top: 0; align-self: start; }
 .pdp-price    { font-size: var(--text-xl); font-weight: 700; }
 .pdp-price-old { font-size: var(--text-default); text-decoration: line-through; color: var(--text-caption); }
 .pdp-urgency  { font-size: var(--text-sm); color: var(--cta-bg); font-weight: 600; margin-top: 8px; }
@@ -151,7 +151,7 @@
 .pdp-accordion-btn:hover { color: var(--text-secondary); }
 .pdp-accordion-icon { font-size: var(--text-lg); font-weight: 300; font-family: var(--font-body); }
 .pdp-accordion.is-open .pdp-accordion-btn { color: var(--cta-bg); }
-.pdp-accordion-body { display: none; padding-bottom: 1.25rem; font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.8; }
+.pdp-accordion-body { display: none; padding-bottom: 1.25rem; font-size: var(--text-default); color: var(--text-secondary); line-height: 1.8; }
 .pdp-accordion-body ul { padding-left: 1.25rem; }
 .pdp-accordion-body li { margin-bottom: 4px; }
 .pdp-accordion.is-open .pdp-accordion-body { display: block; }
@@ -310,3 +310,61 @@
 
 .pdp-made-to-order { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--text-secondary); }
 .pdp-made-to-order .material-icons { font-size: var(--text-default); }
+
+.pdp-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  background: var(--surface-page);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 12px rgba(20,20,18,0.06);
+}
+
+.pdp-sticky-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pdp-sticky-name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pdp-sticky-price {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+@media (min-width: 1080) {
+  .pdp-sticky-bar { display: none; }
+}
+
+.pdp-sticky-bar {
+  /* same as above but start hidden */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(100%);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.pdp-sticky-bar.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+@media (min-width: 1080) {
+  .pdp-sticky-bar { display: none !important; }
+}
+
