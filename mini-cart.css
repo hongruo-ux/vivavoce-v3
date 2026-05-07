@@ -135,7 +135,6 @@
 
 /* Footer */
 .mini-cart-footer {
-  padding: 1rem 1.5rem 0.5rem;
   border-top: 1px solid var(--border);
   flex-shrink: 0;
   display: flex;

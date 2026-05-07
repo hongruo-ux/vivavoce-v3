@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
             <a href="#" class="footer-link">About Us</a>
             <a href="#" class="footer-link">Brand Ambassadors</a>
             <a href="#" class="footer-link">Community Spotlight</a>
-            <a href="#" class="footer-link">Sustainability</a>
+            <a href="#" class="footer-link">Ethical Production</a>
             <a href="#" class="footer-link">Careers</a>
           </div>
         </div>
@@ -116,9 +116,9 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="footer-bottom-inner">
           <div class="footer-bottom-left">
             <span class="material-icons">eco</span>
-            <a href="editorial.html" class="footer-bottom-link">Sustainability</a>
+            <a href="eco.html" class="footer-bottom-link">Ethical Production</a>
             <span class="footer-bottom-sep">·</span>
-            <a href="#" class="footer-bottom-link">Need Help?</a>
+            <a href="FAQ.html" class="footer-bottom-link">Need Help?</a>
           </div>
           <div class="footer-bottom-lang">
             <span class="material-icons">language</span>

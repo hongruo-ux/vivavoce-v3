@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
     ], cards: [{ label: 'Beauty Edit' }] }},
     { label: 'Editorial', href: 'editorial.html', megaMenu: { cols: [
       { title: 'Community', links: ['Lifestyle','Fashion','Trending Styles','Brand Stories','View All'] },
-      { title: 'Sustainability & Vision', links: ['Our Mission','Sustainability','Environmental Friendly','View All'] },
+      { title: 'Sustainability & Vision', links: ['Our Mission','Ethical Production','Environmental Friendly','View All'] },
     ], stories: [
       { cat: 'Fashion', title: 'Most Wanted', date: '8 hrs ago' },
       { cat: 'Lifestyle', title: 'The Must-See Movies To Add To Your Watch List', date: '8 hrs ago' },
@@ -316,12 +316,12 @@ window.addEventListener('DOMContentLoaded', () => {
           <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
         <div class="utility-bar-left">
-          <button href="#" class="utility-link">
+          <button href="eco.html" class="utility-link">
             <span class="material-icons" style="font-size:16px;">eco</span>
             Ethical Production
           </button>
           
-          <button href="#" class="utility-link hide-on-mobile">Need Help?</button>
+          <button href="FAQ.html" class="utility-link hide-on-mobile">Need Help?</button>
         </div>
         <a href="index.html" class="site-logo"><img src="images/logo/logo-black.png" alt="Viva Voce" class="site-logo-img" /></a>
         <div class="utility-bar-right">
