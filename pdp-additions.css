@@ -29,13 +29,14 @@
    PDP INFO COLUMN
    ============================================================ */
 .pdp-info     { display: flex; flex-direction: column; gap: 1.125rem; position: sticky; top: 0; align-self: start; }
-.pdp-price    { font-size: var(--header-h3); font-weight: 600; }
+.pdp-price    { font-size: var(--header-h4); font-weight: 500; }
 .pdp-price-old { font-size: var(--text-default); text-decoration: line-through; color: var(--text-caption); }
-.pdp-urgency  { font-size: var(--text-sm); color: var(--cta-bg); font-weight: 600; margin-top: 8px; }
+.pdp-urgency  { font-size: var(--text-sm); color: var(--cta-bg); font-weight: 600; margin-top: 1rem; }
 
 /* Klarna */
-.pdp-klarna     { display: flex; align-items: center; gap: 6px; font-size: var(--text-default); color: var(--text-secondary); margin-top: 6px; flex-wrap: wrap; }
-.pdp-klarna-img { height: 20px; width: auto; }
+.pdp-klarna     { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--text-secondary); margin-top: 6px; flex-wrap: wrap; }
+.pdp-klarna-img { height: 40px; width: auto; }
+.pdp-klarna-link {margin-top: -12px; color: var(--text-primary); text-transform: capitalize; }
 
 /* Mobile header — hidden on desktop */
 .pdp-mobile-header  { display: none; }
@@ -254,64 +255,131 @@
 /* ============================================================
    CUSTOMER VOICES
    ============================================================ */
-.customer-voices-grid        { display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--icy-mint); border-radius: var(--radius-card); overflow: hidden; }
-.customer-voices-tabs        { padding: 2rem; display: flex; flex-direction: column; justify-content: center; gap: 0; }
-.customer-voices-tabs .section-eyebrow { margin-bottom: 1.25rem; }
+  /* ── Customer Voices ─────────────────────────────────── */
+.cv-band { background: var(--surface-mint); }
 
-.customer-voice-item         { border-bottom: 1px solid rgba(0,0,0,0.1); }
-.customer-voice-item:first-of-type { border-top: 1px solid rgba(0,0,0,0.1); }
-.customer-voice-item.is-active { border: none; border-radius: var(--radius-card); }
-.customer-voice-item.is-active + .customer-voice-item { border-top: none; }
-
-.customer-voice-btn          { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0.875rem 1.25rem; font-family: var(--font-body); font-size: var(--text-default); font-weight: 500; color: var(--text-primary); text-align: left; min-height: 0; background: transparent; border-radius: 0; transition: background 0.15s ease; }
-.customer-voice-btn:hover    { background: rgba(255,255,255,0.45); border-radius: var(--radius-card); }
-.customer-voice-item.is-active .customer-voice-btn { background: var(--surface-sand); border-radius: 100px; }
-
-.customer-voice-arrow        { font-size: 1.125rem; color: var(--text-primary); opacity: 0; transition: opacity 0.15s ease; }
-.customer-voice-btn:hover .customer-voice-arrow,
-.customer-voice-item.is-active .customer-voice-arrow { opacity: 1; }
-
-.customer-voice-answer       { display: none; }
-
-.customer-voices-answer-col  { padding: 2rem; display: flex; align-items: center; justify-content: center; }
-.customer-voice-display      { font-family: var(--font-display); font-size: var(--text-xl); line-height: 1.6; color: var(--text-primary); font-style: italic; }
-
-.customer-voices-img-wrap    { padding: 1.5rem; }
-.customer-voices-img         { border-radius: var(--radius-card); }
-
-.customer-voices-carousel    { margin-top: 2rem; }
-.customer-voices-sticky-card { min-width: 25%; position: sticky; left: 0; background: var(--surface-page); z-index: 1; }
-.customer-voices-hashtag     { font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; }
-
-@media (max-width: 1079px) {
-  .customer-voices-grid        { display: flex; flex-direction: column; background-color: var(--surface-page); }
-  .customer-voices-answer-col  { display: none; }
-  .customer-voices-img-wrap    { display: none; }
-  .customer-voices-tabs        { padding: 0; }
-  .customer-voices-sticky-card { min-width: 100%; position: static; }
-  .customer-voice-btn {padding: 0.875rem .5rem;}
-  .customer-voice-arrow {opacity: 1;}
-  
-
-  .customer-voice-item.is-active .customer-voice-answer {
-    display: block;
-    padding: 1rem 1rem 1.5rem;
-    font-size: var(--text-xl);
-    font-style: italic;
-    line-height: 1.6;
-    font-weight: 700;
-    color: var(--text-primary);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .customer-voice-item.is-active .customer-voice-btn {
-    border-radius: 100px;
-    padding-inline: 1rem;
-  }
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch;
+  min-height: 520px;
 }
 
-.pdp-made-to-order { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--text-secondary); }
-.pdp-made-to-order .material-icons { font-size: var(--text-default); }
+.cv-questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.cv-heading {
+  padding: 0 0 2rem 0;
+}
+
+.cv-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+ padding: 0.875rem 1.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 100px;
+  font-size: var(--text-default);
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+  gap: 0.75rem;
+  transition: background 150ms;
+}
+
+.cv-item--active .cv-btn {
+  background: var(--surface-card);
+ padding: 0.875rem 1.25rem;
+
+}
+
+.cv-btn:hover { background: var(--surface-sand); }
+
+.cv-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+
+.cv-item { border: none; padding-bottom: .5rem;}
+
+/* Mobile answer */
+.cv-mob-answer {
+  display: none;
+  gap: 1rem;
+  padding: 1rem 1.25rem 1.25rem;
+  align-items: flex-start;
+}
+.cv-mob-img {
+  width: 100px;
+  aspect-ratio: 3/4;
+  flex-shrink: 0;
+}
+.cv-mob-text p {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  font-style: italic;
+  padding: 1rem;
+}
+.cv-author {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* Desktop answer col */
+.cv-answer-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  background: var(--surface-sand);
+  margin: 2rem 0 2rem 2rem;
+}
+.cv-answer-text {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  line-height: 1.4;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* Desktop image col */
+.cv-img-col { overflow: hidden;     padding-right: 2rem;}
+.cv-img { width: 100%; height: 100%; HEIGHT: -webkit-fill-available;
+    margin: 2rem 2rem 2rem 0; }
+
+/* Mobile */
+@media (max-width: 1079px) {
+  .cv-grid { grid-template-columns: 1fr; }
+  .cv-answer-col { display: none; }
+  .cv-img-col { display: none; }
+  .cv-questions { padding: 2rem 0; }
+  .cv-mob-answer { display: none; }
+  .cv-item--active .cv-mob-answer { display: flex; background: var(--surface-card); }
+  .cv-mob-img {
+  width: 100px;
+  min-height: 133px;
+  aspect-ratio: 3/4;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+.cv-btn{ border-radius: 0;     padding: 0.875rem 0;}
+.cv-item--active .cv-btn{ border-radius: 0; background-color: var(--surface-sand); padding: 0.875rem 1.25rem; }
+}
+
+.pdp-made-to-order { display: flex; align-items: center; gap: 6px; font-size: var(--text-xs); color: var(--text-secondary); }
+.pdp-made-to-order .material-icons { font-size: var(--text-xs); }
 
 .pdp-sticky-bar {
   position: fixed;
@@ -353,7 +421,19 @@
 @media (min-width: 1080) {
   .pdp-sticky-bar { display: none; }
 }
-
+.customer-voice-answer {
+    display: none !important;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--surface-sand);
+    border-radius: var(--radius-card);
+    margin: 0.5rem 0 1rem;
+    align-items: flex-start;
+  }
+  .customer-voice-item.is-active .customer-voice-answer {
+    display: flex !important;
+  }
 .pdp-sticky-bar {
   /* same as above but start hidden */
   opacity: 0;

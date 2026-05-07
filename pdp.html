@@ -80,12 +80,11 @@
               <span class="badge new">NEW</span>
             </div>
             <div class="pdp-klarna">
-              or 4 interest-free payments of $148.75 with
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqs6u1Vw8F8BzivH5V7DdBcg9ZPLSFX9d8jg&s" alt="Klarna" class="pdp-klarna-img">
-            </div>
-            <div >
-              <a href="#pdp-accordion-desc" class="btn-link">Write a Review</a>
-            </div>
+            Pay in 4 interest-free installments of $22.00 with
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqndo12a3K_oLulNRlS64XQkK4DYjyfxP-zg&s" alt="Klarna" class="pdp-klarna-img">
+            <a class="pdp-klarna-link" href="#" onclick="openKlarnaModal();return false;">View sample plans</a>
+          </div>
+            
           </div>
 
           <!-- Color swatches -->
@@ -129,7 +128,7 @@
 
       <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
         <div class="pdp-cta-row">
-          <button class="btn filled lg full" id="pdp-atc-btn" onclick="openMiniCart()">Add to Bag — $595</button>
+          <button class="btn filled lg full" id="pdp-atc-btn" onclick="openMiniCart()">Add to Bag</button>
           <button class="pdp-wishlist-btn" aria-label="Save to Wishlist">
             <span class="material-icons">favorite_border</span>
           </button>
@@ -142,7 +141,7 @@
           <!-- Made to Order -->
 
           <div class="mini-cart-made-to-order" style="background-color: var(--surface-sand); padding: 1rem; text-align:center; width: 100%;">
-                  <p class="dark" style="width: 100%; line-height: 180%;">
+                  <p class="dark" style="width: 100%; line-height: 180%; font-size: var(--text-sm);">
                     <span><strong>Made to Order</strong><br>Please allow 3–4 weeks for delivery.</span>
                   </p>
                 </div>
@@ -234,7 +233,7 @@
       <div class="section-carousel">
         <div class="section-header-carousel">
           <div>
-            <h3 class="section-title">Complete the look</h3>
+            <h3 class="">Complete the look</h3>
           </div>
         </div>
         <div class="carousel-wrap">
@@ -337,138 +336,86 @@
     </div></div></div>
 
 <!-- Customer Voices Section -->
-<div class="band"><div class="container"><div class="section-lg">
+<div class="band cv-band">
+  <div class="cv-grid">
 
-  <div class="customer-voices-grid">
+    <!-- Col 1: Questions -->
+    <div class="cv-questions">
+      <div class="container">
+        <h2 class="cv-heading">Customer Voices</h2>
 
-    <div class="customer-voices-tabs section-sm">
-      <h3 style="padding: 2rem 0;">Customer Voices</h3 >
+        <div class="cv-item cv-item--active" data-index="0">
+          <button class="cv-btn">
+            <span>Is the sizing true to fit?</span>
+            <span class="material-icons cv-icon">arrow_forward</span>
+          </button>
+          <div class="cv-mob-answer">
+            <div class="wf-img cv-mob-img" style="background-image:url('images/blog/blog1.png')"></div>
+            <div class="cv-mob-text">
+              <p>True to size. Model wears a size larger to achieve the runway look. Boxy fit with internal shoulder pads and mid-weight non-stretchy fabric.</p>
+              <span class="cv-author">– Gill Page</span>
+            </div>
+          </div>
+        </div>
 
-      <div class="customer-voice-item is-active">
-        <button class="customer-voice-btn">
-          <span>Is the sizing true to fit?</span>
-          <span class="material-icons customer-voice-arrow"></span>
-        </button>
-        <p class="customer-voice-answer">True to size. Model wears a size larger to achieve the runway look. Boxy fit with internal shoulder pads and mid-weight non-stretchy fabric.</p>
+        <div class="cv-item" data-index="1">
+          <button class="cv-btn">
+            <span>How is the fabric quality?</span>
+            <span class="material-icons cv-icon" style="display:none;">arrow_forward</span>
+          </button>
+          <div class="cv-mob-answer">
+            <div class="wf-img cv-mob-img" style="background-image:url('images/blog/blog1.png')"></div>
+            <div class="cv-mob-text">
+              <p>True to size. Model wears a size larger to achieve the runway look. Boxy fit with internal shoulder pads and mid-weight non-stretchy fabric.</p>
+              <span class="cv-author">– Gill Page</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-item" data-index="2">
+          <button class="cv-btn">
+            <span>How long does shipping take?</span>
+            <span class="material-icons cv-icon" style="display:none;">arrow_forward</span>
+          </button>
+          <div class="cv-mob-answer">
+            <div class="wf-img cv-mob-img" style="background-image:url('images/blog/blog1.png')"></div>
+            <div class="cv-mob-text">
+              <p>True to size. Model wears a size larger to achieve the runway look. Boxy fit with internal shoulder pads and mid-weight non-stretchy fabric.</p>
+              <span class="cv-author">– Gill Page (A real customer from the brand)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-item" data-index="3">
+          <button class="cv-btn">
+            <span>What is the return policy?</span>
+            <span class="material-icons cv-icon" style="display:none;">arrow_forward</span>
+          </button>
+          <div class="cv-mob-answer">
+            <div class="wf-img cv-mob-img" style="background-image:url('images/blog/blog1.png')"></div>
+            <div class="cv-mob-text">
+              <p>True to size. Model wears a size larger to achieve the runway look. Boxy fit with internal shoulder pads and mid-weight non-stretchy fabric.</p>
+              <span class="cv-author">– Gill Page</span>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <div class="customer-voice-item">
-        <button class="customer-voice-btn">
-          <span>How is the fabric quality?</span>
-          <span class="material-icons customer-voice-arrow"></span>
-        </button>
-        <p class="customer-voice-answer">This fabric is even better in person — thick, breathable, and has that perfect structured drape. It only gets better with wear.</p>
-      </div>
-
-      <div class="customer-voice-item">
-        <button class="customer-voice-btn">
-          <span>How long does shipping take?</span>
-          <span class="material-icons customer-voice-arrow"></span>
-        </button>
-        <p class="customer-voice-answer">Standard shipping takes 3–5 business days. Express options available at checkout. Free shipping on all US orders.</p>
-      </div>
-
-      <div class="customer-voice-item">
-        <button class="customer-voice-btn">
-          <span>What is the return policy?</span>
-          <span class="material-icons customer-voice-arrow"></span>
-        </button>
-        <p class="customer-voice-answer">Items can be returned within 15 days of delivery for a full refund. After 15 days, store credit only. Returns are always free.</p>
-      </div>
-
     </div>
 
-    <div class="customer-voices-answer-col">
-      <p class="customer-voice-display">True to size. Model wears a size larger to achieve the runway look. Boxy fit with internal shoulder pads and mid-weight non-stretchy fabric.</p>
+    <!-- Col 2: Desktop answer -->
+    <div class="cv-answer-col">
+      <p class="cv-answer-text">True to size. Model wears a size larger to achieve the runway look. Boxy fit with internal shoulder pads and mid-weight non-stretchy fabric.</p>
+      <span class="cv-author">– Gill Page</span>
     </div>
 
-    <div class="customer-voices-img-wrap">
-      <div class="wf-img ratio-3-4 customer-voices-img" style="background-image:url('images/blog/blog1.png')"></div>
+    <!-- Col 3: Desktop image -->
+    <div class="cv-img-col">
+      <div class="wf-img cv-img" style="background-image:url('images/blog/blog1.png')"></div>
     </div>
 
   </div>
-
-  <div class="section-carousel customer-voices-carousel">
-    <div class="carousel-wrap">
-      <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <div class="carousel-track">
-
-        <div class="carousel-item--4 customer-voices-sticky-card">
-          <div class="insta-text-card">
-            <div class="section-eyebrow">Community</div>
-            <h3>Your people are sharing on social media</h3>
-            <p>Post your questions or thoughts on Instagram.</p>
-            <p class="customer-voices-hashtag">#VivaVoce</p>
-          </div>
-        </div>
-
-        <div class="carousel-item--4">
-          <div class="insta-feed-card">
-            <div class="carousel-img wf-img ratio-1-1" style="background-image:url('images/home/banner4.png')">
-              <div class="insta-gradient-mask"></div>
-              <div class="insta-card-footer">
-                <div class="insta-profile">
-                  <div class="insta-badge">VoV</div>
-                  <div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">3 days ago</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item--4">
-          <div class="insta-feed-card">
-            <div class="carousel-img wf-img ratio-1-1" style="background-image:url('images/home/banner5.png')">
-              <div class="insta-gradient-mask"></div>
-              <div class="insta-card-footer">
-                <div class="insta-profile">
-                  <div class="insta-badge">VoV</div>
-                  <div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">5 days ago</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item--4">
-          <div class="insta-feed-card">
-            <div class="carousel-img wf-img ratio-1-1" style="background-image:url('images/home/banner4.png')">
-              <div class="insta-gradient-mask"></div>
-              <div class="insta-card-footer">
-                <div class="insta-profile">
-                  <div class="insta-badge">VoV</div>
-                  <div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">1 week ago</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item--4">
-          <div class="insta-feed-card">
-            <div class="carousel-img wf-img ratio-1-1" style="background-image:url('images/home/banner5.png')">
-              <div class="insta-gradient-mask"></div>
-              <div class="insta-card-footer">
-                <div class="insta-profile">
-                  <div class="insta-badge">VoV</div>
-                  <div class="insta-meta"><span class="insta-brand">Viva Voce</span><span class="insta-date">1 week ago</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <button class="carousel-btn carousel-btn--next" aria-label="Next">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
-    </div>
-  </div>
-
-</div></div></div>
-
+</div>
     <!-- Recently viewed -->
     <div class="band"><div class="container"><div class="section-sm">
       <div class="section-carousel">
@@ -668,43 +615,70 @@
     document.getElementById('pdp-ig-modal-body').innerHTML = '';
   }
 </script>
-<script>
+<!-- Customer Voice -->
+ <script>
 (function() {
-  var items   = document.querySelectorAll('.customer-voice-item');
-  var display = document.querySelector('.customer-voice-display');
+  var answers = [
+    { text: 'True to size. Model wears a size larger to achieve the runway look. Boxy fit with internal shoulder pads and mid-weight non-stretchy fabric.', author: '– Gill Page' },
+    { text: 'This fabric is even better in person — thick, breathable, and has that perfect structured drape. It only gets better with wear.', author: '– Anna K.' },
+    { text: 'Standard shipping takes 3–5 business days. Express options available at checkout. Free shipping on all US orders.', author: '– Viva Voce' },
+    { text: 'Items can be returned within 15 days of delivery for a full refund. After 15 days, store credit only. Returns are always free.', author: '– Viva Voce' }
+  ];
 
-  function isMobile() {
-    return window.matchMedia('(max-width: 1079px)').matches;
-  }
+  var items      = document.querySelectorAll('.cv-item');
+  var answerText = document.querySelector('.cv-answer-text');
+  var answerAuth = document.querySelector('.cv-answer-col .cv-author');
 
-  function activate(item) {
-    items.forEach(function(it) {
-      it.classList.remove('is-active');
-      it.querySelector('.customer-voice-arrow').textContent = isMobile() ? 'add' : 'arrow_forward';
+  function isMobile() { return window.innerWidth < 1080; }
+
+  function activate(index) {
+    items.forEach(function(it, i) {
+      var icon   = it.querySelector('.cv-icon');
+      var mobAns = it.querySelector('.cv-mob-answer');
+      var isThis = i === index;
+
+      it.classList.toggle('cv-item--active', isThis);
+
+      if (isMobile()) {
+        if (icon) icon.textContent = isThis ? 'remove' : 'add';
+        if (icon) icon.style.display = 'inline-block';
+        if (mobAns) mobAns.style.display = isThis ? 'flex' : 'none';
+      } else {
+        if (icon) icon.textContent = 'arrow_forward';
+        if (icon) icon.style.display = isThis ? 'inline-block' : 'none';
+        if (mobAns) mobAns.style.display = 'none';
+      }
     });
-    item.classList.add('is-active');
-    item.querySelector('.customer-voice-arrow').textContent = isMobile() ? 'remove' : 'arrow_forward';
-    if (display) display.textContent = item.querySelector('.customer-voice-answer').textContent;
+
+    if (answerText) answerText.textContent = answers[index].text;
+    if (answerAuth) answerAuth.textContent = answers[index].author;
   }
 
-  items.forEach(function(item) {
-    item.querySelector('.customer-voice-btn').addEventListener('click', function() {
-      activate(item);
+  items.forEach(function(it, i) {
+    it.querySelector('.cv-btn').addEventListener('click', function() {
+      if (it.classList.contains('cv-item--active') && isMobile()) {
+        it.classList.remove('cv-item--active');
+        var icon   = it.querySelector('.cv-icon');
+        var mobAns = it.querySelector('.cv-mob-answer');
+        if (icon) icon.textContent = 'add';
+        if (mobAns) mobAns.style.display = 'none';
+      } else {
+        activate(i);
+      }
     });
   });
 
-  if (items.length) activate(items[0]);
+  activate(0);
 
   window.addEventListener('resize', function() {
-    items.forEach(function(it) {
-      var arrow = it.querySelector('.customer-voice-arrow');
-      arrow.textContent = it.classList.contains('is-active')
-        ? (isMobile() ? 'remove' : 'arrow_forward')
-        : (isMobile() ? 'add' : 'arrow_forward');
+    var activeIndex = Array.from(items).findIndex(function(it) {
+      return it.classList.contains('cv-item--active');
     });
+    activate(activeIndex >= 0 ? activeIndex : 0);
   });
 })();
 </script>
+
 <!-- Mini Cart -->
 <div class="mini-cart-overlay" id="mini-cart-overlay"></div>
 <div class="mini-cart" id="mini-cart" role="dialog" aria-modal="true" aria-label="Your Bag">
@@ -750,11 +724,6 @@
         <div class="product-brand">Jacquemus</div>
         <div class="product-name">La Robe Murano Asymmetric Linen Dress</div>
         <p class="pdp-made-to-order dark">Size: S · Natural Linen</p>
-        <div class="mini-cart-made-to-order">
-                  <p class="pdp-made-to-order dark">
-                    <span><strong>Made to Order</strong><br>Please allow 3–4 weeks for delivery.</span>
-                  </p>
-                </div>
         <div class="cart-item-actions">
           <div class="qty-ctrl">
             <button class="qty-btn">−</button>
@@ -770,34 +739,34 @@
     </div>
       <!-- You May Also Like -->
   <div class="mini-cart-carousel">
-    <div class="section-eyebrow" style="padding: 1rem 0rem;">You May Also Like</div>
+    <div style="padding: 1rem 0rem; text-size:var(--text-lg); text-weight 500px;; ">You may also like</div>
     <div class="carousel-wrap">
       <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
       <div class="carousel-track">
-        <div class="carousel-item--3">
+        <div class="carousel-item--2">
           <div class="product-card">
             <div class="product-card-img"><a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a></div>
             <div class="product-card-info"><a href="plpBrand.html" class="product-brand">Toteme</a><div class="product-name">Draped Silk Midi Dress</div><div class="product-price">$485</div></div>
             <button class="product-quick-add">Quick Add</button>
           </div>
         </div>
-        <div class="carousel-item--3">
+        <div class="carousel-item--2">
           <div class="product-card">
             <div class="product-card-img"><a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a></div>
             <div class="product-card-info"><a href="plpBrand.html" class="product-brand">Sandro</a><div class="product-name">Floral Wrap Midi Skirt</div><div class="product-price">$310</div></div>
             <button class="product-quick-add">Quick Add</button>
           </div>
         </div>
-        <div class="carousel-item--3">
+        <div class="carousel-item--2">
           <div class="product-card">
             <div class="product-card-img"><a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a></div>
             <div class="product-card-info"><a href="plpBrand.html" class="product-brand">Jacquemus</a><div class="product-name">Le Chiquito Noeud Bag</div><div class="product-price">$650</div></div>
             <button class="product-quick-add">Quick Add</button>
           </div>
         </div>
-        <div class="carousel-item--3">
+        <div class="carousel-item--2">
           <div class="product-card">
             <div class="product-card-img"><a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a></div>
             <div class="product-card-info"><a href="plpBrand.html" class="product-brand">AMI Paris</a><div class="product-name">Oversized Crewneck Sweater</div><div class="product-price">$395</div></div>
@@ -817,8 +786,8 @@
 
   <div class="mini-cart-footer">
     <div class="mini-cart-subtotal">
-      <span class="mini-cart-subtotal-label">Subtotal <span id="mini-cart-item-count">1 item</span></span>
-      <span class="mini-cart-subtotal-value" id="mini-cart-subtotal-value">$595</span>
+      <span class="mini-cart-subtotal-label">Subtotal <span id="mini-cart-item-count">2 item</span></span>
+      <span class="mini-cart-subtotal-value" id="mini-cart-subtotal-value">$1190</span>
     </div>
     <a href="cart.html" class="btn filled full">Proceed to Checkout →</a>
     <a href="cart.html" class="btn full">View Bag</a>
@@ -829,7 +798,7 @@
 
   <!-- You May Also Like -->
   <div class="mini-cart-carousel">
-    <div class="section-eyebrow" style="padding: 1rem 1.5rem 0.5rem;">You May Also Like</div>
+    <div class="section-eyebrow" style="padding: 1rem 1.5rem 0.5rem;">You may also like</div>
     <div class="carousel-wrap">
       <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
@@ -1066,6 +1035,30 @@
       applyResponsiveLayout();
     }
   });
+</script>
+
+<!-- Shop Pay Modal -->
+<div class="account-modal-mask" id="klarna-modal-mask"></div>
+<div class="account-modal popup-sm" id="klarna-modal" style="max-width:360px;width:95vw;">
+  <div class="account-modal-content" style="padding:0;">
+    <img src="images/home/shoppay.png" alt="Shop Pay plans" style="width:100%;display:block;">
+  </div>
+</div>
+
+<script>
+  function openKlarnaModal() {
+    document.getElementById('klarna-modal').classList.add('is-open');
+    document.getElementById('klarna-modal-mask').classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeKlarnaModal() {
+    document.getElementById('klarna-modal').classList.remove('is-open');
+    document.getElementById('klarna-modal-mask').classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('klarna-modal-close').addEventListener('click', closeKlarnaModal);
+  document.getElementById('klarna-modal-mask').addEventListener('click', closeKlarnaModal);
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeKlarnaModal(); });
 </script>
 </body>
 </html>

@@ -89,12 +89,14 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-secondary);
+  color: var(--red-coral);
   margin-bottom: 2px;
+  padding: .125rem 0;
+
 }
 .mini-cart-body .product-name {
   font-size: var(--text-default);
-  color: var(--text-primary);
+  color: var(--text-sm);
   margin-bottom: 4px;
 }
 .mini-cart-body .utility-text {
@@ -119,7 +121,7 @@
   display: flex;
   align-items: center;
   gap: 0.375rem;
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   font-weight: 500;
   color: var(--text-secondary);
   background: var(--surface-sand);
@@ -128,7 +130,6 @@
   margin-top: 0.5rem;
 }
 .mini-cart-made-to-order .material-icons {
-  font-size: 0.875rem;
   color: var(--text-caption);
 }
 
