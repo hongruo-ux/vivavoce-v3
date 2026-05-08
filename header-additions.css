@@ -117,12 +117,13 @@
    ============================================================ */
 .mega-menu         { display: none; position: fixed; left: 0; right: 0; background: #fff; border-top: 1px solid var(--border); z-index: 99; }
 .mega-menu.is-open { display: block; }
-.mega-menu-inner   { padding: 1.5rem 0; max-width: 1280px; margin: 0 auto; border-bottom: 1px solid var(--border);}
-.mega-shop-all     { display: inline-block; font-size: var(--text-default); font-weight: 700; color: var(--text-primary); text-decoration: none; margin-bottom: 1rem; transition: color 150ms; }
+.mega-menu-inner   { padding: 2rem 0; max-width: 1280px; margin: 0 auto; border-bottom: 1px solid var(--border);}
+.mega-shop-all     { display: inline-block; font-size: var(--header-h3); font-weight: 400; font-family:  color: var(--text-primary); text-decoration: none; margin-bottom: 1.5rem; transition: color 150ms; }
 .mega-shop-all:hover { color: var(--red-coral); }
+.mega-menu-title { font-weight: 300; color: #555; padding-bottom: 1rem;}
 
 /* 5-col grid */
-.mega-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; align-items: start; }
+.mega-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; align-items: start; }
 
 /* Links area — spans listCols cols, uses CSS columns internally for group stacking */
 .mega-links-area[data-cols="2"] { grid-column: span 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; align-items: start; }
@@ -130,35 +131,43 @@
 .mega-links-area[data-cols="4"] { grid-column: span 4; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; align-items: start; }
 
 /* Cards area — spans cardCols cols */
-.mega-cards-area[data-cols="1"] { grid-column: span 1; display: grid; grid-template-columns: 1fr; gap: 1rem; }
-.mega-cards-area[data-cols="2"] { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.mega-cards-area[data-cols="1"] { grid-column: span 1; display: grid; grid-template-columns: 1fr; gap: .5rem; }
+.mega-cards-area[data-cols="2"] { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
 
 /* Group — break-inside prevents a group splitting across columns */
 .mega-group        { break-inside: avoid; margin-bottom: 1.5rem; }
 
-.mega-col-title    { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 0.25rem; padding-bottom: 0.5rem;}
-.mega-link         { display: block; font-size: var(--text-default); color: var(--text-primary); text-decoration: none; padding: 6px 0; transition: color 150ms; }
+.mega-col-title    { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 0.25rem; padding-bottom: 0.125rem; padding-top: 1rem;}
+.mega-link         { display: block; font-size: var(--text-lg); color: var(--text-primary); text-decoration: none; padding: .4rem 0; transition: color 150ms; }
 .mega-link:hover   { color: var(--red-coral); }
 
 /* Cards */
 .mega-card         { text-decoration: none; color: var(--text-primary); min-width: 0; }
-.mega-card-img     { width: 100%; aspect-ratio: 3/4; background: var(--placeholder); }
-.mega-card-label   { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 700; margin-top: 0.5rem; color: var(--text-primary); }
+.mega-card-img     { width: 100%; aspect-ratio: 1/1; background: var(--placeholder); }
+.mega-card-label   { font-family:  font-size: var(--text-sm); font-weight: 700; margin-top: 0.5rem; color: var(--text-primary); }
 
 /* Editorial — legacy stories layout untouched */
 .mega-editorial-gap  { grid-column: span 1; }
 .mega-stories-area   { grid-column: span 2; border-left: 1px solid var(--border); padding-left: 1.5rem; }
 .mega-story          { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.625rem 0; border-bottom: 1px solid var(--border); }
 .mega-story:last-child { border-bottom: none; }
-.mega-story-img      { width: 56px; height: 56px; flex-shrink: 0; background: var(--placeholder); }
+.mega-story-img      { width: 100px; height: 100px; flex-shrink: 0; background: var(--placeholder); }
 .mega-story-cat      { font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 2px; }
 .mega-story-title    { font-size: var(--text-default); font-weight: 700; color: var(--text-primary); line-height: 1.35; margin-bottom: 2px; }
 .mega-story-date     { font-size: var(--text-sm); color: var(--text-disabled); }
+.mega-cards-area[data-cols="3"] { grid-column: span 3; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .5rem; }
+
+/* Default nav links */
+
+/* Featured col links */
+.mega-group--featured .mega-link { font-size: var(--text-lg); font-weight: 600; padding: .6rem 0;}
+
+
 
 @media (min-width: 1401px) {}
 @media (max-width: 1400px) {}
 @media (max-width: 1280px) { 
-  .mega-menu-inner   { padding: 1.5rem 2rem; max-width: 1280px; margin: 0 auto; }
+  .mega-menu-inner   { padding: 1.5rem 1rem; max-width: 1280px; margin: 0 auto; }
 
 }
 
@@ -297,6 +306,7 @@
 .mobile-acc-group-item:last-of-type { border-bottom: none; }
 .mobile-acc-group-btn  { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0.625rem 1.25rem; font-size: var(--text-default); font-weight: 600; color: var(--text-primary); background: none; border: none; cursor: pointer; font-family: var(--font-body); text-align: left; min-height: 0; transition: color 150ms; }
 .mobile-acc-group-btn:hover { color: var(--red-coral); }
+.mobile-acc-group-btn[aria-expanded="true"] { background: var(--surface-sand); }
 .mobile-acc-plus       { font-size: var(--text-default); font-weight: 300; color: var(--text-caption); flex-shrink: 0; line-height: 1; }
 .mobile-acc-group-body         { display: none; padding: 0.25rem 1.25rem 0.75rem 1.5rem; }
 .mobile-acc-group-body.is-open { display: block; }
@@ -503,3 +513,4 @@
 @media (max-width: 1079px) {
   .newsletter-img { max-height: 220px; aspect-ratio: 16/9; width: 100%; }
 }
+

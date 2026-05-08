@@ -82,7 +82,7 @@
         <aside class="filter-sidebar">
           <div class="filter-header">
             <span>Filters</span>
-            <button class="btn sm" id="sidebar-clear-btn">Clear All</button>
+            <button class="btn-link" id="sidebar-clear-btn">Clear All</button>
           </div>
           <div class="active-filters" id="active-filters-bar" style="display:none">
             <span style="font-size:var(--text-sm);color:var(--text-muted)">Active:</span>
@@ -1005,7 +1005,6 @@
       </div>
     </div>
     <div class="filter-drawer-footer">
-      <button class="btn sm" id="filter-clear-btn">Clear All</button>
       <button class="btn filled sm" id="filter-apply-btn">Apply Filters</button>
     </div>
   </div>
@@ -1108,9 +1107,13 @@
       count += document.querySelectorAll('.filter-size-btn.is-active').length;
       count += document.querySelectorAll('.filter-color-btn.is-active').length;
       if (dot) {
-        dot.classList.toggle('is-visible', count > 0);
-        dot.textContent = count > 0 ? count : '';
-      }
+                dot.classList.toggle('is-visible', count > 0);
+                dot.textContent = count > 0 ? count : '';
+              }
+              var sidebarClearBtn = document.getElementById('sidebar-clear-btn');
+              if (sidebarClearBtn) sidebarClearBtn.classList.toggle('is-visible', count > 0);
+      
+      
     }
 
     document.addEventListener('change', function (e) {

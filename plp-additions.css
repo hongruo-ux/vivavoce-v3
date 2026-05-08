@@ -60,7 +60,7 @@
    FILTER SIDEBAR (desktop)
    ============================================================ */
 .filter-sidebar      { padding-right: 1.5rem; position: sticky; top: 160px; max-height: calc(100vh - 127px); overflow-y: auto; }
-.filter-header       { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: var(--text-sm); font-weight: 700; }
+.filter-header       { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; font-size: var(--text-default); font-weight: 500; border-bottom: 1px solid var(--border);}
 .filter-group        { border-bottom: 1px solid var(--border); padding: 1rem 0; }
 .filter-group-title  { font-family: var(--font-display); display: flex; justify-content: space-between; align-items: center; width: 100%; font-size: var(--text-default); font-weight: 500; color: var(--cta-bg); min-height: 44px; text-align: left; padding: 0; transition: color 150ms; }
 .filter-group-title:hover { color: var(--link-hover); }
@@ -364,3 +364,6 @@
 }
 
 }
+
+#sidebar-clear-btn { display: none; }
+#sidebar-clear-btn.is-visible { display: block; }

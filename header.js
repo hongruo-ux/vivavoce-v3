@@ -10,60 +10,56 @@ window.addEventListener('DOMContentLoaded', () => {
   const isHomePage = currentPage === 'index.html';
 
   const NAV_ITEMS = [
-    { label: "What's New", href: 'plpNew.html', noActive: true, megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: 'Shop by Category', links: ['All New Arrivals','Activewear','Bottoms','Dresses','Tops','Swimwear','Innerwear'] },
-      { title: 'The Collections', links: ['Spring Brights','Neutral Ground','Black & White'] },
-    ], cards: [{ label: 'Spring Brights' }, { label: 'Shop Our Pop-Up' }] }},
+    { label: "What's New", href: 'plpNew.html', noActive: true, megaMenu: { listCols: 1, cardCols: 3, cols: [
+      { title: '', links: ['All New Arrivals','New this Week','Best Sellers','Back in Stock'] },
+    ], cards: [{ label: 'Spring Brights' }, { label: 'New Dressess for Summer' }, { label: 'Shop Our Pop-Up' }] }},
     { label: 'Get Inspired', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: 'Shop by Style', links: ['Midi Dresses','Maxi Dresses','Mini Dresses','Shirt Dresses','Wrap Dresses','Slip Dresses','Bodycon Dresses'] },
-      { title: 'Shop by Occasion', links: ['Casual','Work','Evening','Wedding Guest','Vacation','Brunch'] },
-      { title: 'Featured', links: ['Best Sellers','New In','Designer Dresses','Under $200','Under $500'] },
-    ], cards: [{ label: 'Dress Edit' }] }},
-    { label: 'Summer', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: 'Shop by Category', links: ['Dresses','Tops','Shorts','Swimwear','Sandals'] },
-      { title: 'Summer Edits', links: ['Resort Wear','Beach Essentials','Sun Dresses','Linen Collection'] },
+      { title: '', links: ['Shop All Inspirations','Designer Spotlight','Best Sellers','Editor\'s Pick'] },
       { title: 'Trending Now', links: ['Coastal Chic','Maximalist Prints','Sheer Layers','Bold Colour'] },
-    ], cards: [{ label: 'Beach Edit' }] }},
+      { title: 'Shop by Occasion', links: ['Casual','Work','Evening','Wedding Guest','Brunch'] },
+    ], cards: [{ label: 'Everyday Linen Comfort'}, { label: 'Water Dress Code'}] }},
+    { label: 'Summer', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
+      { title: '', links: ['All Summer','Best Sellers','New In','Swimwear','Matching Pieces'] },
+      { title: 'Summer Edits', links: ['Resort Wear','Beach Essentials','Sun Dresses','Linen Collection'] },
+    ], cards: [{ label: 'Summer Vacation Must Have' }, { label: 'Beach Edit' }] }},
     { label: 'Brands', href: 'brands.html' },
-    { label: 'Clothing', megaMenu: { listCols: 4, cardCols: 1, cols: [
-      { title: 'Dresses', links: ['Midi','Maxi','Mini','Wrap','Slip','Shirt Dress'] },
-      { title: 'Tops', links: ['Blouses','T-Shirts','Knitwear','Shirts','Bodysuits'] },
-      { title: 'Bottoms', links: ['Trousers','Jeans','Skirts','Shorts','Leggings'] },
-      { title: 'Outerwear', links: ['Coats','Jackets','Blazers','Gilets'] },
-      { title: 'Bags', links: ['Tote','Shoulder','Crossbody','Clutch','Backpack'] },
-      { title: 'Accessories', links: ['Necklaces','Rings','Earrings','Bracelets','Scarves','Sunglasses'] },
-      { title: 'Beauty', links: ['Skincare','Makeup','Best Sellers','Natural','Luxury'] },
-    ], cards: [{ label: 'Bag Edit' }] }},
-    { label: 'Dresses', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: 'Style', links: ['Midi','Maxi','Mini','Wrap','Slip'] },
-      { title: 'Occasion', links: ['Party','Wedding Guest','Casual','Work'] },
-      { title: 'Edit', links: ['New Arrivals','Under £100','Designer','Sustainable'] },
-    ], cards: [{ label: 'Dress Edit' }] }},
-    { label: 'Active', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: 'Women', links: ['Leggings','Sports Bras','Tops','Jackets','Shorts'] },
-      { title: 'Training Day Style', links: ['T-Shirts','Shorts','Joggers','Hoodies','Jackets'] },
-      { title: 'Shop', links: ['New In','Best Sellers','Sale','Under $100'] },
+    { label: 'Clothing', megaMenu: { listCols: 4, cardCols: 1, noFeatured: true, cols: [
+      { title: 'Shop by Categories', links: ['Dresses & Jumpsuits','Tops & Blouses','Tees & Tanks','Bodysuits', 'Pants & Trousers','Denim', 'Swimwear', 'Shirts'] },
+      { title: ' ', links: ['Skirts','Shorts','Leggings','Coats', 'Jackets & Blazers', 'Loungewear & Intimates', 'Coats'] },
+      { title: 'Shop by Sizes', links: ['XS – M','L – XL','XXL - 4XL','Plus','Tall','Plus'] },
+      { title: 'Shop by Brands', links: ['Brand Name','Brand Name', 'Brand Name', 'Brand Name', 'Brand Name'] },
+    ], cards: [{ label: 'Trending Cloth Edit' }] }},
+    { label: 'Dresses', href: 'plpCategory.html', megaMenu: { listCols: 4, cardCols: 1, cols: [
+      { title: '', links: ['All Dresses','Best sellers','New In', 'Editor\'s Pick'] },
+      { title: 'Styles', links: ['Jumpsuits','Maxi', 'Midi', 'Knit', 'Wrap','Slip','Shirt Dresses'] },
+      { title: 'Popular', links: ['Under $200','Under $100','XS – M','L – XL','XXL - 4XL','Organic Materials'] },
+      { title: 'Brands', links: ['Featured Brand Name','Featured Brand Name','Featured Brand Name'] },
+    ], cards: [{ label: 'Just Arrived! Discover linen jumpsuits and more.' }] }},
+    { label: 'Active', megaMenu: { listCols: 4, cardCols: 1, cols: [
+      { title: '', links: ['All Active','Best Sellers','New In','Matching Pieces'] },
+      { title: 'Styles', links: ['Leggings','Swim','Tops','Shorts','Hoodies','Outwears'] },
+      { title: 'Popular', links: ['Under $100','Under $50','Yoga','Eco-Friendly Farbrics', 'Curve & Plus'] },
+      { title: 'Brands', links: ['Featured Brand Name','Featured Brand Name','Featured Brand Name'] },
     ], cards: [{ label: 'Active Edit' }] }},
-    { label: 'Shoes', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: 'Type', links: ['Heels','Flats','Boots','Sandals','Trainers'] },
-     { title: 'Occasion', links: ['Casual','Formal','Sport','Going Out'] },
-      { title: 'Shop', links: ['New In','Sale','Designer','Under $50'] },
+    { label: 'Shoes', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 1, cols: [
+      { title: '', links: ['All Shoes','Best Sellers','New In','Water Shoes'] },
+      { title: 'Styles', links: ['Heels','Flats','Boots','Sandals', 'Slippers', 'Trainers'] },
+      { title: 'Popular', links: ['Boat shoes','Platform','Wide & Comfort Fit','Sustainable Shoes'] },
     ], cards: [{ label: 'Shoe Edit' }] }},
     { label: 'Bags', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
+      { title: '', links: ['Shop Bags','Best Sellers','New In', 'Editor\'s Pick'] },
       { title: 'Style', links: ['Tote','Shoulder','Crossbody','Clutch','Backpack'] },
-      { title: 'Size', links: ['Mini','Small','Medium','Large','Oversized'] },
-      { title: 'Shop', links: ['New In','Designer','Under $200','Under $100'] },
-    ], cards: [{ label: 'Bag Edit' }] }},
+      { title: 'Popular', links: ['New In ','Under $100','Under $200','Icon Bags','Mini Bags'] },
+    ], cards: [{ label: 'Bag Edit' }, { label: 'The It Bag- the luxury edit from our brand.' }] }},
     { label: 'Accessories', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: 'Jewellery', links: ['Necklaces','Rings','Earrings','Bracelets'] },
-      { title: 'Scarves & Hats', links: ['Scarves','Hats','Belts','Sunglasses'] },
-      { title: 'Shop', links: ['New In','Designer','Trending','Under $50'] },
-    ], cards: [{ label: 'Jewelry-New' }] }},
-    { label: 'Beauty', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: 'Skincare', links: ['Cleansers','Serums','Moisturisers','SPF','Eye Care'] },
+      { title: '', links: ['All Accessories','Best Sellers','New In','Editor\'s Pick'] },
+      { title: 'Scarves & Hats', links: ['Jewelry', 'Small Leather Items', 'Scarves','Hats','Belts','Sunglasses'] },
+      { title: 'Popular', links: ['Under $100','Under $50','Birth Stones','Perfect for Gift'] },
+    ], cards: [{ label: 'Jewelry-New' }, { label: 'The gift shop for Mom' }] }},
+    { label: 'Beauty', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 1, cols: [
+      { title: '', links: ['All Beauty','Best Sellers','Natural','Luxury'] },
       { title: 'Makeup', links: ['Foundation','Lips','Eyes','Blush','Setting Spray'] },
-      { title: 'Shop', links: ['New In','Best Sellers','Natural','Luxury'] },
-    ], cards: [{ label: 'Beauty Edit' }] }},
+      { title: 'Skincare', links: ['Serums','Cleansers','Moisturisers','SPF','Eye Care'] },    ], cards: [{ label: 'Best Gift for Mom!' }] }},
     { label: 'Editorial', href: 'editorial.html', megaMenu: { cols: [
       { title: 'Community', links: ['Lifestyle','Fashion','Trending Styles','Brand Stories','View All'] },
       { title: 'Sustainability & Vision', links: ['Our Mission','Ethical Production','Environmental Friendly','View All'] },
@@ -131,23 +127,30 @@ window.addEventListener('DOMContentLoaded', () => {
     // Standard 5-col grid menus
     const listCols = item.megaMenu.listCols;
     const cardCols = item.megaMenu.cardCols;
-    const groupsHTML = item.megaMenu.cols.map(col => `
-      <div class="mega-group">
+    const skipShopAll = [].includes(item.label);
+
+    // Title: plain h3, no link — skipped for Get Inspired & Summer
+    const menuTitle = skipShopAll ? '' : `<h3 class="mega-menu-title">${item.label}</h3>`;
+
+    // Groups: inject "Shop All [Label]" as first link in first col group (desktop only)
+    const groupsHTML = item.megaMenu.cols.map((col, i) => {
+      
+      return `<div class="mega-group${i === 0 && !item.megaMenu.noFeatured ? ' mega-group--featured' : ''}">
         ${col.title ? `<div class="mega-col-title">${col.title}</div>` : ''}
         ${col.links.map(l => `<a href="plpCategory.html" class="mega-link">${l}</a>`).join('')}
-      </div>`).join('');
+      </div>`;
+    }).join('');
+
     const cards = item.megaMenu.cards || [];
     const cardsHTML = cards.map(c =>
       `<a href="plpCategory.html" class="mega-card"><div class="mega-card-img wf-img"></div><div class="mega-card-label">${c.label}</div></a>`
     ).join('');
-    const actionLabel = 'Shop All';
-    const skipShopAll = ['Get Inspired', 'Summer'].includes(item.label);
-    const shopAllLink = skipShopAll ? '' : `<a href="plp.html" class="mega-shop-all">${actionLabel} ${item.label}</a>`;
+
     return `<div class="nav-item">
       <a href="${item.href || 'plp.html'}" class="nav-link" data-menu="${menuId}">${item.label}</a>
       <div class="mega-menu" id="${menuId}">
         <div class="mega-menu-inner">
-          ${shopAllLink}
+          ${menuTitle}
           <div class="mega-grid">
             <div class="mega-links-area" data-cols="${listCols}">${groupsHTML}</div>
             <div class="mega-cards-area" data-cols="${cardCols}">${cardsHTML}</div>
@@ -156,25 +159,29 @@ window.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>`;
   }).join('');
+
   // ── Mobile accordion links ──────────────────────────────────
   const mobileAccordionLinks = NAV_ITEMS.map(item => {
     if (!item.megaMenu) {
       return `<a href="${item.href||'plp.html'}" class="mobile-nav-link">${item.label}</a>`;
     }
     const subId = 'acc-' + item.label.replace(/[\s']+/g, '-');
+    const skipShopAll = ['Get Inspired', 'Summer'].includes(item.label);
+
     const groupsHTML = item.megaMenu.cols.map((col, i) => {
       const groupId = subId + '-g' + i;
-      const isFirst = i === 0;
       const linksHTML = col.links.map(l => `<a href="plpCategory.html" class="mobile-acc-link">${l}</a>`).join('');
-      if (!col.title) return `<div class="mobile-acc-group-open">${linksHTML}</div>`;
+      // First group: always flat, no accordion tab, Shop All link hidden on mobile
+      if (i === 0) return `<div class="mobile-acc-group-open">${linksHTML}</div>`;
       return `<div class="mobile-acc-group-item">
-        <button class="mobile-acc-group-btn" data-group="${groupId}" aria-expanded="${isFirst}">
+        <button class="mobile-acc-group-btn" data-group="${groupId}" aria-expanded="false">
           <span>${col.title}</span>
-          <span class="mobile-acc-plus" aria-hidden="true">${isFirst ? '−' : '+'}</span>
+          <span class="mobile-acc-plus" aria-hidden="true">+</span>
         </button>
-        <div class="mobile-acc-group-body${isFirst ? ' is-open' : ''}" id="${groupId}">${linksHTML}</div>
+        <div class="mobile-acc-group-body" id="${groupId}">${linksHTML}</div>
       </div>`;
     }).join('');
+
     const cardsHTML = item.megaMenu.cards ? item.megaMenu.cards.map(c =>
       `<a href="plpCategory.html" class="mobile-acc-card">
         <div class="mobile-acc-card-img wf-img"></div>
@@ -190,10 +197,9 @@ window.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>`).join('') : '';
     const actionLabel = item.label === 'Editorial' ? 'Read All' : 'Shop All';
-    const skipShopAll = ['Get Inspired', 'Summer'].includes(item.label);
     const shopAllMobile = skipShopAll ? '' : `
-      <div class="shop-all-container" style="padding: 8px 16px; margin-bottom: 8px;">
-        <a href="plp.html" style="font-weight:700; text-decoration:none; color:inherit; font-size:.9375rem; display:block;">
+      <div class="shop-all-container" style="padding: 8px 20px; margin-bottom: 8px; font-family: var(--font-display);">
+        <a href="plp.html" style="font-weight:600; text-decoration:none; color:inherit; font-size: var(--text-sm); display:block;">
           ${actionLabel} ${item.label}
         </a>
       </div>`;

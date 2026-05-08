@@ -137,8 +137,8 @@
 }
 @media (max-width: 1399px) {
   :root {
-    --text-xl:      1.125rem;  /* 18px */
-    --text-lg:      1rem;      /* 16px */
+    --text-xl:      1.25rem;  /* 18px */
+    --text-lg:      1.125rem;      /* 16px */
     --text-default: 1rem;      /* 16px */
     --text-sm:      0.875rem;  /* 14px */
     --text-xs:      0.75rem;   /* 12px */
