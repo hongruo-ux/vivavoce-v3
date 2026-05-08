@@ -135,7 +135,7 @@ min-width: 25%; background: var(--surface-sand); z-index: 1;"
 }
 @media (max-width: 739px) {
   .section        { padding: 2rem 0; }
-  .section-carousel {padding-block:1.5rem 0;}
+  .section-carousel {padding-block:1rem 0;}
 
   .bg-header      { padding-block: 2rem 1.5rem; }
   .grid-3         { grid-template-columns: repeat(2, 1fr); }

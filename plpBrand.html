@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Category Level Collection Page</title>
+  <title>Women's Collection — Viva Voce</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="plp-additions.css" />
   <link rel="stylesheet" href="header-additions.css" />
@@ -19,30 +19,31 @@
   <main>
 
     <!-- ============================================================
-         BREADCRUMB
+         BREADCRUMB + CATEGORY CAROUSEL
          Pattern: band > container > section-sm
     ============================================================ -->
     <div class="band">
       <div class="container">
         <div class="">
+
           <div class="breadcrumb">
-            <a href="index.html">Home</a><span>/</span><a href="brands.html">All Brands</a><span>/</span><span>Brand Name</span>
+            <a href="index.html">Home</a><span>/</span><span>Brand Name</span>
           </div>
+
         </div>
       </div>
     </div>
 
     <!-- ============================================================
-         PAGE HEADER + BRAND HERO
+         PAGE HEADER
          Pattern: band > container > section-xs
     ============================================================ -->
     <div class="band">
       <div class="container">
-        <div class="section-xxs">
+        <div class="section-xs">
           <div class="page-header"><h2>Brand Name</h2></div>
         </div>
       </div>
-
       <!-- brand banner — full width within band, no container -->
       <section class="plp-brand-hero">
         <div class="brand-hero-content hide-mobile"">
@@ -73,29 +74,18 @@
             <button class="btn sm" id="sidebar-clear-btn">Clear All</button>
           </div>
           <div class="active-filters" id="active-filters-bar" style="display:none">
-            <span style="font-size: var(--text-sm);color:var(--text-muted)">Active:</span>
+            <span style="font-size:var(--text-sm);color:var(--text-muted)">Active:</span>
           </div>
+       
+          
           <div class="filter-group">
-            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-category">Category <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-            <div class="filter-group-body" id="fg-category">
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Dresses" style="width:15px;height:15px">Dresses<span class="filter-count">324</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Tops" style="width:15px;height:15px">Tops<span class="filter-count">289</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Trousers" style="width:15px;height:15px">Trousers<span class="filter-count">201</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Skirts" style="width:15px;height:15px">Skirts<span class="filter-count">167</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Outerwear" style="width:15px;height:15px">Outerwear<span class="filter-count">145</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Footwear" style="width:15px;height:15px">Footwear<span class="filter-count">24</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Accessories" style="width:15px;height:15px">Accessories<span class="filter-count">56</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Swimwear" style="width:15px;height:15px">Swimwear<span class="filter-count">87</span></label>
-            </div>
-          </div>
-          <div class="filter-group">
-            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-brand">Brand <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-            <div class="filter-group-body" id="fg-brand">
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Toteme" style="width:15px;height:15px">Toteme<span class="filter-count">84</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Jacquemus" style="width:15px;height:15px">Jacquemus<span class="filter-count">72</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="A.P.C." style="width:15px;height:15px">A.P.C.<span class="filter-count">65</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Sandro" style="width:15px;height:15px">Sandro<span class="filter-count">58</span></label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="AMI Paris" style="width:15px;height:15px">AMI Paris<span class="filter-count">43</span></label>
+            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-cat">Shoy by Category <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="filter-group-body" id="fg-cat">
+                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Dresses" style="width:15px;height:15px">Dresses<span class="filter-count">84</span></label>
+                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Tops" style="width:15px;height:15px">Tops<span class="filter-count">84</span></label>
+                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Trousers" style="width:15px;height:15px">Trousers<span class="filter-count">84</span></label>
+                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Skirts" style="width:15px;height:15px">Skirts<span class="filter-count">84</span></label>
+                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Outerwear" style="width:15px;height:15px">Shoes<span class="filter-count">84</span></label>
             </div>
           </div>
           <div class="filter-group">
@@ -117,29 +107,12 @@
               </div>
             </div>
           </div>
-          <div class="filter-group">
+           <div class="filter-group">
             <button class="filter-group-title" aria-expanded="true" aria-controls="fg-fit">Fit Type <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
             <div class="filter-group-body" id="fg-fit">
-              <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Tall" style="width:15px;height:15px">Tall</label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Petite" style="width:15px;height:15px">Petite</label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Plus Size" style="width:15px;height:15px">Plus Size</label>
-            </div>
-          </div>
-          <div class="filter-group">
-            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-color">Color <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-            <div class="filter-group-body" id="fg-color">
-              <div class="filter-color-grid">
-                <button class="filter-color-btn" data-color="Black" data-hex="#1a1a18"><span class="filter-color-swatch" style="background:#1a1a18"></span><span class="filter-color-label">Black</span></button>
-                <button class="filter-color-btn" data-color="White" data-hex="#ffffff"><span class="filter-color-swatch" style="background:#ffffff;border-color:#d0d0cc"></span><span class="filter-color-label">White</span></button>
-                <button class="filter-color-btn" data-color="Grey" data-hex="#9b9b97"><span class="filter-color-swatch" style="background:#9b9b97"></span><span class="filter-color-label">Grey</span></button>
-                <button class="filter-color-btn" data-color="Brown" data-hex="#7a4a32"><span class="filter-color-swatch" style="background:#7a4a32"></span><span class="filter-color-label">Brown</span></button>
-                <button class="filter-color-btn" data-color="Khaki" data-hex="#c4a882"><span class="filter-color-swatch" style="background:#c4a882"></span><span class="filter-color-label">Khaki</span></button>
-                <button class="filter-color-btn" data-color="Neutral" data-hex="#e8ddd0"><span class="filter-color-swatch" style="background:#e8ddd0"></span><span class="filter-color-label">Neutral</span></button>
-                <button class="filter-color-btn" data-color="Red" data-hex="#de3726"><span class="filter-color-swatch" style="background:#de3726"></span><span class="filter-color-label">Red</span></button>
-                <button class="filter-color-btn" data-color="Pink" data-hex="#e8196e"><span class="filter-color-swatch" style="background:#e8196e"></span><span class="filter-color-label">Pink</span></button>
-                <button class="filter-color-btn" data-color="Burgundy" data-hex="#5c1a2e"><span class="filter-color-swatch" style="background:#5c1a2e"></span><span class="filter-color-label">Burgundy</span></button>
-                <button class="filter-color-btn" data-color="Orange" data-hex="#e87832"><span class="filter-color-swatch" style="background:#e87832"></span><span class="filter-color-label">Orange</span></button>
-              </div>
+              <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Tall" style="width:15px;height:15px">Tall<span class="filter-count">84</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Petite" style="width:15px;height:15px">Petite<span class="filter-count">84</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Plus Size" style="width:15px;height:15px">Plus Size<span class="filter-count">84</span></label>
             </div>
           </div>
           <div class="filter-group">
@@ -161,26 +134,68 @@
               </div>
             </div>
           </div>
+         
           <div class="filter-group">
-            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-availability">Availability <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-            <div class="filter-group-body" id="fg-availability">
-              <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-sustain" data-label="Fair Trade" style="width:15px;height:15px">Available Now</label>
-              <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-sustain" data-label="Eco-Friendly Materials" style="width:15px;height:15px">Made To Order</label>
+            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-color">Color <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="filter-group-body" id="fg-color">
+              <div class="filter-color-grid">
+                <button class="filter-color-btn" data-color="Black" data-hex="#1a1a18"><span class="filter-color-swatch" style="background:#1a1a18"></span><span class="filter-color-label">Black</span></button>
+                <button class="filter-color-btn" data-color="White" data-hex="#ffffff"><span class="filter-color-swatch" style="background:#ffffff;border-color:#d0d0cc"></span><span class="filter-color-label">White</span></button>
+                <button class="filter-color-btn" data-color="Grey" data-hex="#9b9b97"><span class="filter-color-swatch" style="background:#9b9b97"></span><span class="filter-color-label">Grey</span></button>
+                <button class="filter-color-btn" data-color="Brown" data-hex="#7a4a32"><span class="filter-color-swatch" style="background:#7a4a32"></span><span class="filter-color-label">Brown</span></button>
+                <button class="filter-color-btn" data-color="Khaki" data-hex="#c4a882"><span class="filter-color-swatch" style="background:#c4a882"></span><span class="filter-color-label">Khaki</span></button>
+                <button class="filter-color-btn" data-color="Neutral" data-hex="#e8ddd0"><span class="filter-color-swatch" style="background:#e8ddd0"></span><span class="filter-color-label">Neutral</span></button>
+                <button class="filter-color-btn" data-color="Red" data-hex="#de3726"><span class="filter-color-swatch" style="background:#de3726"></span><span class="filter-color-label">Red</span></button>
+                <button class="filter-color-btn" data-color="Pink" data-hex="#e8196e"><span class="filter-color-swatch" style="background:#e8196e"></span><span class="filter-color-label">Pink</span></button>
+                <button class="filter-color-btn" data-color="Burgundy" data-hex="#5c1a2e"><span class="filter-color-swatch" style="background:#5c1a2e"></span><span class="filter-color-label">Burgundy</span></button>
+                <button class="filter-color-btn" data-color="Orange" data-hex="#e87832"><span class="filter-color-swatch" style="background:#e87832"></span><span class="filter-color-label">Orange</span></button>
+              </div>
             </div>
           </div>
-          <div class="filter-group">
+           <div class="filter-group">
+            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-brand">Brand <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="filter-group-body" id="fg-brand">
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Toteme" style="width:15px;height:15px">Toteme<span class="filter-count">84</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Jacquemus" style="width:15px;height:15px">Jacquemus<span class="filter-count">72</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="A.P.C." style="width:15px;height:15px">A.P.C.<span class="filter-count">65</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Sandro" style="width:15px;height:15px">Sandro<span class="filter-count">58</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="AMI Paris" style="width:15px;height:15px">AMI Paris<span class="filter-count">43</span></label>
+            </div>
+          </div>
+           <div class="filter-group">
+            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-material">Material <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="filter-group-body" id="fg-material">
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Cotton" style="width:15px;height:15px">Cotton<span class="filter-count">84</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Linen" style="width:15px;height:15px">Linen<span class="filter-count">72</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Wool" style="width:15px;height:15px">Wool<span class="filter-count">65</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Silk" style="width:15px;height:15px">Silk<span class="filter-count">58</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Denim" style="width:15px;height:15px">Denim<span class="filter-count">43</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="100% Organic Cotton" style="width:15px;height:15px">100% Organic Cotton<span class="filter-count">43</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Recycled Materials" style="width:15px;height:15px">Recycled Materials<span class="filter-count">43</span></label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Tencel™" style="width:15px;height:15px">Tencel™<span class="filter-count">43</span></label>
+            </div>
+          </div>
+          
+          
+          <!-- <div class="filter-group">
+            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-available">Availability <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="filter-group-body" id="fg-available">
+              <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-available" data-label="Available Now" style="width:15px;height:15px">Available Now</label>
+              <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-available" data-label="Made To Order" style="width:15px;height:15px">Made To Order</label>
+            </div>
+          </div> -->
+          <!-- <div class="filter-group">
             <button class="filter-group-title" aria-expanded="true" aria-controls="fg-sustainability">Sustainability <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
             <div class="filter-group-body" id="fg-sustainability">
               <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-sustain" data-label="Fair Trade" style="width:15px;height:15px">Fair Trade</label>
               <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-sustain" data-label="Eco-Friendly Materials" style="width:15px;height:15px">Eco-Friendly Materials</label>
               <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-sustain" data-label="OEKO-TEX" style="width:15px;height:15px">OEKO-TEX</label>
             </div>
-          </div>
+          </div> -->
         </aside>
 
         <!-- Products column -->
         <div>
-
         <!-- Desktop toolbar: Sort + product count -->
           <div class="plp-toolbar">
             <span class="section-eyebrow" style="width: 70%;">1,420 products</span>
@@ -194,31 +209,32 @@
               </select>
             </div>
           </div>
+
           <!-- Mobile / tablet toolbar: Filter + Sort CTAs (full width) -->
           <div class="plp-toolbar-mobile">
-            <span class="plp-cta-btn">
-              <button class="btn sm plp-toolbar-btn" id="filter-open-btn" aria-label="Open filters" aria-expanded="false" aria-controls="filter-drawer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-                Filter
-              </button>
-              <span class="plp-filter-dot" id="filter-dot" aria-hidden="true"></span>
-            </span>
-            <div class="plp-sort-wrap">
-              <button class="btn sm plp-toolbar-btn" id="sort-open-btn" aria-label="Sort products" aria-expanded="false" aria-haspopup="listbox">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M7 12h10M11 18h2"/></svg>
-                <span id="sort-label">Sort</span>
-              </button>
-              <div class="sort-dropdown" id="sort-dropdown" role="listbox" aria-label="Sort options">
-                <button class="sort-option is-selected" role="option" data-value="relevance">Relevance</button>
-                <button class="sort-option" role="option" data-value="new-in">New In</button>
-                <button class="sort-option" role="option" data-value="price-asc">Price: Low–High</button>
-                <button class="sort-option" role="option" data-value="price-desc">Price: High–Low</button>
-              </div>
-            </div>
-          </div>
+  <span class="plp-cta-btn">
+    <button class="btn xs plp-toolbar-btn" id="filter-open-btn">Filter</button>
+    <span class="plp-filter-dot" id="filter-dot"></span>
+  </span>
 
+  <div class="plp-sort-wrap">
+    <button class="btn xs plp-toolbar-btn" id="sort-open-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M7 12h10M11 18h2"/></svg>
+      <span id="sort-label">Sort</span>
+    </button>
+    <div class="sort-dropdown" id="sort-dropdown">
+       <button class="sort-option is-selected" data-value="relevance">Relevance</button>
+       <button class="sort-option" data-value="new-in">New In</button>
+       <button class="sort-option" data-value="price-asc">Price: Low–High</button>
+       <button class="sort-option" data-value="price-desc">Price: High–Low</button>
+    </div>
+  </div>
+</div>
+
+
+      
           <!-- Product grid -->
-          <div class="grid-3 plp-grid" id="plp-grid" >
+          <div class="grid-3 plp-grid" id="plp-grid">
 
             <div class="product-card" data-name="La Robe Murano" data-price="$595" data-brand="Jacquemus" data-colors="#e8c4b8,#1a1a18,#c4d4e8" data-sizes="XS,S,M,L" data-badge="Exclusive">
               <a href="pdp.html"><div class="product-card-img">
@@ -228,7 +244,7 @@
                 </button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-badge"><span class="badge new">New</span></div>
-                <div class="product-card-mask"><span class="mask-label">Exclusive</span><SPan>•</SPan><span class="mask-label">Eco-Friendly Materials</span></div>
+                <div class="product-card-mask"><span class="mask-label">Exclusive</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -243,9 +259,9 @@
             <div class="product-card" data-name="Strapless Midi Dress" data-price="$485" data-brand="Toteme" data-colors="#f5f0e8,#1a1a18" data-sizes="XS,S,M,L,XL" data-badge="Editor's Pick">
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist">
-                  <span class="material-icons wl-icon-default">favorite_border</span>
-                  <span class="material-icons wl-icon-hover">favorite</span>
-                </button>
+  <span class="material-icons wl-icon-default">favorite_border</span>
+  <span class="material-icons wl-icon-hover">favorite</span>
+</button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div>
               </div></a>
@@ -262,13 +278,13 @@
             <div class="product-card" data-name="Wrap Midi Dress" data-price="$285" data-brand="Sandro" data-colors="#8b4a6b,#1a1a18,#c4a882" data-sizes="XS,S,M,L" data-sustain-badge="Fair Trade">
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist">
-                  <span class="material-icons wl-icon-default">favorite_border</span>
-                  <span class="material-icons wl-icon-hover">favorite</span>
-                </button>
+  <span class="material-icons wl-icon-default">favorite_border</span>
+  <span class="material-icons wl-icon-hover">favorite</span>
+</button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">Fair Trade</span></div>
 
-                <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-badge"><span class="badge sale">Selling Fast</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -322,9 +338,9 @@
             <div class="product-card" data-name="Peasant Dress" data-price="$565" data-brand="Isabel Marant" data-colors="#c4a882,#f5f0e8" data-sizes="36,38,40,42" data-sustain-badge="Eco-Friendly Materials">
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist">
-                  <span class="material-icons wl-icon-default">favorite_border</span>
-                  <span class="material-icons wl-icon-hover">favorite</span>
-                </button>
+  <span class="material-icons wl-icon-default">favorite_border</span>
+  <span class="material-icons wl-icon-hover">favorite</span>
+</button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
               </div></a>
@@ -346,7 +362,7 @@
                 </button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">OEKO-TEX</span></div>
-                <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-badge"><span class="badge sale">Selling Fast</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -361,9 +377,9 @@
             <div class="product-card" data-name="La Robe Jean" data-price="$475" data-brand="Jacquemus" data-colors="#2c4a6b,#1a1a18" data-sizes="XS,S,M,L" data-badge="Exclusive">
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist">
-                  <span class="material-icons wl-icon-default">favorite_border</span>
-                  <span class="material-icons wl-icon-hover">favorite</span>
-                </button>
+                <span class="material-icons wl-icon-default">favorite_border</span>
+                <span class="material-icons wl-icon-hover">favorite</span>
+              </button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">Exclusive</span></div>
               </div></a>
@@ -443,7 +459,7 @@
                   <span class="material-icons wl-icon-hover">favorite</span>
                 </button>
                 <div class="wf-img ratio-3-4"></div>
-                <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-badge"><span class="badge sale">Selling Fast</span></div>
                 <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
@@ -479,9 +495,9 @@
             <div class="product-card plp-hidden" data-name="Silk Wrap Blouse" data-price="$265" data-brand="Toteme" data-colors="#f5f0e8,#c4b8a8,#1a1a18" data-sizes="XS,S,M,L,XL" data-sustain-badge="OEKO-TEX">
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist">
-                  <span class="material-icons wl-icon-default">favorite_border</span>
-                  <span class="material-icons wl-icon-hover">favorite</span>
-                </button>
+                <span class="material-icons wl-icon-default">favorite_border</span>
+                <span class="material-icons wl-icon-hover">favorite</span>
+              </button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">OEKO-TEX</span></div>
 
@@ -519,12 +535,12 @@
             <div class="product-card plp-hidden" data-name="Ruched Mini Skirt" data-price="$198" data-brand="Sandro" data-colors="#8b4a6b,#1a1a18,#f5f0e8" data-sizes="XS,S,M,L" data-sustain-badge="Eco-Friendly Materials">
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist">
-                  <span class="material-icons wl-icon-default">favorite_border</span>
-                  <span class="material-icons wl-icon-hover">favorite</span>
-                </button>
+  <span class="material-icons wl-icon-default">favorite_border</span>
+  <span class="material-icons wl-icon-hover">favorite</span>
+</button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
-                <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-badge"><span class="badge sale">Selling Fast</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -616,9 +632,9 @@
             <div class="product-card plp-hidden" data-name="Printed Midi Dress" data-price="$420" data-brand="Isabel Marant" data-colors="#6b8b6b,#e8c4b8,#1a1a18" data-sizes="36,38,40,42" data-badge="Editor's Pick" data-sustain-badge="OEKO-TEX">
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist">
-                  <span class="material-icons wl-icon-default">favorite_border</span>
-                  <span class="material-icons wl-icon-hover">favorite</span>
-                </button>
+                <span class="material-icons wl-icon-default">favorite_border</span>
+                <span class="material-icons wl-icon-hover">favorite</span>
+              </button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">OEKO-TEX</span></div>
               </div></a>
@@ -640,7 +656,7 @@
                 </button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">Eco-Friendly Materials</span></div>
-                <div class="product-card-badge"><span class="badge sale">Sale</span></div>
+                <div class="product-card-badge"><span class="badge sale">Selling Fast</span></div>
               </div></a>
               <button class="product-quick-add" type="button" aria-label="Quick add">Quick Add</button>
               <div class="product-card-info">
@@ -675,9 +691,9 @@
             <div class="product-card plp-hidden" data-name="Linen Cargo Pants" data-price="$275" data-brand="Sandro" data-colors="#c4b8a8,#1a1a18,#6b8b6b" data-sizes="XS,S,M,L" data-sustain-badge="OEKO-TEX">
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist">
-                  <span class="material-icons wl-icon-default">favorite_border</span>
-                  <span class="material-icons wl-icon-hover">favorite</span>
-                </button>
+  <span class="material-icons wl-icon-default">favorite_border</span>
+  <span class="material-icons wl-icon-hover">favorite</span>
+</button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">OEKO-TEX</span></div>
               </div></a>
@@ -694,9 +710,9 @@
             <div class="product-card plp-hidden" data-name="Off-Shoulder Blouse" data-price="$195" data-brand="Jacquemus" data-colors="#f5f0e8,#e8c4b8" data-sizes="XS,S,M,L" data-badge="Editor's Pick">
               <a href="pdp.html"><div class="product-card-img">
                 <button class="product-card-wishlist" aria-label="Save to wishlist">
-                  <span class="material-icons wl-icon-default">favorite_border</span>
-                  <span class="material-icons wl-icon-hover">favorite</span>
-                </button>
+  <span class="material-icons wl-icon-default">favorite_border</span>
+  <span class="material-icons wl-icon-hover">favorite</span>
+</button>
                 <div class="wf-img ratio-3-4"></div>
                 <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div>
               </div></a>
@@ -721,14 +737,14 @@
           </div>
 
           <!-- Desktop pagination -->
-          <p class="pagination-label" id="pagination-label">Showing 1–12 of <strong>1,420</strong> products</p>
+          <p class="pagination-label" id="pagination-label">Showing 1–16 of <strong>60</strong> products</p>
           <div class="pagination" id="plp-pagination">
             <button class="page-btn">‹</button>
             <button class="page-btn active">1</button>
             <button class="page-btn">2</button>
             <button class="page-btn">3</button>
             <button class="page-btn">…</button>
-            <button class="page-btn">59</button>
+            <button class="page-btn">4</button>
             <button class="page-btn">›</button>
           </div>
 
@@ -738,21 +754,24 @@
       </div><!-- /container -->
     </div><!-- /band: plp-layout -->
 
+
+
     <!-- ============================================================
          BRAND FOOTER (mobile only)
          Pattern: band
     ============================================================ -->
-    <section class="plp-brand-footer show-mobile">
+    <div class="container">
+      <section class="plp-brand-footer show-mobile">
       <div class="brand-hero-content">
-        <span class="brand-eyebrow">About the brand</span>
-        <h1 class="brand-title">BRAND NAME</h1>
-        <p class="brand-description">
+        <span class="brand-eyebrow" style="padding-bottom: 1rem;">About the brand</span>
+        <h3 class="">BRAND NAME</h3>
+        <p class="plp-seo-body">
           Few labels are as synonymous with classic American style as Polo Ralph Lauren. The heritage brand is globally recognized for its elevated sportswear, tailoring...
         </p>
       </div>
     </section>
-
-    <!-- ============================================================
+    </div>
+        <!-- ============================================================
          SEO BLOCK — ABOUT + KEYWORD PILLS
          Pattern: band > container > section-sm
     ============================================================ -->
@@ -800,7 +819,10 @@
         </div>
       </div>
 
+
   </main>
+
+  <div id="main-footer"></div>
 
   <!-- SEO Read More toggle -->
   <script>
@@ -816,11 +838,10 @@
   })();
   </script>
 
-  <div id="main-footer"></div>
-
   <script src="header.js"></script>
   <script src="footer.js"></script>
   <script src="quickadd.js"></script>
+  <script src="add-to-wishlist-additions.js"></script>
 
   <!-- Quick Add modal -->
   <div class="qa-mask" id="qa-mask"></div>
@@ -862,8 +883,12 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
     </div>
+    <div class="filter-drawer-active-tags" id="modal-active-tags"></div>
+
+
+
     <div class="filter-drawer-body">
-      <div class="filter-acc-item">
+      <!-- <div class="filter-acc-item">
         <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-category">
           Category
           <svg class="filter-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
@@ -875,42 +900,22 @@
           <a href="catePLP.html?cat=skirts" class="filter-cat-link">Skirts<span class="filter-count">167</span></a>
           <a href="catePLP.html?cat=outerwear" class="filter-cat-link">Outerwear<span class="filter-count">145</span></a>
         </div>
-      </div>
+      </div> -->
       <div class="filter-acc-item">
-        <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-brand">
-          Brand
+        <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-cat">
+          Shop by Category
           <svg class="filter-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="filter-acc-body" id="fac-brand">
-          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Toteme" data-filter>Toteme<span class="filter-count">84</span></label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Jacquemus" data-filter>Jacquemus<span class="filter-count">72</span></label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="A.P.C." data-filter>A.P.C.<span class="filter-count">65</span></label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Sandro" data-filter>Sandro<span class="filter-count">58</span></label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="AMI Paris" data-filter>AMI Paris<span class="filter-count">43</span></label>
+        <div class="filter-acc-body" id="fac-cat">
+          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-cat" data-label="Dresses">Dresses<span class="filter-count">84</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-cat" data-label="Tops">Tops<span class="filter-count">84</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-cat" data-label="Trousers">Trousers<span class="filter-count">84</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-cat" data-label="Skirts">Skirts<span class="filter-count">84</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-cat" data-label="Shoes">Shoes<span class="filter-count">84</span></label>
+
         </div>
       </div>
-      <div class="filter-acc-item">
-        <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-price">
-          Price
-          <svg class="filter-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="filter-acc-body" id="fac-price">
-          <div class="filter-range-wrap">
-            <div class="filter-range-header">
-              <span class="filter-range-label" id="price-label-drawer">$5 – $4,900</span>
-              <button class="filter-range-reset" id="price-reset-drawer">Reset</button>
-            </div>
-            <div class="filter-range-track" id="price-track-drawer">
-              <div class="filter-range-fill" id="price-fill-drawer"></div>
-              <input type="range" class="filter-range-input filter-range-min" id="price-min-drawer" min="5" max="4900" value="5" step="5" aria-label="Minimum price">
-              <input type="range" class="filter-range-input filter-range-max" id="price-max-drawer" min="5" max="4900" value="4900" step="5" aria-label="Maximum price">
-            </div>
-            <div class="filter-range-ticks">
-              <span>$5</span><span>$4,900</span>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div class="filter-acc-item">
         <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-size">
           Size
@@ -939,9 +944,31 @@
           <svg class="filter-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="filter-acc-body" id="fac-fit">
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Tall">Tall</label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Petite">Petite</label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Plus Size">Plus Size</label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Tall">Tall<span class="filter-count">84</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Petite">Petite<span class="filter-count">84</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-fit" data-label="Plus Size">Plus Size<span class="filter-count">84</span></label>
+        </div>
+      </div>
+      <div class="filter-acc-item">
+        <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-price">
+          Price
+          <svg class="filter-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="filter-acc-body" id="fac-price">
+          <div class="filter-range-wrap">
+            <div class="filter-range-header">
+              <span class="filter-range-label" id="price-label-drawer">$5 – $4,900</span>
+              <button class="filter-range-reset" id="price-reset-drawer">Reset</button>
+            </div>
+            <div class="filter-range-track" id="price-track-drawer">
+              <div class="filter-range-fill" id="price-fill-drawer"></div>
+              <input type="range" class="filter-range-input filter-range-min" id="price-min-drawer" min="5" max="4900" value="5" step="5" aria-label="Minimum price">
+              <input type="range" class="filter-range-input filter-range-max" id="price-max-drawer" min="5" max="4900" value="4900" step="5" aria-label="Maximum price">
+            </div>
+            <div class="filter-range-ticks">
+              <span>$5</span><span>$4,900</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="filter-acc-item">
@@ -964,34 +991,41 @@
           </div>
         </div>
       </div>
-       <div class="filter-acc-item">
-        <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-availability">
-          Availability
+      <div class="filter-acc-item">
+        <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-brand">
+          Brand
           <svg class="filter-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="filter-acc-body" id="fac-availability">
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-sustain" data-label="Available Now">Available Now</label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-sustain" data-label="Made To Order">Made To Order</label>
+        <div class="filter-acc-body" id="fac-brand">
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Toteme">Toteme<span class="filter-count">84</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Jacquemus">Jacquemus<span class="filter-count">72</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="A.P.C.">A.P.C.<span class="filter-count">65</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Sandro">Sandro<span class="filter-count">58</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="AMI Paris">AMI Paris<span class="filter-count">43</span></label>
         </div>
       </div>
       <div class="filter-acc-item">
-        <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-sustainability">
-          Sustainability
+        <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-material">
+          Material
           <svg class="filter-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="filter-acc-body" id="fac-sustainability">
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-sustain" data-label="Fair Trade">Fair Trade</label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-sustain" data-label="Eco-Friendly Materials">Eco-Friendly Materials</label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-sustain" data-label="OEKO-TEX">OEKO-TEX</label>
+        <div class="filter-acc-body" id="fac-material">
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Cotton">Cotton<span class="filter-count">84</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Linen">Linen<span class="filter-count">72</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Wool">Wool<span class="filter-count">65</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Silk">Silk<span class="filter-count">58</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Denim">Denim<span class="filter-count">43</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="100% Organic Cotton">100% Organic Cotton<span class="filter-count">43</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Recycled Materials">Recycled Materials<span class="filter-count">43</span></label>
+          <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Tencel™">Tencel™<span class="filter-count">43</span></label>
         </div>
       </div>
     </div>
     <div class="filter-drawer-footer">
-      <button class="btn sm" id="filter-clear-btn">Clear All</button>
       <button class="btn filled sm" id="filter-apply-btn">Apply Filters</button>
     </div>
   </div>
-<script src="add-to-wishlist-additions.js"></script>    
+
   <script>
   (function () {
 
@@ -1017,8 +1051,12 @@
     }
 
     function renderActiveTags() {
+      /* remove all existing tags first */
+      var existing = activeFiltersBar.querySelectorAll('.active-filter');
+      existing.forEach(function (el) { el.remove(); });
+
+      /* ── checkbox filters (Fit Type, Brand, Material, etc.) ── */
       var checked = getChecked();
-      /* dedupe by label */
       var seen = {};
       var unique = checked.filter(function (cb) {
         var lbl = cb.getAttribute('data-label');
@@ -1026,24 +1064,12 @@
         seen[lbl] = true;
         return true;
       });
-
-      if (unique.length === 0) {
-        activeFiltersBar.style.display = 'none';
-        return;
-      }
-      activeFiltersBar.style.display = 'flex';
-
-      /* rebuild tag buttons — keep the label span, replace everything after */
-      var existing = activeFiltersBar.querySelectorAll('.active-filter');
-      existing.forEach(function (el) { el.remove(); });
-
       unique.forEach(function (cb) {
         var lbl = cb.getAttribute('data-label');
         var btn = document.createElement('button');
         btn.className = 'active-filter';
         btn.textContent = lbl + ' ✕';
         btn.addEventListener('click', function () {
-          /* uncheck all with this label */
           getAllFilterCheckboxes().forEach(function (c) {
             if (c.getAttribute('data-label') === lbl) c.checked = false;
           });
@@ -1052,6 +1078,38 @@
         });
         activeFiltersBar.appendChild(btn);
       });
+
+      /* ── size buttons ── */
+      document.querySelectorAll('.filter-size-btn.is-active').forEach(function (sizeBtn) {
+        var lbl = sizeBtn.getAttribute('data-size');
+        var btn = document.createElement('button');
+        btn.className = 'active-filter';
+        btn.textContent = lbl + ' ✕';
+        btn.addEventListener('click', function () {
+          sizeBtn.classList.remove('is-active');
+          renderActiveTags();
+          updateFilterDot();
+        });
+        activeFiltersBar.appendChild(btn);
+      });
+
+      /* ── color buttons ── */
+      document.querySelectorAll('.filter-color-btn.is-active').forEach(function (colorBtn) {
+        var lbl = colorBtn.getAttribute('data-color');
+        var btn = document.createElement('button');
+        btn.className = 'active-filter';
+        btn.textContent = lbl + ' ✕';
+        btn.addEventListener('click', function () {
+          colorBtn.classList.remove('is-active');
+          renderActiveTags();
+          updateFilterDot();
+        });
+        activeFiltersBar.appendChild(btn);
+      });
+
+      /* show/hide the bar */
+      var hasAny = activeFiltersBar.querySelectorAll('.active-filter').length > 0;
+      activeFiltersBar.style.display = hasAny ? 'flex' : 'none';
     }
 
     function updateFilterDot() {
@@ -1063,13 +1121,19 @@
         var lbl = cb.getAttribute('data-label');
         if (!seen[lbl]) { seen[lbl] = true; count++; }
       });
-      if (dot) dot.classList.toggle('is-visible', count > 0);
+      count += document.querySelectorAll('.filter-size-btn.is-active').length;
+      count += document.querySelectorAll('.filter-color-btn.is-active').length;
+      if (dot) {
+        dot.classList.toggle('is-visible', count > 0);
+        dot.textContent = count > 0 ? count : '';
+      }
     }
 
     document.addEventListener('change', function (e) {
       if (e.target && e.target.classList.contains('plp-filter')) {
         syncPaired(e.target);
         renderActiveTags();
+        renderModalTags();
         updateFilterDot();
       }
     });
@@ -1077,10 +1141,87 @@
     /* Sidebar clear */
     var sidebarClear = document.getElementById('sidebar-clear-btn');
     if (sidebarClear) sidebarClear.addEventListener('click', function () {
+      var modalClearBtn = document.getElementById('modal-tags-clear-btn');
+        if (modalClearBtn) modalClearBtn.addEventListener('click', function () {
+          getAllFilterCheckboxes().forEach(function (cb) { cb.checked = false; });
+          document.querySelectorAll('.filter-size-btn.is-active, .filter-color-btn.is-active').forEach(function (b) { b.classList.remove('is-active'); });
+          renderActiveTags();
+          renderModalTags();
+          updateFilterDot();
+        });
       getAllFilterCheckboxes().forEach(function (cb) { cb.checked = false; });
+      document.querySelectorAll('.filter-size-btn.is-active, .filter-color-btn.is-active').forEach(function (b) { b.classList.remove('is-active'); });
+      renderActiveTags();
+      renderModalTags();
+      updateFilterDot();
+    });
+
+    /* ─── MODAL ACTIVE TAGS ─── */
+    function renderModalTags() {
+  var container = document.getElementById('modal-active-tags');
+  if (!container) return;
+  container.innerHTML = '';
+
+  var tags = [];
+
+  var checked = getChecked();
+  var seen = {};
+  checked.filter(function(cb) {
+    var lbl = cb.getAttribute('data-label');
+    if (seen[lbl]) return false;
+    seen[lbl] = true;
+    return true;
+  }).forEach(function(cb) {
+    var lbl = cb.getAttribute('data-label');
+    tags.push({ label: lbl, remove: function() {
+      getAllFilterCheckboxes().forEach(function(c) {
+        if (c.getAttribute('data-label') === lbl) c.checked = false;
+      });
+    }});
+  });
+
+  document.querySelectorAll('.filter-size-btn.is-active').forEach(function(btn) {
+    var lbl = btn.getAttribute('data-size');
+    tags.push({ label: lbl, remove: function() { btn.classList.remove('is-active'); }});
+  });
+
+  document.querySelectorAll('.filter-color-btn.is-active').forEach(function(btn) {
+    var lbl = btn.getAttribute('data-color');
+    tags.push({ label: lbl, remove: function() { btn.classList.remove('is-active'); }});
+  });
+
+  if (tags.length === 0) {
+    container.style.display = 'none';
+    return;
+  }
+
+  container.style.display = 'flex';
+
+  tags.forEach(function(tag) {
+    var btn = document.createElement('button');
+    btn.className = 'active-filter';
+    btn.textContent = tag.label + ' ✕';
+    btn.addEventListener('click', function() {
+      tag.remove();
+      renderModalTags();
       renderActiveTags();
       updateFilterDot();
     });
+    container.appendChild(btn);
+  });
+
+  var clearAll = document.createElement('button');
+  clearAll.className = 'modal-tags-clear-btn';
+  clearAll.textContent = 'Clear All';
+  clearAll.addEventListener('click', function() {
+    getAllFilterCheckboxes().forEach(function(cb) { cb.checked = false; });
+    document.querySelectorAll('.filter-size-btn.is-active, .filter-color-btn.is-active').forEach(function(b) { b.classList.remove('is-active'); });
+    renderActiveTags();
+    renderModalTags();
+    updateFilterDot();
+  });
+  container.appendChild(clearAll);
+}
 
     /* ─── FILTER DRAWER ─── */
     var overlay  = document.getElementById('filter-overlay');
@@ -1089,18 +1230,22 @@
     var closeBtn = document.getElementById('filter-close-btn');
     var clearBtn = document.getElementById('filter-clear-btn');
     var applyBtn = document.getElementById('filter-apply-btn');
+    var mobileToolbar = document.querySelector('.plp-toolbar-mobile');
 
     function openDrawer() {
       drawer.classList.add('is-open');
       overlay.classList.add('is-open');
       document.body.style.overflow = 'hidden';
       if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+      if (mobileToolbar) mobileToolbar.classList.add('drawer-is-open');
+      renderModalTags();
     }
     function closeDrawer() {
       drawer.classList.remove('is-open');
       overlay.classList.remove('is-open');
       document.body.style.overflow = '';
       if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+      if (mobileToolbar) mobileToolbar.classList.remove('drawer-is-open');
     }
 
     if (openBtn)  openBtn.addEventListener('click', openDrawer);
@@ -1108,11 +1253,17 @@
     if (overlay)  overlay.addEventListener('click', closeDrawer);
     if (clearBtn) clearBtn.addEventListener('click', function () {
       getAllFilterCheckboxes().forEach(function (cb) { cb.checked = false; });
+      document.querySelectorAll('.filter-size-btn.is-active, .filter-color-btn.is-active').forEach(function (b) { b.classList.remove('is-active'); });
       renderActiveTags();
+      renderModalTags();
       updateFilterDot();
     });
-    if (applyBtn) applyBtn.addEventListener('click', closeDrawer);
-
+if (applyBtn) applyBtn.addEventListener('click', function() {
+  renderActiveTags();
+  renderModalTags();
+  updateFilterDot();
+  closeDrawer();
+});
     /* Drawer accordions */
     var accBtns = drawer ? drawer.querySelectorAll('.filter-acc-btn') : [];
     accBtns.forEach(function (btn) {
@@ -1166,6 +1317,8 @@
       document.querySelectorAll('.filter-size-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
           this.classList.toggle('is-active');
+          renderActiveTags();
+          renderModalTags();
           updateFilterDot();
         });
       });
@@ -1176,6 +1329,8 @@
       document.querySelectorAll('.filter-color-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
           this.classList.toggle('is-active');
+          renderActiveTags();
+          renderModalTags();
           updateFilterDot();
         });
       });
@@ -1349,6 +1504,7 @@
 
   })();
   </script>
+
   <!-- Wishlist modal -->
 <div class="qa-mask" id="wl-mask"></div>
 <div class="wl-modal" id="wl-modal" role="dialog" aria-modal="true" aria-labelledby="wl-title">
@@ -1375,6 +1531,8 @@
     <button class="btn filled full lg" id="wl-save">Save</button>
   </div>
 </div>
+
+
 
 </body>
 </html>

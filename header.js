@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
     { label: 'Bags', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
       { title: 'Style', links: ['Tote','Shoulder','Crossbody','Clutch','Backpack'] },
       { title: 'Size', links: ['Mini','Small','Medium','Large','Oversized'] },
-      { title: 'Shop', links: ['New In','Designer','Under $200','Community Top Pick'] },
+      { title: 'Shop', links: ['New In','Designer','Under $200','Under $100'] },
     ], cards: [{ label: 'Bag Edit' }] }},
     { label: 'Accessories', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
       { title: 'Jewellery', links: ['Necklaces','Rings','Earrings','Bracelets'] },

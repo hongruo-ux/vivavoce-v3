@@ -450,3 +450,19 @@
   .pdp-sticky-bar { display: none !important; }
 }
 
+.modal-tags-clear-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: var(--text-sm);
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  min-height: 0;
+  padding: 0;
+  align-self: center;
+}
+.modal-tags-clear-btn:hover { color: var(--text-primary); }
+

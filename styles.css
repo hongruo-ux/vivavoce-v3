@@ -278,7 +278,7 @@ a:focus-visible { outline: var(--focus-ring); outline-offset: 2px; border-radius
 
 img, video { display: block; max-width: 100%; border-radius: 0 !important; }
 
-button { font-family: var(--font-body); cursor: pointer; border: none; background: none; min-height: 44px; transition: background 150ms ease, color 150ms ease; }
+button { font-family: var(--font-body); cursor: pointer; border: none; background: none; min-height: 40px; transition: background 150ms ease, color 150ms ease; }
 button:focus-visible { outline: var(--focus-ring); outline-offset: 2px; }
 
 input, textarea, select {
@@ -527,7 +527,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .product-card-info  { padding: 0.75rem 0 0; display: flex; flex-direction: column; gap: 4px; }
 .product-brand      { font-size: var(--text-sm); font-weight: 400; color: var(--red-coral); text-decoration: none; display: block; font-family: var(--font-display); }
 .product-brand:hover { color: var(--cta-hover); }
-.product-name       { font-size: var(--text-lg); font-weight: 500; color: var(--text-primary); line-height: 1.4; font-family: var(--font-body); }
+.product-name       { font-size: var(--text-xl); font-weight: 500; color: var(--text-primary); line-height: 1.4; font-family: var(--font-body); }
 .product-price      { font-size: var(--text-default); font-weight: 600; color: var(--text-primary); font-family: var(--font-body); }
 .product-price .old { text-decoration: line-through; color: var(--text-caption); margin-right: 6px; font-weight: 400; }
 .product-card-info a:hover .product-name { text-decoration: underline; text-underline-offset: 2px; }
