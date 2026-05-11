@@ -11,58 +11,70 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const NAV_ITEMS = [
     { label: "What's New", href: 'plpNew.html', noActive: true, megaMenu: { listCols: 1, cardCols: 3, cols: [
-      { title: '', links: ['All New Arrivals','New this Week','Best Sellers','Back in Stock'] },
+      { title: '', links: [
+        { label: 'All New Arrivals', href: 'plpNew.html' },
+        { label: 'New this Week',    href: 'plpNew.html' },
+        { label: 'Best Sellers',     href: 'plpNew.html' },
+        { label: 'Back in Stock',    href: 'plpNew.html' },
+      ] },
     ], cards: [{ label: 'Spring Brights' }, { label: 'New Dressess for Summer' }, { label: 'Shop Our Pop-Up' }] }},
     { label: 'Get Inspired', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: '', links: ['Shop All Inspirations','Designer Spotlight','Best Sellers','Editor\'s Pick'] },
+      { title: '', links: ['Designer Spotlight','Best Sellers','Editor\'s Pick','Shop All Inspirations'] },
       { title: 'Trending Now', links: ['Coastal Chic','Maximalist Prints','Sheer Layers','Bold Colour'] },
       { title: 'Shop by Occasion', links: ['Casual','Work','Evening','Wedding Guest','Brunch'] },
     ], cards: [{ label: 'Everyday Linen Comfort'}, { label: 'Water Dress Code'}] }},
     { label: 'Summer', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: '', links: ['All Summer','Best Sellers','New In','Swimwear','Matching Pieces'] },
+      { title: '', links: ['Best Sellers','New In','Swimwear','Matching Pieces', 'Shop All Summer'] },
       { title: 'Summer Edits', links: ['Resort Wear','Beach Essentials','Sun Dresses','Linen Collection'] },
     ], cards: [{ label: 'Summer Vacation Must Have' }, { label: 'Beach Edit' }] }},
     { label: 'Brands', href: 'brands.html' },
     { label: 'Clothing', megaMenu: { listCols: 4, cardCols: 1, noFeatured: true, cols: [
       { title: 'Shop by Categories', links: ['Dresses & Jumpsuits','Tops & Blouses','Tees & Tanks','Bodysuits', 'Pants & Trousers','Denim', 'Swimwear', 'Shirts'] },
-      { title: ' ', links: ['Skirts','Shorts','Leggings','Coats', 'Jackets & Blazers', 'Loungewear & Intimates', 'Coats'] },
+      { title: ' ', links: ['Skirts','Shorts','Leggings','Coats', 'Jackets & Blazers', 'Loungewear & Intimates', 'Coats','Shop All Clothing'] },
       { title: 'Shop by Sizes', links: ['XS – M','L – XL','XXL - 4XL','Plus','Tall','Plus'] },
       { title: 'Shop by Brands', links: ['Brand Name','Brand Name', 'Brand Name', 'Brand Name', 'Brand Name'] },
     ], cards: [{ label: 'Trending Cloth Edit' }] }},
-    { label: 'Dresses', href: 'plpCategory.html', megaMenu: { listCols: 4, cardCols: 1, cols: [
-      { title: '', links: ['All Dresses','Best sellers','New In', 'Editor\'s Pick'] },
-      { title: 'Styles', links: ['Jumpsuits','Maxi', 'Midi', 'Knit', 'Wrap','Slip','Shirt Dresses'] },
+    { label: 'Dresses', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
+      { title: '', links: ['Best sellers','New In', 'Editor\'s Pick'] },
+      { title: 'Styles', links: ['Jumpsuits','Maxi', 'Midi', 'Knit', 'Wrap','Slip','Shirt Dresses','Shop All Dresses'] },
       { title: 'Popular', links: ['Under $200','Under $100','XS – M','L – XL','XXL - 4XL','Organic Materials'] },
-      { title: 'Brands', links: ['Featured Brand Name','Featured Brand Name','Featured Brand Name'] },
-    ], cards: [{ label: 'Just Arrived! Discover linen jumpsuits and more.' }] }},
+    ], cards: [{ label: 'Just Arrived! Discover linen jumpsuits' }, { label: 'Summer Editions' }] }},
     { label: 'Active', megaMenu: { listCols: 4, cardCols: 1, cols: [
-      { title: '', links: ['All Active','Best Sellers','New In','Matching Pieces'] },
-      { title: 'Styles', links: ['Leggings','Swim','Tops','Shorts','Hoodies','Outwears'] },
+      { title: '', links: ['Best Sellers','New In','Matching Pieces'] },
+      { title: 'Styles', links: ['Leggings','Swim','Tops','Shorts','Hoodies','Outwears', 'Shop All Active'] },
       { title: 'Popular', links: ['Under $100','Under $50','Yoga','Eco-Friendly Farbrics', 'Curve & Plus'] },
       { title: 'Brands', links: ['Featured Brand Name','Featured Brand Name','Featured Brand Name'] },
     ], cards: [{ label: 'Active Edit' }] }},
     { label: 'Shoes', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 1, cols: [
-      { title: '', links: ['All Shoes','Best Sellers','New In','Water Shoes'] },
-      { title: 'Styles', links: ['Heels','Flats','Boots','Sandals', 'Slippers', 'Trainers'] },
+      { title: '', links: ['Best Sellers','New In','Water Shoes'] },
+      { title: 'Styles', links: ['Heels','Flats','Boots','Sandals', 'Slippers', 'Trainers', 'Shop All Shoes'] },
       { title: 'Popular', links: ['Boat shoes','Platform','Wide & Comfort Fit','Sustainable Shoes'] },
     ], cards: [{ label: 'Shoe Edit' }] }},
     { label: 'Bags', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: '', links: ['Shop Bags','Best Sellers','New In', 'Editor\'s Pick'] },
-      { title: 'Style', links: ['Tote','Shoulder','Crossbody','Clutch','Backpack'] },
+      { title: '', links: ['Best Sellers','New In', 'Editor\'s Pick'] },
+      { title: 'Style', links: ['Tote','Shoulder','Crossbody','Clutch','Backpack','Shop All Bags'] },
       { title: 'Popular', links: ['New In ','Under $100','Under $200','Icon Bags','Mini Bags'] },
     ], cards: [{ label: 'Bag Edit' }, { label: 'The It Bag- the luxury edit from our brand.' }] }},
     { label: 'Accessories', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: '', links: ['All Accessories','Best Sellers','New In','Editor\'s Pick'] },
-      { title: 'Scarves & Hats', links: ['Jewelry', 'Small Leather Items', 'Scarves','Hats','Belts','Sunglasses'] },
+      { title: '', links: ['Best Sellers','New In','Editor\'s Pick'],  },
+      { title: 'Scarves & Hats', links: ['Jewelry', 'Small Leather Items', 'Scarves','Hats','Belts','Sunglasses','Shop All Accessories'] },
       { title: 'Popular', links: ['Under $100','Under $50','Birth Stones','Perfect for Gift'] },
     ], cards: [{ label: 'Jewelry-New' }, { label: 'The gift shop for Mom' }] }},
     { label: 'Beauty', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 1, cols: [
-      { title: '', links: ['All Beauty','Best Sellers','Natural','Luxury'] },
-      { title: 'Makeup', links: ['Foundation','Lips','Eyes','Blush','Setting Spray'] },
+      { title: '', links: ['Best Sellers','Natural','Luxury'] },
+      { title: 'Makeup', links: ['Foundation','Lips','Eyes','Blush','Setting Spray', 'Shop All Beauty'] },
       { title: 'Skincare', links: ['Serums','Cleansers','Moisturisers','SPF','Eye Care'] },    ], cards: [{ label: 'Best Gift for Mom!' }] }},
     { label: 'Editorial', href: 'editorial.html', megaMenu: { cols: [
-      { title: 'Community', links: ['Lifestyle','Fashion','Trending Styles','Brand Stories','View All'] },
-      { title: 'Sustainability & Vision', links: ['Our Mission','Ethical Production','Environmental Friendly','View All'] },
+      { title: 'Community', links: [
+        { label: 'All Editorials', href: 'editorial.html' },
+        { label: 'Viva Voce Dressing Room', href: 'dressing-room.html' },
+        { label: 'Community Spotlight', href: 'community-spotlight.html' },
+      ]},
+      { title: 'Our Visions', links: [
+        { label: 'About Us', href: 'about-us.html' },
+        { label: 'Ethical Production', href: 'ethical-production.html' },
+        { label: "Founder's Notes", href: 'founders-notes.html' },
+      ]},
     ], stories: [
       { cat: 'Fashion', title: 'Most Wanted', date: '8 hrs ago' },
       { cat: 'Lifestyle', title: 'The Must-See Movies To Add To Your Watch List', date: '8 hrs ago' },
@@ -95,8 +107,11 @@ window.addEventListener('DOMContentLoaded', () => {
       const groupsHTML = item.megaMenu.cols.map(col => `
         <div class="mega-group">
           ${col.title ? `<div class="mega-col-title">${col.title}</div>` : ''}
-          ${col.links.map(l => `<a href="plpCategory.html" class="mega-link">${l}</a>`).join('')}
-        </div>`).join('');
+          ${col.links.map(l => {
+            const href = typeof l === 'object' ? l.href : 'plpCategory.html';
+            const label = typeof l === 'object' ? l.label : l;
+            return `<a href="${href}" class="mega-link">${label}</a>`;
+          }).join('')}        </div>`).join('');
       const storiesHTML = item.megaMenu.stories.map(s => `
         <div class="mega-story">
           <div class="mega-story-img wf-img"></div>
@@ -110,7 +125,7 @@ window.addEventListener('DOMContentLoaded', () => {
         <a href="${item.href || 'plp.html'}" class="nav-link" data-menu="${menuId}">${item.label}</a>
         <div class="mega-menu" id="${menuId}">
           <div class="mega-menu-inner">
-            <a href="editorial.html" class="mega-shop-all">Read All ${item.label}</a>
+            <h3 class="mega-menu-title">${item.label}</h3>
             <div class="mega-grid">
               <div class="mega-links-area" data-cols="2">${groupsHTML}</div>
               <div class="mega-editorial-gap"></div>
@@ -137,7 +152,11 @@ window.addEventListener('DOMContentLoaded', () => {
       
       return `<div class="mega-group${i === 0 && !item.megaMenu.noFeatured ? ' mega-group--featured' : ''}">
         ${col.title ? `<div class="mega-col-title">${col.title}</div>` : ''}
-        ${col.links.map(l => `<a href="plpCategory.html" class="mega-link">${l}</a>`).join('')}
+        ${col.links.map(l => {
+          const href  = typeof l === 'object' ? l.href  : 'plpCategory.html';
+          const label = typeof l === 'object' ? l.label : l;
+          return `<a href="${href}" class="mega-link">${label}</a>`;
+        }).join('')}
       </div>`;
     }).join('');
 
@@ -170,9 +189,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const groupsHTML = item.megaMenu.cols.map((col, i) => {
       const groupId = subId + '-g' + i;
-      const linksHTML = col.links.map(l => `<a href="plpCategory.html" class="mobile-acc-link">${l}</a>`).join('');
+      const linksHTML = item.megaMenu.stories
+        ? col.links.map(l => {
+            const href = typeof l === 'object' ? l.href : 'plpCategory.html';
+            const label = typeof l === 'object' ? l.label : l;
+            return `<a href="${href}" class="mobile-acc-link">${label}</a>`;
+          }).join('')
+        : col.links.map(l => {
+          const href  = typeof l === 'object' ? l.href  : 'plpCategory.html';
+          const label = typeof l === 'object' ? l.label : l;
+          return `<a href="${href}" class="mobile-acc-link">${label}</a>`;
+        }).join('');
       // First group: always flat, no accordion tab, Shop All link hidden on mobile
-      if (i === 0) return `<div class="mobile-acc-group-open">${linksHTML}</div>`;
+      if (i === 0 || col.noTitle || !col.title.trim()) return `<div class="mobile-acc-group-open">${linksHTML}</div>`;
       return `<div class="mobile-acc-group-item">
         <button class="mobile-acc-group-btn" data-group="${groupId}" aria-expanded="false">
           <span>${col.title}</span>
@@ -582,10 +611,22 @@ window.addEventListener('DOMContentLoaded', () => {
       const id = btn.dataset.group;
       const body = document.getElementById(id);
       const isOpen = body.classList.contains('is-open');
-      const plus = btn.querySelector('.mobile-acc-plus');
-      body.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', String(!isOpen));
-      if (plus) plus.textContent = isOpen ? '+' : '−';
+      // Close all other group bodies within the same parent acc-body
+      const parentAccBody = btn.closest('.mobile-acc-body');
+      if (parentAccBody) {
+        parentAccBody.querySelectorAll('.mobile-acc-group-body.is-open').forEach(b => {
+          b.classList.remove('is-open');
+          b.previousElementSibling?.setAttribute('aria-expanded', 'false');
+          const p = b.previousElementSibling?.querySelector('.mobile-acc-plus');
+          if (p) p.textContent = '+';
+        });
+      }
+      if (!isOpen) {
+        body.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        const plus = btn.querySelector('.mobile-acc-plus');
+        if (plus) plus.textContent = '−';
+      }
     });
   });
 

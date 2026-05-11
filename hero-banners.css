@@ -160,6 +160,7 @@
         }
     @media (max-width:1399px) {
       .featured-stack__img{ aspect-ratio: 4 / 3;}
+      .featured-stack__hero {aspect-ratio: 16 / 8 ;}
       
     }
 
@@ -443,11 +444,11 @@
 /* --- Mother's Day Banner --- */
 .holiday-day {
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 30% 70%;
   align-items: center;
   background-color: var(--surface-sand);
   border-radius: var(--radius-lg);
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 3rem 2rem 2rem 2rem;
   overflow: hidden;
   box-sizing: border-box;
 }

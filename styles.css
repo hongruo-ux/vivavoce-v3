@@ -86,6 +86,7 @@
   --red-coral:       #de3726;
   --blue-sky:        #C2DBFC;
   --icy-mint:        #CCE5C0;
+  --lake-blue:         #005670;
 
   --font-display: 'GT Alpina', 'Montagu Slab', Georgia, serif;
   --font-body:    'Sharp Earth OL', 'Roboto', -apple-system, system-ui, sans-serif;
@@ -99,13 +100,14 @@
 
   /* Header type scale */
   --header-display: 4rem;    /* 64px */
-  --header-h1:      3rem;    /* 48px */
-  --header-h2:      2.25rem; /* 36px */
+  --header-h1:      3.25rem;    /* 48px */
+  --header-h2:      2.5rem; /* 36px */
   --header-h3:      1.75rem; /* 28px */
   --header-h4:      1.25rem;  /* 18px */
-  --header-h5: 1rem;      /* 16px */
+  --header-h5:      1rem;      /* 16px */
 
   /* Quote type scale */
+  --quote-xl:       3rem; /* 30px */
   --quote-lg:       1.875rem; /* 30px */
   --quote-sm:       1.25rem;  /* 20px */
 
@@ -129,9 +131,9 @@
   --text-sm:      .985rem;
 
   --header-display: 4rem;
-  --header-h1:      3rem;
-  --header-h2:      2.25rem;
-  --header-h3:      1.985rem;
+  --header-h1:      3.25rem;
+  --header-h2:      2.5rem;
+  --header-h3:      1.75rem;
 
   }
 }
@@ -144,12 +146,13 @@
     --text-xs:      0.75rem;   /* 12px */
 
     --header-display: 3.5rem;  /* 56px */
-    --header-h1:      2.5rem;  /* 40px */
+    --header-h1:      2.875rem;  /* 40px */
     --header-h2:      2rem;    /* 32px */
     --header-h3:      1.5rem;  /* 24px */
     --header-h4:       1.125rem; /* 17px */
   --header-h5: 1rem;      /* 16px */
 
+    --quote-xl:       2.5rem; /* 30px */
     --quote-lg:       1.5rem;  /* 24px */
     --quote-sm:       1.125rem;/* 18px */
   }
@@ -163,12 +166,12 @@
     --text-xs:      0.6875rem; /* 11px */
 
     --header-display: 3rem;    /* 48px */
-    --header-h1:      2.25rem; /* 36px */
-    --header-h2:      1.75rem; /* 28px */
+    --header-h1:      2.5rem; /* 36px */
+    --header-h2:      1.8755rem; /* 28px */
     --header-h3:      1.375rem;/* 22px */
     --header-h4:      1.125rem;      /* 16px */
     --header-h5: 0.9375rem; /* 15px */
-
+    --quote-xl:       2rem; /* 30px */
     --quote-lg:       1.25rem; /* 20px */
     --quote-sm:       1rem;    /* 16px */
   }
@@ -187,7 +190,7 @@
     --header-h3:      1.25rem; /* 20px */
     --header-h4:      1rem;      /* 16px */
     --header-h5:       0.875rem;  /* 14px */
-
+    --quote-xl:       1.875rem; /* 30px */
     --quote-lg:       1.125rem;/* 18px */
     --quote-sm:       1rem;    /* 16px */
   }
@@ -200,6 +203,8 @@
 
 .quote-lg { font-size: var(--quote-lg); font-family: var(--font-display);font-style: italic; }
 .quote-sm { font-size: var(--quote-sm); font-family: var(--font-display);font-style: italic; }
+.quote-xl { font-size: var(--quote-xl); font-family: var(--font-display);font-style: italic; }
+
 
 /* Layer 1 */
 .band { width: 100%; width: 100%; max-width: 1800px; margin: auto;}
@@ -267,7 +272,7 @@ h1 { font-size: var(--header-h1); font-weight: 500; }
 h2 { font-size: var(--header-h2); font-weight: 500; }
 h3 { font-size: var(--header-h3); font-weight: 500; }
 
-h3,h4, h5, h6 { font-family: var(--font-body); color: var(--text-primary); line-height: 1.4; letter-spacing: normal; }
+h3,h4, h5, h6 { font-family: var(--font-body); color: var(--text-primary); line-height: 1.4; letter-spacing: normal; padding-block:.25rem ;}
 h4 { font-size: var(--header-h4); font-weight: 700; }
 h5 { font-size: var(--header-h5); font-weight: 600; }
 h6 { font-size: var(--text-default); font-weight: 600; }
@@ -282,15 +287,31 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 button:focus-visible { outline: var(--focus-ring); outline-offset: 2px; }
 
 input, textarea, select {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: var(--text-default);
   color: var(--text-primary);
   background: var(--surface-page);
-  border: 1.5px solid #767672;
+  border: 1.5px solid #1a1a18;
   border-radius: 100px;
   padding: 0.75rem 1rem;
   min-height: 44px;
   width: 100%;
+}
+.input-label {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  font-weight: 500;
+  padding-left: 1rem;
+  line-height: 2;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+textarea {
+  border-radius: 1.25rem;
+  padding: 0.875rem 1rem;
 }
 
 select {
@@ -330,6 +351,42 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
    .left {padding-left:1rem; padding-top: 1rem;}
    .right { padding-left: 0; padding-right:1rem; padding-top: 1rem;}
    .text-center{text-align: center;}
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0.75rem 0;
+  padding-inline: 1rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-lg);
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  accent-color: var(--cta-bg);
+}
+.radio-reveal {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.radio-reveal.is-visible {
+  display: flex;
 }
 
 
@@ -446,8 +503,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
    6. SECTION COMPONENTS — header, eyebrow, title
    ============================================================ */
 .section-header          { gap: 2rem; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; }
-.section-eyebrow         { font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 4px; }
-.section-title           { font-family: var(--font-display); text-transform: capitalize; }
+.section-eyebrow         { font-size: var(--text-sm); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 4px; }
+.section-title           { font-family: var(--font-display); text-transform: uppercase; padding-block: 1rem .5rem; font-size: var(--header-h3); font-weight: 600; color: var(--red-coral); }
 .section-title-block     { padding: 0 0 1rem; }
 .half-header             { max-width: 60%; }
 .section-header-carousel { gap: 2rem; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1rem; }
@@ -469,11 +526,12 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 /* ============================================================
    8. BADGES & TAGS
    ============================================================ */
-.badge     { display: inline-flex; align-items: center; font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.04em; padding: 1px 6px; border-radius: var(--radius-pill); text-transform: uppercase; }
+.badge     { display: inline-flex; align-items: center; font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.04em; padding: 1px 6px; border-radius: var(--radius-pill); text-transform: uppercase; }
 .badge.new  { background: var(--evergreen); color: #fff; }
 .badge.sale { background: var(--red-coral); color: #fff; }
+.badge.stock { background: var(--golden-hour); color: var(--lake-blue); }
 
-.tag        { display: inline-flex; align-items: center; font-size: 0.75rem; font-weight: 400; border-radius: var(--radius-pill); color: var(--text-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+.tag        { display: inline-flex; align-items: center; font-size: 0.75rem; font-weight: 600; border-radius: var(--radius-pill); color: var(--text-primary); letter-spacing: 0.04em; text-transform: uppercase; }
 .tag.active { background: var(--neon-celery); color: var(--evergreen); }
 
 .active-filters { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
@@ -631,7 +689,11 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
    ============================================================ */
 @media (min-width: 1401px) {}
 @media (max-width: 1400px) {}
-@media (max-width: 1079px) {}
+@media (max-width: 1079px) { 
+  br {
+    display: none;
+  }
+}
 @media (max-width: 739px) {
   .search-overlay { padding-top: 0; align-items: stretch; }
   .search-panel   { width: 100%; max-width: 100%; max-height: 100vh; height: 100%; box-shadow: none; border-radius: 0; }

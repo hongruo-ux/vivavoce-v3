@@ -8,15 +8,15 @@
 /* ============================================================
    PLP LAYOUT
    ============================================================ */
-.plp-layout   { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; padding-bottom: 8rem; }
-.page-header  { padding-bottom: 0.875rem; color: var(--red-coral)!important; }
+.plp-layout   { display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; padding-bottom: 8rem; }
+.page-header  { padding-bottom: 0.875rem; color: var(--red-coral)!important; font-weight: 600; text-transform: uppercase;}
 .breadcrumb   { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--text-caption); margin: 1rem 0; }
 .breadcrumb button { min-height: 0; font-size: var(--text-sm); color: var(--text-caption); padding: 0; }
 .breadcrumb a      { color: var(--text-caption); }
 
 @media (min-width: 1401px) {}
 @media (max-width: 1400px) {
-   .plp-layout{grid-template-columns: 240px 1fr; padding-bottom: 5rem;}
+   .plp-layout{grid-template-columns: 260px 1fr; padding-bottom: 5rem;}
     .plp-layout {gap: 1rem;}
 }
 @media (max-width: 1079px) {
@@ -34,7 +34,7 @@
 .plp-cta-btn        { position: relative; display: flex; flex: 1; }
 .plp-toolbar-btn    { flex: 1; justify-content: center; width: 100%; }
 .plp-sort-wrap      { position: relative; flex: 1; display: flex; flex-direction: column; align-items: flex-end; }
-.plp-filter-dot     { position: absolute; top: -3px; right: -3px; width: 8px; height: 8px; border-radius: 50%; background: var(--red-coral); border: 1.5px solid var(--surface-page); display: none; z-index: 1; }
+.plp-filter-dot     { position: absolute; top: -3px; right: -3px; width: 18px; height: 18px; text-align: center; color: #fff; font-size: 12px; font-weight: 600; border-radius: 50%; background: var(--red-coral); border: 1.5px solid var(--surface-page); display: none; z-index: 1; }
 .plp-filter-dot.is-visible { display: block; }
 
 .sort-dropdown          { display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: var(--surface-page); border: 1px solid var(--border); z-index: 300; box-shadow: var(--shadow-card); min-width: 160px; }
@@ -50,7 +50,14 @@
 @media (max-width: 1400px) {}
 @media (max-width: 1079px) {
   .plp-toolbar         { display: none; }
-  .plp-toolbar-mobile  { display: flex; }
+  .plp-toolbar-mobile  { display: flex; 
+    position: sticky;
+      top: var(--header-h, 57px);
+      z-index: 100;
+      background: var(--surface-page);
+      padding: .5rem;
+         
+}
   .plp-toolbar-showing { display: none; }
 }
 @media (max-width: 739px) {}
@@ -59,20 +66,20 @@
 /* ============================================================
    FILTER SIDEBAR (desktop)
    ============================================================ */
-.filter-sidebar      { padding-right: 1.5rem; position: sticky; top: 160px; max-height: calc(100vh - 127px); overflow-y: auto; }
+.filter-sidebar      { padding-right: 1rem; position: sticky; top: 160px; max-height: calc(100vh - 127px); overflow-y: auto; }
 .filter-header       { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; font-size: var(--text-default); font-weight: 500; border-bottom: 1px solid var(--border);}
 .filter-group        { border-bottom: 1px solid var(--border); padding: 1rem 0; }
-.filter-group-title  { font-family: var(--font-display); display: flex; justify-content: space-between; align-items: center; width: 100%; font-size: var(--text-default); font-weight: 500; color: var(--cta-bg); min-height: 44px; text-align: left; padding: 0; transition: color 150ms; }
+.filter-group-title  { font-family: var(--font-display); display: flex; justify-content: space-between; align-items: center; width: 100%; font-size: var(--text-default); font-weight: 600; color: var(--cta-bg); text-transform: uppercase; min-height: 44px; text-align: left; padding: 0; transition: color 150ms; }
 .filter-group-title:hover { color: var(--link-hover); }
 .filter-group-title[aria-expanded="false"] .filter-chev { transform: rotate(0deg); }
 .filter-group-title[aria-expanded="true"]  .filter-chev { transform: rotate(180deg); }
 .filter-chev         { flex-shrink: 0; transition: transform 220ms ease; color: var(--text-caption); }
 .filter-group-body   { margin-top: 0.25rem; display: flex; flex-direction: column; gap: 8px; padding-bottom: 0.75rem; }
 .filter-group-body.is-closed { display: none; }
-.filter-option       { display: flex; align-items: center; gap: 8px; font-size: var(--text-default); color: var(--text-secondary); cursor: pointer; }
+.filter-option       { display: flex; align-items: center; gap: 8px; font-size: var(--text-default); color: var(--text-secondary); cursor: pointer; font-weight: 500;}
 .filter-count        { margin-left: auto; font-size: var(--text-sm); color: var(--text-caption); }
 .filter-group:last-child {
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
   border-bottom:none;
 }
 
@@ -150,7 +157,7 @@
    FILTER — PRICE RANGE SLIDER
    ============================================================ */
 .filter-range-wrap   { padding: 4px 0 8px; }
-.filter-range-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.filter-range-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
 .filter-range-label  { font-size: var(--text-default); font-weight: 600; color: var(--text-primary); }
 .filter-range-reset  { font-size: var(--text-default); color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; background: none; border: none; cursor: pointer; padding: 0; min-height: 0; font-family: var(--font-body); transition: color 150ms; }
 .filter-range-reset:hover { color: var(--text-primary); }
@@ -367,3 +374,53 @@
 
 #sidebar-clear-btn { display: none; }
 #sidebar-clear-btn.is-visible { display: block; }
+
+/* ─── ECO TOOLTIP CLICK (MOBILE) ─── */
+
+.eco-tooltip-wrap { position: static; display: inline-flex; align-items: center; margin-left: 4px; }
+.eco-tooltip-btn { background: none; border: none; cursor: pointer; padding: 0; display: inline-flex; align-items: center; color: var(--text-caption); min-height: 0; }
+.eco-tooltip-btn .material-icons { font-size: 16px; }
+.eco-tooltip-btn:hover .material-icons,
+.eco-tooltip-btn:focus .material-icons { color: var(--text-primary); }
+.eco-tooltip .material-icons { font-size: 16px; vertical-align: middle; margin-right: 4px; color: var(--icy-mint); }
+.eco-tooltip { display: none; position: absolute; left: 0; right: auto; width: 240px; background: var(--evergreen); color: var(--icy-mint); font-size: var(--text-sm); padding: 8px 12px; z-index: 9999; line-height: 1.5; border: 1px solid var(--border); pointer-events: none; }
+.eco-tooltip-wrap.is-open .eco-tooltip { display: flex; flex-direction: row; align-items: flex-start; gap: 8px; }
+
+
+
+/* ─── PRODUCT AVAILABILITY ─── */
+
+.product-availability{
+   font-size: var(--text-sm); 
+   font-weight: 500;
+   padding: .5rem 0;
+
+}
+.product-availability.available {
+  color: var(--evergreen);
+}
+
+.product-availability.made-to-order {
+  color: var(--text-caption);
+}
+
+.filter-option--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.filter-option-main {
+  font-size: var(--text-default);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.filter-option-sub {
+  font-size: var(--text-xs);
+  color: var(--text-caption);
+  padding-left: 1.5rem;
+}
+
+
+

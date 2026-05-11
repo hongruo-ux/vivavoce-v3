@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Size Guide — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="header-additions.css" />
+  <link rel="stylesheet" href="editorial-addition.css" />
+  <link rel="stylesheet" href="article-addition.css" />
+  <link rel="stylesheet" href="plp-additions.css" />
+  <link rel="stylesheet" href="cart-additions.css">
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="size-additions.css">
+</head>
+<body class="bg-article">
+
+  <div id="main-header"></div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         1. BREADCRUMB
+    ════════════════════════════════════════════════ -->
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <span>Size Guide</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         2. HERO BANNER
+    ════════════════════════════════════════════════ -->
+    <section class="editorial-hero">
+      <div class="editorial-hero-img wf-img" style="background-image: url('images/size/hero.jpg');"></div>
+      <div class="editorial-hero-overlay">
+        <div class="editorial-hero-content">
+          <p class="editorial-hero-eyebrow">Size Guide</p>
+          <h1 class="light">Fashion for Every Body</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         3. STICKY TAB NAV
+    ════════════════════════════════════════════════ -->
+    <nav class="editorial-tab-nav" id="sg-tab-nav" aria-label="Size Guide sections">
+      <div class="editorial-tab-nav-inner container" style="justify-content: center;">
+        <a href="#section-philosophy" class="editorial-tab is-active" data-section="section-philosophy">Our Sizes</a>
+        <a href="#section-chart"      class="editorial-tab"           data-section="section-chart">Size Chart</a>
+        <a href="#section-tips"       class="editorial-tab"           data-section="section-tips">Fit Tips</a>
+      </div>
+    </nav>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 1 — OUR SIZES
+    ════════════════════════════════════════════════ -->
+    <div id="section-philosophy" class="editorial-section-anchor">
+      <section class="article-body-section">
+        <div class="article-content-wrap faq-wrap">
+
+          <h3 class="article-section-title">Our Sizes</h3>
+          <p class="article-body-text">At Viva Voce, we believe that great style belongs to every body — full stop. That's why we carry sizes from XXS to 6X across our entire collection, partnering exclusively with brands that share our commitment to true size inclusivity.</p>
+          <p class="article-body-text">We don't believe in "extended" sizing as an afterthought. Every size in our range is designed with the same care, the same fabrics, and the same attention to fit. Whether you're between sizes or styling for a specific silhouette, we've got you.</p>
+          <p class="article-body-text">If you're ever unsure about sizing, our team is always happy to help. Reach out at <a href="mailto:contact@vivavoce.live">contact@vivavoce.live</a> and we'll guide you to the right fit.</p>
+
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════
+     SECTION 2 — SIZE CHART
+    ════════════════════════════════════════════════ -->
+    <div id="section-chart" class="editorial-section-anchor">
+      <section class="article-body-section container">
+        <div class="article-content-wrap">
+
+          <h3 class="article-section-title">Size Chart</h3>
+
+          <div class="sg-grid">
+
+            <!-- Left: how to measure image -->
+            <div class="sg-img-col">
+              <img src="images/home/sizes.png" alt="How to measure" style="width:100%;object-fit:contain;">
+            </div>
+
+            <!-- Right: toggle + table -->
+            <div class="sg-table-col">
+
+              <!-- CM / IN toggle — exact PDP pattern -->
+              <div style="display:flex;gap:0;border:1.5px solid var(--border);border-radius:var(--radius-pill);overflow:hidden;width:fit-content;margin-bottom:1.25rem;">
+                <button onclick="switchUnit('cm')" id="unit-cm" style="padding:0.625rem 2rem;font-size:var(--text-sm);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;border:none;background:var(--text-primary);color:#fff;cursor:pointer;min-height:0;">CM</button>
+                <button onclick="switchUnit('in')" id="unit-in" style="padding:0.625rem 2rem;font-size:var(--text-sm);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;border:none;background:transparent;color:var(--text-secondary);cursor:pointer;min-height:0;">IN</button>
+              </div>
+
+              <table style="width:100%;border-collapse:collapse;font-size:var(--text-sm);">
+                <thead>
+                  <tr style="border-bottom:2px solid var(--border);">
+                    <th style="text-align:left;padding:0.5rem 0.75rem;font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.06em;color:var(--text-caption);">Size</th>
+                    <th style="text-align:left;padding:0.5rem 0.75rem;font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.06em;color:var(--text-caption);">Bust</th>
+                    <th style="text-align:left;padding:0.5rem 0.75rem;font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.06em;color:var(--text-caption);">Waist</th>
+                    <th style="text-align:left;padding:0.5rem 0.75rem;font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.06em;color:var(--text-caption);">Hips</th>
+                  </tr>
+                </thead>
+                <tbody id="size-table-body"></tbody>
+              </table>
+              <p style="font-size:var(--text-xs);color:var(--text-caption);margin-top:1rem;">Measurements refer to your body measurements.</p>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 3 — FIT TIPS
+    ════════════════════════════════════════════════ -->
+    <div id="section-tips" class="editorial-section-anchor">
+      <section class="article-body-section">
+        <div class="article-content-wrap faq-wrap">
+
+          <h3 class="article-section-title">Fit Tips</h3>
+          <p class="article-body-text">Different clothing types fit differently. Here's what to keep in mind when choosing your size:</p>
+
+          <h4 class="article-subsection-title">Dresses &amp; Jumpsuits</h4>
+          <ul class="privacy-list article-body-text">
+            <li>Measure your bust, waist, and hips and compare against the size chart — dresses are typically sized by the largest measurement.</li>
+            <li>For wrap or adjustable styles, sizing is more flexible — when in doubt, size up for comfort.</li>
+            <li>Maxi and midi styles have fixed hem lengths; check product descriptions for model height references.</li>
+          </ul>
+
+          <h4 class="article-subsection-title">Tops &amp; Blouses</h4>
+          <ul class="privacy-list article-body-text">
+            <li>Focus on your bust measurement first for a comfortable fit across the shoulders and chest.</li>
+            <li>Oversized and relaxed styles are intentionally cut larger — sizing down is common.</li>
+            <li>Fitted styles run true to size; check sleeve length if listed in the product details.</li>
+          </ul>
+
+          <h4 class="article-subsection-title">Bottoms — Pants, Skirts &amp; Shorts</h4>
+          <ul class="privacy-list article-body-text">
+            <li>Use your waist and hip measurements together — if they fall in different sizes, size to your hips for a comfortable fit and adjust at the waist if needed.</li>
+            <li>High-waisted styles are designed to sit above the natural waist — check the rise measurement in product details.</li>
+            <li>Wide-leg and relaxed fit bottoms are forgiving across sizes; fitted styles follow standard sizing closely.</li>
+          </ul>
+
+          <h4 class="article-subsection-title">Swimwear</h4>
+          <ul class="privacy-list article-body-text">
+            <li>Swimwear typically runs smaller than ready-to-wear — sizing up one size is often recommended.</li>
+            <li>For two-piece sets, tops and bottoms can be sized separately for the best fit.</li>
+            <li>Check fabric content — higher stretch fabrics are more forgiving across a wider size range.</li>
+          </ul>
+
+          <h4 class="article-subsection-title">Activewear</h4>
+          <ul class="privacy-list article-body-text">
+            <li>Active fabrics are designed to stretch and move — sizing true to your measurements works well for most styles.</li>
+            <li>For high-impact activities, a closer fit is preferred; for yoga and low-impact wear, a relaxed fit is perfectly fine.</li>
+            <li>Check waistband width and rise in product details — both affect comfort during movement.</li>
+          </ul>
+
+          <h4 class="article-subsection-title">Outerwear &amp; Jackets</h4>
+          <ul class="privacy-list article-body-text">
+            <li>Consider what you'll wear underneath — if you layer frequently, size up one size.</li>
+            <li>Focus on shoulder width and bust measurements for the most accurate fit.</li>
+            <li>Structured styles run true to size; unstructured and oversized styles allow more flexibility.</li>
+          </ul>
+
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <div id="main-footer"></div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script>
+  (function () {
+
+    var tabNav   = document.getElementById('sg-tab-nav');
+    var headerEl = document.getElementById('site-header');
+
+    function setHeaderHeight() {
+      if (!headerEl) return;
+      document.documentElement.style.setProperty('--header-h', headerEl.offsetHeight + 'px');
+    }
+    if (headerEl) {
+      setHeaderHeight();
+    } else {
+      var obs = new MutationObserver(function () {
+        headerEl = document.getElementById('site-header');
+        if (headerEl) { setHeaderHeight(); obs.disconnect(); }
+      });
+      obs.observe(document.body, { childList: true, subtree: true });
+    }
+    window.addEventListener('resize', setHeaderHeight);
+
+    var tabs     = document.querySelectorAll('.editorial-tab');
+    var sections = document.querySelectorAll('.editorial-section-anchor');
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = document.getElementById(tab.getAttribute('data-section'));
+        if (!target) return;
+        var offset = (headerEl ? headerEl.offsetHeight : 0) + (tabNav ? tabNav.offsetHeight : 0) + 8;
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+      });
+    });
+
+    function onScroll() {
+      var offset  = (headerEl ? headerEl.offsetHeight : 0) + (tabNav ? tabNav.offsetHeight : 0) + 32;
+      var current = null;
+      sections.forEach(function (sec) {
+        if (sec.getBoundingClientRect().top <= offset) current = sec.id;
+      });
+      tabs.forEach(function (tab) {
+        tab.classList.toggle('is-active', tab.getAttribute('data-section') === current);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+  })();
+
+  var sizeGuideData = {
+    cm: [
+      ['XXS','76–79','58–61','84–87'],
+      ['XS', '79–84','61–64','87–92'],
+      ['S',  '84–89','64–68','92–97'],
+      ['M',  '89–94','70–78','97–104'],
+      ['L',  '97–104','78–86','107–114'],
+      ['XL', '107–114','86–92','117–124'],
+      ['XXL','117–122','94–98','127–132'],
+      ['3XL','122–130','98–104','132–140'],
+      ['4XL','130–138','104–112','140–148'],
+      ['5XL','138–148','112–120','148–158'],
+      ['6XL','148–158','120–130','158–168']
+    ],
+    in: [
+      ['XXS','30–31','23–24','33–34'],
+      ['XS', '31–33','24–25','34–36'],
+      ['S',  '33–35','25–27','36–38'],
+      ['M',  '35–37','28–31','38–41'],
+      ['L',  '38–41','31–34','42–45'],
+      ['XL', '42–45','34–36','46–49'],
+      ['XXL','46–48','37–39','50–52'],
+      ['3XL','48–51','39–41','52–55'],
+      ['4XL','51–54','41–44','55–58'],
+      ['5XL','54–58','44–47','58–62'],
+      ['6XL','58–62','47–51','62–66']
+    ]
+  };
+
+  function renderTable(unit) {
+    var rows = sizeGuideData[unit];
+    var tbody = document.getElementById('size-table-body');
+    if (!tbody) return;
+    tbody.innerHTML = rows.map(function(r, i) {
+      var isLast = i === rows.length - 1;
+      return '<tr style="border-bottom:' + (isLast ? 'none' : '1px solid var(--border)') + ';">' +
+        '<td style="padding:0.625rem 0.75rem;font-weight:700;font-size:var(--text-default);">' + r[0] + '</td>' +
+        '<td style="padding:0.625rem 0.75rem;color:var(--text-secondary);">' + r[1] + '</td>' +
+        '<td style="padding:0.625rem 0.75rem;color:var(--text-secondary);">' + r[2] + '</td>' +
+        '<td style="padding:0.625rem 0.75rem;color:var(--text-secondary);">' + r[3] + '</td>' +
+        '</tr>';
+    }).join('');
+  }
+
+  function switchUnit(unit) {
+    renderTable(unit);
+    document.getElementById('unit-cm').style.background = unit === 'cm' ? 'var(--text-primary)' : 'transparent';
+    document.getElementById('unit-cm').style.color      = unit === 'cm' ? '#fff' : 'var(--text-secondary)';
+    document.getElementById('unit-in').style.background = unit === 'in' ? 'var(--text-primary)' : 'transparent';
+    document.getElementById('unit-in').style.color      = unit === 'in' ? '#fff' : 'var(--text-secondary)';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    renderTable('cm');
+  });
+</script>
+
+</body>
+</html>

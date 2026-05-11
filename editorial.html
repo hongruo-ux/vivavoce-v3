@@ -16,7 +16,7 @@
   <div id="main-header"></div>
 
   <main>
-    <div class="container" style="padding-top:16px">
+    <div class="container" >
       <div class="breadcrumb">
         <a href="index.html">Home</a><span>/</span><span>Editorial</span>
       </div>
@@ -37,7 +37,10 @@
             <div class="editorial-search-wrap">
               <svg class="editorial-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
               <input class="editorial-search-input" type="search" placeholder="Search articles…" aria-label="Search articles" />
-              <button type="submit" class="btn sm editorial-search-btn">Go</button>
+              <button type="submit" class="btn filled sm" aria-label="Search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+
             </div>
           </form>
         </div>
@@ -49,11 +52,9 @@
     ════════════════════════════════════════════════ -->
     <nav class="editorial-tab-nav" id="editorial-tab-nav" aria-label="Editorial sections">
       <div class="editorial-tab-nav-inner container">
-        <a href="#section-lifestyle"     class="editorial-tab is-active" data-section="section-lifestyle">Lifestyle</a>
-        <a href="#section-fashion"       class="editorial-tab"           data-section="section-fashion">Fashion</a>
-        <a href="#section-trending"      class="editorial-tab"           data-section="section-trending">Trending Styles</a>
-        <a href="#section-brand-stories" class="editorial-tab"           data-section="section-brand-stories">Brand Stories</a>
-        <a href="#section-sustainability"class="editorial-tab"           data-section="section-sustainability">Sustainability</a>
+        <a href="#section-dressing-room"             class="editorial-tab is-active" data-section="section-dressing-room">Viva Voce Dressing Room</a>
+        <a href="#section-community-spotlight"       class="editorial-tab"           data-section="section-community-spotlight">Community Spotlight</a>
+        <a href="#section-sustainability"            class="editorial-tab"           data-section="section-sustainability">Ethical Production</a>
       </div>
     </nav>
 
@@ -64,15 +65,15 @@
     ════════════════════════════════════════════════ -->
 
     <!-- LIFESTYLE ──────────────────────────────────── -->
-    <div id="section-lifestyle" class="editorial-section-anchor">
+    <div id="section-dressing-room" class="editorial-section-anchor">
       <div class="container">
         <div class="section">
           <div class="section-header">
             <div>
               <p class="section-eyebrow">Read &amp; Discover</p>
-              <h2 class="section-title">Lifestyle</h2>
+              <h2 class="section-title">Viva Voce Dressing Room</h2>
             </div>
-            <a href="editorial-list.html" class="btn sm desktop-only">View all</a>
+            <a href="dressing-room.html" class="btn sm desktop-only">View all</a>
           </div>
 
           <!-- Desktop: featured + 2×2 -->
@@ -80,7 +81,7 @@
             <a href="article-shop.html" class="editorial-featured-card">
               <div class="wf-img editorial-card-img"></div>
               <div class="editorial-card-body">
-                <div class="blog-cat">Lifestyle</div>
+                <div class="blog-cat-dressing">Viva Voce Dressing Room</div>
                 <div class="blog-title"><h3>Morning Rituals That Actually Stick</h3></div>
                 <div class="blog-meta">Apr 20 · 4 min read</div>
               </div>
@@ -89,7 +90,7 @@
               <a href="article-shop.html" class="editorial-card">
                 <div class="wf-img ratio-4-3 editorial-card-img"></div>
                 <div class="editorial-card-body">
-                  <div class="blog-cat">Lifestyle</div>
+                <div class="blog-cat-dressing">Viva Voce Dressing Room</div>
                   <div class="blog-title"><h4>The Art of Slowing Down in a Fast World</h4></div>
                   <div class="blog-meta">Apr 16 · 6 min read</div>
                 </div>
@@ -97,7 +98,7 @@
               <a href="article-shop.html" class="editorial-card">
                 <div class="wf-img ratio-4-3 editorial-card-img"></div>
                 <div class="editorial-card-body">
-                  <div class="blog-cat">Lifestyle</div>
+                <div class="blog-cat-dressing">Viva Voce Dressing Room</div>
                   <div class="blog-title"><h4>5 Ways to Reset Your Space This Season</h4></div>
                   <div class="blog-meta">Apr 10 · 3 min read</div>
                 </div>
@@ -105,7 +106,7 @@
               <a href="article-shop.html" class="editorial-card">
                 <div class="wf-img ratio-4-3 editorial-card-img"></div>
                 <div class="editorial-card-body">
-                  <div class="blog-cat">Lifestyle</div>
+                <div class="blog-cat-dressing">Viva Voce Dressing Room</div>
                   <div class="blog-title"><h4>What We're Watching, Reading &amp; Cooking</h4></div>
                   <div class="blog-meta">Apr 5 · 5 min read</div>
                 </div>
@@ -113,7 +114,7 @@
               <a href="article-shop.html" class="editorial-card">
                 <div class="wf-img ratio-4-3 editorial-card-img"></div>
                 <div class="editorial-card-body">
-                  <div class="blog-cat">Lifestyle</div>
+                <div class="blog-cat-dressing">Viva Voce Dressing Room</div>
                   <div class="blog-title"><h4>How to Build a Home You Actually Love</h4></div>
                   <div class="blog-meta">Mar 30 · 7 min read</div>
                 </div>
@@ -125,11 +126,11 @@
           <div class="carousel-wrap mobile-only">
             <button class="carousel-btn carousel-btn--prev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
             <div class="carousel-track">
-              <a href="article-shop.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Lifestyle</div><div class="blog-title"><h3>Morning Rituals That Actually Stick</h3></div><div class="blog-meta">Apr 20 · 4 min read</div></div></a>
-              <a href="article-shop.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Lifestyle</div><div class="blog-title"><h3>The Art of Slowing Down in a Fast World</h3></div><div class="blog-meta">Apr 16 · 6 min read</div></div></a>
-              <a href="article-shop.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Lifestyle</div><div class="blog-title"><h3>5 Ways to Reset Your Space This Season</h3></div><div class="blog-meta">Apr 10 · 3 min read</div></div></a>
-              <a href="article-shop.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Lifestyle</div><div class="blog-title"><h3>What We're Watching, Reading &amp; Cooking</h3></div><div class="blog-meta">Apr 5 · 5 min read</div></div></a>
-              <a href="article-shop.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Lifestyle</div><div class="blog-title"><h3>How to Build a Home You Actually Love</h3></div><div class="blog-meta">Mar 30 · 7 min read</div></div></a>
+              <a href="article-shop.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Viva Voce Dressing Room</div><div class="blog-title"><h3>Morning Rituals That Actually Stick</h3></div><div class="blog-meta">Apr 20 · 4 min read</div></div></a>
+              <a href="article-shop.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Viva Voce Dressing Room</div><div class="blog-title"><h3>The Art of Slowing Down in a Fast World</h3></div><div class="blog-meta">Apr 16 · 6 min read</div></div></a>
+              <a href="article-shop.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Viva Voce Dressing Room</div><div class="blog-title"><h3>5 Ways to Reset Your Space This Season</h3></div><div class="blog-meta">Apr 10 · 3 min read</div></div></a>
+              <a href="article-shop.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Viva Voce Dressing Room</div><div class="blog-title"><h3>What We're Watching, Reading &amp; Cooking</h3></div><div class="blog-meta">Apr 5 · 5 min read</div></div></a>
+              <a href="article-shop.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Viva Voce Dressing Room</div><div class="blog-title"><h3>How to Build a Home You Actually Love</h3></div><div class="blog-meta">Mar 30 · 7 min read</div></div></a>
             </div>
             <button class="carousel-btn carousel-btn--next" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
           </div>
@@ -139,15 +140,15 @@
     </div>
 
     <!-- FASHION ─────────────────────────────────────── -->
-    <div id="section-fashion" class="editorial-section-anchor editorial-section-alt">
+    <div id="section-community-spotlight" class="editorial-section-anchor editorial-section-alt">
       <div class="container">
         <div class="section">
           <div class="section-header">
             <div>
               <p class="section-eyebrow">Style &amp; Dressing</p>
-              <h2 class="section-title">Fashion</h2>
+              <h2 class="section-title">Community Spotlight</h2>
             </div>
-            <a href="editorial-list.html" class="btn sm desktop-only">View all</a>
+            <a href="community-spotlight.html" class="btn sm desktop-only">View all</a>
           </div>
 
           <!-- Desktop -->
@@ -155,16 +156,16 @@
             <a href="article.html" class="editorial-featured-card">
               <div class="wf-img editorial-card-img"></div>
               <div class="editorial-card-body">
-                <div class="blog-cat">Fashion</div>
+                <div class="blog-cat-spotlight">Community Spotlight</div>
                 <div class="blog-title"><h3>The Return of Quiet Luxury for SS25</h3></div>
                 <div class="blog-meta">Apr 22 · 8 min read</div>
               </div>
             </a>
             <div class="editorial-grid-2x2">
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Fashion</div><div class="blog-title"><h4>How to Build a Capsule Wardrobe for Spring</h4></div><div class="blog-meta">Apr 18 · 5 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Fashion</div><div class="blog-title"><h4>5 Ways to Wear a Blazer This Season</h4></div><div class="blog-meta">Apr 12 · 3 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Fashion</div><div class="blog-title"><h4>The New Minimalism: Clean Lines for a New Era</h4></div><div class="blog-meta">Apr 8 · 6 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Fashion</div><div class="blog-title"><h4>Inside the Season's Most Wanted Pieces</h4></div><div class="blog-meta">Apr 2 · 4 min read</div></div></a>
+              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-spotlight">Community Spotlight</div><div class="blog-title"><h4>How to Build a Capsule Wardrobe for Spring</h4></div><div class="blog-meta">Apr 18 · 5 min read</div></div></a>
+              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-spotlight">Community Spotlight</div><div class="blog-title"><h4>5 Ways to Wear a Blazer This Season</h4></div><div class="blog-meta">Apr 12 · 3 min read</div></div></a>
+              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-spotlight">Community Spotlight</div><div class="blog-title"><h4>The New Minimalism: Clean Lines for a New Era</h4></div><div class="blog-meta">Apr 8 · 6 min read</div></div></a>
+              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-spotlight">Community Spotlight</div><div class="blog-title"><h4>Inside the Season's Most Wanted Pieces</h4></div><div class="blog-meta">Apr 2 · 4 min read</div></div></a>
             </div>
           </div>
 
@@ -172,11 +173,11 @@
           <div class="carousel-wrap mobile-only">
             <button class="carousel-btn carousel-btn--prev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
             <div class="carousel-track">
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Fashion</div><div class="blog-title"><h4>The Return of Quiet Luxury for SS25</h4></div><div class="blog-meta">Apr 22 · 8 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Fashion</div><div class="blog-title"><h4>How to Build a Capsule Wardrobe for Spring</h4></div><div class="blog-meta">Apr 18 · 5 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Fashion</div><div class="blog-title"><h4>5 Ways to Wear a Blazer This Season</h4></div><div class="blog-meta">Apr 12 · 3 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Fashion</div><div class="blog-title"><h4>The New Minimalism: Clean Lines for a New Era</h4></div><div class="blog-meta">Apr 8 · 6 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Fashion</div><div class="blog-title"><h4>Inside the Season's Most Wanted Pieces</h4></div><div class="blog-meta">Apr 2 · 4 min read</div></div></a>
+              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-spotlight">Community Spotlight</div><div class="blog-title"><h4>The Return of Quiet Luxury for SS25</h4></div><div class="blog-meta">Apr 22 · 8 min read</div></div></a>
+              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-spotlight">Community Spotlight</div><div class="blog-title"><h4>How to Build a Capsule Wardrobe for Spring</h4></div><div class="blog-meta">Apr 18 · 5 min read</div></div></a>
+              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-spotlight">Community Spotlight</div><div class="blog-title"><h4>5 Ways to Wear a Blazer This Season</h4></div><div class="blog-meta">Apr 12 · 3 min read</div></div></a>
+              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-spotlight">Community Spotlight</div><div class="blog-title"><h4>The New Minimalism: Clean Lines for a New Era</h4></div><div class="blog-meta">Apr 8 · 6 min read</div></div></a>
+              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-spotlight">Community Spotlight</div><div class="blog-title"><h4>Inside the Season's Most Wanted Pieces</h4></div><div class="blog-meta">Apr 2 · 4 min read</div></div></a>
             </div>
             <button class="carousel-btn carousel-btn--next" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
           </div>
@@ -185,99 +186,7 @@
       </div>
     </div>
 
-    <!-- TRENDING STYLES ─────────────────────────────── -->
-    <div id="section-trending" class="editorial-section-anchor">
-      <div class="container">
-        <div class="section">
-          <div class="section-header">
-            <div>
-              <p class="section-eyebrow">What's Hot Right Now</p>
-              <h2 class="section-title">Trending Styles</h2>
-            </div>
-            <a href="editorial-list.html" class="btn sm desktop-only">View all</a>
-          </div>
 
-          <!-- Desktop -->
-          <div class="editorial-featured-layout desktop-only">
-            <a href="article.html" class="editorial-featured-card">
-              <div class="wf-img editorial-card-img"></div>
-              <div class="editorial-card-body">
-                <div class="blog-cat">Trending Styles</div>
-                <div class="blog-title"><h3>Coastal Grandmother Is Back — and Better</h3></div>
-                <div class="blog-meta">Apr 21 · 5 min read</div>
-              </div>
-            </a>
-            <div class="editorial-grid-2x2">
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Trending Styles</div><div class="blog-title"><h4>Sheer Layers: The Case for Wearing Less</h4></div><div class="blog-meta">Apr 15 · 4 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Trending Styles</div><div class="blog-title"><h4>Bold Colour Blocking: How to Do It Right</h4></div><div class="blog-meta">Apr 9 · 3 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Trending Styles</div><div class="blog-title"><h4>Maximalist Prints: More Is More This Season</h4></div><div class="blog-meta">Apr 3 · 6 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Trending Styles</div><div class="blog-title"><h4>The Linen Edit: Effortless for Any Occasion</h4></div><div class="blog-meta">Mar 28 · 4 min read</div></div></a>
-            </div>
-          </div>
-
-          <!-- Tablet + Mobile -->
-          <div class="carousel-wrap mobile-only">
-            <button class="carousel-btn carousel-btn--prev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-            <div class="carousel-track">
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Trending Styles</div><div class="blog-title"><h4>Coastal Grandmother Is Back — and Better</h4></div><div class="blog-meta">Apr 21 · 5 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Trending Styles</div><div class="blog-title"><h4>Sheer Layers: The Case for Wearing Less</h4></div><div class="blog-meta">Apr 15 · 4 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Trending Styles</div><div class="blog-title"><h4>Bold Colour Blocking: How to Do It Right</h4></div><div class="blog-meta">Apr 9 · 3 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Trending Styles</div><div class="blog-title"><h4>Maximalist Prints: More Is More This Season</h4></div><div class="blog-meta">Apr 3 · 6 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Trending Styles</div><div class="blog-title"><h4>The Linen Edit: Effortless for Any Occasion</h4></div><div class="blog-meta">Mar 28 · 4 min read</div></div></a>
-            </div>
-            <button class="carousel-btn carousel-btn--next" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- BRAND STORIES ───────────────────────────────── -->
-    <div id="section-brand-stories" class="editorial-section-anchor editorial-section-alt">
-      <div class="container">
-        <div class="section">
-          <div class="section-header">
-            <div>
-              <p class="section-eyebrow">Behind the Label</p>
-              <h2 class="section-title">Brand Stories</h2>
-            </div>
-            <a href="editorial-list.html" class="btn sm desktop-only">View all</a>
-          </div>
-
-          <!-- Desktop -->
-          <div class="editorial-featured-layout desktop-only">
-            <a href="article.html" class="editorial-featured-card">
-              <div class="wf-img editorial-card-img"></div>
-              <div class="editorial-card-body">
-                <div class="blog-cat">Brand Stories</div>
-                <div class="blog-title"><h3></h3>Inside Jacquemus: Sun, Sea and Linen</div>
-                <div class="blog-meta">Apr 19 · 6 min read</div>
-              </div>
-            </a>
-            <div class="editorial-grid-2x2">
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Brand Stories</div><div class="blog-title"><h4>How Totême Became the Quiet Brand of the Moment</h4></div><div class="blog-meta">Apr 13 · 5 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Brand Stories</div><div class="blog-title"><h4>The Story Behind Our Favourite New Label</h4></div><div class="blog-meta">Apr 7 · 4 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Brand Stories</div><div class="blog-title"><h4>Reformation's Blueprint for Responsible Fashion</h4></div><div class="blog-meta">Apr 1 · 7 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Brand Stories</div><div class="blog-title"><h4>When Design Meets Purpose: Sézane at 10</h4></div><div class="blog-meta">Mar 25 · 5 min read</div></div></a>
-            </div>
-          </div>
-
-          <!-- Tablet + Mobile -->
-          <div class="carousel-wrap mobile-only">
-            <button class="carousel-btn carousel-btn--prev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-            <div class="carousel-track">
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Brand Stories</div><div class="blog-title"><h4>Inside Jacquemus: Sun, Sea and Linen</h4></div><div class="blog-meta">Apr 19 · 6 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Brand Stories</div><div class="blog-title"><h4>How Totême Became the Quiet Brand of the Moment</h4></div><div class="blog-meta">Apr 13 · 5 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Brand Stories</div><div class="blog-title"><h4>The Story Behind Our Favourite New Label</h4></div><div class="blog-meta">Apr 7 · 4 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Brand Stories</div><div class="blog-title"><h4>Reformation's Blueprint for Responsible Fashion</h4></div><div class="blog-meta">Apr 1 · 7 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Brand Stories</div><div class="blog-title"><h4>When Design Meets Purpose: Sézane at 10</h4></div><div class="blog-meta">Mar 25 · 5 min read</div></div></a>
-            </div>
-            <button class="carousel-btn carousel-btn--next" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
-          </div>
-
-        </div>
-      </div>
-    </div>
 
     <!-- SUSTAINABILITY ───────────────────────────────── -->
     <div id="section-sustainability" class="editorial-section-anchor">
@@ -286,9 +195,9 @@
           <div class="section-header">
             <div>
               <p class="section-eyebrow">Our Commitment</p>
-              <h2 class="section-title">Sustainability</h2>
+              <h2 class="section-title">Ethical Production</h2>
             </div>
-            <a href="editorial-list.html" class="btn sm desktop-only">View all</a>
+            <a href="ethical-production.html" class="btn sm desktop-only">View all</a>
           </div>
 
           <!-- Desktop -->
@@ -296,16 +205,16 @@
             <a href="article.html" class="editorial-featured-card">
               <div class="wf-img editorial-card-img"></div>
               <div class="editorial-card-body">
-                <div class="blog-cat">Sustainability</div>
+                <div class="blog-cat-ethical">Ethical Production</div>
                 <div class="blog-title"><h3>Our 2025 Sustainability Report</h3></div>
                 <div class="blog-meta">Apr 23 · 10 min read</div>
               </div>
             </a>
             <div class="editorial-grid-2x2">
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Sustainability</div><div class="blog-title"><h4>What Does Certified Sustainable Actually Mean?</h4></div><div class="blog-meta">Apr 17 · 6 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Sustainability</div><div class="blog-title"><h4>How We're Rethinking Packaging in 2025</h4></div><div class="blog-meta">Apr 11 · 4 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Sustainability</div><div class="blog-title"><h4>5 Brands Leading the Circular Fashion Movement</h4></div><div class="blog-meta">Apr 4 · 5 min read</div></div></a>
-              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Sustainability</div><div class="blog-title"><h4>Buying Less, Buying Better: A Practical Guide</h4></div><div class="blog-meta">Mar 27 · 6 min read</div></div></a>
+              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-ethical">Ethical Production</div><div class="blog-title"><h4>What Does Certified Sustainable Actually Mean?</h4></div><div class="blog-meta">Apr 17 · 6 min read</div></div></a>
+              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-ethical">Ethical Production</div><div class="blog-title"><h4>How We're Rethinking Packaging in 2025</h4></div><div class="blog-meta">Apr 11 · 4 min read</div></div></a>
+              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-ethical">Ethical Production</div><div class="blog-title"><h4>5 Brands Leading the Circular Community Spotlight Movement</h4></div><div class="blog-meta">Apr 4 · 5 min read</div></div></a>
+              <a href="article.html" class="editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-ethical">Ethical Production</div><div class="blog-title"><h4>Buying Less, Buying Better: A Practical Guide</h4></div><div class="blog-meta">Mar 27 · 6 min read</div></div></a>
             </div>
           </div>
 
@@ -313,15 +222,84 @@
           <div class="carousel-wrap mobile-only">
             <button class="carousel-btn carousel-btn--prev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
             <div class="carousel-track">
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Sustainability</div><div class="blog-title"><h4>Our 2025 Sustainability Report</h4></div><div class="blog-meta">Apr 23 · 10 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Sustainability</div><div class="blog-title"><h4>What Does Certified Sustainable Actually Mean?</h4></div><div class="blog-meta">Apr 17 · 6 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Sustainability</div><div class="blog-title"><h4>How We're Rethinking Packaging in 2025</h4></div><div class="blog-meta">Apr 11 · 4 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Sustainability</div><div class="blog-title"><h4>5 Brands Leading the Circular Fashion Movement</h4></div><div class="blog-meta">Apr 4 · 5 min read</div></div></a>
-              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat">Sustainability</div><div class="blog-title"><h4>Buying Less, Buying Better: A Practical Guide</h4></div><div class="blog-meta">Mar 27 · 6 min read</div></div></a>
+              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-ethical">Ethical Production</div><div class="blog-title"><h4>Our 2025 Sustainability Report</h4></div><div class="blog-meta">Apr 23 · 10 min read</div></div></a>
+              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-ethical">Ethical Production</div><div class="blog-title"><h4>What Does Certified Sustainable Actually Mean?</h4></div><div class="blog-meta">Apr 17 · 6 min read</div></div></a>
+              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-ethical">Ethical Production</div><div class="blog-title"><h4>How We're Rethinking Packaging in 2025</h4></div><div class="blog-meta">Apr 11 · 4 min read</div></div></a>
+              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-ethical">Ethical Production</div><div class="blog-title"><h4>5 Brands Leading the Circular Community Spotlight Movement</h4></div><div class="blog-meta">Apr 4 · 5 min read</div></div></a>
+              <a href="article.html" class="carousel-item--4 editorial-card"><div class="wf-img ratio-4-3 editorial-card-img"></div><div class="editorial-card-body"><div class="blog-cat-ethical">Ethical Production</div><div class="blog-title"><h4>Buying Less, Buying Better: A Practical Guide</h4></div><div class="blog-meta">Mar 27 · 6 min read</div></div></a>
             </div>
             <button class="carousel-btn carousel-btn--next" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
           </div>
 
+        </div>
+      </div>
+    </div>
+       <!-- ═══════════════════════════════════════════════
+         10. RELATED ARTICLES CAROUSEL
+    ════════════════════════════════════════════════ -->
+    <div class="band container">
+      <div class="container-article section-sm" id="section-6">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">Keep Reading</p>
+            <h3>Related Articles</h3>
+          </div>
+        </div>
+        <div class="carousel-wrap">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel-track">
+
+            <a href="#" class="carousel-item--3 editorial-card">
+              <div class="wf-img ratio-4-3 editorial-card-img"></div>
+              <div class="editorial-card-body">
+                <div class="blog-cat-dressing">Viva Voce Dressing Room</div>
+                <div class="blog-title">The Art of Slowing Down in a Fast World</div>
+                <div class="blog-meta">Apr 16 · 6 min read</div>
+              </div>
+            </a>
+
+            <a href="#" class="carousel-item--3 editorial-card">
+              <div class="wf-img ratio-4-3 editorial-card-img"></div>
+              <div class="editorial-card-body">
+                <div class="blog-cat-dressing">Viva Voce Dressing Room</div>
+                <div class="blog-title">5 Ways to Reset Your Space This Season</div>
+                <div class="blog-meta">Apr 10 · 3 min read</div>
+              </div>
+            </a>
+
+            <a href="#" class="carousel-item--3 editorial-card">
+              <div class="wf-img ratio-4-3 editorial-card-img"></div>
+              <div class="editorial-card-body">
+                <div class="blog-cat-dressing">Viva Voce Dressing Room</div>
+                <div class="blog-title">How to Build a Capsule Wardrobe for Spring</div>
+                <div class="blog-meta">Apr 18 · 5 min read</div>
+              </div>
+            </a>
+
+            <a href="#" class="carousel-item--3 editorial-card">
+              <div class="wf-img ratio-4-3 editorial-card-img"></div>
+              <div class="editorial-card-body">
+                <div class="blog-cat">Trending Styles</div>
+                <div class="blog-title">Coastal Grandmother Is Back — and Better</div>
+                <div class="blog-meta">Apr 21 · 5 min read</div>
+              </div>
+            </a>
+
+            <a href="#" class="carousel-item--3 editorial-card">
+              <div class="wf-img ratio-4-3 editorial-card-img"></div>
+              <div class="editorial-card-body">
+                <div class="blog-cat">Brand Stories</div>
+                <div class="blog-title">Inside Jacquemus: Sun, Sea and Linen</div>
+                <div class="blog-meta">Apr 19 · 6 min read</div>
+              </div>
+            </a>
+
+          </div>
+          <button class="carousel-btn carousel-btn--next" aria-label="Next">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -333,6 +311,7 @@
   <script src="header.js"></script>
   <script src="footer.js"></script>
   <script src="carousel.js"></script>
+  <script src="carousel-stepper.js"></script>
   <script>
   (function () {
 

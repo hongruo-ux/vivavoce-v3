@@ -4,8 +4,24 @@
 .alpha-nav { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
 .alpha-btn { width: 32px; height: 32px; min-height: 0; border: 1px solid var(--border); border-radius: var(--radius-card); font-size: var(--text-default); font-weight: 600; color: var(--text-secondary); }
 .alpha-btn.active { background: var(--text-primary); color: #fff; border-color: var(--text-primary); }
-.brand-list-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
-.brand-list-card { display: flex; flex-direction: column; gap: 6px; padding: 1.25rem;  border-radius: var(--radius-card); cursor: pointer; text-align: left; min-height: 0; transition: box-shadow 150ms ease; }
+.brand-list-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+.brand-list-card { display: flex; flex-direction: column; gap: 6px; padding: 1.25rem 0 0;  border-radius: var(--radius-card); cursor: pointer; text-align: left; min-height: 0; transition: box-shadow 150ms ease; }
 .brand-list-card:hover { box-shadow: var(--shadow-hover); }
 
 
+@media (max-width: 1080px) {
+  .brand-list-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 739px) {
+  .brand-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.brand-image{
+    width: 100%;
+    aspect-ratio: 4/3;
+}

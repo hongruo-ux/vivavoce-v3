@@ -17,10 +17,16 @@ window.addEventListener('DOMContentLoaded', () => {
           />
           <div class="newsletter-content">
             <h4 class="newsletter-title">Join our Newsletter — Get Updates, Offers and Invites.</h4>
-            <div class="newsletter-form">
-              <input type="email" placeholder="Email address" aria-label="Email address" />
-              <button class="newsletter-submit" aria-label="Subscribe">${arrowSVG}</button>
-            </div>
+            <form class="editorial-search-form" role="search" onsubmit="return false;">
+              <div class="editorial-search-wrap">
+                <svg class="editorial-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <input class="editorial-search-input" type="search" placeholder="Search articles…" aria-label="Search articles" />
+                <button type="submit" class="btn secondary sm" aria-label="Search">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+
+              </div>
+          </form>
           </div>
         </div>
       </div>
@@ -55,11 +61,11 @@ window.addEventListener('DOMContentLoaded', () => {
           </button>
           <div class="footer-col-title">Company</div>
           <div class="footer-accordion-body" id="footer-col-company">
-            <a href="#" class="footer-link">About Us</a>
-            <a href="#" class="footer-link">Brand Ambassadors</a>
+            <a href="about-us.html" class="footer-link">About Us</a>
+            <a href="brand-ambassadors.html" class="footer-link">Brand Ambassadors</a>
             <a href="#" class="footer-link">Community Spotlight</a>
             <a href="#" class="footer-link">Ethical Production</a>
-            <a href="#" class="footer-link">Careers</a>
+            <a href="careers.html" class="footer-link">Careers</a>
           </div>
         </div>
 
@@ -70,11 +76,10 @@ window.addEventListener('DOMContentLoaded', () => {
           </button>
           <div class="footer-col-title">Customer Care</div>
           <div class="footer-accordion-body" id="footer-col-care">
-            <a href="#" class="footer-link">Shipping &amp; Returns</a>
-            <a href="#" class="footer-link">Size Guide</a>
-            <a href="#" class="footer-link">FAQ</a>
-            <a href="#" class="footer-link">Contact Us</a>
-            <a href="account.html" class="footer-link">My Account</a>
+            <a href="shipping-returns.html" class="footer-link">Shipping &amp; Returns</a>
+            <a href="size-guide.html" class="footer-link">Size Guide</a>
+            <a href="faq.html" class="footer-link">FAQ</a>
+            <a href="contact-us.html" class="footer-link">Contact Us</a>
           </div>
         </div>
 
@@ -85,7 +90,7 @@ window.addEventListener('DOMContentLoaded', () => {
           </button>
           <div class="footer-col-title">Legal</div>
           <div class="footer-accordion-body" id="footer-col-legal">
-            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
             <a href="#" class="footer-link">Cookie Policy</a>
             <a href="#" class="footer-link">Cookie Preferences</a>
             <a href="#" class="footer-link">Terms &amp; Conditions</a>
@@ -97,7 +102,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       <!-- Payment Strip -->
       <div class="footer-payment-strip">
-        <span class="footer-payment-label">Viva Voce Accepts</span>
+        <span class="summary">Viva Voce Accepts</span>
         <div class="footer-payment-icons">
           <div class="footer-payment-icon"><img src="images/payments/UnionPay.png" alt="UnionPay" /></div>
           <div class="footer-payment-icon"><img src="images/payments/Visa.png" alt="Visa" /></div>

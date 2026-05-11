@@ -1,0 +1,291 @@
+/* ── About Page — Section Base ─────────────────── */
+.about-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 740px) {
+  .about-section {
+    min-height: 56.25vw;
+  }
+}
+
+/* Section background colors — edit here only */
+.about-section.about-hero          { background: var(--icy-mint); }
+.about-section.about-belong        { background: var(--surface-sand); }
+.about-section.about-quote         { background: var(--neon-celery); }
+.about-section.about-founder       { background: var(--surface-sand); }
+.about-section.about-sustainability{ background: var(--icy-mint); }
+.about-section.about-cta           { background: var(--surface-card); }
+
+
+/* ── Hero ───────────────────────────────────────── */
+.about-hero-grid {
+ display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  flex: 1;
+  min-height: inherit;
+  align-items: stretch;
+}
+
+.about-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 4rem max(2rem, calc((100vw - 1600px) / 2 + 4rem));
+}
+
+.about-hero-logo {
+  width: 60vh;
+  height: 30vh;
+  background-size: contain !important;
+  background-color: transparent;
+  background-position: left center !important;
+}
+
+.about-hero-sub {
+  font-family: var(--font-body);
+  font-size: var(--header-h3);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.about-hero-img {
+  overflow: hidden;
+}
+
+.about-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+}
+
+
+/* ── Tagline ────────────────────────────────────── */
+.about-tagline-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  flex: 1;
+  padding: 4rem max(2rem, calc((100vw - 1600px) / 2 + 4rem));
+}
+
+.about-logo {
+  width: 120px;
+  height: 120px;
+  background-size: contain !important;
+  background-color: transparent;
+}
+
+.about-tagline-text {
+  font-size: var(--quote-lg);
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-secondary);
+  max-width: 640px;
+  line-height: 1.5;
+}
+.section-about {
+  color: var(--red-coral);
+  text-transform: uppercase;
+}
+
+
+/* ── 2-col grid ─────────────────────────────────── */
+.about-section > .band,
+.about-section > .band > .container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: inherit;
+}
+
+.about-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  flex: 1;
+  padding: 6rem max(2rem, calc((100vw - 1600px) / 2 + 2rem));
+}
+
+.about-grid-reverse { direction: rtl; }
+.about-grid-reverse > * { direction: ltr; }
+
+.about-col-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-col-image { overflow: hidden; }
+.about-img { width: 100%; }
+.article-body-text,
+.about {
+  margin-bottom: .5rem;
+}
+
+/* ── Quote ──────────────────────────────────────── */
+.about-quote-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  flex: 1;
+  padding: 4rem max(2rem, calc((100vw - 1600px) / 2 + 4rem));
+}
+
+.about-quote-mark {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  line-height: .5;
+  color: var(--red-coral);
+}
+
+.about-quote-inner .quote-lg {
+  color: var(--red-coral);
+  max-width: 720px;
+}
+
+.about-quote-line {
+  width: 80px;
+  border: none;
+  border-top: 4px solid var(--red-coral);
+  margin: 0 auto;
+}
+
+.about-quote-attr {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-caption);
+}
+
+
+/* ── CTA ────────────────────────────────────────── */
+.about-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  flex: 1;
+  margin-inline: auto;
+  padding: 4rem 2rem;
+}
+
+.about-cta .section-title,
+.about-cta .section-eyebrow,
+.about-cta .article-body-text {
+  color: var(--surface-page);
+}
+
+.about-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 740px) {
+  .about-section {
+    min-height: 42.25vw;
+  }
+}
+
+.about-tagline-inner,
+.about-quote-inner,
+.about-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2.5rem;
+  padding-inline: max(2rem, calc((100vw - 1600px) / 2 + 4rem));
+}
+
+.about-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding-inline: max(2rem, calc((100vw - 1600px) / 2 + 2rem));
+}
+
+/* ── Mobile ─────────────────────────────────────── */
+@media (max-width: 739px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-hero-img { aspect-ratio: 16 / 9; }
+  .about-hero-content { padding: 2rem 1rem; }
+  .about-hero-logo { width: 160px; height: 50px; }
+  .about-hero-sub { font-size: var(--text-default); }
+
+  .about-grid,
+  .about-grid.about-grid-reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .about-col-image .ratio-1-1 {
+    aspect-ratio: 16 / 9 !important;
+  }
+}
+
+/* ── mobile hero ─────────────────────────────────────── */
+
+@media (max-width: 1080px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    background-image: url('images/about/hero.png');
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 2 / 3;
+  }
+
+  .about-hero-img {
+    display: none;
+  }
+
+  .about-hero-content {
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: start;
+    gap: 0.5rem;
+  }
+  .about-hero-logo{ 
+    width: 38vh;
+    height: 10vh;}
+
+    .about-grid,
+  .about-grid.about-grid-reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 2rem;
+    padding: 2rem 0rem;
+  }
+  .about-tagline-inner, .about-quote-inner, .about-cta-inner{ padding: 3rem 2rem; gap: 1rem;}
+  .about-quote-mark { font-size: 6rem;}
+  .about-col-content { gap: .875rem;}
+  br {
+    display: none;
+  }
+
+}

@@ -132,6 +132,7 @@ min-width: 25%; background: var(--surface-sand); z-index: 1;"
   .grid-4         { grid-template-columns: repeat(3, 1fr); }
   .grid-6         { grid-template-columns: repeat(4, 1fr); }
   .brand-list-grid { grid-template-columns: repeat(3, 1fr); }
+  .grid-3 {grid-template-columns: repeat(2, 1fr);}
 }
 @media (max-width: 739px) {
   .section        { padding: 2rem 0; }
@@ -297,7 +298,7 @@ min-width: 25%; background: var(--surface-sand); z-index: 1;"
   align-items: center;
   background-color: var(--surface-mint);
   border-radius: var(--radius-lg);
-  padding-inline: 2rem;
+  padding-inline: 1rem 2rem;
 }
 
 .trust-block__top {

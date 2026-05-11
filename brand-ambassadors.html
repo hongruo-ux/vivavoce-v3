@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Ambassadors — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="header-additions.css" />
+  <link rel="stylesheet" href="editorial-addition.css" />
+  <link rel="stylesheet" href="article-addition.css" />
+  <link rel="stylesheet" href="plp-additions.css" />
+  <link rel="stylesheet" href="cart-additions.css">
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="contact-addition.css">
+</head>
+<body class="bg-article">
+
+  <div id="main-header"></div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         1. BREADCRUMB
+    ════════════════════════════════════════════════ -->
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <span>Brand Ambassadors</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         2. PAGE HEADER — image left, text right
+    ════════════════════════════════════════════════ -->
+    <section class="contact-header-grid">
+      <div class="form-page-header-left ambassadors">
+        <div class="wf-img ratio-1-1" style="background-image: url('images/ambassadors/Frame\ 6.png');"></div>
+      </div>
+      <div class="contact-header-right ambassadors">
+        <h1 class="article-title-main ambassadors">BRAND <br>AMBASSADORS</h1>
+        <p class="article-body-text">Are you an <strong>Influencer or Creator</strong> who passionately embraces <strong>fashion, unshakeable confidence, bold self-expression</strong>? Viva Voce is looking for you to join our incredible brand ambassador community!</p>
+        <p class="article-body-text">We believe fashion is for <strong>every body</strong>, and we're dedicated to spotlighting creators who spread messages of <strong>body liberation and inclusivity</strong>.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         3. FORM SECTION
+    ════════════════════════════════════════════════ -->
+    <section class="article-body-section">
+      <div class="article-content-wrap contact-wrap section-sm">
+        <div class="editorial-hero-content form-title-section" >
+          <h2 class="article-section-title">Want to Join Us?</h2>
+          <p class="article-body-text form-summary">If you're excited about partnering with us, fill out the application form. In the meantime, explore the amazing content shared by our community on Instagram and TikTok using the hashtag <strong>#VivaVoceCommunity</strong>.</p>
+
+        </div>
+        
+        <div class="contact-form-wrap">
+          <div>
+            <label class="input-label" for="amb-name">Your Full Name</label>
+            <input type="text" id="amb-name" name="name" placeholder="What's your first and last name?" autocomplete="name" />
+          </div>
+          <div>
+            <label class="input-label" for="amb-location">City &amp; State</label>
+            <input type="text" id="amb-location" name="location" placeholder="What city &amp; state are you located in?" />
+          </div>
+          <div>
+            <label class="input-label" for="amb-instagram">Instagram Handle</label>
+            <input type="text" id="amb-instagram" name="instagram" placeholder="What's your Instagram handle?" />
+          </div>
+          <div>
+            <div>
+              <label class="input-label">Social Media Platform</label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="social-platform" value="instagram" checked />
+                  <span>Instagram</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="social-platform" value="tiktok" />
+                  <span>TikTok</span>
+                </label>
+              </div>
+              <div id="social-handle-wrap" class="radio-reveal">
+                <label class="input-label" for="amb-handle">Your Handle</label>
+                <input type="text" id="amb-handle" name="handle" placeholder="What's your handle?" />
+              </div>
+            </div>
+            </div>
+          <div>
+            <label class="input-label" for="amb-message">Anything else?</label>
+            <textarea id="amb-message" name="message" placeholder="Please share any specifics we should know about you or how you are hoping to partner with us!" rows="6"></textarea>
+          </div>
+          <button class="btn filled full lg" type="submit">Send</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="main-footer"></div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script>
+    document.querySelectorAll('input[name="social-platform"]').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+    var wrap = document.getElementById('social-handle-wrap');
+    var input = document.getElementById('amb-handle');
+    wrap.classList.add('is-visible');
+    input.placeholder = this.value === 'instagram'
+      ? "What's your Instagram handle?"
+      : "What's your TikTok handle?";
+  });
+});
+  </script>
+
+</body>
+</html>
