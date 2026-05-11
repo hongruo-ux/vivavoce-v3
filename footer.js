@@ -17,16 +17,11 @@ window.addEventListener('DOMContentLoaded', () => {
           />
           <div class="newsletter-content">
             <h4 class="newsletter-title">Join our Newsletter — Get Updates, Offers and Invites.</h4>
-            <form class="editorial-search-form" role="search" onsubmit="return false;">
-              <div class="editorial-search-wrap">
-                <svg class="editorial-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                <input class="editorial-search-input" type="search" placeholder="Search articles…" aria-label="Search articles" />
-                <button type="submit" class="btn secondary sm" aria-label="Search">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </button>
-
-              </div>
-          </form>
+            <form class="newsletter-form" onsubmit="return false;">
+  <input type="email" placeholder="Enter your email address" autocomplete="email" />
+  <button type="submit" class="btn md filled">
+Subscribe  </button>
+</form>
           </div>
         </div>
       </div>
@@ -36,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         <!-- Brand Column -->
         <div class="footer-brand-col">
-          <img src="images/logo/logo.png" alt="Viva Voce" class="footer-logo" style="min-width:280px;" />
+          <img src="images/logo/logo.png" alt="Viva Voce" class="footer-logo" style="min-width:20vw; padding-right:2rem;" />
           <div class="footer-social-label">Follow us on social media</div>
           <div class="footer-social-icons">
             <a href="#" aria-label="Facebook">

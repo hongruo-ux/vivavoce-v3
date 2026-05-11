@@ -98,72 +98,57 @@
           </div>
 
           <!-- Size -->
-          <!-- Size -->
-<div>
-  <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);letter-spacing:.06em;align-items: center;">
-    <span>SIZE: <strong id="selected-size">S</strong></span>
-    <a class="btn-link" href="#" onclick="openSizeGuide();return false;">Size Guide</a>
-  </div>
-  <div class="size-grid" id="size-section">
-    <button class="size-btn oos" onclick="selectSize(this,'XS')">XS</button>
-    <button class="size-btn active" onclick="selectSize(this,'S')">S</button>
-    <button class="size-btn" onclick="selectSize(this,'M')">M</button>
-    <button class="size-btn" onclick="selectSize(this,'L')">L</button>
-    <button class="size-btn oos" onclick="selectSize(this,'XL')">XL</button>
-    <button class="size-btn back-order" onclick="selectSize(this,'XXL')">XXL</button>
-    <button class="size-btn" onclick="selectSize(this,'34')">34</button>
-    <button class="size-btn" onclick="selectSize(this,'36')">36</button>
-    <button class="size-btn" onclick="selectSize(this,'38')">38</button>
-  </div>
-  <p class="pdp-urgency" id="pdp-urgency-text">Hurry! Only 3 left in size S</p>
-</div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);letter-spacing:.06em;align-items: center;">
+              <span>SIZE: <strong id="selected-size">S</strong></span>
+              <a class="btn-link" href="#" onclick="openSizeGuide();return false;">Size Guide</a>
+            </div>
+            <div class="size-grid" id="size-section">
+              <button class="size-btn oos" onclick="selectSize(this,'XS')">XS</button>
+              <button class="size-btn active" onclick="selectSize(this,'S')">S</button>
+              <button class="size-btn" onclick="selectSize(this,'M')">M</button>
+              <button class="size-btn" onclick="selectSize(this,'L')">L</button>
+              <button class="size-btn oos" onclick="selectSize(this,'XL')">XL</button>
+              <button class="size-btn" onclick="selectSize(this,'34')">34</button>
+              <button class="size-btn" onclick="selectSize(this,'36')">36</button>
+              <button class="size-btn" onclick="selectSize(this,'38')">38</button>
+            </div>
+            <p class="pdp-urgency">Hurry! Only 3 left in size S</p>
+          </div>
 
-<!-- Qty -->
-<div class="pdp-qty-row" id="pdp-qty-row">
-  <div class="qty-ctrl">
-    <button class="qty-btn" onclick="changeQty(-1)">−</button>
-    <div class="qty-val" id="qty">1</div>
-    <button class="qty-btn" onclick="changeQty(1)">+</button>
-  </div>
-</div>
 
-<!-- Email input — back-order only -->
-<div id="pdp-backorder-email-wrap" style="display:none; margin-top:1.5rem; margin-bottom:-1.5rem;">
-  <input
-    type="email"
-    id="pdp-backorder-email"
-    name="backorder-email"
-    placeholder="Enter your email address"
-    autocomplete="email"
-  />
-</div>
+      <!-- Back-ordered: Notify Me CTA — replaces the standard pdp-cta-row block -->
+      <div id="pdp-backorder-block" style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
 
-<!-- CTA -->
-<div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
-  <div class="pdp-cta-row">
-    <button class="btn filled lg full" id="pdp-atc-btn" onclick="openMiniCart()">Add to Bag</button>
-    <button class="pdp-wishlist-btn" aria-label="Save to Wishlist">
-      <span class="material-icons">favorite_border</span>
-    </button>
-  </div>
-  <button class="pdp-shoppay-btn" id="pdp-shoppay-btn">
-    <span>Express Pay</span>
-  </button>
-</div>
+        <!-- Email input -->
+        <div>
+          <label class="input-label" for="backorder-email">Email Address</label>
+          <input
+            type="email"
+            id="backorder-email"
+            name="backorder-email"
+            placeholder="Enter your email address"
+            autocomplete="email"
+          />
+        </div>
 
-<!-- Back Order notice — hidden by default, shown when back-order size selected -->
-<div id="pdp-order-notice" class="wishlist-stock-back" style="display:none; padding:1rem; text-align:center; width:100%; background: #f0f0ec;;">
-  <p id="pdp-order-notice-text" style="width:100%; line-height:180%; font-size:var(--text-sm);">
-    <strong>Back Order</strong><br>Estimated dispatch in 4–6 weeks.
-  </p>
-</div>
+        <!-- Notify Me button row -->
+        <div class="pdp-cta-row">
+          <button class="btn filled lg full" id="pdp-notify-btn" onclick="handleNotifyMe()">Notify Me</button>
+          <button class="pdp-wishlist-btn" aria-label="Save to Wishlist">
+            <span class="material-icons">favorite_border</span>
+          </button>
+        </div>
 
-<!-- Made to Order — always visible unless back-order size selected -->
-<div id="pdp-made-to-order-box" class="mini-cart-made-to-order" style="background-color:var(--surface-sand); padding:1rem; text-align:center; width:100%;">
-  <p class="dark" style="width:100%; line-height:180%; font-size:var(--text-sm);">
-    <strong>Made to Order</strong><br>Please allow 3–4 weeks for delivery.
-  </p>
-</div>
+      </div>
+          
+          <!-- Made to Order -->
+
+          <div class="mini-cart-made-to-order" style=" background-color: #f0f0ec; padding: 1rem; text-align:center; width: 100%;">
+                  <p class="dark" style="width: 100%; line-height: 180%; font-size: var(--text-sm);">
+                    <span><strong>Back Order</strong><br>Estimated dispatch in 4–6 weeks</span>
+                  </p>
+                </div>
 
           <!-- Accordions -->
           <div class="pdp-accordions">
@@ -682,69 +667,6 @@
   });
 })();
 </script>
-<script>
-  const BACKORDER_SKUS = ['XXL'];
-
-  function selectSize(el, size) {
-    document.querySelectorAll('#size-section .size-btn').forEach(function(b) {
-      b.classList.remove('active');
-    });
-    el.classList.add('active');
-    document.getElementById('selected-size').textContent = size;
-
-    const isBackOrder    = BACKORDER_SKUS.includes(size);
-    const atcBtn         = document.getElementById('pdp-atc-btn');
-    const shoppayBtn     = document.getElementById('pdp-shoppay-btn');
-    const urgencyText    = document.getElementById('pdp-urgency-text');
-    const emailWrap      = document.getElementById('pdp-backorder-email-wrap');
-    const emailInput     = document.getElementById('pdp-backorder-email');
-    const qtyRow         = document.getElementById('pdp-qty-row');
-    const orderNotice    = document.getElementById('pdp-order-notice');
-    const madeToOrderBox = document.getElementById('pdp-made-to-order-box');
-
-    if (isBackOrder) {
-      atcBtn.textContent          = 'Notify Me';
-      atcBtn.onclick              = handleNotifyMe;
-      shoppayBtn.style.display    = 'none';
-      qtyRow.style.display        = 'none';
-      urgencyText.textContent     = 'This size is currently on back order.';
-      urgencyText.style.color     = 'var(--text-muted)';
-      emailWrap.style.display     = '';
-      orderNotice.style.display   = '';
-      madeToOrderBox.style.display = 'none';
-    } else {
-      atcBtn.textContent          = 'Add to Bag';
-      atcBtn.onclick              = openMiniCart;
-      shoppayBtn.style.display    = '';
-      qtyRow.style.display        = '';
-      urgencyText.textContent     = 'Hurry! Only 3 left in size ' + size;
-      urgencyText.style.color     = '';
-      emailWrap.style.display     = 'none';
-      emailInput.value            = '';
-      orderNotice.style.display   = 'none';
-      madeToOrderBox.style.display = '';
-    }
-  }
-
-  function handleNotifyMe() {
-    const atcBtn     = document.getElementById('pdp-atc-btn');
-    const emailInput = document.getElementById('pdp-backorder-email');
-
-    if (!emailInput.value || !emailInput.validity.valid) {
-      emailInput.focus();
-      return;
-    }
-
-    atcBtn.disabled    = true;
-    atcBtn.textContent = '✓ We\'ll let you know';
-
-    setTimeout(function() {
-      atcBtn.textContent = 'Notify Me';
-      atcBtn.disabled    = false;
-      emailInput.value   = '';
-    }, 3000);
-  }
-</script>
 
 <!-- Mini Cart -->
 <div class="mini-cart-overlay" id="mini-cart-overlay"></div>
@@ -1062,6 +984,22 @@
       applyResponsiveLayout();
     }
   });
+</script>
+<script>
+function handleNotifyMe() {
+  const btn = document.getElementById('pdp-notify-btn');
+  const input = document.getElementById('backorder-email');
+  if (!input.value) { input.focus(); return; }
+
+  btn.disabled = true;
+  btn.textContent = '✓ You\'re on the list';
+
+  setTimeout(function() {
+    btn.textContent = 'Notify Me';
+    btn.disabled = false;
+    input.value = '';
+  }, 3000);
+}
 </script>
 
 <!-- Shop Pay Modal -->

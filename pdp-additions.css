@@ -466,3 +466,13 @@
 }
 .modal-tags-clear-btn:hover { color: var(--text-primary); }
 
+/* Back-order size pill state */
+.size-btn.back-order {
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+.size-btn.back-order.active {
+    background: rgba(107, 107, 103, 0.15);
+  color: var(--text-muted);
+  border-color: var(--text-muted);
+}
