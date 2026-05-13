@@ -1,0 +1,82 @@
+/* ============================================================
+   LOGIN-ADDITION.CSS
+   Auth-specific structural styles for login.html.
+   All values reference tokens from styles.css.
+   No colours, sizes, or fonts invented here.
+   ============================================================ */
+
+/* Password field wrapper — positions the eye toggle inside the input */
+.auth-input-group         { display: flex; flex-direction: column; }
+.auth-password-wrap       { position: relative; }
+.auth-password-wrap input { padding-right: 3rem; }
+
+.auth-eye-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  min-height: 0;
+  height: auto;
+  padding: 0;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 150ms ease;
+}
+.auth-eye-btn:hover         { color: var(--text-primary); }
+.auth-eye-btn:focus-visible { outline: var(--focus-ring); outline-offset: 2px; border-radius: 2px; }
+
+/* Show the correct eye icon based on state */
+.auth-eye-btn .eye-hide           { display: none; }
+.auth-eye-btn.is-visible .eye-show { display: none; }
+.auth-eye-btn.is-visible .eye-hide { display: block; }
+
+/* Checkbox row — extends .radio-option pattern */
+.auth-checkbox-row { align-items: center; padding-inline: 0; }
+.auth-checkbox {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  border-radius: 3px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--cta-bg);
+  padding: 0;
+}
+
+/* — or — divider */
+.auth-or-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.auth-or-divider .divider { flex: 1; }
+.auth-or-label {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  white-space: nowrap;
+  font-family: var(--font-body);
+}
+
+/* Google button — outline variant matching .btn but with brand icon spacing */
+.auth-google-btn {
+  gap: 0.625rem;
+}
+
+/* Forgot password link row */
+.auth-forgot { text-align: center; }
+
+/* Terms micro-copy */
+.auth-terms {
+  font-size: var(--text-sm);
+  color: var(--text-caption);
+  line-height: 1.6;
+  text-align: center;
+}
+.auth-terms a {
+  color: var(--link-default);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.auth-terms a:hover { color: var(--link-hover); }

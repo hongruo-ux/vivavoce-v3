@@ -34,10 +34,27 @@
 .pdp-urgency  { font-size: var(--text-sm); color: var(--cta-bg); font-weight: 600; margin-top: 1rem; }
 
 /* Klarna */
-.pdp-klarna     { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--text-secondary); margin-top: 6px; flex-wrap: wrap; }
-.pdp-klarna-img { height: 40px; width: auto; }
-.pdp-klarna-link {margin-top: -12px; color: var(--text-primary); text-transform: capitalize; }
+.pdp-klarna {
+  display: flex;
+  flex-wrap: wrap;       /* Allows wrapping on tiny screens so it doesn't break */
+  align-items: center;   /* Centers logo vertically with text */
+  column-gap: 8px;       /* Adds even spacing between text, logo, and link */
+  line-height: 1.5;
+}
 
+.pdp-klarna-img {
+  display: inline-block;
+  height: 18px;          /* CRITICAL: This prevents the 1280px logo from exploding */
+  width: auto;           /* Keeps the logo proportions correct */
+  vertical-align: middle;
+  margin-top: -2px;      /* Fine-tuning for visual optical centering */
+}
+
+.pdp-klarna-link {
+  white-space: nowrap;   /* Prevents the link text from splitting in half */
+  font-size: 14px;       /* Adjust to match your design */
+  color: #000;           /* Or your preferred link color */
+}
 /* Mobile header — hidden on desktop */
 .pdp-mobile-header  { display: none; }
 
@@ -378,7 +395,7 @@
 .cv-item--active .cv-btn{ border-radius: 0; background-color: var(--surface-sand); padding: 0.875rem 1.25rem; }
 }
 
-.pdp-made-to-order { display: flex; align-items: center; gap: 6px; font-size: var(--text-xs); color: var(--text-secondary); }
+.pdp-made-to-order { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--text-secondary); }
 .pdp-made-to-order .material-icons { font-size: var(--text-xs); }
 
 .pdp-sticky-bar {

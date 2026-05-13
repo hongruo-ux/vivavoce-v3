@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="header-additions.css" />
+  <link rel="stylesheet" href="editorial-addition.css" />
+  <link rel="stylesheet" href="article-addition.css" />
+  <link rel="stylesheet" href="plp-additions.css" />
+  <link rel="stylesheet" href="cart-additions.css">
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="contact-addition.css">
+  <link rel="stylesheet" href="login-addition.css">
+</head>
+<body class="bg-article">
+
+  <div id="main-header"></div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         1. BREADCRUMB
+    ════════════════════════════════════════════════ -->
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <span id="breadcrumb-label">Log In</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         2. AUTH FORMS
+    ════════════════════════════════════════════════ -->
+    <section class="article-body-section">
+      <div class="article-content-wrap contact-wrap section-sm">
+
+        <!-- ── SIGN IN PANEL ─────────────────────── -->
+        <div id="panel-signin">
+
+          <div class="editorial-hero-content form-title-section">
+            <h1 class="article-section-title">Welcome Back!</h1>
+            <p class="article-body-text form-summary">
+              Don't have an account? <strong><a href="#" class="auth-toggle-link" id="goto-register" style="font-weight: 600 !important;">Create an Account</a></strong> 
+            </p>
+          </div>
+
+          <div class="contact-form-wrap">
+
+            <div>
+              <label class="input-label" for="signin-email">Email</label>
+              <input type="email" id="signin-email" name="email" placeholder="Your email address" autocomplete="email" />
+            </div>
+
+            <div class="auth-input-group">
+              <label class="input-label" for="signin-password">Password</label>
+              <div class="auth-password-wrap">
+                <input type="password" id="signin-password" name="password" placeholder="Your password" autocomplete="current-password" />
+                <button type="button" class="auth-eye-btn" aria-label="Toggle password visibility" data-target="signin-password">
+                  <svg class="eye-icon eye-show" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <svg class="eye-icon eye-hide" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <label class="radio-option auth-checkbox-row">
+              <input type="checkbox" id="signin-remember" name="remember" class="auth-checkbox" />
+              Remember me
+            </label>
+
+            <button class="btn filled full lg" type="submit" style="margin: 1rem 0 .5rem;">Sign in</button>
+            <p class="article-body-text auth-forgot">
+              <a href="#" class="auth-toggle-link">Forgotten your password?</a>
+            </p>
+
+            <div class="auth-or-divider">
+              <span class="divider"></span>
+              <span class="auth-or-label">or</span>
+              <span class="divider"></span>
+            </div>
+
+            <button class="btn full lg auth-google-btn" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.34-8.16 2.34-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+              Sign in with Google
+            </button>
+
+            
+
+          </div>
+        </div>
+
+        <!-- ── CREATE ACCOUNT PANEL ──────────────── -->
+        <div id="panel-register" hidden>
+
+          <div class="editorial-hero-content form-title-section">
+            <h1 class="article-section-title">Create an account</h1>
+            <p class="article-body-text form-summary">
+              Already have an account? <a href="#" class="auth-toggle-link" id="goto-signin"><strong>Sign In</strong></a>
+            </p>
+          </div>
+
+          <div class="contact-form-wrap">
+
+            <div>
+              <label class="input-label" for="reg-firstname">First Name</label>
+              <input type="text" id="reg-firstname" name="firstname" placeholder="First name" autocomplete="given-name" />
+            </div>
+
+            <div>
+              <label class="input-label" for="reg-lastname">Last Name</label>
+              <input type="text" id="reg-lastname" name="lastname" placeholder="Last name" autocomplete="family-name" />
+            </div>
+
+            <div>
+              <label class="input-label" for="reg-email">Email Address</label>
+              <input type="email" id="reg-email" name="email" placeholder="Your email address" autocomplete="email" />
+            </div>
+
+            <div class="auth-input-group">
+              <label class="input-label" for="reg-password">Password</label>
+              <div class="auth-password-wrap">
+                <input type="password" id="reg-password" name="password" placeholder="Create a password" autocomplete="new-password" />
+                <button type="button" class="auth-eye-btn" aria-label="Toggle password visibility" data-target="reg-password">
+                  <svg class="eye-icon eye-show" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <svg class="eye-icon eye-hide" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <label class="radio-option auth-checkbox-row">
+              <input type="checkbox" id="reg-offers" name="offers" class="auth-checkbox" />
+              Email me Viva Voce offers and exclusives
+            </label>
+
+            <button class="btn filled full lg" type="submit" style="margin: 1rem 0;">Create Account</button>
+
+            <div class="auth-or-divider">
+              <span class="divider"></span>
+              <span class="auth-or-label">or</span>
+              <span class="divider"></span>
+            </div>
+
+            <button class="btn full lg auth-google-btn" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.34-8.16 2.34-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+              Continue with Google
+            </button>
+
+            <p class="article-body-text auth-terms">
+              By creating an account you agree to our
+              <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="main-footer"></div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script>
+    (function () {
+      var panelSignin   = document.getElementById('panel-signin');
+      var panelRegister = document.getElementById('panel-register');
+      var gotoRegister  = document.getElementById('goto-register');
+      var gotoSignin    = document.getElementById('goto-signin');
+      var breadcrumb    = document.getElementById('breadcrumb-label');
+
+      function showSignin() {
+        panelSignin.removeAttribute('hidden');
+        panelRegister.setAttribute('hidden', '');
+        breadcrumb.textContent = 'Log In';
+      }
+
+      function showRegister() {
+        panelRegister.removeAttribute('hidden');
+        panelSignin.setAttribute('hidden', '');
+        breadcrumb.textContent = 'Create an Account';
+      }
+
+      gotoRegister.addEventListener('click', function (e) {
+        e.preventDefault();
+        showRegister();
+      });
+
+      gotoSignin.addEventListener('click', function (e) {
+        e.preventDefault();
+        showSignin();
+      });
+
+      // Password show/hide
+      document.querySelectorAll('.auth-eye-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var input = document.getElementById(btn.dataset.target);
+          var isHidden = input.type === 'password';
+          input.type = isHidden ? 'text' : 'password';
+          btn.classList.toggle('is-visible', isHidden);
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

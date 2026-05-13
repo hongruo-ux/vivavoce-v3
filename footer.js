@@ -75,6 +75,8 @@ Subscribe  </button>
             <a href="size-guide.html" class="footer-link">Size Guide</a>
             <a href="faq.html" class="footer-link">FAQ</a>
             <a href="contact-us.html" class="footer-link">Contact Us</a>
+            <a href="login.html" class="footer-link">My Account</a>
+            <a href="track-orders.html" class="footer-link">Track Orders</a>
           </div>
         </div>
 

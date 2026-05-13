@@ -271,13 +271,13 @@ window.addEventListener('DOMContentLoaded', () => {
     <a href="#" class="btn md full">Sign Out</a>
   ` : `
     <a href="account.html" class="btn filled md full">Sign in to Viva Voce</a>
-    <a href="account.html" class="btn secondary md full">Other sign in options</a>
+    <a href="login.html" class="btn secondary md full">Other sign in options</a>
     <div class="account-btn-row">
-      <a href="account.html" class="btn sm">
+      <a href="account.html" class="btn md">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
         Orders
       </a>
-      <a href="account.html" class="btn sm">
+      <a href="account.html" class="btn md">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
         Profile
       </a>

@@ -169,8 +169,8 @@
 /* ── Secure note ────────────────────────────────────────────── */
 .cart-secure-note {
   text-align: center;
-  font-size: var(--text-default);
-  color: var(--text-caption);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
   margin-top: 0.625rem;
   padding: .5rem;
 }
