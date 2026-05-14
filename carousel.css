@@ -209,7 +209,7 @@ min-width: 25%; background: var(--surface-sand); z-index: 1;"
 }
 
 .hero-slide__content.content--top    { top: 0; }
-.hero-slide__content.content--middle { top: 50%; transform: translateY(-50%); }
+.hero-slide__content.content--middle { top: 60%; transform: translateY(-50%); }
 .hero-slide__content.content--bottom { bottom: 0; }
 
 .hero-slide__content .section-eyebrow {font-family: var(--font-display);}

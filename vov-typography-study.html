@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viva Voce — Typography Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:ital,opsz,wght@0,16..144,100..700;1,16..144,100..700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  /* ── Brand Tokens ── */
+  :root {
+    --red:      #DE3726;
+    --green:    #14442A;
+    --blue:     #005670;
+    --violet:   #6A13D6;
+    --gold:     #FBB346;
+    --mint:     #CCE5C0;
+    --sky:      #C2DBFC;
+    --celery:   #E2E54A;
+    --sand:     #F9EEE2;
+    --black:    #000000;
+    --white:    #FFFFFF;
+
+    /* Google-alternative fonts (what we can actually load) */
+    --font-serif:  'Montagu Slab', serif;
+    --font-sans:   'Roboto', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--sand);
+    color: var(--black);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── Layout ── */
+  .page { max-width: 1100px; margin: 0 auto; padding: 60px 32px 100px; }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--green);
+    color: var(--sky);
+    padding: 64px 48px;
+    margin-bottom: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: 'VoV';
+    position: absolute;
+    right: -20px; top: -20px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 180px;
+    color: rgba(194,219,252,0.07);
+    line-height: 1;
+    letter-spacing: -4px;
+    pointer-events: none;
+  }
+  .hero-label {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    color: var(--sky);
+  }
+  .hero p {
+    margin-top: 20px;
+    font-size: 15px;
+    color: var(--mint);
+    max-width: 520px;
+    font-weight: 300;
+  }
+
+  /* ── Section headings ── */
+  .section-label {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--green);
+    margin-bottom: 32px;
+  }
+
+  /* ── Cards grid ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 48px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 48px; }
+  @media(max-width: 680px) { .grid-2,.grid-3 { grid-template-columns: 1fr; } }
+
+  .card {
+    padding: 36px 32px;
+    border-radius: 2px;
+  }
+
+  /* ── Font specimens ── */
+
+  /* Primary serif headline */
+  .card-serif {
+    background: var(--sky);
+    color: var(--green);
+  }
+  .specimen-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.05;
+    margin: 16px 0 12px;
+    color: var(--green);
+  }
+  .specimen-headline em {
+    font-style: italic;
+  }
+
+  /* Sans — Subline treatment */
+  .card-sans-sub {
+    background: var(--red);
+    color: var(--sand);
+  }
+  .specimen-subline {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin: 16px 0 12px;
+    color: var(--sand);
+  }
+
+  /* Sans — Body treatment */
+  .card-sans-body {
+    background: var(--green);
+    color: var(--mint);
+  }
+  .specimen-body {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    margin: 16px 0 12px;
+    color: var(--mint);
+  }
+
+  /* ── Size scale ── */
+  .scale-section { margin-bottom: 48px; }
+  .scale-row {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(20,68,42,0.12);
+  }
+  .scale-meta {
+    min-width: 160px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+  .scale-sample { font-family: var(--font-serif); font-weight: 400; color: var(--green); }
+
+  /* ── Role comparison ── */
+  .role-section { margin-bottom: 64px; }
+  .role-card {
+    background: var(--white);
+    padding: 40px;
+    margin-bottom: 16px;
+    border-left: 5px solid var(--red);
+  }
+  .role-card.serif-role { border-color: var(--green); }
+  .role-card.sub-role   { border-color: var(--gold); }
+  .role-card.body-role  { border-color: var(--blue); }
+  .role-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .role-tag.green  { color: var(--green); }
+  .role-tag.gold   { color: var(--gold); background: var(--green); padding: 3px 8px; display: inline-block; }
+  .role-tag.blue   { color: var(--blue); }
+
+  .role-detail {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666;
+    margin-top: 8px;
+    font-family: var(--font-sans);
+  }
+
+  /* ── Pairing demo ── */
+  .pairing-demo {
+    background: var(--gold);
+    padding: 56px 48px;
+    margin-bottom: 48px;
+  }
+  .pairing-demo .sub { font-family: var(--font-sans); font-weight: 500; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--green); }
+  .pairing-demo .hed { font-family: var(--font-serif); font-size: clamp(32px,4vw,52px); font-weight: 400; color: var(--green); line-height: 1.1; margin: 8px 0 16px; }
+  .pairing-demo .bod { font-family: var(--font-sans); font-size: 15px; font-weight: 300; color: var(--green); max-width: 500px; line-height: 1.7; }
+  .pairing-demo .btn {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 28px;
+    border-radius: 100px;
+    background: var(--green);
+    color: var(--gold);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: default;
+  }
+
+  /* ── Google Alt note ── */
+  .alt-note {
+    background: var(--violet);
+    color: var(--sky);
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .alt-note h3 { font-family: var(--font-serif); font-size: 22px; font-weight: 400; margin-bottom: 10px; }
+  .alt-note p  { font-size: 14px; font-weight: 300; line-height: 1.6; opacity: 0.9; }
+
+  /* ── Don't / Do ── */
+  .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 64px; }
+  @media(max-width:680px){ .do-dont { grid-template-columns: 1fr; } }
+  .dont-card { background: #fff0ee; padding: 28px; border-top: 3px solid var(--red); }
+  .do-card   { background: #eef7ee; padding: 28px; border-top: 3px solid var(--green); }
+  .do-dont .label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+  .dont-card .label { color: var(--red); }
+  .do-card   .label { color: var(--green); }
+  .do-dont p { font-size: 13px; font-weight: 300; line-height: 1.6; color: #333; }
+
+  /* ── Color-on-type test ── */
+  .color-test-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 12px;
+    margin-bottom: 64px;
+  }
+  .ct {
+    padding: 24px 20px;
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .ct small { display: block; font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; margin-bottom: 6px; opacity: 0.7; }
+
+  /* ── Divider ── */
+  .divider { border: none; border-top: 1px solid rgba(20,68,42,0.15); margin: 48px 0; }
+
+  /* tooltip chips */
+  .chip {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .chip.warn { background: var(--red); }
+  .chip.ok   { background: var(--green); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Typography Study Guide</div>
+    <h1>Viva Voce<br><em>Type System</em></h1>
+    <p>A complete reference for understanding and applying VoV's two-font typographic system — from role hierarchy to sizing scale, pairing logic, and accessibility notes.</p>
+  </div>
+
+  <!-- OVERVIEW -->
+  <p class="section-label">01 — Font Families</p>
+  <h2 class="section-title">Two fonts. Two voices. One brand.</h2>
+
+  <div class="grid-3">
+
+    <div class="card card-serif">
+      <div class="section-label" style="color:var(--green)">Primary / Headline</div>
+      <div class="specimen-headline">GT Alpina<br><em>Fine Extended</em></div>
+      <p style="font-size:12px;font-weight:400;color:var(--blue);margin-top:8px;">Feminine · Joyful · Warm<br>Humanist serif. Used for all headlines.<br><br><strong>Google alt:</strong> Montagu Slab (shown here)</p>
+    </div>
+
+    <div class="card card-sans-sub">
+      <div class="section-label" style="color:var(--gold)">Secondary / Subline</div>
+      <div class="specimen-subline">Sharp Earth<br>Medium, All Caps</div>
+      <p style="font-size:12px;font-weight:400;color:rgba(249,238,226,0.8);margin-top:8px;">Confident · Global · Precise<br>Multi-script sans serif.<br>Always ALL CAPS at +5% letter-spacing for sublines.<br><br><strong>Google alt:</strong> Roboto Medium (shown here)</p>
+    </div>
+
+    <div class="card card-sans-body">
+      <div class="section-label" style="color:var(--gold)">Secondary / Body copy</div>
+      <div class="specimen-body">Sharp Earth Regular is used for all body copy and longer-form reading. Comfortable, accessible, never competes with the headline serif.</div>
+      <p style="font-size:12px;font-weight:400;color:rgba(204,229,192,0.7);margin-top:8px;"><strong>Google alt:</strong> Roboto Light (shown here)</p>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- ROLE HIERARCHY -->
+  <p class="section-label">02 — Role Hierarchy</p>
+  <h2 class="section-title">Every font has a job.</h2>
+
+  <div class="role-section">
+    <div class="role-card serif-role">
+      <span class="role-tag green">GT Alpina Fine Extended Regular → Headline</span>
+      <div style="font-family:var(--font-serif);font-size:clamp(28px,4vw,48px);font-weight:400;color:var(--green);line-height:1.1;margin-top:8px;">You belong here.</div>
+      <p class="role-detail">Used large and sparingly for maximum emotional impact. Italic variant available for warmth and expressiveness. Never use for body text — it's a statement maker, not a workhorse.</p>
+    </div>
+
+    <div class="role-card sub-role">
+      <span class="role-tag gold">Sharp Earth Medium, All Caps, +5% tracking → Subline</span>
+      <div class="specimen-subline" style="font-size:14px;color:var(--green);margin-top:8px;">Visible. Valid. Valued. &nbsp;·&nbsp; Brand Strategy &nbsp;·&nbsp; Our Voice</div>
+      <p class="role-detail">Section openers, labels, and callouts. All caps is mandatory. The 5% letter-spacing creates breathing room and authority. Never lowercase in this role.</p>
+    </div>
+
+    <div class="role-card body-role">
+      <span class="role-tag blue">Sharp Earth Regular → Body / Copy</span>
+      <div style="font-family:var(--font-sans);font-size:15px;font-weight:300;color:var(--green);line-height:1.75;margin-top:8px;">There are two distinct sides to our personality – that's what makes us powerful. Our warmth makes us even more effective as warriors. We are here to create a safe space, that is open to everybody.</div>
+      <p class="role-detail">Comfortable reading weight (Light / Regular). Generous line-height (1.65–1.75). Used for all paragraphs, descriptions, and UI copy.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SIZE SCALE -->
+  <p class="section-label">03 — Size Scale (Inferred)</p>
+  <h2 class="section-title">Sizing that makes space for impact.</h2>
+
+  <div class="scale-section">
+    <div class="scale-row">
+      <div class="scale-meta">Display<br>96–120px</div>
+      <div class="scale-sample" style="font-size:clamp(60px,8vw,96px);line-height:1;">Raise your voice.</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-meta">H1<br>48–64px</div>
+      <div class="scale-sample" style="font-size:clamp(36px,5vw,64px);line-height:1.05;">You belong here.</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-meta">H2<br>32–40px</div>
+      <div class="scale-sample" style="font-size:clamp(26px,4vw,40px);">More than a brand.</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-meta">H3<br>22–28px</div>
+      <div class="scale-sample" style="font-size:clamp(20px,2.5vw,28px);">We are a declaration.</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-meta">Subline<br>10–13px · ALL CAPS</div>
+      <div class="specimen-subline" style="font-size:12px;margin:0;color:var(--green);">Brand Strategy &nbsp;·&nbsp; Section Header</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-meta">Body<br>14–16px</div>
+      <div style="font-family:var(--font-sans);font-size:15px;font-weight:300;color:var(--green);">Every voice matters, every perspective is important, and we recognize individuals' right to expression.</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-meta">Caption / Fine<br>11–12px</div>
+      <div style="font-family:var(--font-sans);font-size:11px;font-weight:400;color:var(--green);">VIVA VOCE | BRAND GUIDE &nbsp;·&nbsp; Page reference copy, footnotes</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LIVE PAIRING -->
+  <p class="section-label">04 — Live Pairing Demo</p>
+  <h2 class="section-title">How the fonts work together in context.</h2>
+
+  <div class="pairing-demo">
+    <div class="sub">Our Values</div>
+    <div class="hed">We are warm.<br>We are fearless.</div>
+    <div class="bod">There are two distinct sides to our personality – that's what makes us powerful. Our warmth makes us even more effective as warriors.</div>
+    <a class="btn">Raise Your Voice</a>
+  </div>
+
+  <hr class="divider">
+
+  <!-- DO / DON'T -->
+  <p class="section-label">05 — Do / Don't</p>
+  <h2 class="section-title">Rules to live by.</h2>
+
+  <div class="do-dont">
+    <div class="dont-card">
+      <span class="label">✕ Don't</span>
+      <p style="font-size:14px;font-weight:500;text-transform:uppercase;color:var(--red);letter-spacing:0.05em;">Use serif for body text</p>
+      <p style="margin-top:8px;">GT Alpina is headlines-only. Using it at small sizes hurts legibility and dilutes its emotional impact.</p>
+    </div>
+    <div class="do-card">
+      <span class="label">✓ Do</span>
+      <p style="font-family:var(--font-serif);font-size:22px;font-weight:400;color:var(--green);">Big, bold, rare.</p>
+      <p style="margin-top:8px;">Deploy the headline font sparingly — it should feel like a reveal every time it appears on the page.</p>
+    </div>
+
+    <div class="dont-card">
+      <span class="label">✕ Don't</span>
+      <p style="font-family:var(--font-sans);font-size:13px;font-weight:500;color:var(--red);">subline in lowercase</p>
+      <p style="margin-top:8px;">Sublines must always be all-caps with ~5% letter-spacing (0.05em). Lowercase removes the structural authority.</p>
+    </div>
+    <div class="do-card">
+      <span class="label">✓ Do</span>
+      <p style="font-family:var(--font-sans);font-size:13px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--green);">SUBLINE IN ALL CAPS</p>
+      <p style="margin-top:8px;">Consistent all-caps + tracking creates the confident, structured feel that anchors sections.</p>
+    </div>
+
+    <div class="dont-card">
+      <span class="label">✕ Don't</span>
+      <p>Mix third fonts, decorative faces, or platform defaults (Arial, system-ui, San Francisco) in external communications.</p>
+    </div>
+    <div class="do-card">
+      <span class="label">✓ Do</span>
+      <p>Use Montagu Slab + Roboto exclusively for internal/Google contexts (slides, docs). All external brand touchpoints must use GT Alpina + Sharp Earth.</p>
+    </div>
+
+    <div class="dont-card">
+      <span class="label">✕ Don't</span>
+      <p>Use the heavy headline font over cluttered backgrounds or at small sizes where the humanist details get lost.</p>
+    </div>
+    <div class="do-card">
+      <span class="label">✓ Do</span>
+      <p>Give headlines breathing room. The brand guide explicitly calls for "plenty of space" — typography needs air, just like the people it celebrates.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GOOGLE ALT NOTE -->
+  <div class="alt-note">
+    <h3>Google Font Alternates — Internal Use Only</h3>
+    <p>When GT Alpina and Sharp Earth aren't available (Google Slides, Google Docs, internal decks), use <strong>Montagu Slab</strong> in place of GT Alpina Extended, and <strong>Roboto</strong> in place of Sharp Earth. The same hierarchy rules apply. These alternates are strictly for internal communications — never use them on external brand collateral, website, ads, or packaging.</p>
+  </div>
+
+  <!-- COLOR × TYPE -->
+  <p class="section-label">06 — Type on Brand Colors</p>
+  <h2 class="section-title">Legibility across the palette.</h2>
+
+  <div class="color-test-grid">
+    <div class="ct" style="background:var(--green);color:var(--sky);">
+      <small>Green / Sky</small>
+      Visible. Valid. Valued.
+    </div>
+    <div class="ct" style="background:var(--red);color:var(--sand);">
+      <small>Red / Sand <span class="chip warn">No small copy</span></small>
+      You belong here.
+    </div>
+    <div class="ct" style="background:var(--gold);color:var(--green);">
+      <small>Gold / Green</small>
+      Raise your voice.
+    </div>
+    <div class="ct" style="background:var(--sky);color:var(--green);">
+      <small>Sky / Green</small>
+      We are fearless.
+    </div>
+    <div class="ct" style="background:var(--violet);color:var(--gold);">
+      <small>Violet / Gold <span class="chip warn">No small copy</span></small>
+      We are family.
+    </div>
+    <div class="ct" style="background:var(--mint);color:var(--green);">
+      <small>Mint / Green</small>
+      More than a brand.
+    </div>
+    <div class="ct" style="background:var(--celery);color:var(--green);">
+      <small>Celery / Green</small>
+      We refuse to shrink.
+    </div>
+    <div class="ct" style="background:var(--black);color:var(--white);">
+      <small>Black / White</small>
+      It's time to be heard.
+    </div>
+    <div class="ct" style="background:var(--blue);color:var(--sky);">
+      <small>Lake Blue / Sky</small>
+      You are great.
+    </div>
+  </div>
+
+  <!-- QUICK REFERENCE -->
+  <p class="section-label">07 — Quick Reference</p>
+  <h2 class="section-title">Cheat sheet.</h2>
+
+  <div class="grid-2">
+    <div class="card" style="background:var(--white);border:1px solid rgba(20,68,42,0.12);">
+      <div class="section-label">Brand fonts</div>
+      <p style="font-size:14px;line-height:2;font-weight:300;">
+        <strong style="font-weight:500;">Headline:</strong> GT Alpina Fine Extended, Regular + Italic<br>
+        <strong style="font-weight:500;">Subline:</strong> Sharp Earth Medium — ALL CAPS, +5% spacing<br>
+        <strong style="font-weight:500;">Body:</strong> Sharp Earth Regular / Light<br>
+        <strong style="font-weight:500;">Caption:</strong> Sharp Earth Regular, 11–12px
+      </p>
+    </div>
+    <div class="card" style="background:var(--white);border:1px solid rgba(20,68,42,0.12);">
+      <div class="section-label">Google alternates (internal only)</div>
+      <p style="font-size:14px;line-height:2;font-weight:300;">
+        <strong style="font-weight:500;">Headline:</strong> Montagu Slab<br>
+        <strong style="font-weight:500;">Subline:</strong> Roboto Medium — ALL CAPS<br>
+        <strong style="font-weight:500;">Body:</strong> Roboto Light<br>
+        <strong style="font-weight:500;">Accessibility note:</strong> Red/Sand & Violet/Gold fail for small copy
+      </p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

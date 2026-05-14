@@ -29,13 +29,13 @@ window.addEventListener('DOMContentLoaded', () => {
     ], cards: [{ label: 'Summer Vacation Must Have' }, { label: 'Beach Edit' }] }},
     { label: 'Brands', href: 'brands.html' },
     { label: 'Clothing', megaMenu: { listCols: 4, cardCols: 1, noFeatured: true, cols: [
-      { title: 'Shop by Categories', links: ['Dresses & Jumpsuits','Tops & Blouses','Tees & Tanks','Bodysuits', 'Pants & Trousers','Denim', 'Swimwear', 'Shirts'] },
-      { title: ' ', links: ['Skirts','Shorts','Leggings','Coats', 'Jackets & Blazers', 'Loungewear & Intimates', 'Coats',{ label: 'All Clothing', href: 'plp.html' }] },
+      { title: ' ', links: [{ label: 'All Clothing', href: 'plp.html' },'Dresses & Jumpsuits','Tops & Blouses','Tees & Tanks','Bodysuits', 'Pants & Trousers','Denim', 'Swimwear', 'Shirts'] },
+      { title: ' ', links: ['Skirts','Shorts','Leggings','Coats', 'Jackets & Blazers', 'Loungewear & Intimates', 'Coats'] },
       { title: 'Shop by Sizes', links: ['XS – M','L – XL','XXL - 4XL','Plus','Tall','Plus'] },
       { title: 'Shop by Brands', links: ['Brand Name','Brand Name', 'Brand Name', 'Brand Name', 'Brand Name'] },
     ], cards: [{ label: 'Trending Cloth Edit' }] }},
     { label: 'Dresses', href: 'plpCategory.html', megaMenu: { listCols: 3, cardCols: 2, cols: [
-      { title: '', links: ['Best sellers','New In', 'Editor\'s Pick'] },
+      { title: '', links: ['Best Sellers','New In', 'Editor\'s Pick'] },
       { title: 'Styles', links: ['Jumpsuits','Maxi', 'Midi', 'Knit', 'Wrap','Slip','Shirt Dresses','Shop All Dresses'] },
       { title: 'Popular', links: ['Under $200','Under $100','XS – M','L – XL','XXL - 4XL','Organic Materials'] },
     ], cards: [{ label: 'Just Arrived! Discover linen jumpsuits' }, { label: 'Summer Editions' }] }},
