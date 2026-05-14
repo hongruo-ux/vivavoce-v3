@@ -58,8 +58,8 @@ Subscribe  </button>
           <div class="footer-accordion-body" id="footer-col-company">
             <a href="about-us.html" class="footer-link">About Us</a>
             <a href="brand-ambassadors.html" class="footer-link">Brand Ambassadors</a>
-            <a href="#" class="footer-link">Community Spotlight</a>
-            <a href="#" class="footer-link">Ethical Production</a>
+            <a href="community-spotlight.html" class="footer-link">Community Spotlight</a>
+            <a href="ethical-production.html" class="footer-link">Ethical Production</a>
             <a href="careers.html" class="footer-link">Careers</a>
           </div>
         </div>
@@ -118,7 +118,7 @@ Subscribe  </button>
         <div class="footer-bottom-inner">
           <div class="footer-bottom-left">
             <span class="material-icons">eco</span>
-            <a href="eco.html" class="footer-bottom-link">Ethical Production</a>
+            <a href="ethical-production.html" class="footer-bottom-link">Ethical Production</a>
             <span class="footer-bottom-sep">·</span>
             <a href="FAQ.html" class="footer-bottom-link">Need Help?</a>
           </div>
