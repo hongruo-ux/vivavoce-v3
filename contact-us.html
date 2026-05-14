@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="cart-additions.css">
   <link rel="stylesheet" href="carousel.css">
   <link rel="stylesheet" href="contact-addition.css">
+  <link rel="stylesheet" href="login-addition.css">
 </head>
 <body class="bg-article">
 
@@ -43,10 +44,7 @@
       <h1 class="article-title-main contact">CONTACT US</h1>
       <p class="article-body-text">Need to get in touch? Feel free to reach out using the contact form or email us directly.</p>
       <p>We're available to Monday - Friday 9a.m - 5pm EST</p>
-       <div class="contact-info-block">
-          <p class="contact-info-label">Email:</p>
-          <a class="contact-info-value" href="mailto:contact@vivavoce.live">contact@vivavoce.live</a>
-        </div>
+  
     </div>
   </section>
 
@@ -76,7 +74,12 @@
             <label class="input-label" for="contact-message">Message</label>
             <textarea id="contact-message" name="message" placeholder="Message" rows="6"></textarea>
           </div>
+          <label class="radio-option auth-checkbox-row">
+              <input type="checkbox" id="signin-remember" name="remember" class="auth-checkbox" />
+             Sign up for our newsletter
+            </label>
           <button class="btn filled full lg" type="submit">Send</button>
+          
         </div>
 
       </div>

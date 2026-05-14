@@ -32,18 +32,6 @@
 .auth-eye-btn.is-visible .eye-show { display: none; }
 .auth-eye-btn.is-visible .eye-hide { display: block; }
 
-/* Checkbox row — extends .radio-option pattern */
-.auth-checkbox-row { align-items: center; padding-inline: 0; }
-.auth-checkbox {
-  width: 18px;
-  height: 18px;
-  min-height: 0;
-  border-radius: 3px;
-  flex-shrink: 0;
-  cursor: pointer;
-  accent-color: var(--cta-bg);
-  padding: 0;
-}
 
 /* — or — divider */
 .auth-or-divider {

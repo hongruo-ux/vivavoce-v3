@@ -91,9 +91,9 @@
             <div class="sg-table-col">
 
               <!-- CM / IN toggle — exact PDP pattern -->
-              <div style="display:flex;gap:0;border:1.5px solid var(--border);border-radius:var(--radius-pill);overflow:hidden;width:fit-content;margin-bottom:1.25rem;">
-                <button onclick="switchUnit('cm')" id="unit-cm" style="padding:0.625rem 2rem;font-size:var(--text-sm);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;border:none;background:var(--text-primary);color:#fff;cursor:pointer;min-height:0;">CM</button>
-                <button onclick="switchUnit('in')" id="unit-in" style="padding:0.625rem 2rem;font-size:var(--text-sm);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;border:none;background:transparent;color:var(--text-secondary);cursor:pointer;min-height:0;">IN</button>
+              <div class="size-guide-container" >
+                <button class="size-guide-left" onclick="switchUnit('in')" id="unit-in" >IN</button>
+                <button class="size-guide-right" onclick="switchUnit('cm')" id="unit-cm" >CM</button>
               </div>
 
               <table style="width:100%;border-collapse:collapse;font-size:var(--text-sm);">
@@ -280,7 +280,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    renderTable('cm');
+    switchUnit('in');
   });
 </script>
 

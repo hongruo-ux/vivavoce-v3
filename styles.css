@@ -740,3 +740,41 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 #sort-open-btn-desktop{
   font-size: var(--text-sm); font-weight: 600; text-transform: uppercase; letter-spacing: .02rem; !important
 }
+
+
+
+.size-guide-toggle{display:none;border-bottom:1px solid var(--border);padding:0 1.5rem; align-items: center;}
+.size-guide-title {padding:0.75rem 0;font-size:var(--text-default);font-weight:600;color:var(--text-primary);border:none;background:none;cursor:pointer;border-bottom:2px solid var(--text-primary);margin-bottom:-1px; text-transform: uppercase;}
+.size-guide-title2 {padding:0.75rem 0;font-size:var(--text-default);font-weight:600;color:var(--text-caption);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px; text-transform: uppercase;}
+.size-guide-left{ 
+  width: 50%;
+  padding:0.625rem 2rem;font-size:var(--text-sm);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;border:none;background:var(--text-primary);color:#fff;cursor:pointer;min-height:0;}
+.size-guide-right{ 
+  padding:0.625rem 2rem;
+  font-size:var(--text-sm);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  border:none;background:transparent;color:var(--text-secondary);cursor:pointer;min-height:0; width: 50%;}
+.size-guide-container { 
+  display:flex;gap:0;
+  border:1.5px solid var(--border);
+  border-radius:var(--radius-pill);
+  overflow:hidden;width:fit-content;
+  margin-bottom:1.25rem;
+  width: 100%;
+}
+
+/* Checkbox row — extends .radio-option pattern */
+.auth-checkbox-row { align-items: center; padding-inline: 0; padding-block: .5rem;}
+.auth-checkbox {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  border-radius: 3px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--cta-bg);
+  padding: 0;
+  
+}

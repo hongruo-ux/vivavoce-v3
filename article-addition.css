@@ -801,7 +801,9 @@
 }
 
 .faq-contact-text {
-  font-size: var(--text-default);
+  font-size: var(--text-lg);
   color: var(--text-primary);
   margin: 0;
+  padding-top: 1rem;
 }
+

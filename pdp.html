@@ -927,10 +927,10 @@
   </div>
 
   <!-- Mobile tabs — hidden on desktop -->
-  <div id="size-guide-mobile-tabs" style="display:none;border-bottom:1px solid var(--border);padding:0 1.5rem; align-items: center;">
-    <div style="display:flex;gap:2rem; justify-content: center;">
-      <button id="mob-tab-chart" onclick="switchMobileTab('chart')" style="padding:0.75rem 0;font-size:var(--text-default);font-weight:600;color:var(--text-primary);border:none;background:none;cursor:pointer;border-bottom:2px solid var(--text-primary);margin-bottom:-1px; text-transform: uppercase;">Size Chart</button>
-      <button id="mob-tab-measure" onclick="switchMobileTab('measure')" style="padding:0.75rem 0;font-size:var(--text-default);font-weight:600;color:var(--text-caption);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px; text-transform: uppercase;">How to Measure</button>
+  <div id="size-guide-mobile-tabs" class="size-guide-toggle">
+    <div class="size-guide-container">
+      <button id="mob-tab-chart" onclick="switchMobileTab('chart')" class="size-guide-title">Size Chart</button>
+      <button id="mob-tab-measure" onclick="switchMobileTab('measure')" class="size-guide-title-2">How to Measure</button>
     </div>
   </div>
 
@@ -947,8 +947,8 @@
 
         <!-- cm / in toggle -->
         <div style="display:flex;gap:0;border:1.5px solid var(--border);border-radius:var(--radius-pill);overflow:hidden;width:fit-content;margin-bottom:1.25rem;">
-          <button onclick="switchUnit('cm')" id="unit-cm" style="padding:0 2rem;font-size:var(--text-sm);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;border:none;background:var(--text-primary);color:#fff;cursor:pointer;">cm</button>
-          <button onclick="switchUnit('in')" id="unit-in" style="padding:0 2rem;font-size:var(--text-sm);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;border:none;background:transparent;color:var(--text-secondary);cursor:pointer;">in</button>
+          <button class="size-guide-left" onclick="switchUnit('in')" id="unit-in" >IN</button>
+          <button class="size-guide-right" onclick="switchUnit('cm')" id="unit-cm" >CM</button>
         </div>
 
         <table style="width:100%;border-collapse:collapse;font-size:var(--text-sm);">
