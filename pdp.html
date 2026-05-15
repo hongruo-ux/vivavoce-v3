@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="carousel.css">
   <link rel="stylesheet" href="quickadd-additions.css">
   <link rel="stylesheet" href="mini-cart.css">
+  <link rel="stylesheet" href="add-to-wishlist-additions.css">
+  
 
 
 </head>
@@ -160,8 +162,9 @@
 <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
   <div class="pdp-cta-row">
     <button class="btn filled lg full" id="pdp-atc-btn" onclick="openMiniCart()">Add to Bag</button>
-    <button class="pdp-wishlist-btn" aria-label="Save to Wishlist">
-      <span class="material-icons">favorite_border</span>
+    <button class="pdp-wishlist-btn product-card-wishlist" aria-label="Save to Wishlist">
+      <span class="material-icons wl-icon-default">favorite_border</span>
+      <span class="material-icons wl-icon-hover">favorite</span>
     </button>
   </div>
   <button class="pdp-shoppay-btn" id="pdp-shoppay-btn">
@@ -1105,5 +1108,10 @@
   document.getElementById('klarna-modal-mask').addEventListener('click', closeKlarnaModal);
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeKlarnaModal(); });
 </script>
+<script src="mini-cart.js"></script>
+<script src="modal-show-image.js"></script>
+<script src="add-to-wishlist-additions.js"></script>
+<script src="hero-banners.js"></script>
+
 </body>
 </html>

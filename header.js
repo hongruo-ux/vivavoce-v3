@@ -364,8 +364,9 @@ window.addEventListener('DOMContentLoaded', () => {
           <button class="icon-circle-btn" id="search-open-btn" aria-label="Search">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
           </button>
-          <button class="icon-circle-btn hide-on-mobile" aria-label="Wishlist">
+         <button class="icon-circle-btn hide-on-mobile" aria-label="Wishlist">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            <span class="cart-count" id="wl-count" style="display:none">0</span>
           </button>
           <button class="icon-circle-btn cart-btn" aria-label="Cart" onclick="location.href='cart.html'">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>

@@ -1,36 +1,24 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-  const modal    = document.getElementById('wl-modal');
-  const mask     = document.getElementById('wl-mask');
-  const closeBtn = document.getElementById('wl-close');
-  const select   = document.getElementById('wl-select');
-  const newInput = document.getElementById('wl-new-input');
-  const saveBtn  = document.getElementById('wl-save');
+  function getCount() {
+    return document.querySelectorAll('.product-card-wishlist.is-wishlisted').length;
+  }
 
-  if (!modal) return;
+  function updateBadge() {
+    const badge = document.getElementById('wl-count');
+    if (!badge) return;
+    const count = getCount();
+    badge.textContent = count;
+    badge.style.display = count > 0 ? 'flex' : 'none';
+  }
 
   document.querySelectorAll('.product-card-wishlist').forEach(btn => {
     btn.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
-      select.value = 'new';
-      newInput.classList.add('is-visible');
-      modal.classList.add('is-open');
-      mask.classList.add('is-open');
+      btn.classList.toggle('is-wishlisted');
+      updateBadge();
     });
   });
-
-  select.addEventListener('change', () => {
-    newInput.classList.toggle('is-visible', select.value === 'new');
-  });
-
-  function closeModal() {
-    modal.classList.remove('is-open');
-    mask.classList.remove('is-open');
-  }
-
-  closeBtn.addEventListener('click', closeModal);
-  mask.addEventListener('click', closeModal);
-  saveBtn.addEventListener('click', closeModal);
 
 });

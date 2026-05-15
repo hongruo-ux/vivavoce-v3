@@ -3,50 +3,9 @@
    ============================================================ */
 .wl-icon-hover   { display: none; color: var(--cta-bg); font-size: 18px; }
 .wl-icon-default { display: block; color: var(--text-primary); font-size: 18px; }
+
 .product-card:hover .wl-icon-default { display: none; }
 .product-card:hover .wl-icon-hover   { display: block; }
 
-/* ============================================================
-   WISHLIST MODAL
-   ============================================================ */
-.wl-modal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 700;
-  width: min(480px, 92vw);
-  background: var(--surface-page);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-  padding: 1.5rem;
-}
-
-.wl-modal.is-open { display: block; }
-
-.wl-modal-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
-
-.wl-modal-body {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.wl-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-}
-
-.wl-new-input { display: none; }
-.wl-new-input.is-visible {
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-}
+.product-card-wishlist.is-wishlisted .wl-icon-default { display: none; }
+.product-card-wishlist.is-wishlisted .wl-icon-hover   { display: block; }

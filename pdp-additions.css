@@ -493,3 +493,12 @@
   color: var(--text-muted);
   border-color: var(--text-muted);
 }
+
+/* PDP: wishlist button is always visible, not card-hover dependent */
+.pdp-wishlist-btn.product-card-wishlist {
+  opacity: 1;
+  position: static;
+  top: auto;
+  right: auto;
+  background: none;
+}
