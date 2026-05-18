@@ -465,6 +465,7 @@
 
 .plp-no-results-subtext {
   color: var(--text-muted);
+  padding-bottom: .5rem;
 }
 
 .plp-trending-pills {
