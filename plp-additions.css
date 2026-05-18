@@ -36,6 +36,7 @@
 .plp-sort-wrap      { position: relative; flex: 1; display: flex; flex-direction: column; align-items: flex-end; }
 .plp-filter-dot     { position: absolute; top: -3px; right: -3px; width: 18px; height: 18px; text-align: center; color: #fff; font-size: 12px; font-weight: 600; border-radius: 50%; background: var(--red-coral); border: 1.5px solid var(--surface-page); display: none; z-index: 1; }
 .plp-filter-dot.is-visible { display: block; }
+.plp-filter { width:15px;height:15px}
 
 .sort-dropdown          { display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: var(--surface-page); border: 1px solid var(--border); z-index: 300; box-shadow: var(--shadow-card); min-width: 160px; }
 .sort-dropdown.is-open  { display: block; width: fit-content;}
