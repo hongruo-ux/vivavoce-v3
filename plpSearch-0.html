@@ -27,7 +27,7 @@
         <div class="">
 
           <div class="breadcrumb">
-            <a href="index.html">Home</a><span>/</span><span>Brand Name</span>
+            <a href="index.html">Home</a><span>/</span><span>Search: "pants"</span>
           </div>
 
         </div>
@@ -41,21 +41,9 @@
     <div class="band">
       <div class="container">
         <div class="section-xs">
-          <div class="page-header"><h2>Brand Name</h2></div>
+          <div class="page-header"><h2>Search: "pants"</h2></div>
         </div>
       </div>
-      <!-- brand banner — full width within band, no container -->
-      <section class="plp-brand-hero">
-        <div class="brand-hero-content hide-mobile"">
-          <h4 style="padding-bottom: .5rem;">About the brand</h4>
-          <p class="brand-description">
-            Few labels are as synonymous with classic American style as your brand. The heritage brand is globally recognized for its elevated sportswear, tailoring...
-          </p>
-        </div>
-        <div class="brand-hero-image">
-          <img src="images/home/slide-3-s.png" alt="Brand Banner" class="wf-img">
-        </div>
-      </section>
     </div>
 
     <!-- ============================================================
@@ -68,7 +56,7 @@
       <div class="plp-layout">
 
         <!-- Desktop Sidebar -->
-        <aside class="filter-sidebar">
+        <aside class="filter-sidebar is-disabled">
           <div class="filter-header">
             <span>Filters</span>
             <button class="btn sm" id="sidebar-clear-btn">Clear All</button>
@@ -77,16 +65,7 @@
             <span style="font-size:var(--text-sm);color:var(--text-muted)">Active:</span>
           </div>
        
-          <div class="filter-group">
-            <button class="filter-group-title" aria-expanded="true" aria-controls="fg-cat">Shoy by Category <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-            <div class="filter-group-body" id="fg-cat">
-                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Dresses" style="width:15px;height:15px">Dresses<span class="filter-count">84</span></label>
-                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Tops" style="width:15px;height:15px">Tops<span class="filter-count">84</span></label>
-                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Trousers" style="width:15px;height:15px">Trousers<span class="filter-count">84</span></label>
-                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Skirts" style="width:15px;height:15px">Skirts<span class="filter-count">84</span></label>
-                <label class="filter-option"><input type="checkbox" class="plp-filter" data-label="Outerwear" style="width:15px;height:15px">Shoes<span class="filter-count">84</span></label>
-            </div>
-          </div>
+          
           <div class="filter-group">
             <button class="filter-group-title" aria-expanded="true" aria-controls="fg-size">Sizes <svg class="filter-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
             <div class="filter-group-body" id="fg-size">
@@ -203,9 +182,26 @@
 
         <!-- Products column -->
         <div>
+          <!-- ========== NO RESULTS STATE ========== -->
+          <div class="plp-no-results" id="plp-no-results">
+            <div class="plp-no-results-container">
+              <h3 class="plp-no-results-heading">Sorry, we couldn't find any results for "foweurywer <span id="no-results-query"></span>"</h3>
+              <p class="plp-no-results-subtext">Please check items close to the result, or try searching for trending suggestions:</p>
+            </div>
+            
+              <div class="plp-trending-pills" style="padding-block:1rem ;">
+                <button class="btn sm plp-trending-pill" data-search="Black Pants">Flower Pants</button>
+                <button class="btn sm plp-trending-pill" data-search="Wide Leg">Flower Patterns</button>
+                <button class="btn sm plp-trending-pill" data-search="Linen Pants">Flower dressess</button>
+                <button class="btn sm plp-trending-pill" data-search="Tailored">Shorts</button>
+                <button class="btn sm plp-trending-pill" data-search="Trousers">Shirts</button>
+                <button class="btn sm plp-trending-pill" data-search="Summer Pants">Summer Pants</button>
+              </div>
+          </div>
+          
         <!-- Desktop toolbar: Sort + product count -->
           <div class="plp-toolbar">
-            <span class="section-eyebrow" style="width: 70%;">1,420 products</span>
+            <span class="section-eyebrow" style="width: 70%;"></span>
             <div class="plp-sort-wrap" style="position:relative; width: 30%;" >
               <a id="sort-open-btn-desktop" aria-label="Sort products" style="display: inline-flex; align-items: center; gap: 0.25rem;">SORT BY<span class="material-icons" aria-hidden="true">expand_more</span></a>
                 <select id="sort-select-desktop" style="position:absolute;top:0;left:0;width:fit-content%;height:100%;opacity:0;cursor:pointer">
@@ -220,7 +216,7 @@
           <!-- Mobile / tablet toolbar: Filter + Sort CTAs (full width) -->
           <div class="plp-toolbar-mobile">
   <span class="plp-cta-btn">
-    <button class="btn xs plp-toolbar-btn" id="filter-open-btn">Filter</button>
+    <button class="btn xs plp-toolbar-btn is-disabled" id="filter-open-btn" disabled>Filter</button>
     <span class="plp-filter-dot" id="filter-dot"></span>
   </span>
 
@@ -768,17 +764,7 @@
             <button class="btn sm plp-load-more-btn" id="plp-load-more-btn">Load More</button>
           </div>
 
-          <!-- Desktop pagination -->
-          <p class="pagination-label" id="pagination-label">Showing 1–16 of <strong>60</strong> products</p>
-          <div class="pagination" id="plp-pagination">
-            <button class="page-btn">‹</button>
-            <button class="page-btn active">1</button>
-            <button class="page-btn">2</button>
-            <button class="page-btn">3</button>
-            <button class="page-btn">…</button>
-            <button class="page-btn">4</button>
-            <button class="page-btn">›</button>
-          </div>
+         
 
         </div><!-- /products column -->
       </div><!-- /plp-layout -->
@@ -788,40 +774,12 @@
 
 
 
-    <!-- ============================================================
-         BRAND FOOTER (mobile only)
-         Pattern: band
-    ============================================================ -->
-    <div class="container">
-      <section class="plp-brand-footer show-mobile">
-      <div class="brand-hero-content">
-        <span class="brand-eyebrow" style="padding-bottom: 1rem;">About the brand</span>
-        <h3 class="">BRAND NAME</h3>
-        <p class="plp-seo-body">
-          Few labels are as synonymous with classic American style as Polo Ralph Lauren. The heritage brand is globally recognized for its elevated sportswear, tailoring...
-        </p>
-      </div>
-    </section>
-    </div>
         <!-- ============================================================
          SEO BLOCK — ABOUT + KEYWORD PILLS
          Pattern: band > container > section-sm
     ============================================================ -->
   <div class="band">
         <div class="container" >
-          <div class="plp-seo-box"  style="background-color: var(--surface-mint);">
-              <div class="container">
-                  <h3>Shop [Brand] On Viva Voce</h3>
-                <div class="plp-seo-body is-truncated" id="plp-seo-body">
-                  <p>Explore Viva Voce's curated edit of <strong>[Brand Name clothing]</strong> — one of the most celebrated names in contemporary fashion. Known for its commitment to <strong>[quality craftsmanship]</strong> and <strong>[timeless design]</strong>, this brand has been a cornerstone of the Viva Voce edit since its launch on our platform. Every piece is selected by our team of stylists who champion brands that align with our values of <strong>[ethical production]</strong> and <strong>[sustainable fashion]</strong>.</p>
-                    <p>From signature <strong>[Brand Name dresses]</strong> to elevated <strong>[Brand Name tops]</strong> and <strong>[Brand Name outerwear]</strong>, our brand edit spans every category and occasion. Whether you're building a <strong>[capsule wardrobe]</strong> or looking for a standout piece, this is the definitive place to shop <strong>[Brand Name online]</strong> with the confidence of knowing every item meets our rigorous ethical and quality standards.</p>
-                    <p>New pieces from <strong>[Brand Name]</strong> are added weekly. Filter by size — including <strong>[petite]</strong>, <strong>[tall]</strong>, and <strong>[plus size]</strong> — colour, and price to find exactly what you're looking for in our <strong>[Brand Name women's clothing]</strong> collection.</p>
-                  </div>
-                <button class="plp-seo-toggle " id="plp-seo-toggle" aria-expanded="false">READ MORE</button>
-
-              </div>
-            
-            </div>
           <div class="">
             <div class="section-sm ">
               <div class="">
@@ -841,14 +799,186 @@
               </div>
             </div>
 
-            
-
-            
-
-            
-
           </div>
         </div>
+
+<!-- ============================================================
+                RECENTLY VIEWED         Pattern: band > container > section-sm
+                    ============================================================ -->
+                    <div class="band">
+                      <div class="container">
+                        <div class="section-sm">
+                      <div class="section-carousel">
+
+                        <div class="section-header-carousel">
+                          <div>
+                            <h3 class="">Recently Viewed</h3>
+                          </div>
+                        </div>
+
+                        <div class="carousel-wrap">
+                          <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                          </button>
+                          <div class="carousel-track">
+
+                            <div class="carousel-item--5">
+                              <div class="product-card">
+                                <div class="product-card-img">
+                                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                                      <span class="material-icons wl-icon-default">favorite_border</span>
+                                      <span class="material-icons wl-icon-hover">favorite</span>
+                                    </button>
+                                    <div class="product-card-mask"><span class="mask-label">Community's FAV</span></div></a>
+                                </div>
+                                <button class="product-quick-add">Quick Add</button>
+
+                                <div class="product-card-info">
+                                  <a href="plpBrand.html" class="product-brand">Toteme</a>
+                                  <div class="product-name">Draped Silk Midi Dress</div>
+                                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size oos">XL</span></div>
+                                  <div class="product-price">$485</div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="carousel-item--5">
+                              <div class="product-card">
+                                <div class="product-card-img">
+                                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                  <span class="material-icons wl-icon-default">favorite_border</span>
+                  <span class="material-icons wl-icon-hover">favorite</span>
+                </button>
+                                    <div class="product-card-mask"><span class="mask-label">Editor's Pick</span></div></a>
+                                </div>
+                                <button class="product-quick-add">Quick Add</button>
+
+                                <div class="product-card-info">
+                                  <a href="plpBrand.html" class="product-brand">Sandro</a>
+                                  <div class="product-name">Floral Wrap Midi Skirt</div>
+                                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size oos">M</span><span class="product-size">L</span></div>
+                                  <div class="product-price">$310</div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="carousel-item--5">
+                              <div class="product-card">
+                                <div class="product-card-img">
+                                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                  <span class="material-icons wl-icon-default">favorite_border</span>
+                  <span class="material-icons wl-icon-hover">favorite</span>
+                </button>
+                                    <div class="product-card-mask"><span class="mask-label">Exclusive</span></div></a>
+                                </div>
+                                <button class="product-quick-add">Quick Add</button>
+
+                                <div class="product-card-info">
+                                  <a href="plpBrand.html" class="product-brand">Jacquemus</a>
+                                  <div class="product-name">Le Chiquito Nœud Bag</div>
+                                  <div class="product-sizes"><span class="product-size">One Size</span></div>
+                                  <div class="product-price">$650</div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="carousel-item--5">
+                              <div class="product-card">
+                                <div class="product-card-img">
+                                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a>
+                                </div>
+                                <button class="product-quick-add">Quick Add</button>
+
+                                <div class="product-card-info">
+                                  <a href="plpBrand.html" class="product-brand">AMI Paris</a>
+                                  <div class="product-name">Oversized Crewneck Sweater</div>
+                                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size">XL</span></div>
+                                  <div class="product-price">$395</div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="carousel-item--5">
+                              <div class="product-card">
+                                <div class="product-card-img">
+                                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div>
+                                    <button class="product-card-wishlist" aria-label="Save to wishlist">
+                  <span class="material-icons wl-icon-default">favorite_border</span>
+                  <span class="material-icons wl-icon-hover">favorite</span>
+                </button>
+                                    <div class="product-card-mask"><span class="mask-label">Community's</span></div></a>
+                                </div>
+                                <button class="product-quick-add">Quick Add</button>
+
+                                <div class="product-card-info">
+                                  <a href="plpBrand.html" class="product-brand">Isabel Marant</a>
+                                  <div class="product-name">Étoile Printed Maxi Dress</div>
+                                  <div class="product-sizes"><span class="product-size oos">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size oos">L</span></div>
+                                  <div class="product-price">$560</div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="carousel-item--5">
+                              <div class="product-card">
+                                <div class="product-card-img">
+                                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a>
+                                </div>
+                                <button class="product-quick-add">Quick Add</button>
+
+                                <div class="product-card-info">
+                                  <a href="plpBrand.html" class="product-brand">A.P.C.</a>
+                                  <div class="product-name">Straight-Leg Tailored Trousers</div>
+                                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size">XL</span></div>
+                                  <div class="product-price">$290</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="carousel-item--5">
+                              <div class="product-card">
+                                <div class="product-card-img">
+                                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a>
+                                </div>
+                                <button class="product-quick-add">Quick Add</button>
+
+                                <div class="product-card-info">
+                                  <a href="plpBrand.html" class="product-brand">A.P.C.</a>
+                                  <div class="product-name">Straight-Leg Tailored Trousers</div>
+                                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size">XL</span></div>
+                                  <div class="product-price">$290</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="carousel-item--5">
+                              <div class="product-card">
+                                <div class="product-card-img">
+                                  <a href="pdp.html"><div class="carousel-img ratio-3-4"></div></a>
+                                </div>
+                                <button class="product-quick-add">Quick Add</button>
+
+                                <div class="product-card-info">
+                                  <a href="plpBrand.html" class="product-brand">A.P.C.</a>
+                                  <div class="product-name">Straight-Leg Tailored Trousers</div>
+                                  <div class="product-sizes"><span class="product-size">XS</span><span class="product-size">S</span><span class="product-size">M</span><span class="product-size">L</span><span class="product-size">XL</span></div>
+                                  <div class="product-price">$290</div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                          <button class="carousel-btn carousel-btn--next" aria-label="Next">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                          </button>
+                        </div>
+
+                      </div>
+
+                        </div>
+                      </div>
+                    </div>
       </div>
 
 
@@ -933,20 +1063,7 @@
           <a href="catePLP.html?cat=outerwear" class="filter-cat-link">Outerwear<span class="filter-count">145</span></a>
         </div>
       </div> -->
-      <div class="filter-acc-item">
-        <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-cat">
-          Shop by Categories
-          <svg class="filter-acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="filter-acc-body" id="fac-cat">
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-cat" data-label="Dresses">Dresses<span class="filter-count">84</span></label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-cat" data-label="Tops">Tops<span class="filter-count">84</span></label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-cat" data-label="Trousers">Trousers<span class="filter-count">84</span></label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-cat" data-label="Skirts">Skirts<span class="filter-count">84</span></label>
-          <label class="filter-option"><input type="checkbox" class="plp-filter plp-filter-cat" data-label="Shoes">Shoes<span class="filter-count">84</span></label>
-
-        </div>
-      </div>
+     
 
       <div class="filter-acc-item">
         <button class="filter-acc-btn" aria-expanded="false" aria-controls="fac-size">
