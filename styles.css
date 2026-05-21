@@ -186,8 +186,8 @@
 
     --header-display: 2.5rem;  /* 40px */
     --header-h1:      2rem;    /* 32px */
-    --header-h2:      1.5rem;  /* 24px */
-    --header-h3:      1.25rem; /* 20px */
+    --header-h2:      1.875rem;  /* 24px */
+    --header-h3:      1.5rem; /* 20px */
     --header-h4:      1rem;      /* 16px */
     --header-h5:       0.875rem;  /* 14px */
     --quote-xl:       1.875rem; /* 30px */
@@ -342,13 +342,13 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 
 @media (max-width: 1079px) {
   .band-padding {  padding-inline: 1rem;}
-   .left {padding-left: max(1rem, calc((100vw - 1600px) / 2 + 1rem)); padding-top: 1rem;}
+   .left {padding-left: max(1rem, calc((100vw - 1600px) / 2 + 1rem)); padding-top: 0rem;}
    .right { padding-left: 0; padding-right: max(1rem, calc((100vw - 1600px) / 2 + 1rem)); padding-top: 1rem;}
 }
 
 @media (max-width: 739px) {
   .band-padding {  padding-inline: 1rem;}
-   .left {padding-left:1rem; padding-top: 1rem;}
+   .left {padding-left:1rem; }
    .right { padding-left: 0; padding-right:1rem; padding-top: 1rem;}
    .text-center{text-align: center;}
 }
@@ -500,7 +500,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 /* ============================================================
    6. SECTION COMPONENTS — header, eyebrow, title
    ============================================================ */
-.section-header          { gap: 2rem; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; }
+.section-header          { gap: 2rem; display: flex; justify-content: space-between; align-items: flex-end; padding-block: 3.5rem; }
 .section-eyebrow         { font-size: var(--text-sm); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 4px; }
 .section-title           { font-family: var(--font-display); text-transform: uppercase; padding-block: 1rem .5rem; font-size: var(--header-h3); font-weight: 600; color: var(--red-coral); }
 .section-title-block     { padding: 0 0 1rem; }
@@ -514,7 +514,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   .half-header             { max-width: 80%; }
 }
 @media (max-width: 739px) {
-  .section-header          { margin-bottom: 1rem; gap: 1rem; }
+  .section-header          { margin-bottom: 0; padding-block: 1rem;; gap: 1rem; }
   .section-title-block     { padding-bottom: 1rem; }
   .section-header-carousel { margin-bottom: 1rem; }
   .half-header             { max-width: 100%; }

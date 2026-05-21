@@ -440,7 +440,7 @@
 @media (max-width: 1079px) {
   .newsletter-banner  { grid-template-columns: 1fr; min-height: 0; max-height: none; }
   .newsletter-img     { display: none; }
-  .newsletter-content { padding: 2rem 1rem; max-width: 100%; }
+  .newsletter-content { padding: 1rem 1rem; max-width: 100%; text-align: center;}
   #acc-user-account .mobile-acc-link { padding-left: 1rem; }
 }
 @media (max-width: 739px) {}

@@ -178,7 +178,7 @@ min-width: 25%; background: var(--surface-sand); z-index: 1;"
 }
 }
 @media (max-width: 739px) {
-  .section-header { display: block !important; margin-bottom: 1rem; }
+  .section-header { display: block !important; padding-block: 2rem; margin-bottom: .5rem; }
   
 }
 /* ============================================================
@@ -365,8 +365,8 @@ min-width: 25%; background: var(--surface-sand); z-index: 1;"
     padding: 1rem;
   }
   .trust-block__img{
-   width: 120px;
-   height: 120px;
+   width: 80px;
+   height: 80px;
    padding: 0;
   }
 .trust-block__icon-img{

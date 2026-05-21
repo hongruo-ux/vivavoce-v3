@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
             class="newsletter-img ratio 16-9"
           />
           <div class="newsletter-content">
-            <h4 class="newsletter-title">Join our Newsletter — Get Updates, Offers and Invites.</h4>
+            <h3 class="newsletter-title">Join our Newsletter — Get Updates, Offers and Invites.</h3>
             <form class="newsletter-form" onsubmit="return false;">
   <input type="email" placeholder="Enter your email address" autocomplete="email" />
   <button type="submit" class="btn md filled">
