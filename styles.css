@@ -778,3 +778,35 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   padding: 0;
   
 }
+
+
+/* 3×5 Grid for Instagram cards */
+.btl-grid-simple {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .25rem;
+}
+
+.btl-grid-simple .btl-card {
+  display: block;
+  aspect-ratio: 1 / 1;
+}
+
+.btl-grid-simple .btl-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Mobile responsive */
+@media (max-width: 1079px) {
+  .btl-grid-simple {
+    display: none;
+  }
+}
+/* Hide carousel on desktop, show grid instead */
+@media (min-width: 1080px) {
+  .btl-grid-simple + .band {
+    display: none !important;
+  }
+}
+
