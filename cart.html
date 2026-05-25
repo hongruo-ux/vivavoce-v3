@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Bag — Viva Voce</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="cart-additions.css" />
@@ -55,43 +55,14 @@
     <div class="band">
       <div class="container">
 
-        <!-- Mobile: top accordion -->
-        <div class="cart-summary-accordion">
-          <button class="cart-summary-accordion-trigger" id="cart-summary-toggle" aria-expanded="false" aria-controls="cart-summary-panel">
-            <span class="cart-summary-accordion-label">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
-              Order Summary
-            </span>
-            <span class="cart-summary-accordion-total">$1,624</span>
-            <svg class="cart-summary-accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="cart-summary-accordion-panel" id="cart-summary-panel" hidden>
-            <div class="summary-row"><span>Subtotal (3 items)</span><span>$1,624</span></div>
-            <div class="summary-row"><span>Shipping</span><span class="utility-text">Free</span></div>
-            <div class="summary-row total"><span>Total</span><span>$1,624</span></div>
-            
-            <div class="cart-promo-row">
-              <input placeholder="Promo code">
-              <button class="btn sm">Apply</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile: top CTAs -->
-        <div class="cart-summary-bottom-mobile">
-          <div class="cart-mobile-ctas">
-            <button class="btn filled lg full">Proceed to Checkout →</button>
-            <button class="btn-shopify">Express Checkout</button>
-          </div>
-        </div>
-
         <!-- Cart layout: left + right columns -->
         <div class="cart-layout">
 
           <!-- Left column -->
           <div>
 
-            <div class="cart-item">
+            <!-- DESKTOP VERSION -->
+            <div class="cart-item cart-item-desktop">
               <div class="cart-item-img wf-img"></div>
               <div>
                 <div class="product-brand">Jacquemus</div>
@@ -99,7 +70,7 @@
                 <p class="utility-text">Size: S · Natural Linen</p>
                 <div class="mini-cart-made-to-order">
                   <p class="pdp-made-to-order dark">
-                    <span><strong>Made to Order</strong><br>Please allow 3–4 weeks for delivery.</span>
+                    <span><strong>Made to Order </strong><br>Please allow 3–4 weeks for delivery.</span>
                   </p>
                 </div>
                 <div class="cart-item-actions">
@@ -117,7 +88,35 @@
               <div class="product-price">$595</div>
             </div>
 
-            <div class="cart-item">
+            <!-- MOBILE VERSION -->
+            <div class="cart-item cart-item-mobile mobile-only">
+              <div class="cart-item-img wf-img"></div>
+              <div class="cart-item-content">
+                <div class="product-brand">Jacquemus</div>
+                <a class="product-name-cart">La Robe Murano Asymmetric Linen Dress</a>
+                <p class="utility-text">Size: S · Natural Linen</p>
+                <div class="product-price">$595</div>
+                <div class="mini-cart-made-to-order">
+                  <p class="pdp-made-to-order dark">
+                    <span><strong>Made to Order </strong><br>Please allow 3–4 weeks for delivery.</span>
+                  </p>
+                </div>
+                <div class="cart-item-actions">
+                  <div class="qty-ctrl">
+                    <button class="qty-btn">−</button>
+                    <div class="qty-val">1</div>
+                    <button class="qty-btn">+</button>
+                  </div>
+                  <button class="icon-circle-btn" aria-label="Remove item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+                  </button>
+                  <a href="#" class="utility-link">Save For Later</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- DESKTOP VERSION -->
+            <div class="cart-item cart-item-desktop">
               <div class="cart-item-img wf-img"></div>
               <div>
                 <div class="product-brand">Jacquemus</div>
@@ -138,12 +137,14 @@
               <div class="product-price">$595</div>
             </div>
 
-            <div class="cart-item">
+            <!-- MOBILE VERSION -->
+            <div class="cart-item cart-item-mobile mobile-only">
               <div class="cart-item-img wf-img"></div>
-              <div>
+              <div class="cart-item-content">
                 <div class="product-brand">Jacquemus</div>
                 <a class="product-name-cart">La Robe Murano Asymmetric Linen Dress</a>
                 <p class="utility-text">Size: S · Natural Linen</p>
+                <div class="product-price">$595</div>
                 <div class="cart-item-actions">
                   <div class="qty-ctrl">
                     <button class="qty-btn">−</button>
@@ -156,55 +157,127 @@
                   <a href="#" class="utility-link">Save For Later</a>
                 </div>
               </div>
-              <div class="product-price">$595</div>
             </div>
+
+        <!-- Mobile: bottom order summary -->
+        <div class="cart-summary-bottom-mobile">
+  <div class="summary-rows-wrapper">
+      <h4>Order Summary</h4>
+    <div class="summary-row"><span>Subtotal (3 items)</span><span>$1,624</span></div>
+    <div class="summary-row"><span>Shipping</span><span class="utility-text">Free</span></div>
+        <div class="summary-row"><span>Tax</span><span class="utility-text">Calculated at checkout</span></div>
+
+    <div class="summary-row total"><span>Total</span><span>$1,624</span></div>
+  </div>
+  
+  <div class="pdp-klarna" style="display: block !important; line-height: 1.6 !important; font-size: 14px !important; color: #000 !important;">
+    Pay in 4 interest-free installments of $22.00 
+    <span style="white-space: nowrap !important; display: inline-block !important; vertical-align: middle !important;">
+      with 
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Shop_Pay_logo.svg/1280px-Shop_Pay_logo.svg.png" 
+          alt="Shop Pay" 
+          style="display: inline-block !important; height: 14px !important; width: auto !important; vertical-align: middle !important; margin: 0 4px !important; transform: translateY(-1px);"> </span>
+    <a href="#" onclick="openKlarnaModal();return false;" 
+      style="display: inline-block !important; vertical-align: middle !important; text-decoration: underline !important; margin-left: 4px !important; white-space: nowrap !important; font-size: 14px !important;">
+      View sample plans
+    </a>
+  </div>
+
+  <div class="cart-promo-row">
+    <input placeholder="Promo code">
+    <button class="btn sm">Apply</button>
+  </div>
+  
+  <button class="btn filled lg full">Proceed to Checkout →</button>
+  <button class="btn-shopify">
+    <svg width="16" height="16" viewBox="0 0 109 124" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M74.7 14.8s-1.4.4-3.7 1.1c-.4-1.3-1-2.8-1.8-4.4-2.7-5.1-6.6-7.8-11.4-7.8-.3 0-.7 0-1 .1-.1-.2-.3-.3-.4-.5-2.1-2.2-4.7-3.3-7.8-3.2-6.1.2-12.1 4.6-17 12.4-3.4 5.4-6 12.2-6.7 17.5-6.9 2.1-11.7 3.6-11.8 3.7C9.4 35.7 9.2 36 9.1 38c-.1 1.5-5.6 43.2-5.6 43.2L62.6 92l30.1-6.5S74.7 15.3 74.7 14.8zM57.1 20c-4 1.2-8.4 2.6-12.7 3.9.4-5.4 2.3-10.8 5.1-14.4 1-1.3 2.5-2.8 4.2-3.6 1.6 3.3 1.9 8 1.4 14.1zM49 6.7c1.4 0 2.6.3 3.6.9-1.6.8-3.2 2.2-4.6 3.8-3.7 4.3-6.6 10.9-7 17.1-3.3 1-6.6 2-9.7 3C33.1 21 40.5 6.9 49 6.7zm10.1 51.9c.3 5.2-2.7 9.7-7.3 10-4.5.3-8.4-3.7-8.7-8.9-.3-5.2 2.7-9.7 7.3-10 4.5-.3 8.4 3.7 8.7 8.9zM60.8 19.7c-.1-5.6-.8-10-2.2-13.3 5.4.7 9 6.8 10.5 13.8-2.6.8-5.3 1.6-8.3 2.5v-3z"/></svg>
+    Express Checkout
+  </button>
+  <div class="cart-secure-note">🔒 Secure checkout · SSL encrypted</div>
+  <div class="cart-payment-methods">
+    <p class="cart-payment-label">WE ACCEPT FOLLOWING PAYMENT OPTIONS</p>
+    <img src="images/cart/logos.png" alt="Accepted payment methods" class="cart-payment-logos">
+    <div class="cart-help-links">
+      <a href="#">Free Shipping</a>
+      <a href="#">Return &amp; Refund</a>
+      <a href="#">Contact Us</a>
+      <a href="#">FAQs</a>
+    </div>
+  </div>
+</div>
+
 
             <div class="section-sm" style="padding-bottom: 1rem;">
               <h2 class="section-title">Save For Later</h2>
             </div>
 
-            <div class="cart-item">
-              <div class="cart-item-img wf-img"></div>
-              <div>
-                <div class="product-brand-cart">A.P.C.</div>
-                <div class="product-name">Wool Blazer — Marine</div>
-                <p class="utility-text">Size: M · Marine</p>
-                <div class="cart-item-actions">
-                  <div class="qty-ctrl">
-                    <button class="qty-btn">−</button>
-                    <div class="qty-val">1</div>
-                    <button class="qty-btn">+</button>
-                  </div>
-                  <button class="icon-circle-btn" aria-label="Remove item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-                  </button>
-                  <a href="#" class="utility-link">Add to Cart</a>
-                </div>
-                <p class="cart-item-urgency">Hurry! Only 3 left.</p>
-              </div>
-              <div class="product-price">$434</div>
-            </div>
+            <!-- DESKTOP VERSION -->
+  <div class="cart-item cart-item-desktop">
+    <div class="cart-item-img wf-img"></div>
+    <div>
+      <div class="product-brand">Jacquemus</div>
+      <a class="product-name-cart">Le Chiquito Long Nylon Shoulder Bag</a>
+      <p class="utility-text">Color: Black</p>
+      <div class="cart-item-actions">
+        <a href="#" class="utility-link">Move to Cart</a>
+        <button class="icon-circle-btn" aria-label="Remove from saved">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="product-price">$395</div>
+  </div>
 
-            <div class="cart-item">
-              <div class="cart-item-img wf-img"></div>
-              <div>
-                <div class="product-brand">Jacquemus</div>
-                <div class="product-name-cart">Le Bambino Small Leather Bag</div>
-                <p class="utility-text">Colour: Brown</p>
-                <div class="cart-item-actions">
-                  <div class="qty-ctrl">
-                    <button class="qty-btn">−</button>
-                    <div class="qty-val">1</div>
-                    <button class="qty-btn">+</button>
-                  </div>
-                  <button class="icon-circle-btn" aria-label="Remove item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-                  </button>
-                  <a href="#" class="utility-link">Add to Cart</a>
-                </div>
-              </div>
-              <div class="product-price">$595</div>
-            </div>
+  <!-- MOBILE VERSION -->
+  <div class="cart-item cart-item-mobile">
+    <div class="cart-item-img wf-img"></div>
+    <div class="cart-item-content">
+      <div class="product-brand">Jacquemus</div>
+      <a class="product-name-cart">Le Chiquito Long Nylon Shoulder Bag</a>
+      <p class="utility-text">Color: Black</p>
+      <div class="product-price">$395</div>
+      <div class="cart-item-actions">
+        <a href="#" class="utility-link">Move to Cart</a>
+        <button class="icon-circle-btn" aria-label="Remove from saved">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESKTOP VERSION -->
+  <div class="cart-item cart-item-desktop">
+    <div class="cart-item-img wf-img"></div>
+    <div>
+      <div class="product-brand">Jacquemus</div>
+      <a class="product-name-cart">Le Bambino Leather Top Handle Bag</a>
+      <p class="utility-text">Color: White</p>
+      <div class="cart-item-actions">
+        <a href="#" class="utility-link">Move to Cart</a>
+        <button class="icon-circle-btn" aria-label="Remove from saved">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="product-price">$675</div>
+  </div>
+
+  <!-- MOBILE VERSION -->
+  <div class="cart-item cart-item-mobile">
+    <div class="cart-item-img wf-img"></div>
+    <div class="cart-item-content">
+      <div class="product-brand">Jacquemus</div>
+      <a class="product-name-cart">Le Bambino Leather Top Handle Bag</a>
+      <p class="utility-text">Color: White</p>
+      <div class="product-price">$675</div>
+      <div class="cart-item-actions">
+        <a href="#" class="utility-link">Move to Cart</a>
+        <button class="icon-circle-btn" aria-label="Remove from saved">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
             <!-- You May Also Like -->
              <!-- ============================================================
@@ -444,27 +517,49 @@
 
         </div><!-- /cart-layout -->
 
-        <!-- Mobile: bottom order summary -->
-        <div class="cart-summary-bottom-mobile">
-          <h4>Order Summary</h4>
-          <div class="summary-row"><span>Subtotal (3 items)</span><span>$1,624</span></div>
-          <div class="summary-row"><span>Shipping</span><span class="utility-text">Free</span></div>
-          <div class="summary-row total"><span>Total</span><span>$1,624</span></div>
-          
-          <div class="cart-promo-row">
-            <input placeholder="Promo code">
-            <button class="btn sm">Apply</button>
-          </div>
-          <button class="btn filled lg full">Proceed to Checkout →</button>
-          <button class="btn-shopify">
-            <svg width="16" height="16" viewBox="0 0 109 124" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M74.7 14.8s-1.4.4-3.7 1.1c-.4-1.3-1-2.8-1.8-4.4-2.7-5.1-6.6-7.8-11.4-7.8-.3 0-.7 0-1 .1-.1-.2-.3-.3-.4-.5-2.1-2.2-4.7-3.3-7.8-3.2-6.1.2-12.1 4.6-17 12.4-3.4 5.4-6 12.2-6.7 17.5-6.9 2.1-11.7 3.6-11.8 3.7C9.4 35.7 9.2 36 9.1 38c-.1 1.5-5.6 43.2-5.6 43.2L62.6 92l30.1-6.5S74.7 15.3 74.7 14.8zM57.1 20c-4 1.2-8.4 2.6-12.7 3.9.4-5.4 2.3-10.8 5.1-14.4 1-1.3 2.5-2.8 4.2-3.6 1.6 3.3 1.9 8 1.4 14.1zM49 6.7c1.4 0 2.6.3 3.6.9-1.6.8-3.2 2.2-4.6 3.8-3.7 4.3-6.6 10.9-7 17.1-3.3 1-6.6 2-9.7 3C33.1 21 40.5 6.9 49 6.7zm10.1 51.9c.3 5.2-2.7 9.7-7.3 10-4.5.3-8.4-3.7-8.7-8.9-.3-5.2 2.7-9.7 7.3-10 4.5-.3 8.4 3.7 8.7 8.9zM60.8 19.7c-.1-5.6-.8-10-2.2-13.3 5.4.7 9 6.8 10.5 13.8-2.6.8-5.3 1.6-8.3 2.5v-3z"/></svg>
-            Express Checkout
-          </button>
-          <div class="cart-secure-note">🔒 Secure checkout · SSL encrypted</div>
-        </div>
 
       </div><!-- /container -->
     </div><!-- /band -->
+    <!-- STICKY BOTTOM BAR -->
+<div class="cart-sticky-footer" id="cart-sticky-footer">
+  <div class="cart-sticky-content">
+    <div class="cart-sticky-summary">
+      <span class="cart-sticky-item-count">3 items</span>
+      <h4 class="cart-sticky-total">$1,624</h4>
+    </div>
+
+    <div class="pdp-klarna">
+      Pay in 4 interest-free installments of $22.00 
+      <span style="white-space: nowrap; display: inline-block; vertical-align: middle;">
+        with 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Shop_Pay_logo.svg/1280px-Shop_Pay_logo.svg.png" 
+            alt="Shop Pay" 
+            style="display: inline-block; height: 14px; width: auto; vertical-align: middle; margin:1px;"> 
+      </span>
+    </div>
+
+    <button class="btn filled sm full">Proceed to Checkout →</button>
+
+    <div class="cart-sticky-more-options">
+      <button class="cart-sticky-more-trigger" id="cart-sticky-more-trigger" aria-expanded="false">
+        <span>More checkout options</span>
+        <svg class="cart-sticky-more-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+
+      <div class="cart-sticky-more-panel" id="cart-sticky-more-panel" hidden>
+        <button class="btn-shopify">
+          <svg width="16" height="16" viewBox="0 0 109 124" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M74.7 14.8s-1.4.4-3.7 1.1c-.4-1.3-1-2.8-1.8-4.4-2.7-5.1-6.6-7.8-11.4-7.8-.3 0-.7 0-1 .1-.1-.2-.3-.3-.4-.5-2.1-2.2-4.7-3.3-7.8-3.2-6.1.2-12.1 4.6-17 12.4-3.4 5.4-6 12.2-6.7 17.5-6.9 2.1-11.7 3.6-11.8 3.7C9.4 35.7 9.2 36 9.1 38c-.1 1.5-5.6 43.2-5.6 43.2L62.6 92l30.1-6.5S74.7 15.3 74.7 14.8zM57.1 20c-4 1.2-8.4 2.6-12.7 3.9.4-5.4 2.3-10.8 5.1-14.4 1-1.3 2.5-2.8 4.2-3.6 1.6 3.3 1.9 8 1.4 14.1zM49 6.7c1.4 0 2.6.3 3.6.9-1.6.8-3.2 2.2-4.6 3.8-3.7 4.3-6.6 10.9-7 17.1-3.3 1-6.6 2-9.7 3C33.1 21 40.5 6.9 49 6.7zm10.1 51.9c.3 5.2-2.7 9.7-7.3 10-4.5.3-8.4-3.7-8.7-8.9-.3-5.2 2.7-9.7 7.3-10 4.5-.3 8.4 3.7 8.7 8.9zM60.8 19.7c-.1-5.6-.8-10-2.2-13.3 5.4.7 9 6.8 10.5 13.8-2.6.8-5.3 1.6-8.3 2.5v-3z"/></svg>
+          Express Checkout
+        </button>
+        <div class="cart-secure-note">🔒 Secure checkout · SSL encrypted</div>
+        <div class="cart-payment-methods">
+          <p class="cart-payment-label">WE ACCEPT FOLLOWING PAYMENT OPTIONS</p>
+          <img src="images/cart/logos.png" alt="Accepted payment methods" class="cart-payment-logos">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   </main>
 

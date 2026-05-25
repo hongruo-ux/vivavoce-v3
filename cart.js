@@ -1,18 +1,24 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-  const toggle = document.getElementById('cart-summary-toggle');
-  const panel  = document.getElementById('cart-summary-panel');
-  if (!toggle || !panel) return;
+  const stickyFooter = document.getElementById('cart-sticky-footer');
+  const trigger = document.getElementById('cart-sticky-more-trigger');
+  const panel = document.getElementById('cart-sticky-more-panel');
 
-  toggle.addEventListener('click', () => {
-    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!isOpen));
-    toggle.classList.toggle('is-open', !isOpen);
-    if (isOpen) {
-      panel.setAttribute('hidden', '');
-    } else {
-      panel.removeAttribute('hidden');
-    }
-  });
+  if (stickyFooter && window.innerWidth <= 1080) {
+    stickyFooter.classList.add('active');
+  }
+
+  if (trigger && panel) {
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      trigger.classList.toggle('is-open', !isOpen);
+      if (isOpen) {
+        panel.setAttribute('hidden', '');
+      } else {
+        panel.removeAttribute('hidden');
+      }
+    });
+  }
 
 });
