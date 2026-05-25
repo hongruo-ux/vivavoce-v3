@@ -270,7 +270,7 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <a href="#" class="btn md full">Sign Out</a>
   ` : `
-    <a href="account.html" class="btn filled md full">Sign in to Viva Voce</a>
+    <a href="profile.html" class="btn filled md full">Sign in to Viva Voce</a>
     <a href="login.html" class="btn secondary md full">Other sign in options</a>
     <div class="account-btn-row">
       <a href="account.html" class="btn md">

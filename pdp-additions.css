@@ -273,7 +273,7 @@
    CUSTOMER VOICES
    ============================================================ */
   /* ── Customer Voices ─────────────────────────────────── */
-.cv-band { background: var(--surface-mint); }
+.cv-band { background: var(--blue-sky); }
 
 .cv-grid {
   display: grid;
@@ -290,7 +290,8 @@
 }
 
 .cv-heading {
-  padding: 0 0 2rem 0;
+  padding: 0 0 2rem .5rem;
+  color: var(--evergreen);
 }
 
 .cv-btn {
@@ -312,12 +313,12 @@
 }
 
 .cv-item--active .cv-btn {
-  background: var(--surface-card);
+  background: var(--surface-mint);
  padding: 0.875rem 1.25rem;
 
 }
 
-.cv-btn:hover { background: var(--surface-sand); }
+.cv-btn:hover { background: var(--surface-card); }
 
 .cv-icon {
   font-size: 1.25rem;
@@ -330,20 +331,18 @@
 /* Mobile answer */
 .cv-mob-answer {
   display: none;
-  gap: 1rem;
-  padding: 1rem 1.25rem 1.25rem;
+  gap: .25rem;
+  padding: .875rem;
   align-items: flex-start;
 }
 .cv-mob-img {
-  width: 100px;
+  width: 30%;
   aspect-ratio: 3/4;
   flex-shrink: 0;
 }
 .cv-mob-text p {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  line-height: 1.5;
-  font-style: italic;
+  font-size: var(--text-xl);
+  font-weight: 500;
   padding: 1rem;
 }
 .cv-author {
@@ -351,6 +350,7 @@
   color: var(--text-secondary);
   display: block;
   margin-top: 0.5rem;
+  padding-left: 1rem;
 }
 
 /* Desktop answer col */
@@ -384,7 +384,6 @@
   .cv-mob-answer { display: none; }
   .cv-item--active .cv-mob-answer { display: flex; background: var(--surface-card); }
   .cv-mob-img {
-  width: 100px;
   min-height: 133px;
   aspect-ratio: 3/4;
   flex-shrink: 0;
@@ -392,7 +391,7 @@
   background-position: center;
 }
 .cv-btn{ border-radius: 0;     padding: 0.875rem .5rem;}
-.cv-item--active .cv-btn{ border-radius: 0; background-color: var(--surface-card); padding: 0.875rem .5rem; }
+.cv-item--active .cv-btn{ border-radius: 0; background-color: var(--surface-card); padding: 0.875rem; }
 }
 
 .pdp-made-to-order { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--text-secondary); }

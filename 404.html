@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found — Viva Voce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="header-additions.css" />
+  <link rel="stylesheet" href="carousel.css">
+  <style>
+    /* 404 Page Styles */
+    .error-404-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .error-404-number {
+      font-size: 88px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--red-coral);
+      line-height: 1;
+      margin: 0;
+    }
+
+    .error-404-headline {
+      font-family: var(--font-display);
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .error-404-copy {
+      color: var(--text-secondary);
+      max-width: 800px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .error-404-cta {
+      margin-top: 1rem;
+    }
+
+    /* Category cards grid - desktop 4 columns, mobile carousel */
+    .category-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .5rem;
+    }
+
+
+
+    /* Hide grid on mobile, show carousel instead */
+    @media (max-width: 1079px) {
+      .category-cards-grid {
+        display: none;
+      }
+    }
+
+    /* Show carousel only on mobile */
+    .category-cards-carousel {
+      display: none;
+    }
+
+    @media (max-width: 1079px) {
+      .category-cards-carousel {
+        display: block;
+      }
+
+      .error-404-section {
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+      }
+
+      .error-404-number {
+      }
+
+      .error-404-headline {
+      }
+    }
+
+    @media (max-width: 739px) {
+      .error-404-number {
+        font-size: 3rem;
+      }
+
+      .error-404-headline {
+        font-size: var(--header-h3);
+      }
+
+      .error-404-section {
+        padding: 2.5rem 1rem;
+        gap: 1rem;
+      }
+    }
+
+   
+  </style>
+</head>
+
+<body>
+
+  <div id="main-header"></div>
+
+  <main>
+
+    <!-- BREADCRUMB -->
+    <div class="band">
+      <div class="container">
+        <div class="breadcrumb section-breadcrumb">
+          <a href="index.html">Home</a><span>/</span>
+          <span>404</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 404 SECTION -->
+    <div class="band">
+      <div class="container">
+        <div class="section-lg">
+          <div class="error-404-section">
+            <p class="error-404-number">404</p>
+            <h2 class="">Well, this is awkward...</h2>
+            <p class="error-404-copy">We can't seem to find the page you're looking for.<br>t might have been moved, or maybe you typed in a slightly incorrect URL.</p>
+            <div class="error-404-cta">
+              <a href="index.html" class="btn lg">Back to Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORY CARDS - DESKTOP GRID -->
+    <div class="band desktop-only">
+      <div class="container">
+        <div class="section-lg">
+          <div class="category-cards-grid">
+            <div class="carousel-item--3">
+  <div class="">
+    <div class="wf-img ratio-1-1" style="background-image: url('images/home/blog1.png');"></div>
+    <div class="">
+      <div class="band-padding right">
+        <a href="plp.html" class="brand-featured-title"><h4>Shop New Arrivals</h4></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item--3">
+  <div class="">
+    <div class="wf-img ratio-1-1" style="background-image: url('images/home/blog2.png');"></div>
+    <div class="">
+      <div class="band-padding right">
+        <a href="plp.html" class="brand-featured-title"><h4>Shop Best Sellers</h4></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item--3">
+  <div class="">
+    <div class="wf-img ratio-1-1" style="background-image: url('images/home/blog3.png');"></div>
+    <div class="">
+      <div class="band-padding right">
+        <a href="plp.html" class="brand-featured-title"><h4>Shop Trending Now</h4></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item--3">
+  <div class="">
+    <div class="wf-img ratio-1-1" style="background-image: url('images/home/cate1.png');"></div>
+    <div class="">
+      <div class="band-padding right">
+        <a href="plp.html" class="brand-featured-title"><h4>Shop Sale</h4></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORY CARDS - MOBILE CAROUSEL -->
+    <div class="band">
+      <div class="container">
+        <div class="section-lg category-cards-carousel">
+          <div class="carousel-wrap">
+            <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="carousel-track">
+
+            <div class="carousel-item--4">
+  <a href="plp.html" class="">
+    <div class="wf-img ratio-1-1" style="background-image: url('images/home/blog1.png');"></div>
+    <div class="">
+      <div class="band-padding right">
+        <h4>Shop New Arrivals</h4>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="carousel-item--4">
+  <a href="plp.html" class="">
+    <div class="wf-img ratio-1-1" style="background-image: url('images/home/blog2.png');"></div>
+    <div class="">
+      <div class="band-padding right">
+        <h4>Shop Best Sellers</h4>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="carousel-item--4">
+  <a href="plp.html" class="">
+    <div class="wf-img ratio-1-1" style="background-image: url('images/home/blog3.png');"></div>
+    <div class="">
+      <div class="band-padding right">
+        <h4>Shop Trending Now</h4>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="carousel-item--4">
+  <a href="plp.html" class="">
+    <div class="wf-img ratio-1-1" style="background-image: url('images/home/cate1.png');"></div>
+    <div class="">
+      <div class="band-padding right">
+        <h4>Shop Sale</h4>
+      </div>
+    </div>
+  </a>
+</div>
+
+              
+            </div>
+            <button class="carousel-btn carousel-btn--next" aria-label="Next">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="main-footer"></div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script src="carousel-stepper.js"></script>
+  <script src="carousel.js"></script>
+
+</body>
+</html>

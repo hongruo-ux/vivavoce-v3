@@ -45,7 +45,6 @@
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
   color: var(--surface-sand);
@@ -446,9 +445,9 @@
   display: grid;
   grid-template-columns: 30% 70%;
   align-items: center;
-  background-color: var(--surface-sand);
+  background-color: var(--evergreen);
   border-radius: var(--radius-lg);
-  padding: 3rem 2rem 2rem 2rem;
+  padding: 5rem 2rem 4rem 2rem;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -457,11 +456,13 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  color: var(--blue-sky);
 }
 
 .holiday-day__title {
   font-family: var(--font-display);
-  color: var(--coral);
+  color: var(--sky-blue);
+  text-transform: capitalize;
 }
 
 .holiday-day__grid {
@@ -490,7 +491,7 @@
   .holiday-day {
     grid-template-columns: 1fr;
     padding: 2rem;
-    gap: .5rem;
+    gap: 1.5rem;
     text-align: center;
   }
 
@@ -510,5 +511,25 @@
 
   .holiday-day__img {
     display: none;
+  }
+}
+
+@media (max-width: 739px) {
+  .section-lg {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .section-lg img {
+    margin-left: -28% !important;
+    width: 80% !important;
+  }
+
+  .section-lg h1 {
+    text-align: left;
+  }
+
+  .section-lg h3 {
+    text-align: left;
   }
 }

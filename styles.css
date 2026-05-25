@@ -87,6 +87,8 @@
   --blue-sky:        #C2DBFC;
   --icy-mint:        #CCE5C0;
   --lake-blue:         #005670;
+  --vibrant-bellflower:       #6A13D6;
+
 
   --font-display: 'GT Alpina', 'Montagu Slab', Georgia, serif;
   --font-body:    'Sharp Earth OL', 'Roboto', -apple-system, system-ui, sans-serif;
@@ -101,7 +103,7 @@
   /* Header type scale */
   --header-display: 4rem;    /* 64px */
   --header-h1:      3.25rem;    /* 48px */
-  --header-h2:      2.5rem; /* 36px */
+  --header-h2:      2.25rem; /* 36px */
   --header-h3:      1.75rem; /* 28px */
   --header-h4:      1.25rem;  /* 18px */
   --header-h5:      1rem;      /* 16px */
@@ -120,7 +122,7 @@
   --placeholder:   #e8e8e4;
   --shadow-card:   rgba(20,20,18,0.01) 0px 0px 0px 1px, rgba(20,20,18,0.02) 0px 2px 6px, rgba(20,20,18,0.03) 0px 4px 8px;
   --shadow-hover:  rgba(20,20,18,0.03) 0px 4px 12px;
-  --max-width:     1600px;
+  --max-width:     2000px;
 }
 
 @media (min-width: 1401px) {
@@ -132,7 +134,7 @@
 
   --header-display: 4rem;
   --header-h1:      3.25rem;
-  --header-h2:      2.5rem;
+  --header-h2:      2.25rem;
   --header-h3:      1.75rem;
 
   }
@@ -186,8 +188,8 @@
 
     --header-display: 2.5rem;  /* 40px */
     --header-h1:      2rem;    /* 32px */
-    --header-h2:      1.875rem;  /* 24px */
-    --header-h3:      1.5rem; /* 20px */
+    --header-h2:      1.5rem;  /* 24px */
+    --header-h3:      1.25rem; /* 20px */
     --header-h4:      1rem;      /* 16px */
     --header-h5:       0.875rem;  /* 14px */
     --quote-xl:       1.875rem; /* 30px */
@@ -207,7 +209,7 @@
 
 
 /* Layer 1 */
-.band { width: 100%; width: 100%; max-width: 1800px; margin: auto;}
+.band { width: 100%; width: 100%; max-width: 2000px; margin: auto;}
 
 /* Layer 3 — vertical padding only */
 .section-lg { padding-block: 5rem; }
@@ -335,15 +337,22 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 
 .bg-header { padding-block: 6rem 5rem; background-color: var(--blue-sky); }
 /* Full-bleed background band. Always place a .container inside for content width + gutters. */
-.band-padding {  padding-inline: max(1rem, calc((100vw - 1600px) / 2 + 1rem));}
- .left {padding-left: max(1rem, calc((100vw - 1600px) / 2 + 1rem)); padding-top: 1.5rem;}
-.right { padding-left: 0; padding-right: max(1rem, calc((100vw - 1600px) / 2 + 1rem)); padding-top: 1.5rem;}
+.band-padding {  padding-inline: max(1rem, calc((100vw - 2000px) / 2 + 1rem));}
+.left {
+  padding-left: clamp(1rem, calc((100vw - 2000px) / 2 + 1rem), 1rem);
+  padding-top: 1.5rem;
+}
 
+.right {
+  padding-left: 0;
+  padding-right: clamp(1rem, calc((100vw - 2000px) / 2 + 1rem), 1rem);
+  padding-top: 1.5rem;
+}
 
 @media (max-width: 1079px) {
   .band-padding {  padding-inline: 1rem;}
-   .left {padding-left: max(1rem, calc((100vw - 1600px) / 2 + 1rem)); padding-top: 0rem;}
-   .right { padding-left: 0; padding-right: max(1rem, calc((100vw - 1600px) / 2 + 1rem)); padding-top: 1rem;}
+   .left {padding-left: max(1rem, calc((100vw - 2000px) / 2 + 1rem)); padding-top: 0rem;}
+   .right { padding-left: 0; padding-right: max(1rem, calc((100vw - 2000px) / 2 + 1rem)); padding-top: 1rem;}
 }
 
 @media (max-width: 739px) {
@@ -419,7 +428,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   .container    { padding-inline: 0.875rem; }
 }
 @media (max-width: 739px) {
-  .container { padding-inline: 1rem; }
+  .container { padding-inline: .5rem; }
 
 }
 
@@ -451,7 +460,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .light {color: var(--surface-page)!important;}
 .light:hover { color: var(--surface-sand)!important; }
 .dark{color: var(--text-primary)!important;}
-
+.center {text-align: center!important; align-items: center;}
 
 
 /* Size scale */
@@ -500,9 +509,11 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 /* ============================================================
    6. SECTION COMPONENTS — header, eyebrow, title
    ============================================================ */
-.section-header          { gap: 2rem; display: flex; justify-content: space-between; align-items: flex-end; padding-block: 3.5rem; }
-.section-eyebrow         { font-size: var(--text-sm); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 4px; }
-.section-title           { font-family: var(--font-display); text-transform: uppercase; padding-block: 1rem .5rem; font-size: var(--header-h3); font-weight: 600; color: var(--red-coral); }
+.section-header          { gap: 2rem; display: flex; justify-content: space-between; align-items: flex-end; padding-block: 1.5rem; }
+.section-eyebrow         { font-size: var(--text-default); font-weight: 500; text-transform: capitalize; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 4px; }
+.section-eyebrow-lg      { font-size: var(--header-h3); font-family: var(--font-display); font-weight: 500; text-transform: capitalize; letter-spacing: 0.1em; margin-bottom: 24px; }
+
+.section-title           { font-family: var(--font-display); font-size: var(--header-h2); text-transform: capitalize; padding-block: 1rem .5rem; font-weight: 500;  }
 .section-title-block     { padding: 0 0 1rem; }
 .half-header             { max-width: 60%; }
 .section-header-carousel { gap: 2rem; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1rem; }
@@ -809,4 +820,38 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     display: none !important;
   }
 }
+.section-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
 
+.section-title-block h1 {
+  margin-bottom: 0;
+}
+
+.section-title-block p {
+  margin: 0;
+}
+
+.section-title-block a {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 739px) {
+  .section-title-block {
+    gap: 0.75rem;
+    text-align: left !important;
+    align-items: flex-start;
+
+    
+  }
+  .section-title-block h1 {
+    text-align: left; 
+    align-items: flex-start;
+
+  }
+
+}

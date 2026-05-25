@@ -17,7 +17,6 @@
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 10%;
 }
 
 .contact-header-right {
@@ -33,7 +32,6 @@
 }
 
 .article-title-main {
-  font-weight: 800;
   margin-bottom: 1vh;
 }
 
