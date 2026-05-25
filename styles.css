@@ -513,7 +513,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .section-eyebrow         { font-size: var(--text-default); font-weight: 500; text-transform: capitalize; letter-spacing: 0.1em; color: var(--text-caption); margin-bottom: 4px; }
 .section-eyebrow-lg      { font-size: var(--header-h3); font-family: var(--font-display); font-weight: 500; text-transform: capitalize; letter-spacing: 0.1em; margin-bottom: 24px; }
 
-.section-title           { font-family: var(--font-display); font-size: var(--header-h2); text-transform: capitalize; padding-block: 1rem .5rem; font-weight: 500;  }
+.section-title           { font-family: var(--font-display); font-size: var(--header-h3); text-transform: capitalize; padding-block: 1rem .5rem; font-weight: 600;  }
 .section-title-block     { padding: 0 0 1rem; }
 .half-header             { max-width: 60%; }
 .section-header-carousel { gap: 2rem; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1rem; }
