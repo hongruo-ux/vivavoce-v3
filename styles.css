@@ -451,7 +451,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .btn.light-btn:hover { border-color: rgba(225,225,225,0.4); background-color: rgba(0,0,0,0.4); color: var(--surface-page); text-decoration: underline; }
 
 .btn.filled        { background: var(--cta-bg); color: #fff; border-color: var(--cta-bg); }
-.btn.filled-sec        { background: var(--text-primary); color: #fff; border-color: var(--text-primary); }
+.btn.filled-sec        { background: var(--evergreen); color: #fff; border-color: var(--evergreen); }
 .btn.filled:hover  { background: var(--cta-hover); border-color: var(--cta-hover); transform: translateY(-1px); color: #fff; }
 .btn.filled:active { background: var(--cta-pressed); }
 

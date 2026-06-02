@@ -72,9 +72,9 @@
    PDP SIZE GRID
    ============================================================ */
 .size-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; }
-.size-btn  { height: 40px; min-height: 0; border: 1.5px solid var(--border); font-size: var(--text-sm); font-weight: 600; color: var(--text-primary); border-radius: var(--radius-pill); }
+.size-btn  { height: 40px; min-height: 0; border: 2px solid var(--border); font-size: var(--text-sm); font-weight: 600; color: var(--text-primary); border-radius: var(--radius-pill); }
 .size-btn:hover  { border-color: var(--text-primary); }
-.size-btn.active { border-color: var(--cta-bg); background: var(--cta-bg); color: #fff; }
+.size-btn.active { border-color: var(--evergreen)!important; background: var(--surface-mint); color:var(--evergreen); }
 .size-btn.oos    { opacity: 0.35; text-decoration: line-through; }
 
 @media (min-width: 1401px) {}
