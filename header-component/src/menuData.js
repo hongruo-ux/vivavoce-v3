@@ -13,7 +13,13 @@ export const menus = {
       column('P - S', ['Pamut Apparel', 'Poplinen', 'Proclaim', 'RCA Public Label', 'Reistor', 'Reprise Activewear', 'Retrollicious', 'Sante Grace', 'See ROSE Go', 'Sela Designs']),
       column('S - V', ['State Bags', 'Superfit Hero', "Sweet Baby Ray's", 'Symbology', 'Tamara Malas', 'Thunderpants US', 'TomboyX', 'Tribe + Temple', 'Village Thrive']),
     ],
-    cards: [{ image: 'card-brands.png', title: 'Hilary MacMillan', badge: 'Higher Social Purpose' }],
+    columnsCompact: [
+      column('Brands', ['All brands', 'Baacal', 'Be Idle', 'Besida', 'cantiqlA', 'Chouette Designs', 'Conscious Clothing', 'Conscious Step', 'Crazy Compression', 'Expansse Active', 'Feelhandmade', 'FITSO', 'Fyoli Fyoli']),
+      column('G - S', ['GIA/irl', 'Hilary MacMillan', 'Nettle Studios', 'Noble', 'Nomads Swimwear', 'NOOWORKS', 'Out of the Woods', 'Pamut Apparel', 'Poplinen', 'Proclaim', 'RCA Public Label', 'Reistor', 'Reprise Activewear']),
+      column('P - V', ['Retrollicious', 'Sante Grace', 'See ROSE Go', 'Sela Designs', 'State Bags', 'Superfit Hero', "Sweet Baby Ray's", 'Symbology', 'Tamara Malas', 'Thunderpants US', 'TomboyX', 'Tribe + Temple', 'Village Thrive']),
+    ],
+    featured: { image: 'story-thumbnail3.png', eyebrow: 'New Brands', title: 'Hilary MacMillan', cta: 'SHOP NOW' },
+    cards: [{ image: 'card-clothing1.png', title: 'Hilary MacMillan' }, { image: 'card-clothing2.png', title: 'Hilary MacMillan' }],
   },
   Clothing: {
     columns: [column('Clothing', ['Best Sellers', 'Dresses & Jumpsuits', 'Tops', 'Pants', 'Bottoms', 'Innerwear', 'Outerwear', 'Activewear', 'Swimwear', 'All Clothing']), column('Shop by Size', sizes)],
