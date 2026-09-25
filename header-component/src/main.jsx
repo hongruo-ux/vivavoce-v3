@@ -19,7 +19,7 @@ function App() {
     window.addEventListener('popstate', pop);
     return () => { document.removeEventListener('click', intercept); window.removeEventListener('popstate', pop); };
   }, []);
-  return <><VivaVoceHeader initialMenu="Clothing"/><main className="demo-content" aria-live="polite">{destination && <div><h1>{destination}</h1><p>This destination is ready to connect to your store.</p></div>}</main></>;
+  return <><VivaVoceHeader/><main className="demo-content" aria-live="polite">{destination && <div><h1>{destination}</h1><p>This destination is ready to connect to your store.</p></div>}</main></>;
 }
 
 createRoot(document.getElementById('root')).render(<App/>);
