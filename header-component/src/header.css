@@ -3,9 +3,9 @@
 @font-face{font-family:'GT Alpina';src:url('../public/fonts/GT-Alpina-Extended-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 :root{--vv-ink:#1a1a1a;--vv-secondary:#3c3c43;--vv-green:#004c2a;--vv-coral:#de3726;--vv-line:#e8e2d9;--vv-body:'Sharp Earth',Arial,sans-serif;--vv-serif:'GT Alpina',Georgia,serif}
 *{box-sizing:border-box}body{margin:0;background:white;color:var(--vv-ink);font-family:var(--vv-body)}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}button{color:inherit}a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--vv-green);outline-offset:4px}[hidden]{display:none!important}
-.vv-header{position:relative;background:white;z-index:10;font:400 16px/1.8 var(--vv-body);--vv-heading:18px;--vv-small:14px;--vv-gutter:80px;--vv-column-gap:72px;--vv-card-width:280px;--vv-panel-pad:32px}
+.vv-header{position:relative;background:white;z-index:10;font:400 16px/1.8 var(--vv-body);--vv-heading:18px;--vv-small:14px;--vv-gutter:40px;--vv-column-gap:72px;--vv-card-width:280px;--vv-panel-pad:32px}
 .vv-announcement{display:flex;align-items:center;justify-content:center;height:32px;padding-right:40px;background:var(--vv-green);color:white;font-size:var(--vv-small);font-weight:500;line-height:1.4;text-align:center}
-.vv-main-row{height:66px;padding:0 40px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.vv-main-row{height:66px;padding:0 var(--vv-gutter);display:flex;justify-content:space-between;align-items:center;gap:24px}
 .vv-help{display:flex;align-items:center;gap:12px;white-space:nowrap;font-size:var(--vv-small);font-weight:500;line-height:1.4}
 .vv-shipping{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400}.vv-shipping img{display:block;width:19px;height:19px}
 .vv-logo{position:relative;flex:0 0 216px;width:216px;height:40px;overflow:hidden}.vv-logo img{position:absolute;max-width:none;width:126.56%;height:203.08%;left:-13.14%;top:-38.46%}
